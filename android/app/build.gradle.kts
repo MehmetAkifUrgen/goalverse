@@ -19,7 +19,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.example.football_tic_tac_toe"
+    namespace = "com.goalverse.footballsos"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
