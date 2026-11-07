@@ -1,0 +1,26 @@
+Goalverse: Football SOS, futbol bilgisini taktiksel hamlelerle birleştiren rekabetçi bir futbol trivia ve 1v1 strateji oyunudur.
+
+ÖNE ÇIKAN ÖZELLİKLER VE OYUN MODLARI:
+
+• FOOTBALL SOS (3×3 KULÜP TABLOSU):
+Satır ve sütunlardaki iki kulüpte de forma giymiş ortak futbolcuyu bularak hücreyi ele geçir, yatay, dikey veya çapraz üçlü çizgiyi tamamla!
+- 3 Tur (2 Galibiyet) ve 5 Tur (3 Galibiyet) çok turlu seri maç sistemi.
+- Aynı futbolcuyu farklı uygun hücrelerde tekrar kullanabilme özgürlüğü.
+- Her turda oyuncu başına 2 pas hakkı ve gerçek zamanlı beraberlik teklifi sistemi.
+- Yapay zekâya karşı Solo mod, aynı cihazda 2 kişilik yerel düello veya 6 haneli oda koduyla Online 1v1 maçlar.
+
+• 6 FARKLI FUTBOL ARCADE & QUIZ MODU:
+1. Rating Battle (Higher / Lower): Overall, piyasa değeri, kariyer golleri, asist, hız ve Şampiyonlar Ligi gollerinde hangi yıldızın daha yüksek olduğunu tahmin et.
+2. 2 Takım 1 Oyuncu: İki dev kulüpte de oynamış ortak yıldızı süre bitmeden bul.
+3. Ben Kimim? (Who Am I?): Zordan kolaya açılan 5 kariyer ipucuyla gizemli futbolcuyu en yüksek puanla bil.
+4. Imposter (Sahtekâr Ajan): 4 futbolcu arasından belirtilen kulüpte hiç oynamamış olan sahtekârı yakala.
+5. Transfer Yolu: Kronolojik kulüp geçmişini takip ederek gizli futbolcuyu keşfet.
+6. Futbol Bombası: Bomba patlamadan kulüp veya ülke kriterine uyan futbolcuları sırayla yaz.
+
+• GÜNLÜK MÜCADELE & GLOBAL ELO SIRALAMASI:
+- Her gün yenilenen özel 3×3 kulüp tablosunu tamamla, serini koru.
+- Kazandığın maçlarla ELO puanını yükselt, Başlangıç Ligi'nden Efsane Lig'e çık ve global liderlik tablosunda yerini al.
+
+• FOOTBALL SOS PRO & KOZMETİK MAĞAZASI:
+- Reklamsız stadyum deneyimi, özel saha ve 3×3 oyun tahtası temaları, profil çerçeveleri, özel rozetler ve 50 maçlık detaylı istatistik geçmişi.
+- %100 Adil Rekabet: Hiçbir abonelik veya kozmetik ürün oyun içi ELO, süre veya hamle avantajı sağlamaz.

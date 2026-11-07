@@ -1,0 +1,4 @@
+# Android Fastlane Appfile for Goalverse: Football SOS
+
+json_key_file(ENV.fetch("GOOGLE_PLAY_JSON_KEY_FILE", "fastlane/google-play-service-account.json"))
+package_name(ENV.fetch("ANDROID_PACKAGE_NAME", "com.goalverse.footballsos"))

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "team_001",
+    "name": "Real Madrid",
+    "country": "ES",
+    "normalizedName": "real madrid"
+  },
+  {
+    "id": "team_002",
+    "name": "Barcelona",
+    "country": "ES",
+    "normalizedName": "barcelona"
+  },
+  {
+    "id": "team_003",
+    "name": "Juventus",
+    "country": "IT",
+    "normalizedName": "juventus"
+  },
+  {
+    "id": "team_004",
+    "name": "Arsenal",
+    "country": "EN",
+    "normalizedName": "arsenal"
+  },
+  {
+    "id": "team_005",
+    "name": "Liverpool",
+    "country": "EN",
+    "normalizedName": "liverpool"
+  },
+  {
+    "id": "team_006",
+    "name": "Galatasaray",
+    "country": "TR",
+    "normalizedName": "galatasaray"
+  },
+  {
+    "id": "team_007",
+    "name": "Manchester United",
+    "country": "EN",
+    "normalizedName": "manchester united"
+  },
+  {
+    "id": "team_008",
+    "name": "Manchester City",
+    "country": "EN",
+    "normalizedName": "manchester city"
+  },
+  {
+    "id": "team_009",
+    "name": "Bayern Munich",
+    "country": "DE",
+    "normalizedName": "bayern munich"
+  },
+  {
+    "id": "team_010",
+    "name": "PSG",
+    "country": "FR",
+    "normalizedName": ""
+  },
+  {
+    "id": "team_011",
+    "name": "Inter",
+    "country": "IT",
+    "normalizedName": "inter"
+  },
+  {
+    "id": "team_012",
+    "name": "AC Milan",
+    "country": "IT",
+    "normalizedName": "ac milan"
+  },
+  {
+    "id": "team_013",
+    "name": "Chelsea",
+    "country": "EN",
+    "normalizedName": "chelsea"
+  },
+  {
+    "id": "team_014",
+    "name": "Atletico Madrid",
+    "country": "ES",
+    "normalizedName": "atletico madrid"
+  },
+  {
+    "id": "team_015",
+    "name": "Dortmund",
+    "country": "DE",
+    "normalizedName": "dortmund"
+  },
+  {
+    "id": "team_016",
+    "name": "Napoli",
+    "country": "IT",
+    "normalizedName": "napoli"
+  },
+  {
+    "id": "team_017",
+    "name": "Tottenham",
+    "country": "EN",
+    "normalizedName": "tottenham"
+  },
+  {
+    "id": "team_018",
+    "name": "Roma",
+    "country": "IT",
+    "normalizedName": "roma"
+  },
+  {
+    "id": "team_019",
+    "name": "Benfica",
+    "country": "PT",
+    "normalizedName": "benfica"
+  },
+  {
+    "id": "team_020",
+    "name": "Ajax",
+    "country": "NL",
+    "normalizedName": "ajax"
+  }
+]

@@ -1,0 +1,3984 @@
+[
+  {
+    "id": "player_0001",
+    "name": "Cristiano Ronaldo",
+    "nationality": "PT",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "cristiano ronaldo"
+  },
+  {
+    "id": "player_0002",
+    "name": "Lionel Messi",
+    "nationality": "AR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "lionel messi"
+  },
+  {
+    "id": "player_0003",
+    "name": "Neymar Jr",
+    "nationality": "BR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "neymar jr"
+  },
+  {
+    "id": "player_0004",
+    "name": "Kylian Mbappe",
+    "nationality": "FR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "kylian mbappe"
+  },
+  {
+    "id": "player_0005",
+    "name": "Zlatan Ibrahimovic",
+    "nationality": "SE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "zlatan ibrahimovic"
+  },
+  {
+    "id": "player_0006",
+    "name": "Paul Pogba",
+    "nationality": "FR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "paul pogba"
+  },
+  {
+    "id": "player_0007",
+    "name": "Luka Modric",
+    "nationality": "HR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "luka modric"
+  },
+  {
+    "id": "player_0008",
+    "name": "Toni Kroos",
+    "nationality": "DE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "toni kroos"
+  },
+  {
+    "id": "player_0009",
+    "name": "Mohamed Salah",
+    "nationality": "EG",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "mohamed salah"
+  },
+  {
+    "id": "player_0010",
+    "name": "Virgil van Dijk",
+    "nationality": "NL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "virgil van dijk"
+  },
+  {
+    "id": "player_0011",
+    "name": "Kevin De Bruyne",
+    "nationality": "BE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "kevin de bruyne"
+  },
+  {
+    "id": "player_0012",
+    "name": "Erling Haaland",
+    "nationality": "NO",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "erling haaland"
+  },
+  {
+    "id": "player_0013",
+    "name": "Robert Lewandowski",
+    "nationality": "PL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "robert lewandowski"
+  },
+  {
+    "id": "player_0014",
+    "name": "Thibaut Courtois",
+    "nationality": "BE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "thibaut courtois"
+  },
+  {
+    "id": "player_0015",
+    "name": "Sergio Ramos",
+    "nationality": "ES",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "sergio ramos"
+  },
+  {
+    "id": "player_0016",
+    "name": "Andres Iniesta",
+    "nationality": "ES",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "andres iniesta"
+  },
+  {
+    "id": "player_0017",
+    "name": "Xavi Hernandez",
+    "nationality": "ES",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "xavi hernandez"
+  },
+  {
+    "id": "player_0018",
+    "name": "Gianluigi Buffon",
+    "nationality": "IT",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "gianluigi buffon"
+  },
+  {
+    "id": "player_0019",
+    "name": "Gareth Bale",
+    "nationality": "WAL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "gareth bale"
+  },
+  {
+    "id": "player_0020",
+    "name": "Luis Suarez",
+    "nationality": "UY",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "luis suarez"
+  },
+  {
+    "id": "player_0021",
+    "name": "Antoine Griezmann",
+    "nationality": "FR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "antoine griezmann"
+  },
+  {
+    "id": "player_0022",
+    "name": "Alphonso Davies",
+    "nationality": "CA",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "alphonso davies"
+  },
+  {
+    "id": "player_0023",
+    "name": "Joshua Kimmich",
+    "nationality": "DE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "joshua kimmich"
+  },
+  {
+    "id": "player_0024",
+    "name": "Manuel Neuer",
+    "nationality": "DE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "manuel neuer"
+  },
+  {
+    "id": "player_0025",
+    "name": "Thomas Muller",
+    "nationality": "DE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "thomas muller"
+  },
+  {
+    "id": "player_0026",
+    "name": "Jadon Sancho",
+    "nationality": "EN",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "jadon sancho"
+  },
+  {
+    "id": "player_0027",
+    "name": "Christian Eriksen",
+    "nationality": "DK",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "christian eriksen"
+  },
+  {
+    "id": "player_0028",
+    "name": "Romelu Lukaku",
+    "nationality": "BE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "romelu lukaku"
+  },
+  {
+    "id": "player_0029",
+    "name": "Lorenzo Insigne",
+    "nationality": "IT",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "lorenzo insigne"
+  },
+  {
+    "id": "player_0030",
+    "name": "Kalidou Koulibaly",
+    "nationality": "SN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "kalidou koulibaly"
+  },
+  {
+    "id": "player_0031",
+    "name": "Edinson Cavani",
+    "nationality": "UY",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "edinson cavani"
+  },
+  {
+    "id": "player_0032",
+    "name": "David Silva",
+    "nationality": "ES",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "david silva"
+  },
+  {
+    "id": "player_0033",
+    "name": "Sergio Aguero",
+    "nationality": "AR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "sergio aguero"
+  },
+  {
+    "id": "player_0034",
+    "name": "Robin van Persie",
+    "nationality": "NL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "robin van persie"
+  },
+  {
+    "id": "player_0035",
+    "name": "Cesc Fabregas",
+    "nationality": "ES",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "cesc fabregas"
+  },
+  {
+    "id": "player_0036",
+    "name": "Thierry Henry",
+    "nationality": "FR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "thierry henry"
+  },
+  {
+    "id": "player_0037",
+    "name": "Andrea Pirlo",
+    "nationality": "IT",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "andrea pirlo"
+  },
+  {
+    "id": "player_0038",
+    "name": "Paolo Maldini",
+    "nationality": "IT",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "paolo maldini"
+  },
+  {
+    "id": "player_0039",
+    "name": "Alessandro Del Piero",
+    "nationality": "IT",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "alessandro del piero"
+  },
+  {
+    "id": "player_0040",
+    "name": "Frank Rijkaard",
+    "nationality": "NL",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "frank rijkaard"
+  },
+  {
+    "id": "player_0041",
+    "name": "Marco van Basten",
+    "nationality": "NL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "marco van basten"
+  },
+  {
+    "id": "player_0042",
+    "name": "Ruud Gullit",
+    "nationality": "NL",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "ruud gullit"
+  },
+  {
+    "id": "player_0043",
+    "name": "Dennis Bergkamp",
+    "nationality": "NL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "dennis bergkamp"
+  },
+  {
+    "id": "player_0044",
+    "name": "Edwin van der Sar",
+    "nationality": "NL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "edwin van der sar"
+  },
+  {
+    "id": "player_0045",
+    "name": "Wesley Sneijder",
+    "nationality": "NL",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "wesley sneijder"
+  },
+  {
+    "id": "player_0046",
+    "name": "Arjen Robben",
+    "nationality": "NL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "arjen robben"
+  },
+  {
+    "id": "player_0047",
+    "name": "Clarence Seedorf",
+    "nationality": "NL",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "clarence seedorf"
+  },
+  {
+    "id": "player_0048",
+    "name": "Patrick Kluivert",
+    "nationality": "NL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "patrick kluivert"
+  },
+  {
+    "id": "player_0049",
+    "name": "Rafael van der Vaart",
+    "nationality": "NL",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "rafael van der vaart"
+  },
+  {
+    "id": "player_0050",
+    "name": "Mateo Kovacic",
+    "nationality": "HR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "mateo kovacic"
+  },
+  {
+    "id": "player_0051",
+    "name": "Achraf Hakimi",
+    "nationality": "MA",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "achraf hakimi"
+  },
+  {
+    "id": "player_0052",
+    "name": "Ibrahim Jones",
+    "nationality": "AR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "ibrahim jones"
+  },
+  {
+    "id": "player_0053",
+    "name": "Joseph Moreau",
+    "nationality": "HR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "joseph moreau"
+  },
+  {
+    "id": "player_0054",
+    "name": "Luca Moretti",
+    "nationality": "BE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "luca moretti"
+  },
+  {
+    "id": "player_0055",
+    "name": "Ruben Davis",
+    "nationality": "GH",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "ruben davis"
+  },
+  {
+    "id": "player_0056",
+    "name": "Daniel Hassan",
+    "nationality": "DZ",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "daniel hassan"
+  },
+  {
+    "id": "player_0057",
+    "name": "Rashid Jensen",
+    "nationality": "CA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "rashid jensen"
+  },
+  {
+    "id": "player_0058",
+    "name": "Maximilian Popovic",
+    "nationality": "TR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "maximilian popovic"
+  },
+  {
+    "id": "player_0059",
+    "name": "Stefan Andersen",
+    "nationality": "CM",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "stefan andersen"
+  },
+  {
+    "id": "player_0060",
+    "name": "Stefan Olsen",
+    "nationality": "SE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "stefan olsen"
+  },
+  {
+    "id": "player_0061",
+    "name": "Ahmet Jovanovic",
+    "nationality": "EC",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "ahmet jovanovic"
+  },
+  {
+    "id": "player_0062",
+    "name": "Jonas Schmidt",
+    "nationality": "CH",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "jonas schmidt"
+  },
+  {
+    "id": "player_0063",
+    "name": "Arda Petrovic",
+    "nationality": "CH",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "arda petrovic"
+  },
+  {
+    "id": "player_0064",
+    "name": "Oliver Petrovic",
+    "nationality": "CL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "oliver petrovic"
+  },
+  {
+    "id": "player_0065",
+    "name": "Joseph Kristensen",
+    "nationality": "CA",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "joseph kristensen"
+  },
+  {
+    "id": "player_0066",
+    "name": "Carlos Moretti",
+    "nationality": "CO",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "carlos moretti"
+  },
+  {
+    "id": "player_0067",
+    "name": "Markus Meyer",
+    "nationality": "KE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "markus meyer"
+  },
+  {
+    "id": "player_0068",
+    "name": "Juan Turan",
+    "nationality": "SN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "juan turan"
+  },
+  {
+    "id": "player_0069",
+    "name": "Arthur Perez",
+    "nationality": "CM",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "arthur perez"
+  },
+  {
+    "id": "player_0070",
+    "name": "Karim Popovic",
+    "nationality": "CH",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "karim popovic"
+  },
+  {
+    "id": "player_0071",
+    "name": "Joao Mercier",
+    "nationality": "NO",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "joao mercier"
+  },
+  {
+    "id": "player_0072",
+    "name": "Maximilian Bianchi",
+    "nationality": "RS",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "maximilian bianchi"
+  },
+  {
+    "id": "player_0073",
+    "name": "Marco Rossi",
+    "nationality": "SN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "marco rossi"
+  },
+  {
+    "id": "player_0074",
+    "name": "Ruben Perez",
+    "nationality": "HU",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "ruben perez"
+  },
+  {
+    "id": "player_0075",
+    "name": "Levin Mahmoud",
+    "nationality": "CZ",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "levin mahmoud"
+  },
+  {
+    "id": "player_0076",
+    "name": "Luca Sanchez",
+    "nationality": "PE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "luca sanchez"
+  },
+  {
+    "id": "player_0077",
+    "name": "Stefan Jensen",
+    "nationality": "PT",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "stefan jensen"
+  },
+  {
+    "id": "player_0078",
+    "name": "Markus Miller",
+    "nationality": "BR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "markus miller"
+  },
+  {
+    "id": "player_0079",
+    "name": "David Oliveira",
+    "nationality": "AR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "david oliveira"
+  },
+  {
+    "id": "player_0080",
+    "name": "Joseph Ramirez",
+    "nationality": "AR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "joseph ramirez"
+  },
+  {
+    "id": "player_0081",
+    "name": "David Andersen",
+    "nationality": "SN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "david andersen"
+  },
+  {
+    "id": "player_0082",
+    "name": "Diogo Jones",
+    "nationality": "GH",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "diogo jones"
+  },
+  {
+    "id": "player_0083",
+    "name": "Kaan Jovanovic",
+    "nationality": "IT",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "kaan jovanovic"
+  },
+  {
+    "id": "player_0084",
+    "name": "David Larsen",
+    "nationality": "UA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "david larsen"
+  },
+  {
+    "id": "player_0085",
+    "name": "Jens Carvalho",
+    "nationality": "SN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "jens carvalho"
+  },
+  {
+    "id": "player_0086",
+    "name": "Levin Kovacevic",
+    "nationality": "SE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "levin kovacevic"
+  },
+  {
+    "id": "player_0087",
+    "name": "Jens Ozdemir",
+    "nationality": "PL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "jens ozdemir"
+  },
+  {
+    "id": "player_0088",
+    "name": "Marco Djokovic",
+    "nationality": "SN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "marco djokovic"
+  },
+  {
+    "id": "player_0089",
+    "name": "Eren Popovic",
+    "nationality": "ES",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "eren popovic"
+  },
+  {
+    "id": "player_0090",
+    "name": "Thomas Oliveira",
+    "nationality": "MA",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "thomas oliveira"
+  },
+  {
+    "id": "player_0091",
+    "name": "Ruben Novak",
+    "nationality": "UY",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "ruben novak"
+  },
+  {
+    "id": "player_0092",
+    "name": "Lars Martinez",
+    "nationality": "MG",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "lars martinez"
+  },
+  {
+    "id": "player_0093",
+    "name": "Jens Fernandez",
+    "nationality": "FR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "jens fernandez"
+  },
+  {
+    "id": "player_0094",
+    "name": "Semih Weber",
+    "nationality": "CA",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "semih weber"
+  },
+  {
+    "id": "player_0095",
+    "name": "Enes Dubois",
+    "nationality": "CO",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "enes dubois"
+  },
+  {
+    "id": "player_0096",
+    "name": "Pablo Brown",
+    "nationality": "RS",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "pablo brown"
+  },
+  {
+    "id": "player_0097",
+    "name": "Jonas Davis",
+    "nationality": "UA",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "jonas davis"
+  },
+  {
+    "id": "player_0098",
+    "name": "Henrik Anderson",
+    "nationality": "KE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "henrik anderson"
+  },
+  {
+    "id": "player_0099",
+    "name": "Juan Johnson",
+    "nationality": "EN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "juan johnson"
+  },
+  {
+    "id": "player_0100",
+    "name": "Francesco Russo",
+    "nationality": "MA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "francesco russo"
+  },
+  {
+    "id": "player_0101",
+    "name": "Yusuf Popovic",
+    "nationality": "CH",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "yusuf popovic"
+  },
+  {
+    "id": "player_0102",
+    "name": "Karim Andersen",
+    "nationality": "DZ",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "karim andersen"
+  },
+  {
+    "id": "player_0103",
+    "name": "William Muller",
+    "nationality": "EG",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "william muller"
+  },
+  {
+    "id": "player_0104",
+    "name": "Rafael Demir",
+    "nationality": "VE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "rafael demir"
+  },
+  {
+    "id": "player_0105",
+    "name": "Michael Fischer",
+    "nationality": "PL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "michael fischer"
+  },
+  {
+    "id": "player_0106",
+    "name": "Semih Anderson",
+    "nationality": "BE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "semih anderson"
+  },
+  {
+    "id": "player_0107",
+    "name": "Viktor Roux",
+    "nationality": "GH",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "viktor roux"
+  },
+  {
+    "id": "player_0108",
+    "name": "Eren Garcia",
+    "nationality": "PT",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "eren garcia"
+  },
+  {
+    "id": "player_0109",
+    "name": "Joseph Russo",
+    "nationality": "US",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "joseph russo"
+  },
+  {
+    "id": "player_0110",
+    "name": "Jens Farouk",
+    "nationality": "IT",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "jens farouk"
+  },
+  {
+    "id": "player_0111",
+    "name": "Baris Cruz",
+    "nationality": "PE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "baris cruz"
+  },
+  {
+    "id": "player_0112",
+    "name": "Baris Dubois",
+    "nationality": "TN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "baris dubois"
+  },
+  {
+    "id": "player_0113",
+    "name": "Peter Milic",
+    "nationality": "PL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "peter milic"
+  },
+  {
+    "id": "player_0114",
+    "name": "Jens Oliveira",
+    "nationality": "FR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "jens oliveira"
+  },
+  {
+    "id": "player_0115",
+    "name": "Hakan Khalil",
+    "nationality": "HR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "hakan khalil"
+  },
+  {
+    "id": "player_0116",
+    "name": "Sercan Durand",
+    "nationality": "VE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "sercan durand"
+  },
+  {
+    "id": "player_0117",
+    "name": "Kristian Wilson",
+    "nationality": "SE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "kristian wilson"
+  },
+  {
+    "id": "player_0118",
+    "name": "Ruben Martin",
+    "nationality": "TN",
+    "position": "MF",
+    "aliases": [
+      "Ruben Martinez"
+    ],
+    "normalizedName": "ruben martin"
+  },
+  {
+    "id": "player_0119",
+    "name": "Karim Mahmoud",
+    "nationality": "BE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "karim mahmoud"
+  },
+  {
+    "id": "player_0120",
+    "name": "Daniel Demir",
+    "nationality": "EC",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "daniel demir"
+  },
+  {
+    "id": "player_0121",
+    "name": "Marco Khalil",
+    "nationality": "VE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "marco khalil"
+  },
+  {
+    "id": "player_0122",
+    "name": "Kristian Johnson",
+    "nationality": "KE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "kristian johnson"
+  },
+  {
+    "id": "player_0123",
+    "name": "Francisco Meyer",
+    "nationality": "DZ",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "francisco meyer"
+  },
+  {
+    "id": "player_0124",
+    "name": "Samir Rossi",
+    "nationality": "CH",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "samir rossi"
+  },
+  {
+    "id": "player_0125",
+    "name": "James Turan",
+    "nationality": "SN",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "james turan"
+  },
+  {
+    "id": "player_0126",
+    "name": "Francisco Hussein",
+    "nationality": "ES",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "francisco hussein"
+  },
+  {
+    "id": "player_0127",
+    "name": "Oliver Jovanovic",
+    "nationality": "BO",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "oliver jovanovic"
+  },
+  {
+    "id": "player_0128",
+    "name": "Enes Johnson",
+    "nationality": "ES",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "enes johnson"
+  },
+  {
+    "id": "player_0129",
+    "name": "Amir Jovanovic",
+    "nationality": "PE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "amir jovanovic"
+  },
+  {
+    "id": "player_0130",
+    "name": "Ibrahim Becker",
+    "nationality": "DE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "ibrahim becker"
+  },
+  {
+    "id": "player_0131",
+    "name": "Batuhan Wilson",
+    "nationality": "BR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "batuhan wilson"
+  },
+  {
+    "id": "player_0132",
+    "name": "Nico Novak",
+    "nationality": "EC",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "nico novak"
+  },
+  {
+    "id": "player_0133",
+    "name": "Goncalo Ali",
+    "nationality": "TN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "goncalo ali"
+  },
+  {
+    "id": "player_0134",
+    "name": "Kerem Milic",
+    "nationality": "PL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "kerem milic"
+  },
+  {
+    "id": "player_0135",
+    "name": "Batuhan El-Sayed",
+    "nationality": "AR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "batuhan el-sayed"
+  },
+  {
+    "id": "player_0136",
+    "name": "Enes Stojanovic",
+    "nationality": "NG",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "enes stojanovic"
+  },
+  {
+    "id": "player_0137",
+    "name": "Joao Ramirez",
+    "nationality": "SI",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "joao ramirez"
+  },
+  {
+    "id": "player_0138",
+    "name": "Eren Smith",
+    "nationality": "TR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "eren smith"
+  },
+  {
+    "id": "player_0139",
+    "name": "Daniel Moreau",
+    "nationality": "HR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "daniel moreau"
+  },
+  {
+    "id": "player_0140",
+    "name": "Luca Ribeiro",
+    "nationality": "CM",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "luca ribeiro"
+  },
+  {
+    "id": "player_0141",
+    "name": "Samir Dubois",
+    "nationality": "SE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "samir dubois"
+  },
+  {
+    "id": "player_0142",
+    "name": "Julian Aydin",
+    "nationality": "RS",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "julian aydin"
+  },
+  {
+    "id": "player_0143",
+    "name": "Pablo Meyer",
+    "nationality": "DE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "pablo meyer"
+  },
+  {
+    "id": "player_0144",
+    "name": "Stefan Jensen 999",
+    "nationality": "BO",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "stefan jensen 999"
+  },
+  {
+    "id": "player_0145",
+    "name": "Tolgahan Stojanovic",
+    "nationality": "US",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "tolgahan stojanovic"
+  },
+  {
+    "id": "player_0146",
+    "name": "Davide Lombardi",
+    "nationality": "EC",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "davide lombardi"
+  },
+  {
+    "id": "player_0147",
+    "name": "Jose Carvalho",
+    "nationality": "CO",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "jose carvalho"
+  },
+  {
+    "id": "player_0148",
+    "name": "Pablo Korkmaz",
+    "nationality": "CA",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "pablo korkmaz"
+  },
+  {
+    "id": "player_0149",
+    "name": "Alessandro Davis",
+    "nationality": "PT",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "alessandro davis"
+  },
+  {
+    "id": "player_0150",
+    "name": "Philipp Santos",
+    "nationality": "VE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "philipp santos"
+  },
+  {
+    "id": "player_0151",
+    "name": "Markus Kristensen",
+    "nationality": "CM",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "markus kristensen"
+  },
+  {
+    "id": "player_0152",
+    "name": "Tolgahan Rossi",
+    "nationality": "DE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "tolgahan rossi"
+  },
+  {
+    "id": "player_0153",
+    "name": "Samir Hansen",
+    "nationality": "MX",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "samir hansen"
+  },
+  {
+    "id": "player_0154",
+    "name": "Can Meyer",
+    "nationality": "HU",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "can meyer"
+  },
+  {
+    "id": "player_0155",
+    "name": "Joao Schulz",
+    "nationality": "MG",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "joao schulz"
+  },
+  {
+    "id": "player_0156",
+    "name": "Henrik Carvalho",
+    "nationality": "SN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "henrik carvalho"
+  },
+  {
+    "id": "player_0157",
+    "name": "Kerem Schneider",
+    "nationality": "DE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "kerem schneider"
+  },
+  {
+    "id": "player_0158",
+    "name": "Henrik Smith",
+    "nationality": "IT",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "henrik smith"
+  },
+  {
+    "id": "player_0159",
+    "name": "Robert Wilson",
+    "nationality": "BE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "robert wilson"
+  },
+  {
+    "id": "player_0160",
+    "name": "Michael Farouk",
+    "nationality": "BO",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "michael farouk"
+  },
+  {
+    "id": "player_0161",
+    "name": "Davide Ibrahim",
+    "nationality": "UA",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "davide ibrahim"
+  },
+  {
+    "id": "player_0162",
+    "name": "Erik Roux",
+    "nationality": "EG",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "erik roux"
+  },
+  {
+    "id": "player_0163",
+    "name": "Robert Alves",
+    "nationality": "TN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "robert alves"
+  },
+  {
+    "id": "player_0164",
+    "name": "Andrea Taylor",
+    "nationality": "NL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "andrea taylor"
+  },
+  {
+    "id": "player_0165",
+    "name": "Bernardo Pereira",
+    "nationality": "EG",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "bernardo pereira"
+  },
+  {
+    "id": "player_0166",
+    "name": "Enzo Olsen",
+    "nationality": "SK",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "enzo olsen"
+  },
+  {
+    "id": "player_0167",
+    "name": "Bilal Abdullah",
+    "nationality": "HR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "bilal abdullah"
+  },
+  {
+    "id": "player_0168",
+    "name": "Nicolo Becker",
+    "nationality": "SN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "nicolo becker"
+  },
+  {
+    "id": "player_0169",
+    "name": "Jens Hussein",
+    "nationality": "AT",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "jens hussein"
+  },
+  {
+    "id": "player_0170",
+    "name": "Diogo Silva",
+    "nationality": "SK",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "diogo silva"
+  },
+  {
+    "id": "player_0171",
+    "name": "Michael Schulz",
+    "nationality": "MA",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "michael schulz"
+  },
+  {
+    "id": "player_0172",
+    "name": "Alessandro Brown",
+    "nationality": "HR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "alessandro brown"
+  },
+  {
+    "id": "player_0173",
+    "name": "Markus Moretti",
+    "nationality": "US",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "markus moretti"
+  },
+  {
+    "id": "player_0174",
+    "name": "Michael Arslan",
+    "nationality": "NL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "michael arslan"
+  },
+  {
+    "id": "player_0175",
+    "name": "Michael Milic",
+    "nationality": "SE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "michael milic"
+  },
+  {
+    "id": "player_0176",
+    "name": "Luis Maric",
+    "nationality": "SN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "luis maric"
+  },
+  {
+    "id": "player_0177",
+    "name": "Michael Johnson",
+    "nationality": "PE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "michael johnson"
+  },
+  {
+    "id": "player_0178",
+    "name": "Matteo Fournier",
+    "nationality": "CA",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "matteo fournier"
+  },
+  {
+    "id": "player_0179",
+    "name": "Enes Larsen",
+    "nationality": "HR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "enes larsen"
+  },
+  {
+    "id": "player_0180",
+    "name": "Andreas Gomes",
+    "nationality": "PE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "andreas gomes"
+  },
+  {
+    "id": "player_0181",
+    "name": "Rafael Martinez",
+    "nationality": "NO",
+    "position": "MF",
+    "aliases": [
+      "Rafael Martin"
+    ],
+    "normalizedName": "rafael martinez"
+  },
+  {
+    "id": "player_0182",
+    "name": "Victor Bruno",
+    "nationality": "SI",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "victor bruno"
+  },
+  {
+    "id": "player_0183",
+    "name": "Burak Celik",
+    "nationality": "HR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "burak celik"
+  },
+  {
+    "id": "player_0185",
+    "name": "Tolgahan Muller",
+    "nationality": "VE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "tolgahan muller"
+  },
+  {
+    "id": "player_0186",
+    "name": "Ugur Ozdemir",
+    "nationality": "ES",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "ugur ozdemir"
+  },
+  {
+    "id": "player_0187",
+    "name": "Daniel Rossi",
+    "nationality": "UY",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "daniel rossi"
+  },
+  {
+    "id": "player_0188",
+    "name": "Antonio Dupont",
+    "nationality": "PT",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "antonio dupont"
+  },
+  {
+    "id": "player_0189",
+    "name": "Joao Alves",
+    "nationality": "PY",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "joao alves"
+  },
+  {
+    "id": "player_0190",
+    "name": "Oliver Taylor",
+    "nationality": "WAL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "oliver taylor"
+  },
+  {
+    "id": "player_0191",
+    "name": "Daniel Anderson",
+    "nationality": "HR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "daniel anderson"
+  },
+  {
+    "id": "player_0192",
+    "name": "Henrik Hansen",
+    "nationality": "IT",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "henrik hansen"
+  },
+  {
+    "id": "player_0193",
+    "name": "Rashid Khalil",
+    "nationality": "AR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "rashid khalil"
+  },
+  {
+    "id": "player_0194",
+    "name": "Jannik Maric",
+    "nationality": "GH",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "jannik maric"
+  },
+  {
+    "id": "player_0195",
+    "name": "Rashid Sanchez",
+    "nationality": "NG",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "rashid sanchez"
+  },
+  {
+    "id": "player_0196",
+    "name": "Bernardo Hoffmann",
+    "nationality": "TR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "bernardo hoffmann"
+  },
+  {
+    "id": "player_0197",
+    "name": "Rafael Kovacevic",
+    "nationality": "ES",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "rafael kovacevic"
+  },
+  {
+    "id": "player_0198",
+    "name": "Burak Marino",
+    "nationality": "VE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "burak marino"
+  },
+  {
+    "id": "player_0199",
+    "name": "Mats Kristensen",
+    "nationality": "DK",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "mats kristensen"
+  },
+  {
+    "id": "player_0200",
+    "name": "Erik Dubois",
+    "nationality": "DE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "erik dubois"
+  },
+  {
+    "id": "player_0201",
+    "name": "Daniel Djokovic",
+    "nationality": "ES",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "daniel djokovic"
+  },
+  {
+    "id": "player_0202",
+    "name": "Okan Demir",
+    "nationality": "IT",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "okan demir"
+  },
+  {
+    "id": "player_0203",
+    "name": "William Jones",
+    "nationality": "MA",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "william jones"
+  },
+  {
+    "id": "player_0204",
+    "name": "Peter Abdullah",
+    "nationality": "DE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "peter abdullah"
+  },
+  {
+    "id": "player_0205",
+    "name": "Rafael Andersen",
+    "nationality": "EC",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "rafael andersen"
+  },
+  {
+    "id": "player_0206",
+    "name": "Emil Lombardi",
+    "nationality": "CL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "emil lombardi"
+  },
+  {
+    "id": "player_0207",
+    "name": "Davide Souza",
+    "nationality": "CL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "davide souza"
+  },
+  {
+    "id": "player_0208",
+    "name": "Maximilian Jones",
+    "nationality": "FR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "maximilian jones"
+  },
+  {
+    "id": "player_0209",
+    "name": "Baris Fournier",
+    "nationality": "SN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "baris fournier"
+  },
+  {
+    "id": "player_0210",
+    "name": "Hans Ferrari",
+    "nationality": "PT",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "hans ferrari"
+  },
+  {
+    "id": "player_0211",
+    "name": "Kerem Dubois",
+    "nationality": "BR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "kerem dubois"
+  },
+  {
+    "id": "player_0212",
+    "name": "Emre Mahmoud",
+    "nationality": "TN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "emre mahmoud"
+  },
+  {
+    "id": "player_0213",
+    "name": "Amir Jovanovic 559",
+    "nationality": "KE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "amir jovanovic 559"
+  },
+  {
+    "id": "player_0214",
+    "name": "Thomas Larsen",
+    "nationality": "BO",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "thomas larsen"
+  },
+  {
+    "id": "player_0215",
+    "name": "Mats Korkmaz",
+    "nationality": "CM",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "mats korkmaz"
+  },
+  {
+    "id": "player_0216",
+    "name": "Philipp Olsen",
+    "nationality": "BO",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "philipp olsen"
+  },
+  {
+    "id": "player_0217",
+    "name": "Mats Rodriguez",
+    "nationality": "US",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "mats rodriguez"
+  },
+  {
+    "id": "player_0218",
+    "name": "Lucas Rossi",
+    "nationality": "CA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "lucas rossi"
+  },
+  {
+    "id": "player_0219",
+    "name": "Nicolo Bianchi",
+    "nationality": "SN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "nicolo bianchi"
+  },
+  {
+    "id": "player_0220",
+    "name": "William Milic",
+    "nationality": "RS",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "william milic"
+  },
+  {
+    "id": "player_0221",
+    "name": "Matthew Silva",
+    "nationality": "DK",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "matthew silva"
+  },
+  {
+    "id": "player_0222",
+    "name": "Alexander Muller",
+    "nationality": "UY",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "alexander muller"
+  },
+  {
+    "id": "player_0223",
+    "name": "Daniel Schneider",
+    "nationality": "CA",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "daniel schneider"
+  },
+  {
+    "id": "player_0224",
+    "name": "John Petrovic",
+    "nationality": "TN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "john petrovic"
+  },
+  {
+    "id": "player_0225",
+    "name": "Klaus Wilson",
+    "nationality": "US",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "klaus wilson"
+  },
+  {
+    "id": "player_0226",
+    "name": "Jannik Hassan",
+    "nationality": "CO",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "jannik hassan"
+  },
+  {
+    "id": "player_0227",
+    "name": "David Brown",
+    "nationality": "DE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "david brown"
+  },
+  {
+    "id": "player_0228",
+    "name": "Maximilian Bianchi 715",
+    "nationality": "CA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "maximilian bianchi 715"
+  },
+  {
+    "id": "player_0229",
+    "name": "Can Hassan",
+    "nationality": "PT",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "can hassan"
+  },
+  {
+    "id": "player_0230",
+    "name": "Joseph Perez",
+    "nationality": "CL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "joseph perez"
+  },
+  {
+    "id": "player_0231",
+    "name": "Rafael Garcia",
+    "nationality": "UA",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "rafael garcia"
+  },
+  {
+    "id": "player_0232",
+    "name": "Jonas Silva",
+    "nationality": "BO",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "jonas silva"
+  },
+  {
+    "id": "player_0233",
+    "name": "Markus Fernandez",
+    "nationality": "PE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "markus fernandez"
+  },
+  {
+    "id": "player_0234",
+    "name": "Sercan Hoffmann",
+    "nationality": "VE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "sercan hoffmann"
+  },
+  {
+    "id": "player_0235",
+    "name": "Julian Fournier",
+    "nationality": "NG",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "julian fournier"
+  },
+  {
+    "id": "player_0236",
+    "name": "Mehmet Greco",
+    "nationality": "NG",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "mehmet greco"
+  },
+  {
+    "id": "player_0237",
+    "name": "Jose Bruno",
+    "nationality": "EN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "jose bruno"
+  },
+  {
+    "id": "player_0238",
+    "name": "Juan Jovanovic",
+    "nationality": "US",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "juan jovanovic"
+  },
+  {
+    "id": "player_0239",
+    "name": "Michael Schneider",
+    "nationality": "KE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "michael schneider"
+  },
+  {
+    "id": "player_0240",
+    "name": "Juan Schmidt",
+    "nationality": "GH",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "juan schmidt"
+  },
+  {
+    "id": "player_0241",
+    "name": "Rashid Yildiz",
+    "nationality": "NG",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "rashid yildiz"
+  },
+  {
+    "id": "player_0242",
+    "name": "Arthur Andersen",
+    "nationality": "CM",
+    "position": "FW",
+    "aliases": [
+      "Arthur Anderson"
+    ],
+    "normalizedName": "arthur andersen"
+  },
+  {
+    "id": "player_0243",
+    "name": "Francesco Martinez",
+    "nationality": "MX",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "francesco martinez"
+  },
+  {
+    "id": "player_0244",
+    "name": "Rashid Petersen",
+    "nationality": "CA",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "rashid petersen"
+  },
+  {
+    "id": "player_0245",
+    "name": "Tolgahan Weber",
+    "nationality": "IT",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "tolgahan weber"
+  },
+  {
+    "id": "player_0246",
+    "name": "Mustafa Fischer",
+    "nationality": "MX",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "mustafa fischer"
+  },
+  {
+    "id": "player_0247",
+    "name": "Victor Fernandez",
+    "nationality": "PL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "victor fernandez"
+  },
+  {
+    "id": "player_0248",
+    "name": "Matteo Schmidt",
+    "nationality": "WAL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "matteo schmidt"
+  },
+  {
+    "id": "player_0249",
+    "name": "Nico Jones",
+    "nationality": "TN",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "nico jones"
+  },
+  {
+    "id": "player_0250",
+    "name": "Thomas Olsen",
+    "nationality": "NL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "thomas olsen"
+  },
+  {
+    "id": "player_0251",
+    "name": "Semih Meyer",
+    "nationality": "PT",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "semih meyer"
+  },
+  {
+    "id": "player_0252",
+    "name": "Henrik Carvalho 502",
+    "nationality": "NO",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "henrik carvalho 502"
+  },
+  {
+    "id": "player_0253",
+    "name": "John Maric",
+    "nationality": "MG",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "john maric"
+  },
+  {
+    "id": "player_0254",
+    "name": "Alexander Jovanovic",
+    "nationality": "SN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "alexander jovanovic"
+  },
+  {
+    "id": "player_0255",
+    "name": "Rashid Weber",
+    "nationality": "VE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "rashid weber"
+  },
+  {
+    "id": "player_0257",
+    "name": "Tolgahan Popovic",
+    "nationality": "TR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "tolgahan popovic"
+  },
+  {
+    "id": "player_0258",
+    "name": "Miguel Farouk",
+    "nationality": "DZ",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "miguel farouk"
+  },
+  {
+    "id": "player_0259",
+    "name": "Alessandro Marino",
+    "nationality": "MA",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "alessandro marino"
+  },
+  {
+    "id": "player_0260",
+    "name": "Rafael Garcia 897",
+    "nationality": "EN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "rafael garcia 897"
+  },
+  {
+    "id": "player_0261",
+    "name": "Baris Ivanovic",
+    "nationality": "DE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "baris ivanovic"
+  },
+  {
+    "id": "player_0262",
+    "name": "Luca Davis",
+    "nationality": "KE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "luca davis"
+  },
+  {
+    "id": "player_0263",
+    "name": "Bernardo Hansen",
+    "nationality": "PT",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "bernardo hansen"
+  },
+  {
+    "id": "player_0264",
+    "name": "Emre Bianchi",
+    "nationality": "EN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "emre bianchi"
+  },
+  {
+    "id": "player_0265",
+    "name": "Hans Greco",
+    "nationality": "MX",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "hans greco"
+  },
+  {
+    "id": "player_0266",
+    "name": "Matteo Muller",
+    "nationality": "NL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "matteo muller"
+  },
+  {
+    "id": "player_0267",
+    "name": "Victor Popovic",
+    "nationality": "HU",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "victor popovic"
+  },
+  {
+    "id": "player_0268",
+    "name": "Alexander Mahmoud",
+    "nationality": "PE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "alexander mahmoud"
+  },
+  {
+    "id": "player_0269",
+    "name": "Mats El-Sayed",
+    "nationality": "UY",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "mats el-sayed"
+  },
+  {
+    "id": "player_0270",
+    "name": "Bruno Jovanovic",
+    "nationality": "SN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "bruno jovanovic"
+  },
+  {
+    "id": "player_0271",
+    "name": "Philipp Khalil",
+    "nationality": "SE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "philipp khalil"
+  },
+  {
+    "id": "player_0272",
+    "name": "Batuhan Cruz",
+    "nationality": "UY",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "batuhan cruz"
+  },
+  {
+    "id": "player_0273",
+    "name": "David Arslan",
+    "nationality": "PL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "david arslan"
+  },
+  {
+    "id": "player_0274",
+    "name": "Amir Ozdemir",
+    "nationality": "PL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "amir ozdemir"
+  },
+  {
+    "id": "player_0275",
+    "name": "Florian Ribeiro",
+    "nationality": "PT",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "florian ribeiro"
+  },
+  {
+    "id": "player_0276",
+    "name": "Goncalo Milic",
+    "nationality": "DK",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "goncalo milic"
+  },
+  {
+    "id": "player_0277",
+    "name": "Mehmet Schneider",
+    "nationality": "PT",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "mehmet schneider"
+  },
+  {
+    "id": "player_0278",
+    "name": "Burak Cruz",
+    "nationality": "CZ",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "burak cruz"
+  },
+  {
+    "id": "player_0279",
+    "name": "Enes Rossi",
+    "nationality": "ES",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "enes rossi"
+  },
+  {
+    "id": "player_0280",
+    "name": "John Alves",
+    "nationality": "MG",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "john alves"
+  },
+  {
+    "id": "player_0281",
+    "name": "Hassan Christensen",
+    "nationality": "BR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "hassan christensen"
+  },
+  {
+    "id": "player_0282",
+    "name": "Luis Rodriguez",
+    "nationality": "AR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "luis rodriguez"
+  },
+  {
+    "id": "player_0283",
+    "name": "Victor Ali",
+    "nationality": "HR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "victor ali"
+  },
+  {
+    "id": "player_0284",
+    "name": "Andrea Davis",
+    "nationality": "BR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "andrea davis"
+  },
+  {
+    "id": "player_0285",
+    "name": "Simone Saleh",
+    "nationality": "KE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "simone saleh"
+  },
+  {
+    "id": "player_0286",
+    "name": "Yusuf Greco",
+    "nationality": "CH",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "yusuf greco"
+  },
+  {
+    "id": "player_0287",
+    "name": "Mustafa Hoffmann",
+    "nationality": "VE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "mustafa hoffmann"
+  },
+  {
+    "id": "player_0288",
+    "name": "Can Dubois",
+    "nationality": "CZ",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "can dubois"
+  },
+  {
+    "id": "player_0289",
+    "name": "Nicolo Meyer",
+    "nationality": "PL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "nicolo meyer"
+  },
+  {
+    "id": "player_0290",
+    "name": "Maximilian Lopez",
+    "nationality": "CH",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "maximilian lopez"
+  },
+  {
+    "id": "player_0291",
+    "name": "Ahmet Schneider",
+    "nationality": "SI",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "ahmet schneider"
+  },
+  {
+    "id": "player_0292",
+    "name": "Bernardo Wagner",
+    "nationality": "SE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "bernardo wagner"
+  },
+  {
+    "id": "player_0293",
+    "name": "Rashid Larsen",
+    "nationality": "TN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "rashid larsen"
+  },
+  {
+    "id": "player_0294",
+    "name": "Emil Hansen",
+    "nationality": "BR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "emil hansen"
+  },
+  {
+    "id": "player_0295",
+    "name": "Baris Ivanovic 688",
+    "nationality": "US",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "baris ivanovic 688"
+  },
+  {
+    "id": "player_0296",
+    "name": "Thomas Martinez",
+    "nationality": "NG",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "thomas martinez"
+  },
+  {
+    "id": "player_0297",
+    "name": "Luca Martinez",
+    "nationality": "GH",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "luca martinez"
+  },
+  {
+    "id": "player_0298",
+    "name": "Hakan Costa",
+    "nationality": "MX",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "hakan costa"
+  },
+  {
+    "id": "player_0299",
+    "name": "Luis El-Sayed",
+    "nationality": "ES",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "luis el-sayed"
+  },
+  {
+    "id": "player_0300",
+    "name": "Francisco El-Sayed",
+    "nationality": "US",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "francisco el-sayed"
+  },
+  {
+    "id": "player_0301",
+    "name": "Hans Dubois",
+    "nationality": "CH",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "hans dubois"
+  },
+  {
+    "id": "player_0302",
+    "name": "Andreas Korkmaz",
+    "nationality": "SN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "andreas korkmaz"
+  },
+  {
+    "id": "player_0303",
+    "name": "Bruno Souza",
+    "nationality": "SK",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "bruno souza"
+  },
+  {
+    "id": "player_0304",
+    "name": "Bruno Petersen",
+    "nationality": "PE",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "bruno petersen"
+  },
+  {
+    "id": "player_0305",
+    "name": "Stefan Smith",
+    "nationality": "PE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "stefan smith"
+  },
+  {
+    "id": "player_0306",
+    "name": "Miguel Roux",
+    "nationality": "MG",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "miguel roux"
+  },
+  {
+    "id": "player_0307",
+    "name": "Philipp Christensen",
+    "nationality": "AT",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "philipp christensen"
+  },
+  {
+    "id": "player_0308",
+    "name": "Kristian Dubois",
+    "nationality": "EN",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "kristian dubois"
+  },
+  {
+    "id": "player_0309",
+    "name": "Ugur Cruz",
+    "nationality": "NL",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "ugur cruz"
+  },
+  {
+    "id": "player_0310",
+    "name": "Alexander Roux",
+    "nationality": "DZ",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "alexander roux"
+  },
+  {
+    "id": "player_0311",
+    "name": "Daniel Aydin",
+    "nationality": "DK",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "daniel aydin"
+  },
+  {
+    "id": "player_0312",
+    "name": "Samir Celik",
+    "nationality": "DK",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "samir celik"
+  },
+  {
+    "id": "player_0313",
+    "name": "Hakan Schulz",
+    "nationality": "FR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "hakan schulz"
+  },
+  {
+    "id": "player_0314",
+    "name": "Lucas Miller",
+    "nationality": "MX",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "lucas miller"
+  },
+  {
+    "id": "player_0315",
+    "name": "Stefan Hoffmann",
+    "nationality": "TN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "stefan hoffmann"
+  },
+  {
+    "id": "player_0316",
+    "name": "Julian Ali",
+    "nationality": "HR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "julian ali"
+  },
+  {
+    "id": "player_0317",
+    "name": "Omar Bruno",
+    "nationality": "WAL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "omar bruno"
+  },
+  {
+    "id": "player_0318",
+    "name": "Thomas Santos",
+    "nationality": "GH",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "thomas santos"
+  },
+  {
+    "id": "player_0319",
+    "name": "John El-Sayed",
+    "nationality": "PL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "john el-sayed"
+  },
+  {
+    "id": "player_0320",
+    "name": "Pablo Souza",
+    "nationality": "MA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "pablo souza"
+  },
+  {
+    "id": "player_0321",
+    "name": "Jannik Turan",
+    "nationality": "AT",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "jannik turan"
+  },
+  {
+    "id": "player_0322",
+    "name": "Daniel Fischer",
+    "nationality": "NG",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "daniel fischer"
+  },
+  {
+    "id": "player_0323",
+    "name": "Ahmet Alves",
+    "nationality": "EN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "ahmet alves"
+  },
+  {
+    "id": "player_0324",
+    "name": "Stefan Martin",
+    "nationality": "GH",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "stefan martin"
+  },
+  {
+    "id": "player_0325",
+    "name": "Mustafa Ibrahim",
+    "nationality": "PT",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "mustafa ibrahim"
+  },
+  {
+    "id": "player_0326",
+    "name": "Burak Bruno",
+    "nationality": "ES",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "burak bruno"
+  },
+  {
+    "id": "player_0327",
+    "name": "Anthony Petrovic",
+    "nationality": "AR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "anthony petrovic"
+  },
+  {
+    "id": "player_0328",
+    "name": "Semih Olsen",
+    "nationality": "FR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "semih olsen"
+  },
+  {
+    "id": "player_0329",
+    "name": "Javier Dubois",
+    "nationality": "CL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "javier dubois"
+  },
+  {
+    "id": "player_0330",
+    "name": "Emre Souza",
+    "nationality": "DE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "emre souza"
+  },
+  {
+    "id": "player_0331",
+    "name": "Burak Nielsen",
+    "nationality": "CH",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "burak nielsen"
+  },
+  {
+    "id": "player_0332",
+    "name": "Javier Ali",
+    "nationality": "CA",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "javier ali"
+  },
+  {
+    "id": "player_0333",
+    "name": "Ugur Milic",
+    "nationality": "BR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "ugur milic"
+  },
+  {
+    "id": "player_0334",
+    "name": "Davide Fischer",
+    "nationality": "PL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "davide fischer"
+  },
+  {
+    "id": "player_0335",
+    "name": "Can Garcia",
+    "nationality": "DE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "can garcia"
+  },
+  {
+    "id": "player_0336",
+    "name": "Luis Mahmoud",
+    "nationality": "TR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "luis mahmoud"
+  },
+  {
+    "id": "player_0337",
+    "name": "Karim Ibrahim",
+    "nationality": "MX",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "karim ibrahim"
+  },
+  {
+    "id": "player_0338",
+    "name": "Alessandro Rossi",
+    "nationality": "MA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "alessandro rossi"
+  },
+  {
+    "id": "player_0339",
+    "name": "Michael Petersen",
+    "nationality": "SN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "michael petersen"
+  },
+  {
+    "id": "player_0340",
+    "name": "Rafael Fournier",
+    "nationality": "PL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "rafael fournier"
+  },
+  {
+    "id": "player_0341",
+    "name": "Matteo Popovic",
+    "nationality": "SN",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "matteo popovic"
+  },
+  {
+    "id": "player_0342",
+    "name": "Bruno Becker",
+    "nationality": "CL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "bruno becker"
+  },
+  {
+    "id": "player_0343",
+    "name": "Furkan Ferrari",
+    "nationality": "SI",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "furkan ferrari"
+  },
+  {
+    "id": "player_0344",
+    "name": "Ibrahim Ibrahim",
+    "nationality": "RS",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "ibrahim ibrahim"
+  },
+  {
+    "id": "player_0345",
+    "name": "Lukas Rodriguez",
+    "nationality": "EC",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "lukas rodriguez"
+  },
+  {
+    "id": "player_0346",
+    "name": "Miguel Silva",
+    "nationality": "MA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "miguel silva"
+  },
+  {
+    "id": "player_0347",
+    "name": "Anthony Gonzalez",
+    "nationality": "UY",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "anthony gonzalez"
+  },
+  {
+    "id": "player_0348",
+    "name": "Amir Novak",
+    "nationality": "SK",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "amir novak"
+  },
+  {
+    "id": "player_0349",
+    "name": "Can Farouk",
+    "nationality": "ES",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "can farouk"
+  },
+  {
+    "id": "player_0350",
+    "name": "Robert Novak",
+    "nationality": "MX",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "robert novak"
+  },
+  {
+    "id": "player_0351",
+    "name": "Florian Ozdemir",
+    "nationality": "PT",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "florian ozdemir"
+  },
+  {
+    "id": "player_0352",
+    "name": "Daniel Maric",
+    "nationality": "EC",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "daniel maric"
+  },
+  {
+    "id": "player_0353",
+    "name": "Luis Miller",
+    "nationality": "NO",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "luis miller"
+  },
+  {
+    "id": "player_0354",
+    "name": "Semih Maric",
+    "nationality": "US",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "semih maric"
+  },
+  {
+    "id": "player_0355",
+    "name": "Peter Johnson",
+    "nationality": "TN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "peter johnson"
+  },
+  {
+    "id": "player_0356",
+    "name": "Mehmet Jones",
+    "nationality": "CO",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "mehmet jones"
+  },
+  {
+    "id": "player_0357",
+    "name": "Diogo Fournier",
+    "nationality": "SN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "diogo fournier"
+  },
+  {
+    "id": "player_0358",
+    "name": "Emil Dupont",
+    "nationality": "SK",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "emil dupont"
+  },
+  {
+    "id": "player_0359",
+    "name": "Mats Maric",
+    "nationality": "KE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "mats maric"
+  },
+  {
+    "id": "player_0360",
+    "name": "Eren Petersen",
+    "nationality": "CA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "eren petersen"
+  },
+  {
+    "id": "player_0361",
+    "name": "Lukas Korkmaz",
+    "nationality": "CL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "lukas korkmaz"
+  },
+  {
+    "id": "player_0362",
+    "name": "Ruben Ramirez",
+    "nationality": "NL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "ruben ramirez"
+  },
+  {
+    "id": "player_0363",
+    "name": "Arda Lombardi",
+    "nationality": "UY",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "arda lombardi"
+  },
+  {
+    "id": "player_0364",
+    "name": "Michael Abdullah",
+    "nationality": "UA",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "michael abdullah"
+  },
+  {
+    "id": "player_0365",
+    "name": "Ugur Marino",
+    "nationality": "SI",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "ugur marino"
+  },
+  {
+    "id": "player_0366",
+    "name": "Maximilian Hansen",
+    "nationality": "DZ",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "maximilian hansen"
+  },
+  {
+    "id": "player_0367",
+    "name": "Arthur Gomes",
+    "nationality": "SN",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "arthur gomes"
+  },
+  {
+    "id": "player_0368",
+    "name": "Anders Turan",
+    "nationality": "AR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "anders turan"
+  },
+  {
+    "id": "player_0369",
+    "name": "Baris Silva",
+    "nationality": "DZ",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "baris silva"
+  },
+  {
+    "id": "player_0370",
+    "name": "Tolgahan Stojanovic 751",
+    "nationality": "AT",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "tolgahan stojanovic 751"
+  },
+  {
+    "id": "player_0371",
+    "name": "Burak Abdullah",
+    "nationality": "UY",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "burak abdullah"
+  },
+  {
+    "id": "player_0372",
+    "name": "Lukas Lambert",
+    "nationality": "UA",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "lukas lambert"
+  },
+  {
+    "id": "player_0373",
+    "name": "Arthur Christensen",
+    "nationality": "PT",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "arthur christensen"
+  },
+  {
+    "id": "player_0374",
+    "name": "Andrea Jovanovic",
+    "nationality": "EG",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "andrea jovanovic"
+  },
+  {
+    "id": "player_0375",
+    "name": "Burak Petersen",
+    "nationality": "BE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "burak petersen"
+  },
+  {
+    "id": "player_0376",
+    "name": "Lars Petrovic",
+    "nationality": "CO",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "lars petrovic"
+  },
+  {
+    "id": "player_0377",
+    "name": "Jonas Taylor",
+    "nationality": "RS",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "jonas taylor"
+  },
+  {
+    "id": "player_0378",
+    "name": "Samir Souza",
+    "nationality": "BE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "samir souza"
+  },
+  {
+    "id": "player_0379",
+    "name": "Ahmet Maric",
+    "nationality": "PE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "ahmet maric"
+  },
+  {
+    "id": "player_0380",
+    "name": "Alexander Hussein",
+    "nationality": "UA",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "alexander hussein"
+  },
+  {
+    "id": "player_0381",
+    "name": "Ahmet Petersen",
+    "nationality": "CZ",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "ahmet petersen"
+  },
+  {
+    "id": "player_0382",
+    "name": "Stefan Mahmoud",
+    "nationality": "RS",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "stefan mahmoud"
+  },
+  {
+    "id": "player_0383",
+    "name": "Davide Jensen",
+    "nationality": "PL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "davide jensen"
+  },
+  {
+    "id": "player_0384",
+    "name": "Anthony Fournier",
+    "nationality": "CM",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "anthony fournier"
+  },
+  {
+    "id": "player_0385",
+    "name": "Markus Johnson",
+    "nationality": "SE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "markus johnson"
+  },
+  {
+    "id": "player_0386",
+    "name": "Antonio Popovic",
+    "nationality": "HR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "antonio popovic"
+  },
+  {
+    "id": "player_0387",
+    "name": "Diogo Roux",
+    "nationality": "CL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "diogo roux"
+  },
+  {
+    "id": "player_0388",
+    "name": "Hans Santos",
+    "nationality": "RS",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "hans santos"
+  },
+  {
+    "id": "player_0389",
+    "name": "Giovanni Moretti",
+    "nationality": "CA",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "giovanni moretti"
+  },
+  {
+    "id": "player_0390",
+    "name": "Luca Jones",
+    "nationality": "HU",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "luca jones"
+  },
+  {
+    "id": "player_0391",
+    "name": "Batuhan Russo",
+    "nationality": "SE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "batuhan russo"
+  },
+  {
+    "id": "player_0392",
+    "name": "Antonio Johnson",
+    "nationality": "CM",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "antonio johnson"
+  },
+  {
+    "id": "player_0393",
+    "name": "Jose Fernandez",
+    "nationality": "UY",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "jose fernandez"
+  },
+  {
+    "id": "player_0394",
+    "name": "Enzo Larsen",
+    "nationality": "PT",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "enzo larsen"
+  },
+  {
+    "id": "player_0395",
+    "name": "Goncalo Arslan",
+    "nationality": "HU",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "goncalo arslan"
+  },
+  {
+    "id": "player_0396",
+    "name": "Alessandro Wagner",
+    "nationality": "SI",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "alessandro wagner"
+  },
+  {
+    "id": "player_0397",
+    "name": "Stefan Sanchez",
+    "nationality": "NG",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "stefan sanchez"
+  },
+  {
+    "id": "player_0398",
+    "name": "Markus Hoffmann",
+    "nationality": "WAL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "markus hoffmann"
+  },
+  {
+    "id": "player_0399",
+    "name": "Ruben Jovanovic",
+    "nationality": "TR",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "ruben jovanovic"
+  },
+  {
+    "id": "player_0400",
+    "name": "Andreas Novak",
+    "nationality": "MA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "andreas novak"
+  },
+  {
+    "id": "player_0401",
+    "name": "Philipp Mahmoud",
+    "nationality": "MX",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "philipp mahmoud"
+  },
+  {
+    "id": "player_0402",
+    "name": "Tolgahan Martinez",
+    "nationality": "US",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "tolgahan martinez"
+  },
+  {
+    "id": "player_0403",
+    "name": "Timo Ali",
+    "nationality": "CM",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "timo ali"
+  },
+  {
+    "id": "player_0404",
+    "name": "Arda Sanchez",
+    "nationality": "NO",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "arda sanchez"
+  },
+  {
+    "id": "player_0405",
+    "name": "Bernardo Milic",
+    "nationality": "HR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "bernardo milic"
+  },
+  {
+    "id": "player_0406",
+    "name": "Enes Miller",
+    "nationality": "CZ",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "enes miller"
+  },
+  {
+    "id": "player_0407",
+    "name": "Florian Carvalho",
+    "nationality": "NL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "florian carvalho"
+  },
+  {
+    "id": "player_0408",
+    "name": "Klaus Russo",
+    "nationality": "BE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "klaus russo"
+  },
+  {
+    "id": "player_0409",
+    "name": "Mehmet Farouk",
+    "nationality": "CH",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "mehmet farouk"
+  },
+  {
+    "id": "player_0410",
+    "name": "James Popovic",
+    "nationality": "UY",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "james popovic"
+  },
+  {
+    "id": "player_0411",
+    "name": "William Yildiz",
+    "nationality": "PL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "william yildiz"
+  },
+  {
+    "id": "player_0412",
+    "name": "Furkan Marino",
+    "nationality": "EN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "furkan marino"
+  },
+  {
+    "id": "player_0413",
+    "name": "Jens Hussein 812",
+    "nationality": "BR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "jens hussein 812"
+  },
+  {
+    "id": "player_0414",
+    "name": "Michael Lopez",
+    "nationality": "SN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "michael lopez"
+  },
+  {
+    "id": "player_0415",
+    "name": "Daniel Ribeiro",
+    "nationality": "UY",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "daniel ribeiro"
+  },
+  {
+    "id": "player_0416",
+    "name": "Bruno Davis",
+    "nationality": "SN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "bruno davis"
+  },
+  {
+    "id": "player_0417",
+    "name": "Kaan Silva",
+    "nationality": "DK",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "kaan silva"
+  },
+  {
+    "id": "player_0418",
+    "name": "Enzo Johnson",
+    "nationality": "PE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "enzo johnson"
+  },
+  {
+    "id": "player_0419",
+    "name": "Caio Cruz",
+    "nationality": "TR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "caio cruz"
+  },
+  {
+    "id": "player_0420",
+    "name": "Caio Lopez",
+    "nationality": "UA",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "caio lopez"
+  },
+  {
+    "id": "player_0421",
+    "name": "Ahmet Maric 655",
+    "nationality": "HU",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "ahmet maric 655"
+  },
+  {
+    "id": "player_0422",
+    "name": "Nicolo Lopez",
+    "nationality": "CZ",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "nicolo lopez"
+  },
+  {
+    "id": "player_0423",
+    "name": "Kerem Korkmaz",
+    "nationality": "NL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "kerem korkmaz"
+  },
+  {
+    "id": "player_0424",
+    "name": "Yusuf Schulz",
+    "nationality": "CO",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "yusuf schulz"
+  },
+  {
+    "id": "player_0425",
+    "name": "Julian Novak",
+    "nationality": "NG",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "julian novak"
+  },
+  {
+    "id": "player_0426",
+    "name": "Anthony Roux",
+    "nationality": "DE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "anthony roux"
+  },
+  {
+    "id": "player_0427",
+    "name": "Julian Novak 573",
+    "nationality": "NG",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "julian novak 573"
+  },
+  {
+    "id": "player_0428",
+    "name": "Michael Meyer",
+    "nationality": "TR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "michael meyer"
+  },
+  {
+    "id": "player_0429",
+    "name": "Ahmet Jovanovic 37",
+    "nationality": "ES",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "ahmet jovanovic 37"
+  },
+  {
+    "id": "player_0430",
+    "name": "Diogo Jensen",
+    "nationality": "UA",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "diogo jensen"
+  },
+  {
+    "id": "player_0431",
+    "name": "Lukas Bianchi",
+    "nationality": "CA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "lukas bianchi"
+  },
+  {
+    "id": "player_0432",
+    "name": "Ugur Olsen",
+    "nationality": "MX",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "ugur olsen"
+  },
+  {
+    "id": "player_0433",
+    "name": "Thomas Davis",
+    "nationality": "BO",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "thomas davis"
+  },
+  {
+    "id": "player_0434",
+    "name": "Maximilian Anderson",
+    "nationality": "TR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "maximilian anderson"
+  },
+  {
+    "id": "player_0435",
+    "name": "Luca Smith",
+    "nationality": "AT",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "luca smith"
+  },
+  {
+    "id": "player_0436",
+    "name": "Daniel Jensen",
+    "nationality": "SI",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "daniel jensen"
+  },
+  {
+    "id": "player_0437",
+    "name": "Stefan Wagner",
+    "nationality": "TN",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "stefan wagner"
+  },
+  {
+    "id": "player_0438",
+    "name": "Joseph Gonzalez",
+    "nationality": "PE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "joseph gonzalez"
+  },
+  {
+    "id": "player_0439",
+    "name": "Batuhan Lombardi",
+    "nationality": "SN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "batuhan lombardi"
+  },
+  {
+    "id": "player_0440",
+    "name": "Florian Martin",
+    "nationality": "SI",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "florian martin"
+  },
+  {
+    "id": "player_0441",
+    "name": "Daniel Hussein",
+    "nationality": "SI",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "daniel hussein"
+  },
+  {
+    "id": "player_0442",
+    "name": "Karim Wagner",
+    "nationality": "DE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "karim wagner"
+  },
+  {
+    "id": "player_0443",
+    "name": "Daniel Jensen 950",
+    "nationality": "VE",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "daniel jensen 950"
+  },
+  {
+    "id": "player_0444",
+    "name": "James Kaya",
+    "nationality": "TN",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "james kaya"
+  },
+  {
+    "id": "player_0445",
+    "name": "Luca Silva",
+    "nationality": "CO",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "luca silva"
+  },
+  {
+    "id": "player_0446",
+    "name": "Stefan Lombardi",
+    "nationality": "HR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "stefan lombardi"
+  },
+  {
+    "id": "player_0447",
+    "name": "Maximilian Garcia",
+    "nationality": "TR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "maximilian garcia"
+  },
+  {
+    "id": "player_0448",
+    "name": "Klaus Bruno",
+    "nationality": "SN",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "klaus bruno"
+  },
+  {
+    "id": "player_0449",
+    "name": "Levin Cruz",
+    "nationality": "HR",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "levin cruz"
+  },
+  {
+    "id": "player_0450",
+    "name": "Erik Mahmoud",
+    "nationality": "DZ",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "erik mahmoud"
+  },
+  {
+    "id": "player_0451",
+    "name": "Kerem Rodriguez",
+    "nationality": "SN",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "kerem rodriguez"
+  },
+  {
+    "id": "player_0452",
+    "name": "Philipp Olsen 551",
+    "nationality": "CZ",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "philipp olsen 551"
+  },
+  {
+    "id": "player_0453",
+    "name": "Mats Korkmaz 573",
+    "nationality": "GH",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "mats korkmaz 573"
+  },
+  {
+    "id": "player_0454",
+    "name": "Semih Farouk",
+    "nationality": "CZ",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "semih farouk"
+  },
+  {
+    "id": "player_0455",
+    "name": "Daniel Johnson",
+    "nationality": "SN",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "daniel johnson"
+  },
+  {
+    "id": "player_0456",
+    "name": "Henrik Schulz",
+    "nationality": "EC",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "henrik schulz"
+  },
+  {
+    "id": "player_0457",
+    "name": "Antonio Khalil",
+    "nationality": "PL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "antonio khalil"
+  },
+  {
+    "id": "player_0458",
+    "name": "Enzo Rossi",
+    "nationality": "UY",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "enzo rossi"
+  },
+  {
+    "id": "player_0459",
+    "name": "Okan Taylor",
+    "nationality": "BR",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "okan taylor"
+  },
+  {
+    "id": "player_0460",
+    "name": "Philipp Jensen",
+    "nationality": "PL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "philipp jensen"
+  },
+  {
+    "id": "player_0461",
+    "name": "Kaan Farouk",
+    "nationality": "EN",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "kaan farouk"
+  },
+  {
+    "id": "player_0462",
+    "name": "Marco Russo",
+    "nationality": "CZ",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "marco russo"
+  },
+  {
+    "id": "player_0463",
+    "name": "Henrik Greco",
+    "nationality": "WAL",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "henrik greco"
+  },
+  {
+    "id": "player_0464",
+    "name": "Klaus Korkmaz",
+    "nationality": "MA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "klaus korkmaz"
+  },
+  {
+    "id": "player_0465",
+    "name": "Emil Yilmaz",
+    "nationality": "EG",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "emil yilmaz"
+  },
+  {
+    "id": "player_0467",
+    "name": "Mustafa Sanchez",
+    "nationality": "UA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "mustafa sanchez"
+  },
+  {
+    "id": "player_0468",
+    "name": "Nicolo Fernandez",
+    "nationality": "HR",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "nicolo fernandez"
+  },
+  {
+    "id": "player_0469",
+    "name": "David Jones",
+    "nationality": "DZ",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "david jones"
+  },
+  {
+    "id": "player_0470",
+    "name": "Anders Mercier",
+    "nationality": "IT",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "anders mercier"
+  },
+  {
+    "id": "player_0471",
+    "name": "Batuhan Yilmaz",
+    "nationality": "IT",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "batuhan yilmaz"
+  },
+  {
+    "id": "player_0472",
+    "name": "Pablo Kaya",
+    "nationality": "UA",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "pablo kaya"
+  },
+  {
+    "id": "player_0473",
+    "name": "Jose Anderson",
+    "nationality": "NO",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "jose anderson"
+  },
+  {
+    "id": "player_0474",
+    "name": "Marco Fontana",
+    "nationality": "BE",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "marco fontana"
+  },
+  {
+    "id": "player_0475",
+    "name": "Amir Ozdemir 110",
+    "nationality": "GH",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "amir ozdemir 110"
+  },
+  {
+    "id": "player_0476",
+    "name": "Rashid Hussein",
+    "nationality": "SN",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "rashid hussein"
+  },
+  {
+    "id": "player_0477",
+    "name": "Daniel Lombardi",
+    "nationality": "PE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "daniel lombardi"
+  },
+  {
+    "id": "player_0478",
+    "name": "Caio Celik",
+    "nationality": "SE",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "caio celik"
+  },
+  {
+    "id": "player_0479",
+    "name": "Philipp Miller",
+    "nationality": "HU",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "philipp miller"
+  },
+  {
+    "id": "player_0480",
+    "name": "Jannik Bianchi",
+    "nationality": "PL",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "jannik bianchi"
+  },
+  {
+    "id": "player_0481",
+    "name": "Carlos Rodriguez",
+    "nationality": "CO",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "carlos rodriguez"
+  },
+  {
+    "id": "player_0482",
+    "name": "Samir Olsen",
+    "nationality": "BO",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "samir olsen"
+  },
+  {
+    "id": "player_0483",
+    "name": "Francisco Schulz",
+    "nationality": "SI",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "francisco schulz"
+  },
+  {
+    "id": "player_0484",
+    "name": "Levin Fournier",
+    "nationality": "CM",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "levin fournier"
+  },
+  {
+    "id": "player_0485",
+    "name": "Hassan Kristensen",
+    "nationality": "CM",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "hassan kristensen"
+  },
+  {
+    "id": "player_0486",
+    "name": "Sercan Marino",
+    "nationality": "CO",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "sercan marino"
+  },
+  {
+    "id": "player_0487",
+    "name": "Emre Ali",
+    "nationality": "NG",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "emre ali"
+  },
+  {
+    "id": "player_0488",
+    "name": "Ahmet Petersen 512",
+    "nationality": "EC",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "ahmet petersen 512"
+  },
+  {
+    "id": "player_0489",
+    "name": "Arda Taylor",
+    "nationality": "EC",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "arda taylor"
+  },
+  {
+    "id": "player_0490",
+    "name": "Eren Saleh",
+    "nationality": "US",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "eren saleh"
+  },
+  {
+    "id": "player_0491",
+    "name": "Philipp Petrovic",
+    "nationality": "MA",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "philipp petrovic"
+  },
+  {
+    "id": "player_0492",
+    "name": "Lukas Martinez",
+    "nationality": "UA",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "lukas martinez"
+  },
+  {
+    "id": "player_0493",
+    "name": "Miguel Ferrari",
+    "nationality": "PT",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "miguel ferrari"
+  },
+  {
+    "id": "player_0494",
+    "name": "Bernardo Arslan",
+    "nationality": "MA",
+    "position": "GK",
+    "aliases": [],
+    "normalizedName": "bernardo arslan"
+  },
+  {
+    "id": "player_0495",
+    "name": "Lars Hassan",
+    "nationality": "NO",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "lars hassan"
+  },
+  {
+    "id": "player_0496",
+    "name": "Simone Saleh 724",
+    "nationality": "GH",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "simone saleh 724"
+  },
+  {
+    "id": "player_0497",
+    "name": "Burak Williams",
+    "nationality": "SK",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "burak williams"
+  },
+  {
+    "id": "player_0498",
+    "name": "Anders Ibrahim",
+    "nationality": "RS",
+    "position": "DF",
+    "aliases": [],
+    "normalizedName": "anders ibrahim"
+  },
+  {
+    "id": "player_0499",
+    "name": "Giovanni Ramirez",
+    "nationality": "EC",
+    "position": "MF",
+    "aliases": [],
+    "normalizedName": "giovanni ramirez"
+  },
+  {
+    "id": "player_0500",
+    "name": "Baris Christensen",
+    "nationality": "NL",
+    "position": "FW",
+    "aliases": [],
+    "normalizedName": "baris christensen"
+  }
+]

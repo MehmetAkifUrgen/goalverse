@@ -1,0 +1,3 @@
+• Matchs en séries de 3 et 5 manches pour Football SOS.
+• Synchronisation multijoueur en temps réel, 2 passes par manche et offres de match nul.
+• Nouvelle interface stade de football, Football SOS Pro et Boutique Cosmétique.

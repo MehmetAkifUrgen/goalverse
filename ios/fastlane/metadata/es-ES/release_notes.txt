@@ -1,0 +1,3 @@
+• Sistema de series de 3 y 5 rondas para Football SOS.
+• Sincronización multijugador mejorada, 2 pases por ronda y ofertas de empate.
+• Nuevo diseño de estadio de fútbol, Football SOS Pro y Tienda Cosmética.

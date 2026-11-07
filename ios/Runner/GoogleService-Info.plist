@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>290994395081-6ijarvkjj8ojmpccsvskeb1uoqt45s8r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.290994395081-6ijarvkjj8ojmpccsvskeb1uoqt45s8r</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>290994395081-8kh64pd5ca61lhoj7h3620n7vmlto0r2.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBv7ykh9OWu32RdpY73nkMKL55I8S9vrfo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>290994395081</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.goalverse.footballsos</string>
+	<key>PROJECT_ID</key>
+	<string>flutterfootbalquiz</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flutterfootbalquiz.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:290994395081:ios:e53dc135766fc3568ffa18</string>
+	<key>DATABASE_URL</key>
+	<string>https://flutterfootbalquiz-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>

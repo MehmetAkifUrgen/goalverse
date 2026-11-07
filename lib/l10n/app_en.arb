@@ -1,0 +1,560 @@
+{
+  "appTitle": "Goalverse",
+  "@appTitle": {
+    "description": "Application title displayed in the app bar and launcher"
+  },
+  "startGame": "Start Game",
+  "@startGame": {
+    "description": "Button label to begin a new game"
+  },
+  "dailyChallenge": "Daily Challenge",
+  "@dailyChallenge": {
+    "description": "Menu item for the daily challenge mode"
+  },
+  "leaderboard": "Leaderboard",
+  "@leaderboard": {
+    "description": "Menu item and page title for the leaderboard screen"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Menu item and page title for the user profile screen"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Menu item and page title for the settings screen"
+  },
+  "play": "Play",
+  "@play": {
+    "description": "Generic button label to start playing"
+  },
+  "quickMatch": "Quick Match",
+  "@quickMatch": {
+    "description": "Game mode to find a random opponent quickly"
+  },
+  "createRoom": "Create Room",
+  "@createRoom": {
+    "description": "Button to create a private multiplayer room"
+  },
+  "joinRoom": "Join Room",
+  "@joinRoom": {
+    "description": "Button to join a private multiplayer room using a code"
+  },
+  "roomCode": "Room Code",
+  "@roomCode": {
+    "description": "Label for the room code input field"
+  },
+  "copyCode": "Copy Code",
+  "@copyCode": {
+    "description": "Button label to copy the room code to clipboard"
+  },
+  "guestLogin": "Continue as Guest",
+  "@guestLogin": {
+    "description": "Button label for anonymous guest login"
+  },
+  "googleLogin": "Sign in with Google",
+  "@googleLogin": {
+    "description": "Button label for Google authentication"
+  },
+  "appleLogin": "Sign in with Apple",
+  "@appleLogin": {
+    "description": "Button label for Apple authentication"
+  },
+  "emailSignIn": "Sign in with Email",
+  "@emailSignIn": {
+    "description": "Button label for email/password authentication"
+  },
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Button label for new user registration"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Button label to sign in an existing user"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Button label to sign out the current user"
+  },
+  "linkAccount": "Link Account",
+  "@linkAccount": {
+    "description": "Button label to connect an additional auth provider"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Button label to dismiss or cancel an action"
+  },
+  "ok": "OK",
+  "@ok": {
+    "description": "Button label to confirm an action or dialog"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Button label to persist changes"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Button label to close a dialog or screen"
+  },
+  "submit": "Submit",
+  "@submit": {
+    "description": "Button label to submit a form or answer"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Search button label and search bar hint title"
+  },
+  "searchPlayerHint": "Search for a player...",
+  "@searchPlayerHint": {
+    "description": "Placeholder text inside the player search input"
+  },
+  "noResults": "No results found",
+  "@noResults": {
+    "description": "Message displayed when a search returns no matches"
+  },
+  "correctAnswer": "Correct!",
+  "@correctAnswer": {
+    "description": "Feedback shown when the user selects a correct answer"
+  },
+  "wrongAnswer": "Wrong answer",
+  "@wrongAnswer": {
+    "description": "Feedback shown when the user selects an incorrect answer"
+  },
+  "errorPlayerNotFound": "Player not found",
+  "@errorPlayerNotFound": {
+    "description": "Error message when a searched player does not exist"
+  },
+  "errorInvalidPlayer": "Invalid player selection",
+  "@errorInvalidPlayer": {
+    "description": "Error message when the selected player is not valid for the turn"
+  },
+  "errorTimeExpired": "Time is up",
+  "@errorTimeExpired": {
+    "description": "Error message when the turn timer reaches zero"
+  },
+  "errorCellAlreadyUsed": "This cell is already taken",
+  "@errorCellAlreadyUsed": {
+    "description": "Error message when tapping an occupied board cell"
+  },
+  "errorNotYourTurn": "It is not your turn",
+  "@errorNotYourTurn": {
+    "description": "Error message when a player acts out of turn"
+  },
+  "errorNetwork": "Network error. Please try again.",
+  "@errorNetwork": {
+    "description": "Error message for connectivity problems"
+  },
+  "errorGameNotFound": "Game not found",
+  "@errorGameNotFound": {
+    "description": "Error message when a game session no longer exists"
+  },
+  "errorOpponentDisconnected": "Opponent disconnected",
+  "@errorOpponentDisconnected": {
+    "description": "Error message when the opponent leaves the game"
+  },
+  "errorServerError": "Server error. Please try again later.",
+  "@errorServerError": {
+    "description": "Error message for an unexpected backend failure"
+  },
+  "errorPermissionDenied": "Permission denied",
+  "@errorPermissionDenied": {
+    "description": "Error message when the user lacks required permissions"
+  },
+  "won": "You Won!",
+  "@won": {
+    "description": "Victory message shown at the end of a game"
+  },
+  "lost": "You Lost",
+  "@lost": {
+    "description": "Defeat message shown at the end of a game"
+  },
+  "draw": "Draw",
+  "@draw": {
+    "description": "Message shown when the game ends in a tie"
+  },
+  "turnOf": "{player}'s Turn",
+  "@turnOf": {
+    "description": "Indicator of whose turn it is",
+    "placeholders": {
+      "player": {
+        "type": "String",
+        "description": "The name of the player whose turn it is"
+      }
+    }
+  },
+  "opponentSearching": "Finding an opponent...",
+  "@opponentSearching": {
+    "description": "Message shown while matchmaking is in progress"
+  },
+  "waitingForOpponent": "Waiting for opponent...",
+  "@waitingForOpponent": {
+    "description": "Message shown in a private room waiting for the second player"
+  },
+  "gameStarted": "Game Started",
+  "@gameStarted": {
+    "description": "Notification banner when the game begins"
+  },
+  "yourTurn": "Your Turn",
+  "@yourTurn": {
+    "description": "Indicator that it is the local player's turn"
+  },
+  "opponentTurn": "Opponent's Turn",
+  "@opponentTurn": {
+    "description": "Indicator that it is the opponent's turn"
+  },
+  "timeLeft": "Time Left",
+  "@timeLeft": {
+    "description": "Label next to the turn countdown timer"
+  },
+  "score": "Score",
+  "@score": {
+    "description": "Label for the score display"
+  },
+  "wins": "Wins",
+  "@wins": {
+    "description": "Statistics label for the total number of wins"
+  },
+  "losses": "Losses",
+  "@losses": {
+    "description": "Statistics label for the total number of losses"
+  },
+  "draws": "Draws",
+  "@draws": {
+    "description": "Statistics label for the total number of draws"
+  },
+  "gamesPlayed": "Games Played",
+  "@gamesPlayed": {
+    "description": "Statistics label for total completed games"
+  },
+  "winRate": "Win Rate",
+  "@winRate": {
+    "description": "Statistics label for the win percentage"
+  },
+  "bestScore": "Best Score",
+  "@bestScore": {
+    "description": "Statistics label for the highest score achieved"
+  },
+  "currentStreak": "Current Streak",
+  "@currentStreak": {
+    "description": "Statistics label for the consecutive win/loss streak"
+  },
+  "rating": "Rating",
+  "@rating": {
+    "description": "Label for the skill rating or elo value"
+  },
+  "achievements": "Achievements",
+  "@achievements": {
+    "description": "Section title for the list of achievements"
+  },
+  "firstWin": "First Victory",
+  "@firstWin": {
+    "description": "Achievement name for winning the first game"
+  },
+  "wins10": "10 Wins",
+  "@wins10": {
+    "description": "Achievement name for reaching 10 total wins"
+  },
+  "wins100": "100 Wins",
+  "@wins100": {
+    "description": "Achievement name for reaching 100 total wins"
+  },
+  "perfectGame": "Perfect Game",
+  "@perfectGame": {
+    "description": "Achievement name for a flawless victory"
+  },
+  "rarePlayer": "Rare Player",
+  "@rarePlayer": {
+    "description": "Achievement name for using a rare or unusual player selection"
+  },
+  "comeback": "Comeback Kid",
+  "@comeback": {
+    "description": "Achievement name for winning from a losing position"
+  },
+  "winStreak5": "5-Game Streak",
+  "@winStreak5": {
+    "description": "Achievement name for winning 5 games in a row"
+  },
+  "winStreak10": "10-Game Streak",
+  "@winStreak10": {
+    "description": "Achievement name for winning 10 games in a row"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Settings label for changing the app language"
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "Settings label for selecting the visual theme"
+  },
+  "darkMode": "Dark",
+  "@darkMode": {
+    "description": "Dark theme option label"
+  },
+  "lightMode": "Light",
+  "@lightMode": {
+    "description": "Light theme option label"
+  },
+  "systemMode": "System Default",
+  "@systemMode": {
+    "description": "Theme option that follows the OS system setting"
+  },
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Settings label for notification preferences"
+  },
+  "notificationsEnabled": "Notifications are enabled",
+  "@notificationsEnabled": {
+    "description": "Status text when notifications are turned on"
+  },
+  "notificationsDisabled": "Notifications are disabled",
+  "@notificationsDisabled": {
+    "description": "Status text when notifications are turned off"
+  },
+  "easy": "Easy",
+  "@easy": {
+    "description": "Easy difficulty level label"
+  },
+  "medium": "Medium",
+  "@medium": {
+    "description": "Medium difficulty level label"
+  },
+  "hard": "Hard",
+  "@hard": {
+    "description": "Hard difficulty level label"
+  },
+  "difficulty": "Difficulty",
+  "@difficulty": {
+    "description": "Settings label for AI difficulty selection"
+  },
+  "noDailyChallenge": "No daily challenge available today",
+  "@noDailyChallenge": {
+    "description": "Message when there is no active daily challenge"
+  },
+  "dailyChallengeCompleted": "Daily challenge completed!",
+  "@dailyChallengeCompleted": {
+    "description": "Message when the user finishes today's challenge"
+  },
+  "comeBackTomorrow": "Come back tomorrow for a new challenge",
+  "@comeBackTomorrow": {
+    "description": "Call to action after completing the daily challenge"
+  },
+  "rank": "Rank",
+  "@rank": {
+    "description": "Leaderboard column label for the rank position"
+  },
+  "country": "Country",
+  "@country": {
+    "description": "Label for the user's country or country filter option"
+  },
+  "noFriends": "No friends yet",
+  "@noFriends": {
+    "description": "Message displayed when the friend list is empty"
+  },
+  "filterAll": "All",
+  "@filterAll": {
+    "description": "Leaderboard filter option for showing all players"
+  },
+  "global": "Global",
+  "@global": {
+    "description": "Leaderboard filter option for the worldwide ranking"
+  },
+  "friends": "Friends",
+  "@friends": {
+    "description": "Leaderboard filter option for the friends ranking"
+  },
+  "inviteFriend": "Invite Friend",
+  "@inviteFriend": {
+    "description": "Button label to send a game invitation to a friend"
+  },
+  "share": "Share",
+  "@share": {
+    "description": "Button label to share content (room code, app etc.)"
+  },
+  "about": "About",
+  "@about": {
+    "description": "Settings menu item for the about page"
+  },
+  "version": "Version",
+  "@version": {
+    "description": "Label for the application version number"
+  },
+  "help": "Help",
+  "@help": {
+    "description": "Settings menu item for the help page"
+  },
+  "support": "Support",
+  "@support": {
+    "description": "Settings menu item for customer support"
+  },
+  "privacy": "Privacy Policy",
+  "@privacy": {
+    "description": "Settings menu item for the privacy policy page"
+  },
+  "terms": "Terms of Service",
+  "@terms": {
+    "description": "Settings menu item for the terms of service page"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Label for the email input field"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Label for the password input field"
+  },
+  "hintEmail": "Enter your email",
+  "@hintEmail": {
+    "description": "Placeholder text for the email input field"
+  },
+  "hintPassword": "Enter your password",
+  "@hintPassword": {
+    "description": "Placeholder text for the password input field"
+  },
+  "errorInvalidEmail": "Invalid email address",
+  "@errorInvalidEmail": {
+    "description": "Error message when email format is invalid"
+  },
+  "errorWrongPassword": "Wrong password",
+  "@errorWrongPassword": {
+    "description": "Error message when password is incorrect"
+  },
+  "errorWeakPassword": "Password is too weak",
+  "@errorWeakPassword": {
+    "description": "Error message when password does not meet strength requirements"
+  },
+  "errorEmailAlreadyInUse": "Email is already in use",
+  "@errorEmailAlreadyInUse": {
+    "description": "Error message when registering with an existing email"
+  },
+  "errorUserNotFound": "User not found",
+  "@errorUserNotFound": {
+    "description": "Error message when no user matches the given credentials"
+  },
+  "errorUserDisabled": "This account has been disabled",
+  "@errorUserDisabled": {
+    "description": "Error message when the user account is disabled"
+  },
+  "errorOperationNotAllowed": "Operation not allowed",
+  "@errorOperationNotAllowed": {
+    "description": "Error message for forbidden authentication operations"
+  },
+  "errorTooManyRequests": "Too many requests. Please try again later",
+  "@errorTooManyRequests": {
+    "description": "Error message when rate limit is exceeded"
+  },
+  "errorUnknown": "An error occurred. Please try again",
+  "@errorUnknown": {
+    "description": "Fallback error message for unknown failures"
+  },
+  "errorAborted": "Sign in was cancelled",
+  "@errorAborted": {
+    "description": "Error message when user cancels third-party sign in flow"
+  },
+  "linkAccountTitle": "Make your account permanent",
+  "@linkAccountTitle": {
+    "description": "Title for the account linking screen"
+  },
+  "linkAccountSubtitle": "Link your account to save progress and never lose your data",
+  "@linkAccountSubtitle": {
+    "description": "Subtitle explaining the benefit of linking an account"
+  },
+  "accountLinkedSuccess": "Account linked successfully!",
+  "@accountLinkedSuccess": {
+    "description": "Success message when account linking completes"
+  },
+  "or": "or",
+  "@or": {
+    "description": "Separator text between groups of login options"
+  },
+  "hello": "Hello",
+  "@hello": {
+    "description": "Greeting shown on the home page with the user's name"
+  },
+  "time": "Time",
+  "@time": {
+    "description": "Label next to the turn countdown timer"
+  },
+  "passTurn": "Pass",
+  "@passTurn": {
+    "description": "Button label to pass the current turn"
+  },
+  "passesRemaining": "Passes Left: {count}",
+  "@passesRemaining": {
+    "description": "Label showing remaining pass count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noPassesLeft": "No passes left!",
+  "@noPassesLeft": {
+    "description": "Message when a player has used all pass rights"
+  },
+  "playerPassedTurn": "{player} passed their turn!",
+  "@playerPassedTurn": {
+    "description": "Notification when a player passes their turn",
+    "placeholders": {
+      "player": {
+        "type": "String"
+      }
+    }
+  },
+  "offerDraw": "Offer Draw",
+  "@offerDraw": {
+    "description": "Button label to offer a draw to the opponent"
+  },
+  "drawOfferSent": "Draw offer sent ({seconds}s)",
+  "@drawOfferSent": {
+    "description": "Banner shown to sender while draw offer is pending",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "drawOfferReceived": "{player} offers a draw ({seconds}s)",
+  "@drawOfferReceived": {
+    "description": "Prompt shown to recipient when opponent offers a draw",
+    "placeholders": {
+      "player": {
+        "type": "String"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "acceptDraw": "Accept",
+  "@acceptDraw": {
+    "description": "Button label to accept a draw offer"
+  },
+  "rejectDraw": "Decline",
+  "@rejectDraw": {
+    "description": "Button label to reject a draw offer"
+  },
+  "drawAcceptedMessage": "Draw offer accepted! The match ended in a draw.",
+  "@drawAcceptedMessage": {
+    "description": "Message shown when a draw offer is accepted"
+  },
+  "drawRejectedMessage": "Draw offer declined. The match continues!",
+  "@drawRejectedMessage": {
+    "description": "Message shown when a draw offer is rejected"
+  },
+  "drawOfferExpiredMessage": "Draw offer expired (30s).",
+  "@drawOfferExpiredMessage": {
+    "description": "Message shown when a draw offer expires without response"
+  },
+  "drawOfferCooldownMessage": "Wait {seconds}s before offering a draw again.",
+  "@drawOfferCooldownMessage": {
+    "description": "Message shown when draw offer is on 60s cooldown",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "matchHistoryTitle": "Match History",
+  "@matchHistoryTitle": {
+    "description": "Title for the match move history sheet"
+  }
+}

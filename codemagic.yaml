@@ -1,0 +1,228 @@
+# Codemagic CI/CD & Automated Store Release Configuration for Goalverse: Football SOS
+#
+# Workflows:
+#   1. android-internal-release   -> Builds signed AAB, runs tests & screenshot generation, deploys to Google Play Internal Track
+#   2. ios-testflight-release     -> Builds signed IPA, runs tests & screenshot generation, distributes to Apple TestFlight
+#   3. unified-staging-release    -> Builds both Android AAB & iOS IPA and deploys to Internal Testing + TestFlight
+#   4. production-release-gated   -> Promotes/uploads verified release + 6-language metadata + 96 screenshots to Production (requires CONFIRM_PRODUCTION_RELEASE="true")
+
+definitions:
+  scripts:
+    - &install_dependencies
+      name: Install Flutter & Cloud Functions dependencies
+      script: |
+        flutter pub get
+        flutter gen-l10n
+
+    - &auto_bump_version
+      name: Auto-increment build number from Codemagic BUILD_NUMBER
+      script: |
+        dart run scripts/bump_version.dart --set-build=${PROJECT_BUILD_NUMBER:-$BUILD_NUMBER}
+        dart run scripts/generate_store_metadata.dart
+
+    - &generate_store_screenshots
+      name: Generate 96 Localized Store Screenshots (TR, EN, ES, FR, DE, IT)
+      script: |
+        flutter test test/store_screenshots_generator_test.dart
+
+    - &run_quality_gates_staging
+      name: Run Pre-Release Quality Gate, Analyzer & Unit/Widget Test Suite
+      script: |
+        dart run scripts/ci_preflight_check.dart
+        flutter analyze
+        flutter test
+
+    - &run_quality_gates_production
+      name: Run Production Pre-Release Gate (Requires CONFIRM_PRODUCTION_RELEASE=true)
+      script: |
+        if [ "$CONFIRM_PRODUCTION_RELEASE" != "true" ]; then
+          echo "ERROR: Production release requires CONFIRM_PRODUCTION_RELEASE=true."
+          exit 1
+        fi
+        dart run scripts/ci_preflight_check.dart --track=production
+        flutter analyze
+        flutter test
+
+    - &configure_android_keystore
+      name: Configure Android Release Keystore from Environment Variables
+      script: |
+        if [ -n "$CM_KEYSTORE" ]; then
+          echo "$CM_KEYSTORE" | base64 --decode > "$CM_KEYSTORE_PATH"
+          cat > android/key.properties <<EOF
+        storePassword=$CM_KEYSTORE_PASSWORD
+        keyPassword=$CM_KEY_PASSWORD
+        keyAlias=$CM_KEY_ALIAS
+        storeFile=$CM_KEYSTORE_PATH
+        EOF
+        fi
+        if [ -n "$GOOGLE_PLAY_SERVICE_ACCOUNT_CREDENTIALS" ]; then
+          echo "$GOOGLE_PLAY_SERVICE_ACCOUNT_CREDENTIALS" > android/fastlane/google-play-service-account.json
+          export GOOGLE_PLAY_JSON_KEY_FILE="$CM_BUILD_DIR/android/fastlane/google-play-service-account.json"
+        fi
+
+    - &build_android_aab
+      name: Build Signed Android App Bundle (AAB)
+      script: |
+        flutter build appbundle --release \
+          --build-number=${PROJECT_BUILD_NUMBER:-$BUILD_NUMBER}
+
+    - &build_ios_ipa
+      name: Set up iOS Code Signing & Build Signed IPA
+      script: |
+        xcode-project use-profiles
+        flutter build ipa --release \
+          --build-number=${PROJECT_BUILD_NUMBER:-$BUILD_NUMBER} \
+          --export-options-plist=/Users/builder/export_options.plist
+
+workflows:
+  android-internal-release:
+    name: Goalverse Android - Internal Testing Release
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      flutter: stable
+      groups:
+        - android_signing
+        - google_play_credentials
+        - release_config
+      vars:
+        RELEASE_TRACK: "internal"
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: "release/android-*"
+          include: true
+          source: true
+    scripts:
+      - *install_dependencies
+      - *auto_bump_version
+      - *generate_store_screenshots
+      - *run_quality_gates_staging
+      - *configure_android_keystore
+      - *build_android_aab
+      - name: Deploy AAB, 6-Language Metadata & Screenshots to Google Play Internal Track
+        script: |
+          cd android
+          bundle install
+          bundle exec fastlane android internal
+    artifacts:
+      - build/**/outputs/**/*.aab
+      - android/fastlane/metadata/android/**/images/phoneScreenshots/*.png
+
+  ios-testflight-release:
+    name: Goalverse iOS - TestFlight Release
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: Goalverse_AppStoreConnect_Key
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      groups:
+        - app_store_credentials
+        - release_config
+      vars:
+        RELEASE_TRACK: "testflight"
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: "release/ios-*"
+          include: true
+          source: true
+    scripts:
+      - *install_dependencies
+      - *auto_bump_version
+      - *generate_store_screenshots
+      - *run_quality_gates_staging
+      - *build_ios_ipa
+      - name: Upload IPA to TestFlight via Fastlane
+        script: |
+          cd ios
+          bundle install
+          bundle exec fastlane ios testflight_release
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - ios/fastlane/screenshots/**/*.png
+
+  unified-staging-release:
+    name: Goalverse Unified - Android Internal + iOS TestFlight
+    max_build_duration: 90
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: Goalverse_AppStoreConnect_Key
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      groups:
+        - android_signing
+        - google_play_credentials
+        - app_store_credentials
+        - release_config
+      vars:
+        RELEASE_TRACK: "staging"
+    triggering:
+      events:
+        - tag
+      tag_patterns:
+        - pattern: "v*-rc*"
+          include: true
+    scripts:
+      - *install_dependencies
+      - *auto_bump_version
+      - *generate_store_screenshots
+      - *run_quality_gates_staging
+      - *configure_android_keystore
+      - *build_android_aab
+      - *build_ios_ipa
+      - name: Deploy Android to Internal Track & iOS to TestFlight
+        script: |
+          cd android && bundle install && bundle exec fastlane android internal
+          cd ../ios && bundle install && bundle exec fastlane ios testflight_release
+    artifacts:
+      - build/**/outputs/**/*.aab
+      - build/ios/ipa/*.ipa
+      - android/fastlane/metadata/android/**/images/phoneScreenshots/*.png
+      - ios/fastlane/screenshots/**/*.png
+
+  production-release-gated:
+    name: Goalverse Production Release (Manual Confirmation Required)
+    max_build_duration: 90
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: Goalverse_AppStoreConnect_Key
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      groups:
+        - android_signing
+        - google_play_credentials
+        - app_store_credentials
+        - release_config
+      vars:
+        RELEASE_TRACK: "production"
+        # Must be explicitly overridden to "true" when triggering a production build
+        CONFIRM_PRODUCTION_RELEASE: "false"
+        SUBMIT_FOR_REVIEW: "false"
+    scripts:
+      - *install_dependencies
+      - *auto_bump_version
+      - *generate_store_screenshots
+      - *run_quality_gates_production
+      - *configure_android_keystore
+      - *build_android_aab
+      - *build_ios_ipa
+      - name: Publish to Google Play Production & App Store Connect
+        script: |
+          cd android && bundle install && bundle exec fastlane android production
+          cd ../ios && bundle install && bundle exec fastlane ios production
+    artifacts:
+      - build/**/outputs/**/*.aab
+      - build/ios/ipa/*.ipa
+      - android/fastlane/metadata/android/**/images/phoneScreenshots/*.png
+      - ios/fastlane/screenshots/**/*.png
+

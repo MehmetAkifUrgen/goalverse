@@ -1,0 +1,489 @@
+[
+  {
+    "id": "team_418",
+    "name": "Real Madrid",
+    "normalizedName": "real madrid",
+    "aliases": [
+      "Real Madrid CF",
+      "Los Blancos",
+      "R. Madrid"
+    ],
+    "country": "ES",
+    "verified": true,
+    "primaryColorHex": "#FEBE10",
+    "secondaryColorHex": "#00529F",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/418.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_131",
+    "name": "FC Barcelona",
+    "normalizedName": "fc barcelona",
+    "aliases": [
+      "Barcelona",
+      "Barca",
+      "Barça",
+      "Blaugrana"
+    ],
+    "country": "ES",
+    "verified": true,
+    "primaryColorHex": "#A50044",
+    "secondaryColorHex": "#004D98",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/131.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_985",
+    "name": "Manchester United",
+    "normalizedName": "manchester united",
+    "aliases": [
+      "Man Utd",
+      "Man United",
+      "Red Devils"
+    ],
+    "country": "EN",
+    "verified": true,
+    "primaryColorHex": "#DA291C",
+    "secondaryColorHex": "#FBE122",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/985.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_5",
+    "name": "AC Milan",
+    "normalizedName": "ac milan",
+    "aliases": [
+      "Milan",
+      "Rossoneri"
+    ],
+    "country": "IT",
+    "verified": true,
+    "primaryColorHex": "#FB090B",
+    "secondaryColorHex": "#000000",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/5.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_46",
+    "name": "Inter Milan",
+    "normalizedName": "inter milan",
+    "aliases": [
+      "Inter",
+      "Internazionale",
+      "FC Internazionale",
+      "Nerazzurri"
+    ],
+    "country": "IT",
+    "verified": true,
+    "primaryColorHex": "#010E80",
+    "secondaryColorHex": "#000000",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/46.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_506",
+    "name": "Juventus",
+    "normalizedName": "juventus",
+    "aliases": [
+      "Juventus FC",
+      "Juve",
+      "Bianconeri"
+    ],
+    "country": "IT",
+    "verified": true,
+    "primaryColorHex": "#000000",
+    "secondaryColorHex": "#FFFFFF",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/506.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_27",
+    "name": "Bayern Munich",
+    "normalizedName": "bayern munich",
+    "aliases": [
+      "FC Bayern",
+      "Bayern",
+      "Bayern Munchen",
+      "Bayern München"
+    ],
+    "country": "DE",
+    "verified": true,
+    "primaryColorHex": "#DC052D",
+    "secondaryColorHex": "#0066B2",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/27.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_11",
+    "name": "Arsenal",
+    "normalizedName": "arsenal",
+    "aliases": [
+      "Arsenal FC",
+      "Gunners"
+    ],
+    "country": "EN",
+    "verified": true,
+    "primaryColorHex": "#EF0107",
+    "secondaryColorHex": "#063672",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/11.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_631",
+    "name": "Chelsea",
+    "normalizedName": "chelsea",
+    "aliases": [
+      "Chelsea FC",
+      "The Blues"
+    ],
+    "country": "EN",
+    "verified": true,
+    "primaryColorHex": "#034694",
+    "secondaryColorHex": "#DBA111",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/631.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_31",
+    "name": "Liverpool",
+    "normalizedName": "liverpool",
+    "aliases": [
+      "Liverpool FC",
+      "The Reds"
+    ],
+    "country": "EN",
+    "verified": true,
+    "primaryColorHex": "#C8102E",
+    "secondaryColorHex": "#00B2A9",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/31.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_583",
+    "name": "Paris Saint-Germain",
+    "normalizedName": "paris saint germain",
+    "aliases": [
+      "PSG",
+      "Paris SG"
+    ],
+    "country": "FR",
+    "verified": true,
+    "primaryColorHex": "#004170",
+    "secondaryColorHex": "#DA291C",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/583.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_281",
+    "name": "Manchester City",
+    "normalizedName": "manchester city",
+    "aliases": [
+      "Man City",
+      "City"
+    ],
+    "country": "EN",
+    "verified": true,
+    "primaryColorHex": "#6CABDD",
+    "secondaryColorHex": "#1C2C5B",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/281.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_13",
+    "name": "Atlético Madrid",
+    "normalizedName": "atletico madrid",
+    "aliases": [
+      "Atletico Madrid",
+      "Atletico",
+      "Atleti"
+    ],
+    "country": "ES",
+    "verified": true,
+    "primaryColorHex": "#CB3524",
+    "secondaryColorHex": "#272E61",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/13.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_16",
+    "name": "Borussia Dortmund",
+    "normalizedName": "borussia dortmund",
+    "aliases": [
+      "Dortmund",
+      "BVB"
+    ],
+    "country": "DE",
+    "verified": true,
+    "primaryColorHex": "#FDE100",
+    "secondaryColorHex": "#000000",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/16.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_148",
+    "name": "Tottenham Hotspur",
+    "normalizedName": "tottenham hotspur",
+    "aliases": [
+      "Tottenham",
+      "Spurs"
+    ],
+    "country": "EN",
+    "verified": true,
+    "primaryColorHex": "#132257",
+    "secondaryColorHex": "#FFFFFF",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/148.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_141",
+    "name": "Galatasaray",
+    "normalizedName": "galatasaray",
+    "aliases": [
+      "Galatasaray SK",
+      "Cimbom",
+      "GS"
+    ],
+    "country": "TR",
+    "verified": true,
+    "primaryColorHex": "#A90432",
+    "secondaryColorHex": "#FDB912",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/141.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_36",
+    "name": "Fenerbahçe",
+    "normalizedName": "fenerbahce",
+    "aliases": [
+      "Fenerbahce",
+      "Fenerbahçe SK",
+      "FB"
+    ],
+    "country": "TR",
+    "verified": true,
+    "primaryColorHex": "#002D72",
+    "secondaryColorHex": "#FFED00",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/36.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_114",
+    "name": "Beşiktaş",
+    "normalizedName": "besiktas",
+    "aliases": [
+      "Besiktas",
+      "Beşiktaş JK",
+      "BJK"
+    ],
+    "country": "TR",
+    "verified": true,
+    "primaryColorHex": "#000000",
+    "secondaryColorHex": "#E30613",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/114.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_610",
+    "name": "Ajax",
+    "normalizedName": "ajax",
+    "aliases": [
+      "AFC Ajax",
+      "Ajax Amsterdam"
+    ],
+    "country": "NL",
+    "verified": true,
+    "primaryColorHex": "#D2122E",
+    "secondaryColorHex": "#FFFFFF",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/610.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_294",
+    "name": "SL Benfica",
+    "normalizedName": "sl benfica",
+    "aliases": [
+      "Benfica"
+    ],
+    "country": "PT",
+    "verified": true,
+    "primaryColorHex": "#E83030",
+    "secondaryColorHex": "#FFFFFF",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/294.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_720",
+    "name": "FC Porto",
+    "normalizedName": "fc porto",
+    "aliases": [
+      "Porto"
+    ],
+    "country": "PT",
+    "verified": true,
+    "primaryColorHex": "#00428C",
+    "secondaryColorHex": "#FFFFFF",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/720.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_336",
+    "name": "Sporting CP",
+    "normalizedName": "sporting cp",
+    "aliases": [
+      "Sporting",
+      "Sporting Lisbon"
+    ],
+    "country": "PT",
+    "verified": true,
+    "primaryColorHex": "#008057",
+    "secondaryColorHex": "#FFFFFF",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/336.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_12",
+    "name": "AS Roma",
+    "normalizedName": "as roma",
+    "aliases": [
+      "Roma",
+      "Giallorossi"
+    ],
+    "country": "IT",
+    "verified": true,
+    "primaryColorHex": "#8E1F2F",
+    "secondaryColorHex": "#F0BC42",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/12.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_6195",
+    "name": "SSC Napoli",
+    "normalizedName": "ssc napoli",
+    "aliases": [
+      "Napoli"
+    ],
+    "country": "IT",
+    "verified": true,
+    "primaryColorHex": "#008FD7",
+    "secondaryColorHex": "#FFFFFF",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/6195.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_162",
+    "name": "AS Monaco",
+    "normalizedName": "as monaco",
+    "aliases": [
+      "Monaco"
+    ],
+    "country": "FR",
+    "verified": true,
+    "primaryColorHex": "#E51B24",
+    "secondaryColorHex": "#FFFFFF",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/162.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_1041",
+    "name": "Olympique Lyon",
+    "normalizedName": "olympique lyon",
+    "aliases": [
+      "Lyon",
+      "OL"
+    ],
+    "country": "FR",
+    "verified": true,
+    "primaryColorHex": "#132968",
+    "secondaryColorHex": "#DA2028",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/1041.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_244",
+    "name": "Olympique Marseille",
+    "normalizedName": "olympique marseille",
+    "aliases": [
+      "Marseille",
+      "OM"
+    ],
+    "country": "FR",
+    "verified": true,
+    "primaryColorHex": "#2FAEE0",
+    "secondaryColorHex": "#FFFFFF",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/244.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_15",
+    "name": "Bayer Leverkusen",
+    "normalizedName": "bayer leverkusen",
+    "aliases": [
+      "Leverkusen",
+      "Bayer 04"
+    ],
+    "country": "DE",
+    "verified": true,
+    "primaryColorHex": "#E32221",
+    "secondaryColorHex": "#000000",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/15.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_368",
+    "name": "Sevilla FC",
+    "normalizedName": "sevilla fc",
+    "aliases": [
+      "Sevilla"
+    ],
+    "country": "ES",
+    "verified": true,
+    "primaryColorHex": "#D4171E",
+    "secondaryColorHex": "#FFFFFF",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/368.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  },
+  {
+    "id": "team_1049",
+    "name": "Valencia CF",
+    "normalizedName": "valencia cf",
+    "aliases": [
+      "Valencia"
+    ],
+    "country": "ES",
+    "verified": true,
+    "primaryColorHex": "#FF6700",
+    "secondaryColorHex": "#000000",
+    "logoUrl": "https://tmssl.akamaized.net/images/wappen/head/1049.png",
+    "logoAssetPath": null,
+    "kitAssetPath": null
+  }
+]

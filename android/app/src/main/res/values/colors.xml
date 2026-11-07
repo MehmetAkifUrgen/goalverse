@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="goalverse_bg">#17182B</color>
+    <color name="goalverse_surface">#292B46</color>
+    <color name="goalverse_coral">#FF786B</color>
+    <color name="goalverse_mint">#79E2C0</color>
+    <color name="ic_launcher_background">#17182B</color>
+</resources>

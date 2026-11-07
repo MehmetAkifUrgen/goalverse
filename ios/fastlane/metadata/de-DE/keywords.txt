@@ -1,0 +1,1 @@
+fussball,fußball,sos,tictactoe,quiz,trivia,spieler,transfer,multiplayer,duell

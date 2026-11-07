@@ -1,0 +1,4 @@
+• Added Best-of-3 and Best-of-5 multi-round Football SOS series system.
+• Enhanced real-time multiplayer board synchronization and inter-round summary screens.
+• Added 2 tactical passes per round and live draw offer system.
+• Introduced the new Football Stadium UI theme, Football SOS Pro, and Cosmetic Store.

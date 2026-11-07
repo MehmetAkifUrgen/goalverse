@@ -1,0 +1,79 @@
+default_platform(:android)
+
+platform :android do
+  desc "Run pre-release quality, tests, metadata & screenshot dimension checks"
+  lane :preflight do |options|
+    track_flag = options[:production] ? "--track=production" : ""
+    Dir.chdir("../..") do
+      sh("dart run scripts/ci_preflight_check.dart #{track_flag}")
+      sh("flutter analyze")
+      sh("flutter test")
+    end
+  end
+
+  desc "Build signed Android App Bundle (AAB) for Google Play"
+  lane :build_aab do
+    Dir.chdir("../..") do
+      sh("flutter build appbundle --release")
+    end
+  end
+
+  desc "Upload 6-language store metadata and localized screenshots to Google Play"
+  lane :upload_metadata_and_screenshots do
+    package = ENV.fetch("ANDROID_PACKAGE_NAME", "com.goalverse.footballsos")
+    upload_to_play_store(
+      package_name: package,
+      track: "internal",
+      skip_upload_aab: true,
+      skip_upload_apk: true,
+      skip_upload_metadata: false,
+      skip_upload_changelogs: false,
+      skip_upload_images: false,
+      skip_upload_screenshots: false
+    )
+  end
+
+  desc "Deploy Android App Bundle + Metadata + Screenshots to Google Play Internal Testing Track"
+  lane :internal do
+    preflight(production: false)
+    build_aab
+    package = ENV.fetch("ANDROID_PACKAGE_NAME", "com.goalverse.footballsos")
+    aab_path = File.expand_path("../../build/app/outputs/bundle/release/app-release.aab", __dir__)
+
+    upload_to_play_store(
+      package_name: package,
+      track: "internal",
+      release_status: ENV.fetch("PLAY_RELEASE_STATUS", "completed"),
+      aab: aab_path,
+      skip_upload_metadata: false,
+      skip_upload_changelogs: false,
+      skip_upload_images: false,
+      skip_upload_screenshots: false
+    )
+  end
+
+  desc "Promote or upload verified release to Google Play Production Track (Requires CONFIRM_PRODUCTION_RELEASE=true)"
+  lane :production do
+    unless ENV["CONFIRM_PRODUCTION_RELEASE"] == "true"
+      UI.user_error!("Production release blocked: Set CONFIRM_PRODUCTION_RELEASE=true after verifying Internal Testing build.")
+    end
+
+    preflight(production: true)
+    build_aab
+    package = ENV.fetch("ANDROID_PACKAGE_NAME", "com.goalverse.footballsos")
+    aab_path = File.expand_path("../../build/app/outputs/bundle/release/app-release.aab", __dir__)
+
+    upload_to_play_store(
+      package_name: package,
+      track: "production",
+      release_status: ENV.fetch("PLAY_PRODUCTION_STATUS", "completed"),
+      rollout: ENV.fetch("PLAY_PRODUCTION_ROLLOUT", "1.0").to_f,
+      aab: aab_path,
+      skip_upload_metadata: false,
+      skip_upload_changelogs: false,
+      skip_upload_images: false,
+      skip_upload_screenshots: false
+    )
+  end
+end
+

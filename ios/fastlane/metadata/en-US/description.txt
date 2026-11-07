@@ -1,0 +1,25 @@
+Goalverse: Football SOS is a competitive football trivia and tactical 3×3 grid game built for true football fans.
+
+KEY FEATURES & GAME MODES:
+
+• FOOTBALL SOS (3×3 CLUB INTERSECTION GRID):
+Claim cells by naming a footballer who has played for both the row club and column club, and complete a line of three horizontally, vertically, or diagonally!
+- Multi-round series format: Best of 3 (First to 2 wins) and Best of 5 (First to 3 wins).
+- Reusable footballers across valid cells, 2 tactical passes per player each round, and live draw offers.
+- Play Solo vs AI, Local 2-Player Pass & Play, Quick Online Matchmaking, or Private 6-digit Room Codes.
+
+• 6 ARCADE FOOTBALL QUIZ MODES:
+1. Rating Battle (Higher / Lower): Compare players across Overall rating, market value, career goals, assists, speed, and Champions League goals.
+2. 2 Teams 1 Player: Find the shared star who played for both featured clubs.
+3. Who Am I?: Guess the mystery footballer using up to 5 progressive career clues.
+4. Imposter: Spot the 1 player out of 4 who never played for the target club.
+5. Transfer Path: Identify the footballer from their chronological club career history.
+6. Football Bomb: Name valid footballers matching the club or nationality prompt before the timer explodes.
+
+• DAILY CHALLENGES & GLOBAL ELO LEADERBOARD:
+- Solve a fresh 3×3 daily football grid every day to build your win streak.
+- Climb divisions from Rising Star to Elite Pro on the global and country ELO leaderboards.
+
+• FOOTBALL SOS PRO & COSMETIC STORE:
+- Ad-free stadium experience, exclusive pitch & 3×3 board themes, champion profile frames, custom badges, and 50-match analytics history.
+- 100% Fair Play Guarantee: Subscriptions and cosmetics never grant ELO, timer, or gameplay advantages.

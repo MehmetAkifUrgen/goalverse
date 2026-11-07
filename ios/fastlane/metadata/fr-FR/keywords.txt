@@ -1,0 +1,1 @@
+football,foot,sos,morpion,quiz,trivia,joueur,transfert,multijoueur,1v1,ligue

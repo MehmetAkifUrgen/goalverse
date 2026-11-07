@@ -1,0 +1,4 @@
+• 3 Tur (2 Galibiyet) ve 5 Tur (3 Galibiyet) çok turlu Football SOS maç sistemi eklendi.
+• Online multiplayer maçlarda senkronize oyun tahtası ve tur arası özet ekranı eklendi.
+• Pas geçme (tur başına 2 hak) ve beraberlik teklifi sistemi eklendi.
+• Yeni stadyum ve çim saha arayüz tasarımı, Football SOS Pro ve Kozmetik Mağazası eklendi.

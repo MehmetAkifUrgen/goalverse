@@ -1,0 +1,151 @@
+{
+  "project_info": {
+    "project_number": "290994395081",
+    "firebase_url": "https://flutterfootbalquiz-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "flutterfootbalquiz",
+    "storage_bucket": "flutterfootbalquiz.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290994395081:android:70a770cf304e5d308ffa18",
+        "android_client_info": {
+          "package_name": "com.example.dynamind_two"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290994395081-e264r5151650pr8iiltutrfdp2anqdgj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ3gynQMRIXXBs12-5Bdcvzf4rHwRv_xU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290994395081-0n4hffuifi7tpdu6upqokhhl5kft81n7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "290994395081-6ijarvkjj8ojmpccsvskeb1uoqt45s8r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.goalverse.footballsos"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290994395081:android:3c6824fcd75642ec8ffa18",
+        "android_client_info": {
+          "package_name": "com.example.football_tic_tac_toe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290994395081-a9fb1l91398qf56vqm8m9d7rk31e3cq6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.football_tic_tac_toe",
+            "certificate_hash": "9912b919bdd05c70aafec4bfd9d93ab4c1e8d1b2"
+          }
+        },
+        {
+          "client_id": "290994395081-djr3s0b8qc0k5d1q6pf3t3aa2cu1251i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.football_tic_tac_toe",
+            "certificate_hash": "b2efa6b12a23b3fc71648a771d34b29d6318aa0b"
+          }
+        },
+        {
+          "client_id": "290994395081-e264r5151650pr8iiltutrfdp2anqdgj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ3gynQMRIXXBs12-5Bdcvzf4rHwRv_xU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290994395081-0n4hffuifi7tpdu6upqokhhl5kft81n7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "290994395081-6ijarvkjj8ojmpccsvskeb1uoqt45s8r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.goalverse.footballsos"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290994395081:android:aa7e6f1f0c9cfdd18ffa18",
+        "android_client_info": {
+          "package_name": "com.goalverse.footballsos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290994395081-8kh64pd5ca61lhoj7h3620n7vmlto0r2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.goalverse.footballsos",
+            "certificate_hash": "b2efa6b12a23b3fc71648a771d34b29d6318aa0b"
+          }
+        },
+        {
+          "client_id": "290994395081-vpp5j0am3e9fks7nhajp4s2qj5co1erq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.goalverse.footballsos",
+            "certificate_hash": "9912b919bdd05c70aafec4bfd9d93ab4c1e8d1b2"
+          }
+        },
+        {
+          "client_id": "290994395081-e264r5151650pr8iiltutrfdp2anqdgj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ3gynQMRIXXBs12-5Bdcvzf4rHwRv_xU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290994395081-0n4hffuifi7tpdu6upqokhhl5kft81n7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "290994395081-6ijarvkjj8ojmpccsvskeb1uoqt45s8r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.goalverse.footballsos"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

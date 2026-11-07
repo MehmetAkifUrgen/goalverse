@@ -1,0 +1,1 @@
+football,soccer,grid,tictactoe,sos,trivia,quiz,multiplayer,1v1,transfer,player

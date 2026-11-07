@@ -1,0 +1,84 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "hosting_public",
+    "cleanUrls": true,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4000
+    },
+    "singleProjectMode": true
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "flutterfootbalquiz",
+          "appId": "1:290994395081:android:aa7e6f1f0c9cfdd18ffa18",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "flutterfootbalquiz",
+          "appId": "1:290994395081:ios:e53dc135766fc3568ffa18",
+          "uploadDebugSymbols": true,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "flutterfootbalquiz",
+          "appId": "1:290994395081:ios:e53dc135766fc3568ffa18",
+          "uploadDebugSymbols": true,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "flutterfootbalquiz",
+          "configurations": {
+            "android": "1:290994395081:android:aa7e6f1f0c9cfdd18ffa18",
+            "ios": "1:290994395081:ios:e53dc135766fc3568ffa18",
+            "macos": "1:290994395081:ios:e53dc135766fc3568ffa18",
+            "web": "1:290994395081:web:27e6ee0096ad88478ffa18"
+          }
+        }
+      }
+    }
+  }
+}

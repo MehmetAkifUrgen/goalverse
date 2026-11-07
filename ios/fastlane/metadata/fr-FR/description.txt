@@ -1,0 +1,20 @@
+Goalverse: Football SOS combine culture footballistique et stratégie sur une grille 3×3 compétitive.
+
+FONCTIONNALITÉS ET MODES DE JEU :
+
+• FOOTBALL SOS (GRILLE 3×3 DE CLUBS) :
+Trouvez un footballeur ayant porté le maillot du club de la ligne et de la colonne pour remporter la case et aligner 3 symboles !
+- Matchs en séries de 3 manches (2 victoires) ou 5 manches (3 victoires).
+- Réutilisation des joueurs autorisée entre les cases, 2 passes par manche et proposition de match nul en direct.
+- Jouez en Solo contre l'IA, à 2 sur le même écran ou en ligne 1v1 via code de salon.
+
+• 6 MODES QUIZ & ARCADE :
+1. Rating Battle : Comparez la note globale, la valeur marchande, les buts et la vitesse.
+2. 2 Clubs 1 Joueur : Trouvez la star passée par les deux clubs.
+3. Qui Suis-Je ? : Devinez le joueur mystère grâce à 5 indices de carrière.
+4. Imposteur : Repérez l'intrus parmi 4 joueurs qui n'a jamais joué pour le club cible.
+5. Parcours de Transferts : Reconnaissez le joueur via l'historique chronologique de ses clubs.
+6. Bombe Foot : Citez des joueurs valides avant la fin du compte à rebours.
+
+• DÉFI QUOTIDIEN, CLASSEMENT ELO & FOOTBALL SOS PRO :
+- Grille quotidienne, classement ELO mondial, boutique cosmétique et abonnement Football SOS Pro sans publicité (100 % Fair-Play, aucun avantage compétitif).

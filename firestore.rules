@@ -1,0 +1,77 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /players/{anyDocument} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /teams/{anyDocument} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /player_team_history/{anyDocument} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /answer_index/{anyDocument} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /users/{userId} {
+      allow read: if true;
+      allow create: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.data.uid == userId
+        && !request.resource.data.keys().hasAny([
+          'isPremium',
+          'premiumEntitlement',
+          'subscriptionProductId',
+          'premiumExpiresAtMs',
+          'subscriptionStatus',
+          'purchasedCosmeticIds',
+          'serverVerifiedAt'
+        ]);
+      allow update: if request.auth != null
+        && request.auth.uid == userId
+        && (!request.resource.data.diff(resource.data).affectedKeys().hasAny([
+          'uid',
+          'isPremium',
+          'premiumEntitlement',
+          'subscriptionProductId',
+          'premiumExpiresAtMs',
+          'subscriptionStatus',
+          'purchasedCosmeticIds',
+          'serverVerifiedAt'
+        ]));
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /purchase_events/{eventId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow write: if false;
+    }
+
+    match /games/{gameId} {
+      allow read, create, update: if true;
+    }
+
+    match /game_players/{gamePlayerId} {
+      allow read: if request.auth != null
+        && (request.auth.uid == resource.data.userId);
+      allow create, update, delete: if false;
+    }
+
+    match /leaderboards/{leaderboardEntry} {
+      allow read: if true;
+      allow create, update: if request.auth != null && request.auth.uid == leaderboardEntry;
+      allow delete: if false;
+    }
+
+    match /daily_challenges/{challengeId} {
+      allow read: if true;
+      allow create, update, delete: if false;
+    }
+  }
+}

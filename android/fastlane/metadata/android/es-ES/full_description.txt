@@ -1,0 +1,23 @@
+Goalverse: Football SOS es el juego competitivo de trivia de fútbol y estrategia en tablero 3×3 para verdaderos apasionados del fútbol.
+
+CARACTERÍSTICAS Y MODOS DE JUEGO:
+
+• FOOTBALL SOS (TABLERO 3×3 DE CLUBES):
+Nombra a un futbolista que haya jugado tanto en el club de la fila como en el de la columna para conquistar la casilla y formar tres en línea.
+- Series al mejor de 3 rondas (2 victorias) y 5 rondas (3 victorias).
+- Reutilización de futbolistas en distintas casillas, 2 pases por ronda y ofertas de empate en tiempo real.
+- Modo Solo contra IA, Duelo Local de 2 jugadores y Partidas Online 1v1 con código de sala.
+
+• 6 MODOS ARCADE DE FÚTBOL:
+1. Rating Battle: Compara valoración general, valor de mercado, goles, asistencias y velocidad.
+2. 2 Equipos 1 Jugador: Encuentra al crack que vistió ambas camisetas.
+3. ¿Quién Soy?: Adivina al jugador misterioso con 5 pistas progresivas.
+4. Impostor: Detecta cuál de los 4 jugadores nunca jugó en el club objetivo.
+5. Ruta de Fichajes: Adivina al futbolista siguiendo su historial cronológico de clubes.
+6. Bomba de Fútbol: Nombra jugadores válidos antes de que explote el cronómetro.
+
+• RETO DIARIO Y CLASIFICACIÓN ELO:
+- Completa el desafío diario 3×3 y sube de división en el ranking global.
+
+• FOOTBALL SOS PRO Y TIENDA COSMÉTICA:
+- Experiencia sin anuncios, temas de césped y tablero 3×3, marcos de perfil e historial de 50 partidos sin ventajas competitivas (100% Fair Play).

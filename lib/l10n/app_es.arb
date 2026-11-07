@@ -1,0 +1,560 @@
+{
+  "appTitle": "Goalverse",
+  "@appTitle": {
+    "description": "Application title displayed in the app bar and launcher"
+  },
+  "startGame": "Empezar Partido",
+  "@startGame": {
+    "description": "Button label to begin a new game"
+  },
+  "dailyChallenge": "Reto Diario",
+  "@dailyChallenge": {
+    "description": "Menu item for the daily challenge mode"
+  },
+  "leaderboard": "Clasificación",
+  "@leaderboard": {
+    "description": "Menu item and page title for the leaderboard screen"
+  },
+  "profile": "Perfil",
+  "@profile": {
+    "description": "Menu item and page title for the user profile screen"
+  },
+  "settings": "Ajustes",
+  "@settings": {
+    "description": "Menu item and page title for the settings screen"
+  },
+  "play": "Jugar",
+  "@play": {
+    "description": "Generic button label to start playing"
+  },
+  "quickMatch": "Partida Rápida",
+  "@quickMatch": {
+    "description": "Game mode to find a random opponent quickly"
+  },
+  "createRoom": "Crear Sala",
+  "@createRoom": {
+    "description": "Button to create a private multiplayer room"
+  },
+  "joinRoom": "Unirse a la Sala",
+  "@joinRoom": {
+    "description": "Button to join a private multiplayer room using a code"
+  },
+  "roomCode": "Código de Sala",
+  "@roomCode": {
+    "description": "Label for the room code input field"
+  },
+  "copyCode": "Copiar Código",
+  "@copyCode": {
+    "description": "Button label to copy the room code to clipboard"
+  },
+  "guestLogin": "Continuar como Invitado",
+  "@guestLogin": {
+    "description": "Button label for anonymous guest login"
+  },
+  "googleLogin": "Iniciar sesión con Google",
+  "@googleLogin": {
+    "description": "Button label for Google authentication"
+  },
+  "appleLogin": "Iniciar sesión con Apple",
+  "@appleLogin": {
+    "description": "Button label for Apple authentication"
+  },
+  "emailSignIn": "Iniciar sesión con Correo",
+  "@emailSignIn": {
+    "description": "Button label for email/password authentication"
+  },
+  "createAccount": "Crear Cuenta",
+  "@createAccount": {
+    "description": "Button label for new user registration"
+  },
+  "login": "Iniciar Sesión",
+  "@login": {
+    "description": "Button label to sign in an existing user"
+  },
+  "logout": "Cerrar Sesión",
+  "@logout": {
+    "description": "Button label to sign out the current user"
+  },
+  "linkAccount": "Vincular Cuenta",
+  "@linkAccount": {
+    "description": "Button label to connect an additional auth provider"
+  },
+  "cancel": "Cancelar",
+  "@cancel": {
+    "description": "Button label to dismiss or cancel an action"
+  },
+  "ok": "Aceptar",
+  "@ok": {
+    "description": "Button label to confirm an action or dialog"
+  },
+  "save": "Guardar",
+  "@save": {
+    "description": "Button label to persist changes"
+  },
+  "close": "Cerrar",
+  "@close": {
+    "description": "Button label to close a dialog or screen"
+  },
+  "submit": "Enviar",
+  "@submit": {
+    "description": "Button label to submit a form or answer"
+  },
+  "search": "Buscar",
+  "@search": {
+    "description": "Search button label and search bar hint title"
+  },
+  "searchPlayerHint": "Buscar un jugador...",
+  "@searchPlayerHint": {
+    "description": "Placeholder text inside the player search input"
+  },
+  "noResults": "Sin resultados",
+  "@noResults": {
+    "description": "Message displayed when a search returns no matches"
+  },
+  "correctAnswer": "¡Correcto!",
+  "@correctAnswer": {
+    "description": "Feedback shown when the user selects a correct answer"
+  },
+  "wrongAnswer": "Respuesta incorrecta",
+  "@wrongAnswer": {
+    "description": "Feedback shown when the user selects an incorrect answer"
+  },
+  "errorPlayerNotFound": "Jugador no encontrado",
+  "@errorPlayerNotFound": {
+    "description": "Error message when a searched player does not exist"
+  },
+  "errorInvalidPlayer": "Selección de jugador no válida",
+  "@errorInvalidPlayer": {
+    "description": "Error message when the selected player is not valid for the turn"
+  },
+  "errorTimeExpired": "Tiempo agotado",
+  "@errorTimeExpired": {
+    "description": "Error message when the turn timer reaches zero"
+  },
+  "errorCellAlreadyUsed": "Esta casilla ya está ocupada",
+  "@errorCellAlreadyUsed": {
+    "description": "Error message when tapping an occupied board cell"
+  },
+  "errorNotYourTurn": "No es tu turno",
+  "@errorNotYourTurn": {
+    "description": "Error message when a player acts out of turn"
+  },
+  "errorNetwork": "Error de red. Inténtalo de nuevo.",
+  "@errorNetwork": {
+    "description": "Error message for connectivity problems"
+  },
+  "errorGameNotFound": "Partida no encontrada",
+  "@errorGameNotFound": {
+    "description": "Error message when a game session no longer exists"
+  },
+  "errorOpponentDisconnected": "El rival se ha desconectado",
+  "@errorOpponentDisconnected": {
+    "description": "Error message when the opponent leaves the game"
+  },
+  "errorServerError": "Error del servidor. Inténtalo más tarde.",
+  "@errorServerError": {
+    "description": "Error message for an unexpected backend failure"
+  },
+  "errorPermissionDenied": "Permiso denegado",
+  "@errorPermissionDenied": {
+    "description": "Error message when the user lacks required permissions"
+  },
+  "won": "¡Has Ganado!",
+  "@won": {
+    "description": "Victory message shown at the end of a game"
+  },
+  "lost": "Has Perdido",
+  "@lost": {
+    "description": "Defeat message shown at the end of a game"
+  },
+  "draw": "Empate",
+  "@draw": {
+    "description": "Message shown when the game ends in a tie"
+  },
+  "turnOf": "Turno de {player}",
+  "@turnOf": {
+    "description": "Indicator of whose turn it is",
+    "placeholders": {
+      "player": {
+        "type": "String",
+        "description": "The name of the player whose turn it is"
+      }
+    }
+  },
+  "opponentSearching": "Buscando rival...",
+  "@opponentSearching": {
+    "description": "Message shown while matchmaking is in progress"
+  },
+  "waitingForOpponent": "Esperando al rival...",
+  "@waitingForOpponent": {
+    "description": "Message shown in a private room waiting for the second player"
+  },
+  "gameStarted": "Partida Iniciada",
+  "@gameStarted": {
+    "description": "Notification banner when the game begins"
+  },
+  "yourTurn": "Tu Turno",
+  "@yourTurn": {
+    "description": "Indicator that it is the local player's turn"
+  },
+  "opponentTurn": "Turno del Rival",
+  "@opponentTurn": {
+    "description": "Indicator that it is the opponent's turn"
+  },
+  "timeLeft": "Tiempo Restante",
+  "@timeLeft": {
+    "description": "Label next to the turn countdown timer"
+  },
+  "score": "Puntuación",
+  "@score": {
+    "description": "Label for the score display"
+  },
+  "wins": "Victorias",
+  "@wins": {
+    "description": "Statistics label for the total number of wins"
+  },
+  "losses": "Derrotas",
+  "@losses": {
+    "description": "Statistics label for the total number of losses"
+  },
+  "draws": "Empates",
+  "@draws": {
+    "description": "Statistics label for the total number of draws"
+  },
+  "gamesPlayed": "Partidas Jugadas",
+  "@gamesPlayed": {
+    "description": "Statistics label for total completed games"
+  },
+  "winRate": "Porcentaje de Victorias",
+  "@winRate": {
+    "description": "Statistics label for the win percentage"
+  },
+  "bestScore": "Mejor Puntuación",
+  "@bestScore": {
+    "description": "Statistics label for the highest score achieved"
+  },
+  "currentStreak": "Racha Actual",
+  "@currentStreak": {
+    "description": "Statistics label for the consecutive win/loss streak"
+  },
+  "rating": "Puntuación",
+  "@rating": {
+    "description": "Label for the skill rating or elo value"
+  },
+  "achievements": "Logros",
+  "@achievements": {
+    "description": "Section title for the list of achievements"
+  },
+  "firstWin": "Primera Victoria",
+  "@firstWin": {
+    "description": "Achievement name for winning the first game"
+  },
+  "wins10": "10 Victorias",
+  "@wins10": {
+    "description": "Achievement name for reaching 10 total wins"
+  },
+  "wins100": "100 Victorias",
+  "@wins100": {
+    "description": "Achievement name for reaching 100 total wins"
+  },
+  "perfectGame": "Partida Perfecta",
+  "@perfectGame": {
+    "description": "Achievement name for a flawless victory"
+  },
+  "rarePlayer": "Jugador Raro",
+  "@rarePlayer": {
+    "description": "Achievement name for using a rare or unusual player selection"
+  },
+  "comeback": "Remontada Épica",
+  "@comeback": {
+    "description": "Achievement name for winning from a losing position"
+  },
+  "winStreak5": "Racha de 5",
+  "@winStreak5": {
+    "description": "Achievement name for winning 5 games in a row"
+  },
+  "winStreak10": "Racha de 10",
+  "@winStreak10": {
+    "description": "Achievement name for winning 10 games in a row"
+  },
+  "language": "Idioma",
+  "@language": {
+    "description": "Settings label for changing the app language"
+  },
+  "theme": "Tema",
+  "@theme": {
+    "description": "Settings label for selecting the visual theme"
+  },
+  "darkMode": "Oscuro",
+  "@darkMode": {
+    "description": "Dark theme option label"
+  },
+  "lightMode": "Claro",
+  "@lightMode": {
+    "description": "Light theme option label"
+  },
+  "systemMode": "Predeterminado del Sistema",
+  "@systemMode": {
+    "description": "Theme option that follows the OS system setting"
+  },
+  "notifications": "Notificaciones",
+  "@notifications": {
+    "description": "Settings label for notification preferences"
+  },
+  "notificationsEnabled": "Notificaciones activadas",
+  "@notificationsEnabled": {
+    "description": "Status text when notifications are turned on"
+  },
+  "notificationsDisabled": "Notificaciones desactivadas",
+  "@notificationsDisabled": {
+    "description": "Status text when notifications are turned off"
+  },
+  "easy": "Fácil",
+  "@easy": {
+    "description": "Easy difficulty level label"
+  },
+  "medium": "Medio",
+  "@medium": {
+    "description": "Medium difficulty level label"
+  },
+  "hard": "Difícil",
+  "@hard": {
+    "description": "Hard difficulty level label"
+  },
+  "difficulty": "Dificultad",
+  "@difficulty": {
+    "description": "Settings label for AI difficulty selection"
+  },
+  "noDailyChallenge": "No hay reto diario disponible hoy",
+  "@noDailyChallenge": {
+    "description": "Message when there is no active daily challenge"
+  },
+  "dailyChallengeCompleted": "¡Reto diario completado!",
+  "@dailyChallengeCompleted": {
+    "description": "Message when the user finishes today's challenge"
+  },
+  "comeBackTomorrow": "Vuelve mañana por un nuevo reto",
+  "@comeBackTomorrow": {
+    "description": "Call to action after completing the daily challenge"
+  },
+  "rank": "Posición",
+  "@rank": {
+    "description": "Leaderboard column label for the rank position"
+  },
+  "country": "País",
+  "@country": {
+    "description": "Label for the user's country or country filter option"
+  },
+  "noFriends": "Todavía no tienes amigos",
+  "@noFriends": {
+    "description": "Message displayed when the friend list is empty"
+  },
+  "filterAll": "Todos",
+  "@filterAll": {
+    "description": "Leaderboard filter option for showing all players"
+  },
+  "global": "Global",
+  "@global": {
+    "description": "Leaderboard filter option for the worldwide ranking"
+  },
+  "friends": "Amigos",
+  "@friends": {
+    "description": "Leaderboard filter option for the friends ranking"
+  },
+  "inviteFriend": "Invitar a un Amigo",
+  "@inviteFriend": {
+    "description": "Button label to send a game invitation to a friend"
+  },
+  "share": "Compartir",
+  "@share": {
+    "description": "Button label to share content (room code, app etc.)"
+  },
+  "about": "Acerca de",
+  "@about": {
+    "description": "Settings menu item for the about page"
+  },
+  "version": "Versión",
+  "@version": {
+    "description": "Label for the application version number"
+  },
+  "help": "Ayuda",
+  "@help": {
+    "description": "Settings menu item for the help page"
+  },
+  "support": "Soporte",
+  "@support": {
+    "description": "Settings menu item for customer support"
+  },
+  "privacy": "Política de Privacidad",
+  "@privacy": {
+    "description": "Settings menu item for the privacy policy page"
+  },
+  "terms": "Términos del Servicio",
+  "@terms": {
+    "description": "Settings menu item for the terms of service page"
+  },
+  "email": "Correo electrónico",
+  "@email": {
+    "description": "Label for the email input field"
+  },
+  "password": "Contraseña",
+  "@password": {
+    "description": "Label for the password input field"
+  },
+  "hintEmail": "Introduce tu correo",
+  "@hintEmail": {
+    "description": "Placeholder text for the email input field"
+  },
+  "hintPassword": "Introduce tu contraseña",
+  "@hintPassword": {
+    "description": "Placeholder text for the password input field"
+  },
+  "errorInvalidEmail": "Correo electrónico no válido",
+  "@errorInvalidEmail": {
+    "description": "Error message when email format is invalid"
+  },
+  "errorWrongPassword": "Contraseña incorrecta",
+  "@errorWrongPassword": {
+    "description": "Error message when password is incorrect"
+  },
+  "errorWeakPassword": "La contraseña es muy débil",
+  "@errorWeakPassword": {
+    "description": "Error message when password does not meet strength requirements"
+  },
+  "errorEmailAlreadyInUse": "El correo ya está en uso",
+  "@errorEmailAlreadyInUse": {
+    "description": "Error message when registering with an existing email"
+  },
+  "errorUserNotFound": "Usuario no encontrado",
+  "@errorUserNotFound": {
+    "description": "Error message when no user matches the given credentials"
+  },
+  "errorUserDisabled": "Esta cuenta ha sido desactivada",
+  "@errorUserDisabled": {
+    "description": "Error message when the user account is disabled"
+  },
+  "errorOperationNotAllowed": "Operación no permitida",
+  "@errorOperationNotAllowed": {
+    "description": "Error message for forbidden authentication operations"
+  },
+  "errorTooManyRequests": "Demasiadas solicitudes. Inténtalo de nuevo más tarde",
+  "@errorTooManyRequests": {
+    "description": "Error message when rate limit is exceeded"
+  },
+  "errorUnknown": "Ocurrió un error. Inténtalo de nuevo",
+  "@errorUnknown": {
+    "description": "Fallback error message for unknown failures"
+  },
+  "errorAborted": "El inicio de sesión fue cancelado",
+  "@errorAborted": {
+    "description": "Error message when user cancels third-party sign in flow"
+  },
+  "linkAccountTitle": "Haz tu cuenta permanente",
+  "@linkAccountTitle": {
+    "description": "Title for the account linking screen"
+  },
+  "linkAccountSubtitle": "Vincula tu cuenta para guardar el progreso y nunca perder tus datos",
+  "@linkAccountSubtitle": {
+    "description": "Subtitle explaining the benefit of linking an account"
+  },
+  "accountLinkedSuccess": "¡Cuenta vinculada correctamente!",
+  "@accountLinkedSuccess": {
+    "description": "Success message when account linking completes"
+  },
+  "or": "o",
+  "@or": {
+    "description": "Separator text between groups of login options"
+  },
+  "hello": "Hola",
+  "@hello": {
+    "description": "Greeting shown on the home page with the user's name"
+  },
+  "time": "Tiempo",
+  "@time": {
+    "description": "Label next to the turn countdown timer"
+  },
+  "passTurn": "Pasar",
+  "@passTurn": {
+    "description": "Button label to pass the current turn"
+  },
+  "passesRemaining": "Pases restantes: {count}",
+  "@passesRemaining": {
+    "description": "Label showing remaining pass count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noPassesLeft": "¡No te quedan pases!",
+  "@noPassesLeft": {
+    "description": "Message when a player has used all pass rights"
+  },
+  "playerPassedTurn": "¡{player} pasó su turno!",
+  "@playerPassedTurn": {
+    "description": "Notification when a player passes their turn",
+    "placeholders": {
+      "player": {
+        "type": "String"
+      }
+    }
+  },
+  "offerDraw": "Ofrecer Tablas",
+  "@offerDraw": {
+    "description": "Button label to offer a draw to the opponent"
+  },
+  "drawOfferSent": "Oferta de tablas enviada ({seconds}s)",
+  "@drawOfferSent": {
+    "description": "Banner shown to sender while draw offer is pending",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "drawOfferReceived": "{player} ofrece tablas ({seconds}s)",
+  "@drawOfferReceived": {
+    "description": "Prompt shown to recipient when opponent offers a draw",
+    "placeholders": {
+      "player": {
+        "type": "String"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "acceptDraw": "Aceptar",
+  "@acceptDraw": {
+    "description": "Button label to accept a draw offer"
+  },
+  "rejectDraw": "Rechazar",
+  "@rejectDraw": {
+    "description": "Button label to reject a draw offer"
+  },
+  "drawAcceptedMessage": "¡Oferta de tablas aceptada! El partido terminó en empate.",
+  "@drawAcceptedMessage": {
+    "description": "Message shown when a draw offer is accepted"
+  },
+  "drawRejectedMessage": "Oferta de tablas rechazada. ¡El partido continúa!",
+  "@drawRejectedMessage": {
+    "description": "Message shown when a draw offer is rejected"
+  },
+  "drawOfferExpiredMessage": "La oferta de tablas expiró (30s).",
+  "@drawOfferExpiredMessage": {
+    "description": "Message shown when a draw offer expires without response"
+  },
+  "drawOfferCooldownMessage": "Espera {seconds}s antes de ofrecer tablas de nuevo.",
+  "@drawOfferCooldownMessage": {
+    "description": "Message shown when draw offer is on 60s cooldown",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "matchHistoryTitle": "Historial de Jugadas",
+  "@matchHistoryTitle": {
+    "description": "Title for the match move history sheet"
+  }
+}

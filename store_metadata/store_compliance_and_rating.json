@@ -1,0 +1,67 @@
+{
+  "appName": "Goalverse: Football SOS",
+  "defaultLanguage": "tr-TR",
+  "supportedLocales": [
+    "tr-TR",
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "de-DE",
+    "it-IT"
+  ],
+  "categories": {
+    "googlePlay": {
+      "applicationType": "GAME",
+      "primaryCategory": "GAME_SPORTS",
+      "secondaryCategory": "GAME_TRIVIA",
+      "tags": [
+        "Football",
+        "Soccer",
+        "Trivia",
+        "Multiplayer",
+        "Board"
+      ]
+    },
+    "appStoreConnect": {
+      "primaryCategory": "GAMES",
+      "primarySubcategoryOne": "GAMES_SPORTS",
+      "primarySubcategoryTwo": "GAMES_TRIVIA",
+      "secondaryCategory": "SPORTS"
+    }
+  },
+  "urls": {
+    "privacyPolicyUrl": "https://flutterfootbalquiz.web.app/privacy",
+    "supportUrl": "https://flutterfootbalquiz.web.app/support",
+    "marketingUrl": "https://flutterfootbalquiz.web.app",
+    "termsOfUseUrl": "https://goalverse.app/terms"
+  },
+  "contactInformation": {
+    "supportEmail": "support@goalverse.app",
+    "pressAndMarketingEmail": "hello@goalverse.app",
+    "website": "https://flutterfootbalquiz.web.app",
+    "phone": "+90 212 000 0000"
+  },
+  "contentRatingQuestionnaire": {
+    "targetAgeRating": {
+      "appleAgeRating": "4+",
+      "pegi": "PEGI 3",
+      "esrb": "Everyone (E)",
+      "usk": "USK 0"
+    },
+    "declarations": {
+      "violence": "NONE",
+      "sexuality": "NONE",
+      "profanity": "NONE",
+      "controlledSubstances": "NONE",
+      "gamblingOrSimulatedGambling": "NONE",
+      "userGeneratedContent": "LIMITED_DISPLAY_NAMES_AND_ROOM_CODES",
+      "onlineMultiplayerInteraction": true,
+      "inAppPurchases": true,
+      "digitalSubscriptions": [
+        "football_sos_pro_monthly",
+        "football_sos_pro_yearly"
+      ],
+      "advertising": "ADMOB_NON_INTRUSIVE_REMOVABLE_WITH_PRO"
+    }
+  }
+}
