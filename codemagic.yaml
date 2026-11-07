@@ -66,6 +66,7 @@ definitions:
       name: Build Signed Android App Bundle (AAB)
       script: |
         flutter build appbundle --release \
+          --android-skip-build-dependency-validation \
           --build-number=${PROJECT_BUILD_NUMBER:-$BUILD_NUMBER}
 
     - &build_ios_ipa
