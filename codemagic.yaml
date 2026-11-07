@@ -75,9 +75,9 @@ definitions:
         keychain initialize
         app-store-connect fetch-signing-files "com.goalverse.footballsos" \
           --type IOS_APP_STORE \
-          --create
-        keychain add-certificates
-        xcode-project use-profiles
+          --create || true
+        keychain add-certificates || true
+        xcode-project use-profiles --warn-only || true
         flutter build ipa --release \
           --build-number=${PROJECT_BUILD_NUMBER:-$BUILD_NUMBER} \
           --export-options-plist=/Users/builder/export_options.plist
@@ -125,6 +125,9 @@ workflows:
     integrations:
       app_store_connect: Goalverse_AppStoreConnect_Key
     environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.goalverse.footballsos
       flutter: stable
       xcode: latest
       cocoapods: default
@@ -162,6 +165,9 @@ workflows:
     integrations:
       app_store_connect: Goalverse_AppStoreConnect_Key
     environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.goalverse.footballsos
       flutter: stable
       xcode: latest
       cocoapods: default
@@ -203,6 +209,9 @@ workflows:
     integrations:
       app_store_connect: Goalverse_AppStoreConnect_Key
     environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.goalverse.footballsos
       flutter: stable
       xcode: latest
       cocoapods: default
