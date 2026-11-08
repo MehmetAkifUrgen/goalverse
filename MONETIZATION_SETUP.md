@@ -63,6 +63,12 @@ Her iki mağazada da **Tüketilemeyen (Non-Consumable)** uygulama içi ürün ol
 - **Android Interstitial (Geçiş) ID:** `ca-app-pub-7956816566156883/7956145437`
 - **Android Rewarded (Ödüllü) ID:** `ca-app-pub-7956816566156883/4016900428`
 
+### iOS Üretim Kimlikleri (Tanımlandı)
+- **iOS App ID:** `ca-app-pub-7956816566156883~1948094102` (`ios/Runner/Info.plist`)
+- **iOS Banner ID:** `ca-app-pub-7956816566156883/5445532168`
+- **iOS Interstitial (Geçiş) ID:** `ca-app-pub-7956816566156883/5804624814`
+- **iOS Rewarded (Ödüllü) ID:** `ca-app-pub-7956816566156883/3825328730`
+
 Geliştirme (`debug`) ve test ortamında politika ihlali oluşmaması için Google'ın resmî test reklam birimleri kullanılır:
 - Android Banner Test ID: `ca-app-pub-3940256099942544/6300978111`
 - Android Interstitial Test ID: `ca-app-pub-3940256099942544/1033173712`

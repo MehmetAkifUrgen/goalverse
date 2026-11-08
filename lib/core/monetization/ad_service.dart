@@ -21,9 +21,11 @@ import 'remote_config_service.dart';
 class AdMobConfig {
   AdMobConfig._();
 
-  // Production Google AdMob App ID (Android)
+  // Production Google AdMob App IDs
   static const String androidProdAppId =
       'ca-app-pub-7956816566156883~4078424263';
+  static const String iosProdAppId =
+      'ca-app-pub-7956816566156883~1948094102';
 
   // Production Google AdMob Ad Unit IDs (Android)
   static const String androidProdBannerId =
@@ -32,6 +34,14 @@ class AdMobConfig {
       'ca-app-pub-7956816566156883/7956145437';
   static const String androidProdRewardedId =
       'ca-app-pub-7956816566156883/4016900428';
+
+  // Production Google AdMob Ad Unit IDs (iOS)
+  static const String iosProdBannerId =
+      'ca-app-pub-7956816566156883/5445532168';
+  static const String iosProdInterstitialId =
+      'ca-app-pub-7956816566156883/5804624814';
+  static const String iosProdRewardedId =
+      'ca-app-pub-7956816566156883/3825328730';
 
   // Official Google AdMob Test App IDs
   static const String androidTestAppId =
@@ -62,7 +72,9 @@ class AdMobConfig {
         (defaultTargetPlatform == TargetPlatform.iOS ||
             defaultTargetPlatform == TargetPlatform.macOS);
     if (isIos) {
-      return prodIos.isNotEmpty ? prodIos : _iosTestBannerId;
+      if (prodIos.isNotEmpty) return prodIos;
+      if (kReleaseMode) return iosProdBannerId;
+      return _iosTestBannerId;
     }
     if (prodAndroid.isNotEmpty) return prodAndroid;
     if (kReleaseMode) return androidProdBannerId;
@@ -77,7 +89,9 @@ class AdMobConfig {
         (defaultTargetPlatform == TargetPlatform.iOS ||
             defaultTargetPlatform == TargetPlatform.macOS);
     if (isIos) {
-      return prodIos.isNotEmpty ? prodIos : _iosTestInterstitialId;
+      if (prodIos.isNotEmpty) return prodIos;
+      if (kReleaseMode) return iosProdInterstitialId;
+      return _iosTestInterstitialId;
     }
     if (prodAndroid.isNotEmpty) return prodAndroid;
     if (kReleaseMode) return androidProdInterstitialId;
@@ -92,7 +106,9 @@ class AdMobConfig {
         (defaultTargetPlatform == TargetPlatform.iOS ||
             defaultTargetPlatform == TargetPlatform.macOS);
     if (isIos) {
-      return prodIos.isNotEmpty ? prodIos : _iosTestRewardedId;
+      if (prodIos.isNotEmpty) return prodIos;
+      if (kReleaseMode) return iosProdRewardedId;
+      return _iosTestRewardedId;
     }
     if (prodAndroid.isNotEmpty) return prodAndroid;
     if (kReleaseMode) return androidProdRewardedId;
