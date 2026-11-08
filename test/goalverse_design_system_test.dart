@@ -9,28 +9,17 @@ import 'package:football_tic_tac_toe/features/home/presentation/home_page.dart';
 void main() {
   group('Goalverse Design Tokens', () {
     test('Color tokens match Football Stadium & Pitch palette', () {
-      expect(AppColors.stadiumNight, const Color(0xFF101B18));
-      expect(AppColors.background, const Color(0xFF101B18));
-      expect(AppColors.cardBackground, const Color(0xFF1A2922));
-      expect(AppColors.surface, const Color(0xFF1A2922));
-      expect(AppColors.pitchGreen, const Color(0xFF173D2B));
-      expect(AppColors.surfaceSecondary, const Color(0xFF173D2B));
-      expect(AppColors.deepForest, const Color(0xFF20543A));
-      expect(AppColors.surfaceElevated, const Color(0xFF20543A));
-      expect(AppColors.turfGreen, const Color(0xFF2D754B));
-      expect(AppColors.electricLime, const Color(0xFFC6F36B));
-      expect(AppColors.primary, const Color(0xFFC6F36B));
-      expect(AppColors.warmWhite, const Color(0xFFF5F5ED));
-      expect(AppColors.textPrimary, const Color(0xFFF5F5ED));
-      expect(AppColors.skyBlue, const Color(0xFF72B7E8));
-      expect(AppColors.secondary, const Color(0xFF72B7E8));
-      expect(AppColors.trophyGold, const Color(0xFFF3C969));
-      expect(AppColors.warning, const Color(0xFFF3C969));
-      expect(AppColors.coralRed, const Color(0xFFF07870));
-      expect(AppColors.error, const Color(0xFFF07870));
-      expect(AppColors.slateGray, const Color(0xFF82918A));
-      expect(AppColors.textMuted, const Color(0xFF82918A));
-      expect(AppColors.border, const Color(0xFF30483A));
+      expect(AppColors.background, const Color(0xFF101316));
+      expect(AppColors.surface, const Color(0xFF191E23));
+      expect(AppColors.surfaceElevated, const Color(0xFF222930));
+      expect(AppColors.primary, const Color(0xFFC9FD06));
+      expect(AppColors.primaryText, const Color(0xFF101316));
+      expect(AppColors.foreground, const Color(0xFFF5F7F8));
+      expect(AppColors.border, const Color(0xFF303940));
+      expect(AppColors.success, const Color(0xFF45C486));
+      expect(AppColors.error, const Color(0xFFE34B5F));
+      expect(AppColors.warning, const Color(0xFFF4C65E));
+      expect(AppColors.cyberCyan, const Color(0xFF38BDF8));
     });
 
     test('Typography uses Sora, Manrope, and SpaceGrotesk font families', () {

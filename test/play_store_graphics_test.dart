@@ -1,4 +1,6 @@
 @Tags(['generator'])
+library;
+
 import 'dart:io';
 import 'dart:ui' as ui;
 

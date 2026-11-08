@@ -1,108 +1,100 @@
 import 'package:flutter/material.dart';
 
-/// Centralized football-themed color tokens for Goalverse / Football SOS
-/// (Stadium Night, Pitch Green, Deep Forest, Turf Green, Electric Lime,
-/// Warm White, Sky Blue, Trophy Gold, Coral Red, and Slate Gray).
+/// Centralized color tokens for Goalverse / Football SOS
+/// (Layered Charcoal surfaces, high-contrast Neon Volt focal accents,
+/// clean borders, and tactical pitch depth).
 class AppColors {
   AppColors._();
 
-  // Primary Football Stadium & Pitch Surfaces
-  static const Color backgroundDeep = Color(0xFF0B1311);
-  static const Color stadiumNight = Color(0xFF101B18); // Primary Background
-  static const Color background = stadiumNight; // #101B18
-  static const Color cardBackground = Color(0xFF1A2922); // Card Surface
-  static const Color surface = cardBackground; // #1A2922
-  static const Color pitchGreen = Color(0xFF173D2B); // Pitch Base Surface
-  static const Color surfaceSecondary = pitchGreen; // #173D2B
-  static const Color surfaceSubtle = Color(0xFF15241D);
-  static const Color deepForest = Color(0xFF20543A); // Elevated Pitch Surface
-  static const Color surfaceElevated = deepForest; // #20543A
-  static const Color turfGreen = Color(
-    0xFF2D754B,
-  ); // Active Turf / Cell Highlight
-  static const Color surfaceHigh = turfGreen; // #2D754B
+  // Core Dark Surfaces (Layered Charcoal & Pitch Depth)
+  static const Color backgroundDeep = Color(0xFF0B0D10);
+  static const Color background = Color(0xFF101316); // #101316
+  static const Color stadiumNight = background;
+  static const Color surfaceSubtle = Color(0xFF15191E);
+  static const Color surface = Color(0xFF191E23); // #191E23
+  static const Color cardBackground = surface;
+  static const Color surfaceSecondary = Color(0xFF1E252D);
+  static const Color surfaceElevated = Color(0xFF222930); // #222930
+  static const Color surfaceHigh = Color(0xFF2A323B);
 
-  // Football Brand & Accent Tokens
-  static const Color electricLime = Color(0xFFC6F36B); // Primary Accent
-  static const Color skyBlue = Color(0xFF72B7E8); // Opponent / Secondary Accent
-  static const Color trophyGold = Color(0xFFF3C969); // Series / Trophy / Draw
-  static const Color coralRed = Color(0xFFF07870); // Error / Wrong / Danger
+  // Tactical Pitch Accents
+  static const Color pitchGreen = Color(0xFF152219);
+  static const Color deepForest = Color(0xFF1C2F23);
+  static const Color turfGreen = Color(0xFF244030);
 
-  // Backwards-compatible aliases mapped to the football palette
-  static const Color electricCoral = electricLime;
-  static const Color arcticMint = turfGreen;
-  static const Color softViolet = skyBlue;
-  static const Color warmAmber = trophyGold;
+  // Brand & Semantic Tokens
+  static const Color primary = Color(0xFFC9FD06); // Neon Volt — #C9FD06
+  static const Color secondary = Color(0xFF38BDF8);
+  static const Color electricLime = primary;
+  static const Color electricCoral = primary;
+  static const Color primaryText = Color(0xFF101316);
+  static const Color foreground = Color(0xFFF5F7F8);
+  static const Color warmWhite = foreground;
+  static const Color textPrimary = foreground;
+  static const Color muted = Color(0xFFA0A8AF);
+  static const Color textSecondary = muted;
+  static const Color mutedSubtle = Color(0xFF6E7781);
+  static const Color textMuted = mutedSubtle;
+  static const Color slateGray = mutedSubtle;
 
-  static const Color primary = electricLime; // #C6F36B
-  static const Color secondary = skyBlue; // #72B7E8
-  static const Color primaryText = stadiumNight; // #101B18 on Electric Lime
+  // Borders & Dividers (Low-contrast, never neon green on ordinary cards)
+  static const Color borderSubtle = Color(0xFF232B32);
+  static const Color border = Color(0xFF303940); // #303940
+  static const Color borderStrong = Color(0xFF3E4952);
 
-  // Typography Colors
-  static const Color warmWhite = Color(0xFFF5F5ED); // Primary Text
-  static const Color slateGray = Color(0xFF82918A); // Secondary / Muted Text
-  static const Color textPrimary = warmWhite; // #F5F5ED
-  static const Color textSecondary = Color(0xFFB8C7BF);
-  static const Color textMuted = slateGray; // #82918A
+  // Status & Game Mode Accents
+  static const Color success = Color(0xFF45C486);
+  static const Color error = Color(0xFFE34B5F);
+  static const Color coralRed = error;
+  static const Color warning = Color(0xFFF4C65E);
+  static const Color trophyGold = warning;
+  static const Color warmAmber = warning;
+  static const Color info = Color(0xFF38BDF8);
+  static const Color skyBlue = info;
+  static const Color cyberCyan = info;
+  static const Color aiAccent = Color(0xFF9279EB);
+  static const Color softViolet = aiAccent;
+  static const Color flameOrange = Color(0xFFFF7A2F);
+  static const Color arcticMint = success;
 
-  static const Color foreground = textPrimary;
-  static const Color muted = textSecondary;
-  static const Color mutedSubtle = textMuted;
-
-  // Borders & Pitch Lines
-  static const Color borderSubtle = Color(0xFF24382D);
-  static const Color border = Color(0xFF30483A); // #30483A
-  static const Color borderStrong = Color(0xFF426651);
-
-  // Semantic Colors
-  static const Color success = electricLime; // #C6F36B
-  static const Color error = coralRed; // #F07870
-  static const Color warning = trophyGold; // #F3C969
-  static const Color info = skyBlue; // #72B7E8
-
-  // Mode & Feature Accent Aliases
-  static const Color aiAccent = skyBlue;
-  static const Color cyberCyan = skyBlue;
-  static const Color flameOrange = coralRed;
-
-  // Light Mode Counterparts (Harmonized Warm Pitch Daylight & Stadium Slate)
-  static const Color lightBackground = Color(0xFFF3F5EF);
+  // Light Mode Counterparts
+  static const Color lightBackground = Color(0xFFF3F5F7);
   static const Color lightSurface = Color(0xFFFFFFFF);
-  static const Color lightSurfaceElevated = Color(0xFFE6ECE8);
-  static const Color lightBorder = Color(0xFFCBD8CF);
-  static const Color lightForeground = Color(0xFF101B18);
-  static const Color lightMuted = Color(0xFF4E6158);
+  static const Color lightSurfaceElevated = Color(0xFFEAEFF3);
+  static const Color lightBorder = Color(0xFFD5DCE2);
+  static const Color lightForeground = Color(0xFF101316);
+  static const Color lightMuted = Color(0xFF5C6670);
   static const Color lightTextPrimary = lightForeground;
   static const Color lightTextSecondary = lightMuted;
 
-  // Controlled Football Pitch Gradients
+  // Controlled Gradients (Used selectively for hero & featured canvases)
   static const LinearGradient heroPitchGradient = LinearGradient(
-    colors: [Color(0xFF20543A), Color(0xFF173D2B), Color(0xFF101B18)],
+    colors: [Color(0xFF1A2218), Color(0xFF14191F), Color(0xFF111519)],
     stops: [0.0, 0.55, 1.0],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
+  static const LinearGradient surfaceDepthGradient = LinearGradient(
+    colors: [Color(0xFF1E242B), Color(0xFF161B20)],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
   static const LinearGradient coralAccentGradient = LinearGradient(
-    colors: [Color(0xFFC6F36B), Color(0xFF9ED844)],
+    colors: [Color(0xFFC9FD06), Color(0xFFA4D005)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
   static const LinearGradient mintAccentGradient = LinearGradient(
-    colors: [Color(0xFF2D754B), Color(0xFF20543A)],
+    colors: [Color(0xFF45C486), Color(0xFF2E9E67)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
   static const LinearGradient violetAccentGradient = LinearGradient(
-    colors: [Color(0xFF72B7E8), Color(0xFF4D94C7)],
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-  );
-
-  static const LinearGradient surfaceDepthGradient = LinearGradient(
-    colors: [Color(0xFF20543A), Color(0xFF1A2922)],
+    colors: [Color(0xFF9279EB), Color(0xFF7052DE)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
