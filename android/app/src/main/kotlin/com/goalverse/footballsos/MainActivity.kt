@@ -1,4 +1,4 @@
-package com.example.football_tic_tac_toe
+package com.goalverse.footballsos
 
 import io.flutter.embedding.android.FlutterActivity
 
