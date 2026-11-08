@@ -57,7 +57,13 @@ Her iki mağazada da **Tüketilemeyen (Non-Consumable)** uygulama içi ürün ol
 
 ## 3. Google AdMob Yapılandırması
 
-Geliştirme ortamında [`AdMobConfig`](lib/core/monetization/ad_service.dart) içerisinde Google'ın resmî test reklam birimleri tanımlıdır:
+### Android Üretim Kimlikleri (Tanımlandı)
+- **Android App ID:** `ca-app-pub-7956816566156883~4078424263` (`android/app/src/main/AndroidManifest.xml`)
+- **Android Banner ID:** `ca-app-pub-7956816566156883/1779563982`
+- **Android Interstitial (Geçiş) ID:** `ca-app-pub-7956816566156883/7956145437`
+- **Android Rewarded (Ödüllü) ID:** `ca-app-pub-7956816566156883/4016900428`
+
+Geliştirme (`debug`) ve test ortamında politika ihlali oluşmaması için Google'ın resmî test reklam birimleri kullanılır:
 - Android Banner Test ID: `ca-app-pub-3940256099942544/6300978111`
 - Android Interstitial Test ID: `ca-app-pub-3940256099942544/1033173712`
 - Android Rewarded Test ID: `ca-app-pub-3940256099942544/5224354917`
@@ -66,13 +72,13 @@ Geliştirme ortamında [`AdMobConfig`](lib/core/monetization/ad_service.dart) i�
 - iOS Rewarded Test ID: `ca-app-pub-3940256099942544/1712485313`
 
 Canlı yayına geçerken:
-1. [`android/app/src/main/AndroidManifest.xml`](android/app/src/main/AndroidManifest.xml) içindeki `com.google.android.gms.ads.APPLICATION_ID` değerini kendi AdMob Android App ID'niz ile değiştirin.
-2. [`ios/Runner/Info.plist`](ios/Runner/Info.plist) içindeki `GADApplicationIdentifier` değerini kendi AdMob iOS App ID'niz ile değiştirin.
-3. Reklam birim kimliklerini `--dart-define` ile geçin:
+1. Android konfigürasyonu doğrudan projeye entegre edilmiştir. Release derlemelerinde otomatik devreye girer.
+2. iOS için AdMob iOS App ID ve Ad Unit ID'leri eklendiğinde `ios/Runner/Info.plist` ve `ad_service.dart` güncellenecektir.
+3. İsteğe bağlı olarak CI/CD ortamında `--dart-define` ile de ezilebilir:
    ```bash
-   --dart-define=ADMOB_ANDROID_BANNER_ID=ca-app-pub-xxxx/xxxx
-   --dart-define=ADMOB_ANDROID_INTERSTITIAL_ID=ca-app-pub-xxxx/xxxx
-   --dart-define=ADMOB_ANDROID_REWARDED_ID=ca-app-pub-xxxx/xxxx
+   --dart-define=ADMOB_ANDROID_BANNER_ID=ca-app-pub-7956816566156883/1779563982
+   --dart-define=ADMOB_ANDROID_INTERSTITIAL_ID=ca-app-pub-7956816566156883/7956145437
+   --dart-define=ADMOB_ANDROID_REWARDED_ID=ca-app-pub-7956816566156883/4016900428
    --dart-define=ADMOB_IOS_BANNER_ID=ca-app-pub-xxxx/xxxx
    --dart-define=ADMOB_IOS_INTERSTITIAL_ID=ca-app-pub-xxxx/xxxx
    --dart-define=ADMOB_IOS_REWARDED_ID=ca-app-pub-xxxx/xxxx

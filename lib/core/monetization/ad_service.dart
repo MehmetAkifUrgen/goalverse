@@ -21,6 +21,18 @@ import 'remote_config_service.dart';
 class AdMobConfig {
   AdMobConfig._();
 
+  // Production Google AdMob App ID (Android)
+  static const String androidProdAppId =
+      'ca-app-pub-7956816566156883~4078424263';
+
+  // Production Google AdMob Ad Unit IDs (Android)
+  static const String androidProdBannerId =
+      'ca-app-pub-7956816566156883/1779563982';
+  static const String androidProdInterstitialId =
+      'ca-app-pub-7956816566156883/7956145437';
+  static const String androidProdRewardedId =
+      'ca-app-pub-7956816566156883/4016900428';
+
   // Official Google AdMob Test App IDs
   static const String androidTestAppId =
       'ca-app-pub-3940256099942544~3347511713';
@@ -52,7 +64,9 @@ class AdMobConfig {
     if (isIos) {
       return prodIos.isNotEmpty ? prodIos : _iosTestBannerId;
     }
-    return prodAndroid.isNotEmpty ? prodAndroid : _androidTestBannerId;
+    if (prodAndroid.isNotEmpty) return prodAndroid;
+    if (kReleaseMode) return androidProdBannerId;
+    return _androidTestBannerId;
   }
 
   static String get interstitialAdUnitId {
@@ -65,7 +79,9 @@ class AdMobConfig {
     if (isIos) {
       return prodIos.isNotEmpty ? prodIos : _iosTestInterstitialId;
     }
-    return prodAndroid.isNotEmpty ? prodAndroid : _androidTestInterstitialId;
+    if (prodAndroid.isNotEmpty) return prodAndroid;
+    if (kReleaseMode) return androidProdInterstitialId;
+    return _androidTestInterstitialId;
   }
 
   static String get rewardedAdUnitId {
@@ -78,7 +94,9 @@ class AdMobConfig {
     if (isIos) {
       return prodIos.isNotEmpty ? prodIos : _iosTestRewardedId;
     }
-    return prodAndroid.isNotEmpty ? prodAndroid : _androidTestRewardedId;
+    if (prodAndroid.isNotEmpty) return prodAndroid;
+    if (kReleaseMode) return androidProdRewardedId;
+    return _androidTestRewardedId;
   }
 }
 
