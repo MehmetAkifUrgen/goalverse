@@ -16,11 +16,11 @@ import '../../game/presentation/online_lobby_dialog.dart';
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
-  String _divisionName(int rating) {
-    if (rating >= 1400) return 'Efsane Lig';
-    if (rating >= 1200) return 'Elit Lig';
-    if (rating >= 1050) return 'Pro Lig';
-    return 'Başlangıç Ligi';
+  String _divisionName(int rating, AppLocalizations l10n) {
+    if (rating >= 1400) return l10n.leagueLegend;
+    if (rating >= 1200) return l10n.leagueElite;
+    if (rating >= 1050) return l10n.leaguePro;
+    return l10n.leagueStarter;
   }
 
   int _calculateLevel(int gamesPlayed, int wins) {
@@ -64,7 +64,7 @@ class HomePage extends ConsumerWidget {
         ? user!.displayName!
         : (user?.email?.isNotEmpty ?? false)
         ? user!.email!.split('@').first
-        : 'Goalverse Kaptanı';
+        : l10n.defaultCaptainName;
 
     final level = _calculateLevel(stats.gamesPlayed, stats.wins);
     final levelProgress = _calculateLevelProgress(
@@ -72,7 +72,7 @@ class HomePage extends ConsumerWidget {
       stats.wins,
     );
     final currentXp = _calculateCurrentXp(stats.gamesPlayed, stats.wins);
-    final division = _divisionName(stats.rating);
+    final division = _divisionName(stats.rating, l10n);
 
     return Scaffold(
       extendBody: false,
@@ -153,10 +153,10 @@ class HomePage extends ConsumerWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          const _SectionHeader(
-                            title: 'Öne Çıkan Modlar',
-                            subtitle: 'Goalverse imza rekabet deneyimleri',
-                            badgeText: 'POPÜLER',
+                          _SectionHeader(
+                            title: l10n.featuredModes,
+                            subtitle: l10n.featuredModesSubtitle,
+                            badgeText: l10n.badgePopular,
                             badgeColor: AppColors.electricCoral,
                           ),
                           const SizedBox(height: AppSpacing.s12),
@@ -165,10 +165,9 @@ class HomePage extends ConsumerWidget {
                               final isCompact = constraints.maxWidth < 560;
                               final sosCard = FeaturedGameCard(
                                 title: 'Football SOS',
-                                subtitle:
-                                    '3×3 kulüp kesişim tablosunda ortak yıldızları bul, üçlü çizgiyi tamamla.',
-                                durationLabel: '30 sn',
-                                modeLabel: '1v1 • Solo • Online',
+                                subtitle: l10n.sosCardSubtitle,
+                                durationLabel: l10n.thirtySeconds,
+                                modeLabel: l10n.oneVsOneSoloOnline,
                                 isPrimaryHighlight: true,
                                 accentColor: AppColors.electricCoral,
                                 graphic: const MiniSosGridGraphic(size: 72),
@@ -180,10 +179,9 @@ class HomePage extends ConsumerWidget {
                               );
                               final ratingCard = FeaturedGameCard(
                                 title: 'Rating Battle',
-                                subtitle:
-                                    'Overall, piyasa değeri ve kariyer gollerinde üstün olan kartı seç.',
-                                durationLabel: '15 sn',
-                                modeLabel: 'Higher / Lower',
+                                subtitle: l10n.ratingBattleSubtitle,
+                                durationLabel: l10n.fifteenSeconds,
+                                modeLabel: l10n.higherLower,
                                 isPrimaryHighlight: false,
                                 accentColor: AppColors.arcticMint,
                                 graphic: const FutMiniCardGraphic(size: 72),
@@ -226,10 +224,10 @@ class HomePage extends ConsumerWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          const _SectionHeader(
-                            title: 'Arcade Modları',
-                            subtitle: 'Farklı kurallarla futbol kültürünü sına',
-                            badgeText: '5 MOD',
+                          _SectionHeader(
+                            title: l10n.arcadeModes,
+                            subtitle: l10n.arcadeModesSubtitle,
+                            badgeText: l10n.badgeModesCount,
                             badgeColor: AppColors.softViolet,
                           ),
                           const SizedBox(height: AppSpacing.s12),
@@ -244,12 +242,11 @@ class HomePage extends ConsumerWidget {
 
                               final modes = [
                                 GameModeCard(
-                                  title: '2 Takım 1 Oyuncu',
-                                  subtitle:
-                                      'İki dev kulüpte de forma giymiş ortak yıldız futbolcuyu bul.',
-                                  playerCountLabel: '1-2P • Online',
-                                  durationLabel: '25 sn',
-                                  statusLabel: 'Ortak Yıldız',
+                                  title: l10n.twoTeamsTitle,
+                                  subtitle: l10n.twoTeamsSubtitle,
+                                  playerCountLabel: l10n.oneToTwoOnlineLabel,
+                                  durationLabel: l10n.twentyFiveSeconds,
+                                  statusLabel: l10n.twoTeamsStatus,
                                   accentColor: AppColors.info,
                                   illustration:
                                       const TwoTeamsBridgeIllustration(
@@ -262,12 +259,11 @@ class HomePage extends ConsumerWidget {
                                   ),
                                 ),
                                 GameModeCard(
-                                  title: 'Ben Kimim?',
-                                  subtitle:
-                                      'Zordan kolaya açılan 5 kariyer ipucuyla gizli efsaneyi tahmin et.',
-                                  playerCountLabel: '1-2P • Online',
-                                  durationLabel: '5 İpucu',
-                                  statusLabel: 'Gizemli Kart',
+                                  title: l10n.whoAmITitle,
+                                  subtitle: l10n.whoAmISubtitle,
+                                  playerCountLabel: l10n.oneToTwoOnlineLabel,
+                                  durationLabel: l10n.fiveClues,
+                                  statusLabel: l10n.whoAmIStatus,
                                   accentColor: AppColors.warmAmber,
                                   illustration:
                                       const WhoAmISilhouetteIllustration(
@@ -280,12 +276,11 @@ class HomePage extends ConsumerWidget {
                                   ),
                                 ),
                                 GameModeCard(
-                                  title: 'Imposter (Ajan)',
-                                  subtitle:
-                                      '4 futbolcu arasından hedef kulüpte hiç oynamamış sahtekârı yakala.',
-                                  playerCountLabel: '1-2P • Online',
-                                  durationLabel: '20 sn',
-                                  statusLabel: '1 Sahtekâr',
+                                  title: l10n.imposterTitle,
+                                  subtitle: l10n.imposterSubtitle,
+                                  playerCountLabel: l10n.oneToTwoOnlineLabel,
+                                  durationLabel: l10n.twentySeconds,
+                                  statusLabel: l10n.imposterStatus,
                                   accentColor: AppColors.error,
                                   illustration: const ImposterRadarIllustration(
                                     size: 56,
@@ -297,12 +292,11 @@ class HomePage extends ConsumerWidget {
                                   ),
                                 ),
                                 GameModeCard(
-                                  title: 'Transfer Yolu',
-                                  subtitle:
-                                      'Kronolojik kulüp geçmişini ve sezonları takip ederek oyuncuyu bul.',
-                                  playerCountLabel: '1-2P • Online',
-                                  durationLabel: '3+ Kulüp',
-                                  statusLabel: 'Kariyer Rotası',
+                                  title: l10n.transferPathTitle,
+                                  subtitle: l10n.transferPathSubtitle,
+                                  playerCountLabel: l10n.oneToTwoOnlineLabel,
+                                  durationLabel: l10n.threePlusClubs,
+                                  statusLabel: l10n.transferPathStatus,
                                   accentColor: AppColors.softViolet,
                                   illustration:
                                       const TransferTimelineIllustration(
@@ -315,12 +309,11 @@ class HomePage extends ConsumerWidget {
                                   ),
                                 ),
                                 GameModeCard(
-                                  title: 'Futbol Bombası',
-                                  subtitle:
-                                      'Bomba patlamadan kulüp veya ülke şartına uyan futbolcuyu söyle.',
-                                  playerCountLabel: '1-8P • Parti',
-                                  durationLabel: '18 sn',
-                                  statusLabel: 'Geri Sayım',
+                                  title: l10n.footballBombTitle,
+                                  subtitle: l10n.footballBombSubtitle,
+                                  playerCountLabel: l10n.partyModeLabel,
+                                  durationLabel: l10n.eighteenSeconds,
+                                  statusLabel: l10n.footballBombStatus,
                                   accentColor: AppColors.electricCoral,
                                   illustration: const BombCountdownIllustration(
                                     size: 56,
@@ -377,10 +370,10 @@ class HomePage extends ConsumerWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          const _SectionHeader(
-                            title: 'Günlük Görev & Sıralama',
-                            subtitle: 'Ödülleri topla, global podyuma yüksel',
-                            badgeText: 'SEZON 1',
+                          _SectionHeader(
+                            title: l10n.dailyAndRanking,
+                            subtitle: l10n.dailyAndRankingSubtitle,
+                            badgeText: l10n.seasonOne,
                             badgeColor: AppColors.warmAmber,
                           ),
                           const SizedBox(height: AppSpacing.s12),
@@ -389,8 +382,7 @@ class HomePage extends ConsumerWidget {
                               final isCompact = constraints.maxWidth < 580;
                               final dailyCard = ChallengeCard(
                                 title: l10n.dailyChallenge,
-                                subtitle:
-                                    'Günün özel 3×3 kulüp tablosunu tamamla ve ekstra ödül kazan.',
+                                subtitle: l10n.dailyChallengeSubtitle,
                                 rewardLabel: '+150 XP • 1.5x ELO',
                                 completedCount: stats.wins > 0 ? 1 : 0,
                                 totalCount: 1,
@@ -490,6 +482,7 @@ class _PlayerCommandHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
@@ -656,14 +649,14 @@ class _PlayerCommandHeader extends StatelessWidget {
               const SizedBox(width: 8),
               IconActionButton(
                 icon: Icons.tune_rounded,
-                tooltip: 'Ayarlar',
+                tooltip: l10n.settings,
                 size: 38,
                 onTap: onSettingsTap,
               ),
               const SizedBox(width: 6),
               IconActionButton(
                 icon: Icons.logout_rounded,
-                tooltip: 'Çıkış Yap',
+                tooltip: l10n.logout,
                 size: 38,
                 onTap: onLogoutTap,
               ),
@@ -699,7 +692,7 @@ class _PlayerCommandHeader extends StatelessWidget {
                   child: _MetricInlinePill(
                     icon: Icons.shield_outlined,
                     iconColor: AppColors.softViolet,
-                    label: 'Lig',
+                    label: l10n.leagueLabel,
                     value: division,
                     isNumeric: false,
                   ),
@@ -715,8 +708,8 @@ class _PlayerCommandHeader extends StatelessWidget {
                   child: _MetricInlinePill(
                     icon: Icons.local_fire_department_rounded,
                     iconColor: AppColors.warmAmber,
-                    label: 'Seri',
-                    value: '$streak Maç',
+                    label: l10n.streakLabel,
+                    value: l10n.streakMatchesCount(streak),
                   ),
                 ),
               ],
@@ -807,6 +800,7 @@ class _GoalverseHeroStage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
@@ -902,7 +896,7 @@ class _GoalverseHeroStage extends StatelessWidget {
                               const SizedBox(width: 6),
                               Flexible(
                                 child: Text(
-                                  '${AppConstants.appBrandUpper} • SEZON 1 DERBİ HAFTASI',
+                                  '${AppConstants.appBrandUpper} • ${l10n.seasonDerbyWeek}',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: AppTypography.label(
@@ -923,7 +917,7 @@ class _GoalverseHeroStage extends StatelessWidget {
 
                   // Sora ExtraBold Hero Headline
                   Text(
-                    'Sahaya Çık,\nFutbol Bilgini Kanıtla.',
+                    l10n.heroHeadline,
                     style: AppTypography.displayLarge(
                       fontSize: 30,
                       color: isDark
@@ -937,7 +931,7 @@ class _GoalverseHeroStage extends StatelessWidget {
                   ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 480),
                     child: Text(
-                      'Goalverse futbol oyun evreninde tek başına pratik yap, canlı 1v1 eşleşmeye gir veya 6 haneli özel oda kurarak arkadaşlarınla düello at.',
+                      l10n.heroSubtitle,
                       style: AppTypography.bodyMedium(
                         color: isDark
                             ? AppColors.textSecondary
@@ -957,14 +951,14 @@ class _GoalverseHeroStage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             ArenaButton(
-                              label: 'Solo Oyna',
+                              label: l10n.soloPlay,
                               icon: Icons.play_arrow_rounded,
                               onTap: onSoloPlay,
                               expand: true,
                             ),
                             const SizedBox(height: AppSpacing.s8),
                             SecondaryButton(
-                              label: 'Online Eşleşme',
+                              label: l10n.onlineMatch,
                               icon: Icons.wifi_tethering_rounded,
                               iconColor: AppColors.arcticMint,
                               onTap: onOnlinePlay,
@@ -977,7 +971,7 @@ class _GoalverseHeroStage extends StatelessWidget {
                         children: [
                           Expanded(
                             child: ArenaButton(
-                              label: 'Solo Oyna',
+                              label: l10n.soloPlay,
                               icon: Icons.play_arrow_rounded,
                               onTap: onSoloPlay,
                               expand: true,
@@ -986,7 +980,7 @@ class _GoalverseHeroStage extends StatelessWidget {
                           const SizedBox(width: AppSpacing.s12),
                           Expanded(
                             child: SecondaryButton(
-                              label: 'Online Eşleşme',
+                              label: l10n.onlineMatch,
                               icon: Icons.wifi_tethering_rounded,
                               iconColor: AppColors.arcticMint,
                               onTap: onOnlinePlay,
@@ -1006,7 +1000,7 @@ class _GoalverseHeroStage extends StatelessWidget {
                       Expanded(
                         child: _HeroRoomActionPill(
                           icon: Icons.add_circle_outline_rounded,
-                          label: 'Özel Oda Kur',
+                          label: l10n.createPrivateRoom,
                           accentColor: AppColors.softViolet,
                           onTap: onCreateRoom,
                         ),
@@ -1015,7 +1009,7 @@ class _GoalverseHeroStage extends StatelessWidget {
                       Expanded(
                         child: _HeroRoomActionPill(
                           icon: Icons.dialpad_rounded,
-                          label: 'Oda Koduna Katıl',
+                          label: l10n.joinWithCode,
                           accentColor: AppColors.warmAmber,
                           onTap: onJoinRoom,
                         ),
@@ -1153,6 +1147,7 @@ class FeaturedGameCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return PressableScale(
@@ -1241,7 +1236,7 @@ class FeaturedGameCard extends StatelessWidget {
                           ),
                           const SizedBox(width: 5),
                           Text(
-                            'Hemen Oyna',
+                            l10n.playNow,
                             style: AppTypography.button(
                               fontSize: 13.5,
                               color: AppColors.primaryText,
@@ -1281,7 +1276,7 @@ class FeaturedGameCard extends StatelessWidget {
                         ),
                         const SizedBox(width: 6),
                         Text(
-                          'Canlı 1v1',
+                          l10n.liveOneVsOne,
                           style: AppTypography.label(
                             fontSize: 12.5,
                             color: isDark
@@ -1333,6 +1328,7 @@ class GameModeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return PressableScale(
@@ -1436,7 +1432,7 @@ class GameModeCard extends StatelessWidget {
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
-                                      'Oda',
+                                      l10n.roomPlayAction,
                                       style: AppTypography.label(
                                         fontSize: 11.5,
                                         color: isDark
@@ -1454,7 +1450,7 @@ class GameModeCard extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Oyna',
+                                l10n.playAction,
                                 style: AppTypography.label(
                                   fontSize: 12,
                                   color: accentColor,
@@ -1505,6 +1501,7 @@ class ChallengeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isDone = completedCount >= totalCount;
     final progress = totalCount > 0 ? completedCount / totalCount : 0.0;
@@ -1580,7 +1577,7 @@ class ChallengeCard extends StatelessWidget {
                     borderRadius: AppRadius.pillBorder,
                   ),
                   child: Text(
-                    isDone ? 'TAMAMLANDI' : 'AKTİF GÖREV',
+                    isDone ? l10n.completedBadge : l10n.activeQuest,
                     style: AppTypography.label(
                       fontSize: 10.5,
                       color: isDone
@@ -1613,7 +1610,7 @@ class ChallengeCard extends StatelessWidget {
                 ),
                 const SizedBox(width: 10),
                 Text(
-                  isDone ? 'Ödül Alındı ✓' : 'Görevi Başlat →',
+                  isDone ? l10n.rewardClaimed : '${l10n.startQuest} →',
                   style: AppTypography.label(
                     fontSize: 11.5,
                     color: isDone ? AppColors.arcticMint : AppColors.warmAmber,
@@ -1649,6 +1646,7 @@ class LeaderboardCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return PressableScale(
@@ -1698,7 +1696,7 @@ class LeaderboardCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 2),
                       Text(
-                        'Global Top 100 & Sezon Podyumu',
+                        l10n.leaderboardSubtitle,
                         style: AppTypography.description(
                           fontSize: 12,
                           color: isDark
@@ -1718,29 +1716,29 @@ class LeaderboardCard extends StatelessWidget {
             const SizedBox(height: 12),
             // Mini Top 3 Podium Hierarchy
             Row(
-              children: const [
+              children: [
                 Expanded(
                   child: _MiniPodiumBadge(
                     rank: 1,
-                    label: '#1 Elit',
+                    label: '#1 ${l10n.rankElite}',
                     elo: '1840',
                     color: AppColors.warmAmber,
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Expanded(
                   child: _MiniPodiumBadge(
                     rank: 2,
-                    label: '#2 Kaptan',
+                    label: '#2 ${l10n.rankCaptain}',
                     elo: '1765',
                     color: AppColors.info,
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Expanded(
                   child: _MiniPodiumBadge(
                     rank: 3,
-                    label: '#3 Yıldız',
+                    label: '#3 ${l10n.rankStar}',
                     elo: '1690',
                     color: AppColors.softViolet,
                   ),
@@ -1762,7 +1760,7 @@ class LeaderboardCard extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Text(
-                      'Sen: $userName ($userDivision)',
+                      '${l10n.youPlayerPrefix}: $userName ($userDivision)',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: AppTypography.label(
@@ -1974,6 +1972,12 @@ class GoalverseBottomNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final arenaLabel = l10n?.navArena ?? 'ARENA';
+    final onlineLabel = l10n?.navOnline ?? 'ONLINE';
+    final dailyLabel = l10n?.navDaily ?? 'DAILY';
+    final rankingLabel = l10n?.navRanking ?? 'RANKING';
+    final profileLabel = l10n?.navProfile ?? 'PROFILE';
     // Uses Column(mainAxisSize: MainAxisSize.min) inside DecoratedBox + SafeArea
     // so it strictly occupies only its intrinsic bottom height (never expanding
     // vertically into the middle of the screen).
@@ -1997,7 +2001,7 @@ class GoalverseBottomNav extends StatelessWidget {
               Expanded(
                 child: _NavTabItem(
                   icon: Icons.sports_soccer_rounded,
-                  label: 'ARENA',
+                  label: arenaLabel,
                   active: activeIndex == 0,
                   onTap: onArenaTap,
                 ),
@@ -2005,7 +2009,7 @@ class GoalverseBottomNav extends StatelessWidget {
               Expanded(
                 child: _NavTabItem(
                   icon: Icons.wifi_tethering_rounded,
-                  label: 'ONLINE',
+                  label: onlineLabel,
                   active: activeIndex == 1,
                   onTap: onOnlineTap,
                 ),
@@ -2013,7 +2017,7 @@ class GoalverseBottomNav extends StatelessWidget {
               Expanded(
                 child: _NavTabItem(
                   icon: Icons.calendar_today_rounded,
-                  label: 'DAILY',
+                  label: dailyLabel,
                   active: activeIndex == 2,
                   onTap: onDailyTap,
                 ),
@@ -2021,7 +2025,7 @@ class GoalverseBottomNav extends StatelessWidget {
               Expanded(
                 child: _NavTabItem(
                   icon: Icons.emoji_events_rounded,
-                  label: 'RANKING',
+                  label: rankingLabel,
                   active: activeIndex == 3,
                   onTap: onRankingTap,
                 ),
@@ -2029,7 +2033,7 @@ class GoalverseBottomNav extends StatelessWidget {
               Expanded(
                 child: _NavTabItem(
                   icon: Icons.person_outline_rounded,
-                  label: 'PROFILE',
+                  label: profileLabel,
                   active: activeIndex == 4,
                   onTap: onProfileTap,
                 ),

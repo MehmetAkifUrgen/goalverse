@@ -117,7 +117,7 @@ class SettingsPage extends ConsumerWidget {
 
                 // Game Difficulty, Sound & Haptics Section
                 _SectionHeader(
-                  title: '${l10n.difficulty} & Kontroller',
+                  title: l10n.difficultyAndControls,
                   icon: Icons.tune_outlined,
                 ),
                 Card(
@@ -150,7 +150,10 @@ class SettingsPage extends ConsumerWidget {
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Text(
-                                    'Süre: ${settings.turnSeconds}sn • Çarpan: ${settings.scoreMultiplier}x',
+                                    l10n.turnDurationAndMultiplier(
+                                      settings.turnSeconds,
+                                      settings.scoreMultiplier.toString(),
+                                    ),
                                     style: const TextStyle(
                                       fontSize: 11,
                                       fontWeight: FontWeight.w900,
@@ -192,10 +195,8 @@ class SettingsPage extends ConsumerWidget {
                       const Divider(height: 1),
                       SwitchListTile(
                         secondary: const Icon(Icons.vibration_rounded),
-                        title: const Text('Titreşim (Haptic Geri Bildirim)'),
-                        subtitle: const Text(
-                          'Doğru ve yanlış tahminlerde dokunsal geri bildirim',
-                        ),
+                        title: Text(l10n.hapticsTitle),
+                        subtitle: Text(l10n.hapticsSubtitle),
                         value: settings.hapticsEnabled,
                         onChanged: (val) =>
                             settingsNotifier.setHapticsEnabled(val),
@@ -203,10 +204,8 @@ class SettingsPage extends ConsumerWidget {
                       const Divider(height: 1),
                       SwitchListTile(
                         secondary: const Icon(Icons.volume_up_outlined),
-                        title: const Text('Ses Efektleri'),
-                        subtitle: const Text(
-                          'Stadyum ve maç içi ses efektleri',
-                        ),
+                        title: Text(l10n.soundEffectsTitle),
+                        subtitle: Text(l10n.soundEffectsSubtitle),
                         value: settings.soundEnabled,
                         onChanged: (val) =>
                             settingsNotifier.setSoundEnabled(val),
@@ -322,9 +321,7 @@ class SettingsPage extends ConsumerWidget {
                             Icons.lock_reset_rounded,
                             color: AppTheme.primary,
                           ),
-                          title: const Text(
-                            'Şifre Sıfırlama Bağlantısı Gönder',
-                          ),
+                          title: Text(l10n.sendPasswordResetLink),
                           subtitle: Text(user.email ?? ''),
                           trailing: const Icon(Icons.chevron_right),
                           onTap: () => ForgotPasswordScreen.showSheet(
@@ -360,16 +357,14 @@ class SettingsPage extends ConsumerWidget {
                             Icons.delete_forever_rounded,
                             color: AppTheme.crimsonStrike,
                           ),
-                          title: const Text(
-                            'Hesabı Kalıcı Olarak Sil',
-                            style: TextStyle(
+                          title: Text(
+                            l10n.deleteAccountPermanently,
+                            style: const TextStyle(
                               color: AppTheme.crimsonStrike,
                               fontWeight: FontWeight.w800,
                             ),
                           ),
-                          subtitle: const Text(
-                            'Profil verilerinizi ve hesabınızı kalıcı olarak siler',
-                          ),
+                          subtitle: Text(l10n.deleteAccountSubtitle),
                           onTap: () => _showDeleteAccountDialog(
                             context,
                             ref,
@@ -454,14 +449,12 @@ class SettingsPage extends ConsumerWidget {
       context: context,
       builder: (ctx) => StatefulBuilder(
         builder: (ctx, setDialogState) => AlertDialog(
-          title: const Text('Hesabı Kalıcı Olarak Sil'),
+          title: Text(l10n.deleteAccountPermanently),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Text(
-                'Bu işlem geri alınamaz. ELO puanınız, galibiyet geçmişiniz ve kullanıcı profiliniz kalıcı olarak silinecektir.',
-              ),
+              Text(l10n.deleteAccountWarning),
               if (requirePassword) ...[
                 const SizedBox(height: 16),
                 TextField(
@@ -469,7 +462,7 @@ class SettingsPage extends ConsumerWidget {
                   obscureText: true,
                   decoration: InputDecoration(
                     labelText: l10n.password,
-                    hintText: 'Onay için mevcut şifrenizi girin',
+                    hintText: l10n.currentPasswordPrompt,
                     prefixIcon: const Icon(Icons.lock_outline_rounded),
                   ),
                 ),
@@ -502,7 +495,7 @@ class SettingsPage extends ConsumerWidget {
                   : () async {
                       if (requirePassword && passwordCtrl.text.trim().isEmpty) {
                         setDialogState(
-                          () => errorMsg = 'Lütfen mevcut şifrenizi girin.',
+                          () => errorMsg = l10n.pleaseEnterPassword,
                         );
                         return;
                       }
@@ -528,7 +521,7 @@ class SettingsPage extends ConsumerWidget {
                         });
                       }
                     },
-              child: Text(isDeleting ? 'Siliniyor...' : 'Hesabı Sil'),
+              child: Text(isDeleting ? l10n.deletingAccount : l10n.deleteAccountButton),
             ),
           ],
         ),

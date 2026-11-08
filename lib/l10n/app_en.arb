@@ -556,5 +556,382 @@
   "matchHistoryTitle": "Match History",
   "@matchHistoryTitle": {
     "description": "Title for the match move history sheet"
+  },
+  "leagueLegend": "Legend League",
+  "@leagueLegend": {
+    "description": "Legend league division name"
+  },
+  "leagueElite": "Elite League",
+  "@leagueElite": {
+    "description": "Elite league division name"
+  },
+  "leaguePro": "Pro League",
+  "@leaguePro": {
+    "description": "Pro league division name"
+  },
+  "leagueStarter": "Starter League",
+  "@leagueStarter": {
+    "description": "Starter league division name"
+  },
+  "defaultCaptainName": "Goalverse Captain",
+  "@defaultCaptainName": {
+    "description": "Default player display name"
+  },
+  "seasonDerbyWeek": "SEASON 1 DERBY WEEK",
+  "@seasonDerbyWeek": {
+    "description": "Live event banner in hero stage"
+  },
+  "heroHeadline": "Step onto the Pitch,\nProve Your Knowledge.",
+  "@heroHeadline": {
+    "description": "Hero section main headline"
+  },
+  "heroSubtitle": "Practice solo, dive into live 1v1 matchmaking, or create a private room to duel friends in the Goalverse football gaming universe.",
+  "@heroSubtitle": {
+    "description": "Hero section description"
+  },
+  "soloPlay": "Play Solo",
+  "@soloPlay": {
+    "description": "Solo play CTA button"
+  },
+  "onlineMatch": "Online Match",
+  "@onlineMatch": {
+    "description": "Online matchmaking CTA button"
+  },
+  "createPrivateRoom": "Create Room",
+  "@createPrivateRoom": {
+    "description": "Private room creation pill"
+  },
+  "joinWithCode": "Join with Code",
+  "@joinWithCode": {
+    "description": "Join room with code pill"
+  },
+  "featuredModes": "Featured Modes",
+  "@featuredModes": {
+    "description": "Featured game modes section title"
+  },
+  "featuredModesSubtitle": "Signature Goalverse competitive experiences",
+  "@featuredModesSubtitle": {
+    "description": "Featured modes section subtitle"
+  },
+  "badgePopular": "POPULAR",
+  "@badgePopular": {
+    "description": "Popular badge tag"
+  },
+  "sosCardSubtitle": "Find shared stars in the 3×3 club grid and complete a three-in-a-row.",
+  "@sosCardSubtitle": {
+    "description": "Subtitle for Football SOS game card"
+  },
+  "playNow": "Play Now",
+  "@playNow": {
+    "description": "Play now primary button"
+  },
+  "ratingBattleSubtitle": "Pick the card with superior overall, market value, or career goals.",
+  "@ratingBattleSubtitle": {
+    "description": "Subtitle for Rating Battle card"
+  },
+  "arcadeModes": "Arcade Modes",
+  "@arcadeModes": {
+    "description": "Arcade game modes section title"
+  },
+  "arcadeModesSubtitle": "Test your football culture with distinct rules",
+  "@arcadeModesSubtitle": {
+    "description": "Arcade modes section subtitle"
+  },
+  "badgeModesCount": "5 MODES",
+  "@badgeModesCount": {
+    "description": "5 Modes badge tag"
+  },
+  "twoTeamsTitle": "2 Clubs 1 Player",
+  "@twoTeamsTitle": {
+    "description": "Two clubs one player mode title"
+  },
+  "twoTeamsSubtitle": "Find the shared star footballer who played for both clubs.",
+  "@twoTeamsSubtitle": {
+    "description": "Two clubs one player mode subtitle"
+  },
+  "twoTeamsStatus": "Shared Star",
+  "@twoTeamsStatus": {
+    "description": "Shared star pill tag"
+  },
+  "whoAmITitle": "Who Am I?",
+  "@whoAmITitle": {
+    "description": "Who am I mode title"
+  },
+  "whoAmISubtitle": "Guess the secret legend with 5 career clues revealed from hard to easy.",
+  "@whoAmISubtitle": {
+    "description": "Who am I mode subtitle"
+  },
+  "whoAmIStatus": "Mystery Card",
+  "@whoAmIStatus": {
+    "description": "Mystery card pill tag"
+  },
+  "fiveClues": "5 Clues",
+  "@fiveClues": {
+    "description": "5 Clues duration label"
+  },
+  "imposterTitle": "Imposter",
+  "@imposterTitle": {
+    "description": "Imposter mode title"
+  },
+  "imposterSubtitle": "Catch the imposter who never played for the target club among 4 players.",
+  "@imposterSubtitle": {
+    "description": "Imposter mode subtitle"
+  },
+  "imposterStatus": "1 Imposter",
+  "@imposterStatus": {
+    "description": "1 Imposter status tag"
+  },
+  "transferPathTitle": "Transfer Path",
+  "@transferPathTitle": {
+    "description": "Transfer path mode title"
+  },
+  "transferPathSubtitle": "Find the player by following their chronological club history and seasons.",
+  "@transferPathSubtitle": {
+    "description": "Transfer path mode subtitle"
+  },
+  "transferPathStatus": "Career Route",
+  "@transferPathStatus": {
+    "description": "Career route status tag"
+  },
+  "threePlusClubs": "3+ Clubs",
+  "@threePlusClubs": {
+    "description": "3+ clubs label"
+  },
+  "footballBombTitle": "Football Bomb",
+  "@footballBombTitle": {
+    "description": "Football bomb mode title"
+  },
+  "footballBombSubtitle": "Name a player matching the club or country criteria before the bomb explodes.",
+  "@footballBombSubtitle": {
+    "description": "Football bomb mode subtitle"
+  },
+  "footballBombStatus": "Countdown",
+  "@footballBombStatus": {
+    "description": "Countdown status tag"
+  },
+  "partyModeLabel": "1-8P • Party",
+  "@partyModeLabel": {
+    "description": "Party mode playerCount label"
+  },
+  "oneToTwoOnlineLabel": "1-2P • Online",
+  "@oneToTwoOnlineLabel": {
+    "description": "1-2 player online label"
+  },
+  "roomPlayAction": "Room",
+  "@roomPlayAction": {
+    "description": "Room play action prefix"
+  },
+  "playAction": "Play",
+  "@playAction": {
+    "description": "Play action suffix"
+  },
+  "dailyAndRanking": "Daily Quest & Ranking",
+  "@dailyAndRanking": {
+    "description": "Daily quest and ranking section header"
+  },
+  "dailyAndRankingSubtitle": "Claim rewards, rise to the global podium",
+  "@dailyAndRankingSubtitle": {
+    "description": "Daily quest and ranking section subtitle"
+  },
+  "seasonOne": "SEASON 1",
+  "@seasonOne": {
+    "description": "Season 1 badge"
+  },
+  "activeQuest": "ACTIVE QUEST",
+  "@activeQuest": {
+    "description": "Active quest badge"
+  },
+  "dailyChallengeSubtitle": "Complete today's 3×3 grid to earn extra rewards.",
+  "@dailyChallengeSubtitle": {
+    "description": "Daily challenge card description"
+  },
+  "startQuest": "Start Quest",
+  "@startQuest": {
+    "description": "Start quest action button"
+  },
+  "leaderboardSubtitle": "Global Top 100 & Season Podium",
+  "@leaderboardSubtitle": {
+    "description": "Leaderboard card subtitle"
+  },
+  "rankElite": "Elite",
+  "@rankElite": {
+    "description": "Rank elite title"
+  },
+  "rankCaptain": "Captain",
+  "@rankCaptain": {
+    "description": "Rank captain title"
+  },
+  "rankStar": "Star",
+  "@rankStar": {
+    "description": "Rank star title"
+  },
+  "youPlayerPrefix": "You",
+  "@youPlayerPrefix": {
+    "description": "You player indicator label"
+  },
+  "navArena": "ARENA",
+  "@navArena": {
+    "description": "Bottom navigation arena tab"
+  },
+  "navOnline": "ONLINE",
+  "@navOnline": {
+    "description": "Bottom navigation online tab"
+  },
+  "navDaily": "DAILY",
+  "@navDaily": {
+    "description": "Bottom navigation daily tab"
+  },
+  "navRanking": "RANKING",
+  "@navRanking": {
+    "description": "Bottom navigation ranking tab"
+  },
+  "navProfile": "PROFILE",
+  "@navProfile": {
+    "description": "Bottom navigation profile tab"
+  },
+  "forgotPasswordQuestion": "Forgot Password?",
+  "@forgotPasswordQuestion": {
+    "description": "Forgot password link button"
+  },
+  "confirmPasswordLabel": "Confirm Password",
+  "@confirmPasswordLabel": {
+    "description": "Confirm password field label"
+  },
+  "confirmPasswordHint": "Re-enter your password",
+  "@confirmPasswordHint": {
+    "description": "Confirm password placeholder hint"
+  },
+  "termsAcceptPrefix": "I have read and accept the ",
+  "@termsAcceptPrefix": {
+    "description": "Terms checkbox prefix"
+  },
+  "termsAcceptLink": "Terms of Service and Privacy Policy",
+  "@termsAcceptLink": {
+    "description": "Terms link text"
+  },
+  "termsAcceptSuffix": ".",
+  "@termsAcceptSuffix": {
+    "description": "Terms checkbox suffix"
+  },
+  "thirtySeconds": "30s",
+  "@thirtySeconds": {
+    "description": "30 seconds duration"
+  },
+  "fifteenSeconds": "15s",
+  "@fifteenSeconds": {
+    "description": "15 seconds duration"
+  },
+  "twentySeconds": "20s",
+  "@twentySeconds": {
+    "description": "20 seconds duration"
+  },
+  "twentyFiveSeconds": "25s",
+  "@twentyFiveSeconds": {
+    "description": "25 seconds duration"
+  },
+  "eighteenSeconds": "18s",
+  "@eighteenSeconds": {
+    "description": "18 seconds duration"
+  },
+  "oneVsOneSoloOnline": "1v1 • Solo • Online",
+  "@oneVsOneSoloOnline": {
+    "description": "1v1 solo online mode label"
+  },
+  "higherLower": "Higher / Lower",
+  "@higherLower": {
+    "description": "Higher lower game mode tag"
+  },
+  "leagueLabel": "League",
+  "@leagueLabel": {
+    "description": "League metric label"
+  },
+  "streakLabel": "Streak",
+  "@streakLabel": {
+    "description": "Streak metric label"
+  },
+  "streakMatchesCount": "{count} Matches",
+  "@streakMatchesCount": {
+    "description": "Streak count suffix",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "completedBadge": "COMPLETED",
+  "@completedBadge": {
+    "description": "Completed quest badge"
+  },
+  "rewardClaimed": "Claimed ✓",
+  "@rewardClaimed": {
+    "description": "Reward claimed button text"
+  },
+  "liveOneVsOne": "Live 1v1",
+  "@liveOneVsOne": {
+    "description": "Live 1v1 action label"
+  },
+  "difficultyAndControls": "Difficulty & Controls",
+  "@difficultyAndControls": {
+    "description": "Settings section header for difficulty and controls"
+  },
+  "turnDurationAndMultiplier": "Time: {seconds}s • Multiplier: {multiplier}x",
+  "@turnDurationAndMultiplier": {
+    "description": "Settings indicator for turn duration and score multiplier",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      },
+      "multiplier": {
+        "type": "String"
+      }
+    }
+  },
+  "hapticsTitle": "Haptic Feedback (Vibration)",
+  "@hapticsTitle": {
+    "description": "Settings switch title for vibration"
+  },
+  "hapticsSubtitle": "Tactile feedback on correct and wrong guesses",
+  "@hapticsSubtitle": {
+    "description": "Settings switch subtitle for vibration"
+  },
+  "soundEffectsTitle": "Sound Effects",
+  "@soundEffectsTitle": {
+    "description": "Settings switch title for audio"
+  },
+  "soundEffectsSubtitle": "Stadium atmosphere and in-game sound effects",
+  "@soundEffectsSubtitle": {
+    "description": "Settings switch subtitle for audio"
+  },
+  "sendPasswordResetLink": "Send Password Reset Link",
+  "@sendPasswordResetLink": {
+    "description": "Settings account tile to send reset email"
+  },
+  "deleteAccountPermanently": "Delete Account Permanently",
+  "@deleteAccountPermanently": {
+    "description": "Settings danger zone tile"
+  },
+  "deleteAccountSubtitle": "Permanently erase your profile data and account",
+  "@deleteAccountSubtitle": {
+    "description": "Settings danger zone subtitle"
+  },
+  "deleteAccountWarning": "This action cannot be undone. Your ELO rating, match history, and user profile will be permanently erased.",
+  "@deleteAccountWarning": {
+    "description": "Delete account confirmation dialog warning message"
+  },
+  "currentPasswordPrompt": "Enter your current password to confirm",
+  "@currentPasswordPrompt": {
+    "description": "Password confirmation input hint"
+  },
+  "pleaseEnterPassword": "Please enter your current password.",
+  "@pleaseEnterPassword": {
+    "description": "Validation error for empty password in account deletion"
+  },
+  "deleteAccountButton": "Delete Account",
+  "@deleteAccountButton": {
+    "description": "Account deletion confirm action button"
+  },
+  "deletingAccount": "Deleting...",
+  "@deletingAccount": {
+    "description": "Account deletion progress indicator text"
   }
 }

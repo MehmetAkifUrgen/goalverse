@@ -418,4 +418,293 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get matchHistoryTitle => 'Maç Geçmişi';
+
+  @override
+  String get leagueLegend => 'Efsane Lig';
+
+  @override
+  String get leagueElite => 'Elit Lig';
+
+  @override
+  String get leaguePro => 'Pro Lig';
+
+  @override
+  String get leagueStarter => 'Başlangıç Ligi';
+
+  @override
+  String get defaultCaptainName => 'Goalverse Kaptanı';
+
+  @override
+  String get seasonDerbyWeek => 'SEZON 1 DERBİ HAFTASI';
+
+  @override
+  String get heroHeadline => 'Sahaya Çık,\nFutbol Bilgini Kanıtla.';
+
+  @override
+  String get heroSubtitle =>
+      'Goalverse futbol oyun evreninde tek başına pratik yap, canlı 1v1 eşleşmeye gir veya özel oda kurarak arkadaşlarınla düello at.';
+
+  @override
+  String get soloPlay => 'Solo Oyna';
+
+  @override
+  String get onlineMatch => 'Online Eşleşme';
+
+  @override
+  String get createPrivateRoom => 'Özel Oda Kur';
+
+  @override
+  String get joinWithCode => 'Oda Koduna Katıl';
+
+  @override
+  String get featuredModes => 'Öne Çıkan Modlar';
+
+  @override
+  String get featuredModesSubtitle => 'Goalverse imza rekabet deneyimleri';
+
+  @override
+  String get badgePopular => 'POPÜLER';
+
+  @override
+  String get sosCardSubtitle =>
+      '3×3 kulüp kesişim tablosunda ortak yıldızları bul, üçlü çizgiyi tamamla.';
+
+  @override
+  String get playNow => 'Hemen Oyna';
+
+  @override
+  String get ratingBattleSubtitle =>
+      'Overall, piyasa değeri ve kariyer gollerinde üstün olan kartı seç.';
+
+  @override
+  String get arcadeModes => 'Arcade Modları';
+
+  @override
+  String get arcadeModesSubtitle => 'Farklı kurallarla futbol kültürünü sına';
+
+  @override
+  String get badgeModesCount => '5 MOD';
+
+  @override
+  String get twoTeamsTitle => '2 Takım 1 Oyuncu';
+
+  @override
+  String get twoTeamsSubtitle =>
+      'İki dev kulüpte de forma giymiş ortak yıldız futbolcuyu bul.';
+
+  @override
+  String get twoTeamsStatus => 'Ortak Yıldız';
+
+  @override
+  String get whoAmITitle => 'Ben Kimim?';
+
+  @override
+  String get whoAmISubtitle =>
+      'Zordan kolaya açılan 5 kariyer ipucuyla gizli efsaneyi tahmin et.';
+
+  @override
+  String get whoAmIStatus => 'Gizemli Kart';
+
+  @override
+  String get fiveClues => '5 İpucu';
+
+  @override
+  String get imposterTitle => 'Imposter (Ajan)';
+
+  @override
+  String get imposterSubtitle =>
+      '4 futbolcu arasından hedef kulüpte hiç oynamamış sahtekârı yakala.';
+
+  @override
+  String get imposterStatus => '1 Sahtekâr';
+
+  @override
+  String get transferPathTitle => 'Transfer Yolu';
+
+  @override
+  String get transferPathSubtitle =>
+      'Kronolojik kulüp geçmişini ve sezonları takip ederek oyuncuyu bul.';
+
+  @override
+  String get transferPathStatus => 'Kariyer Rotası';
+
+  @override
+  String get threePlusClubs => '3+ Kulüp';
+
+  @override
+  String get footballBombTitle => 'Futbol Bombası';
+
+  @override
+  String get footballBombSubtitle =>
+      'Bomba patlamadan kulüp veya ülke şartına uyan futbolcuyu söyle.';
+
+  @override
+  String get footballBombStatus => 'Geri Sayım';
+
+  @override
+  String get partyModeLabel => '1-8P • Parti';
+
+  @override
+  String get oneToTwoOnlineLabel => '1-2P • Online';
+
+  @override
+  String get roomPlayAction => 'Oda';
+
+  @override
+  String get playAction => 'Oyna';
+
+  @override
+  String get dailyAndRanking => 'Günlük Görev & Sıralama';
+
+  @override
+  String get dailyAndRankingSubtitle => 'Ödülleri topla, global podyuma yüksel';
+
+  @override
+  String get seasonOne => 'SEZON 1';
+
+  @override
+  String get activeQuest => 'AKTİF GÖREV';
+
+  @override
+  String get dailyChallengeSubtitle =>
+      'Günün özel 3×3 kulüp tablosunu tamamla ve ekstra ödül kazan.';
+
+  @override
+  String get startQuest => 'Görevi Başlat';
+
+  @override
+  String get leaderboardSubtitle => 'Global Top 100 & Sezon Podyumu';
+
+  @override
+  String get rankElite => 'Elit';
+
+  @override
+  String get rankCaptain => 'Kaptan';
+
+  @override
+  String get rankStar => 'Yıldız';
+
+  @override
+  String get youPlayerPrefix => 'Sen';
+
+  @override
+  String get navArena => 'ARENA';
+
+  @override
+  String get navOnline => 'ONLINE';
+
+  @override
+  String get navDaily => 'GÜNLÜK';
+
+  @override
+  String get navRanking => 'SIRALAMA';
+
+  @override
+  String get navProfile => 'PROFİL';
+
+  @override
+  String get forgotPasswordQuestion => 'Şifremi Unuttum?';
+
+  @override
+  String get confirmPasswordLabel => 'Şifre Tekrarı';
+
+  @override
+  String get confirmPasswordHint => 'Şifrenizi tekrar girin';
+
+  @override
+  String get termsAcceptPrefix => '';
+
+  @override
+  String get termsAcceptLink => 'Kullanım Koşulları ve Gizlilik Politikasını';
+
+  @override
+  String get termsAcceptSuffix => ' okudum ve kabul ediyorum.';
+
+  @override
+  String get thirtySeconds => '30 sn';
+
+  @override
+  String get fifteenSeconds => '15 sn';
+
+  @override
+  String get twentySeconds => '20 sn';
+
+  @override
+  String get twentyFiveSeconds => '25 sn';
+
+  @override
+  String get eighteenSeconds => '18 sn';
+
+  @override
+  String get oneVsOneSoloOnline => '1v1 • Solo • Online';
+
+  @override
+  String get higherLower => 'Higher / Lower';
+
+  @override
+  String get leagueLabel => 'Lig';
+
+  @override
+  String get streakLabel => 'Seri';
+
+  @override
+  String streakMatchesCount(int count) {
+    return '$count Maç';
+  }
+
+  @override
+  String get completedBadge => 'TAMAMLANDI';
+
+  @override
+  String get rewardClaimed => 'Ödül Alındı ✓';
+
+  @override
+  String get liveOneVsOne => 'Canlı 1v1';
+
+  @override
+  String get difficultyAndControls => 'Zorluk ve Kontroller';
+
+  @override
+  String turnDurationAndMultiplier(int seconds, String multiplier) {
+    return 'Süre: ${seconds}sn • Çarpan: ${multiplier}x';
+  }
+
+  @override
+  String get hapticsTitle => 'Titreşim (Haptic Geri Bildirim)';
+
+  @override
+  String get hapticsSubtitle =>
+      'Doğru ve yanlış tahminlerde dokunsal geri bildirim';
+
+  @override
+  String get soundEffectsTitle => 'Ses Efektleri';
+
+  @override
+  String get soundEffectsSubtitle => 'Stadyum ve maç içi ses efektleri';
+
+  @override
+  String get sendPasswordResetLink => 'Şifre Sıfırlama Bağlantısı Gönder';
+
+  @override
+  String get deleteAccountPermanently => 'Hesabı Kalıcı Olarak Sil';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Profil verilerinizi ve hesabınızı kalıcı olarak siler';
+
+  @override
+  String get deleteAccountWarning =>
+      'Bu işlem geri alınamaz. ELO puanınız, galibiyet geçmişiniz ve kullanıcı profiliniz kalıcı olarak silinecektir.';
+
+  @override
+  String get currentPasswordPrompt => 'Onay için mevcut şifrenizi girin';
+
+  @override
+  String get pleaseEnterPassword => 'Lütfen mevcut şifrenizi girin.';
+
+  @override
+  String get deleteAccountButton => 'Hesabı Sil';
+
+  @override
+  String get deletingAccount => 'Siliniyor...';
 }

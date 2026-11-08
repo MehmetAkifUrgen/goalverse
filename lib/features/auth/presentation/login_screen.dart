@@ -475,7 +475,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                                         _emailController.text,
                                                   ),
                                         child: Text(
-                                          'Şifremi Unuttum?',
+                                          l10n.forgotPasswordQuestion,
                                           style: AppTypography.label(
                                             fontSize: 12.5,
                                             color: AppColors.primary,
@@ -499,8 +499,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                       onFieldSubmitted: (_) =>
                                           _handleEmailSubmit(),
                                       decoration: InputDecoration(
-                                        labelText: 'Şifre Tekrarı',
-                                        hintText: 'Şifrenizi tekrar girin',
+                                        labelText: l10n.confirmPasswordLabel,
+                                        hintText: l10n.confirmPasswordHint,
                                         prefixIcon: const Icon(
                                           Icons.lock_reset_rounded,
                                         ),
@@ -546,16 +546,24 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                             onTap: _showTermsDialog,
                                             child: Text.rich(
                                               TextSpan(
-                                                text:
-                                                    'Kullanım Koşulları ve Gizlilik Politikasını',
-                                                style: AppTypography.label(
+                                                text: l10n.termsAcceptPrefix,
+                                                style: AppTypography.description(
                                                   fontSize: 12,
-                                                  color: AppColors.primary,
+                                                  color: isDark
+                                                      ? AppColors.muted
+                                                      : AppColors
+                                                            .lightTextSecondary,
                                                 ),
                                                 children: [
                                                   TextSpan(
-                                                    text:
-                                                        ' okudum ve kabul ediyorum.',
+                                                    text: l10n.termsAcceptLink,
+                                                    style: AppTypography.label(
+                                                      fontSize: 12,
+                                                      color: AppColors.primary,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text: l10n.termsAcceptSuffix,
                                                     style: AppTypography.description(
                                                       fontSize: 12,
                                                       color: isDark
@@ -649,7 +657,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             children: [
                               Expanded(
                                 child: SecondaryButton(
-                                  label: 'Apple ile Giriş',
+                                  label: l10n.appleLogin,
                                   icon: Icons.apple,
                                   expand: true,
                                   onTap: _isLoading
@@ -661,7 +669,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                               Expanded(
                                 child: SecondaryButton(
                                   key: const Key('guest_sign_in_button'),
-                                  label: 'Misafir Oyna',
+                                  label: l10n.guestLogin,
                                   icon: Icons.play_arrow_rounded,
                                   iconColor: AppColors.primary,
                                   expand: true,

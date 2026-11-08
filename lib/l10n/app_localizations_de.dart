@@ -420,4 +420,296 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get matchHistoryTitle => 'Spielverlauf';
+
+  @override
+  String get leagueLegend => 'Legenden-Liga';
+
+  @override
+  String get leagueElite => 'Elite-Liga';
+
+  @override
+  String get leaguePro => 'Profi-Liga';
+
+  @override
+  String get leagueStarter => 'Starter-Liga';
+
+  @override
+  String get defaultCaptainName => 'Goalverse-Kapitän';
+
+  @override
+  String get seasonDerbyWeek => 'SAISON 1 DERBY-WOCHE';
+
+  @override
+  String get heroHeadline => 'Betritt den Rasen,\nBeweise dein Wissen.';
+
+  @override
+  String get heroSubtitle =>
+      'Übe solo, starte 1v1-Matches oder erstelle einen privaten Raum für Duelle im Goalverse-Fußballuniversum.';
+
+  @override
+  String get soloPlay => 'Solo Spielen';
+
+  @override
+  String get onlineMatch => 'Online-Match';
+
+  @override
+  String get createPrivateRoom => 'Raum Erstellen';
+
+  @override
+  String get joinWithCode => 'Mit Code Beitreten';
+
+  @override
+  String get featuredModes => 'Hervorgehobene Modi';
+
+  @override
+  String get featuredModesSubtitle => 'Typische Goalverse-Wettkampferlebnisse';
+
+  @override
+  String get badgePopular => 'BELIEBT';
+
+  @override
+  String get sosCardSubtitle =>
+      'Finde gemeinsame Stars im 3×3-Vereinsgitter und schließe die Reihe ab.';
+
+  @override
+  String get playNow => 'Jetzt Spielen';
+
+  @override
+  String get ratingBattleSubtitle =>
+      'Wähle die Karte mit besseren Werten, Marktwert oder Karrieretoren.';
+
+  @override
+  String get arcadeModes => 'Arcade-Modi';
+
+  @override
+  String get arcadeModesSubtitle =>
+      'Teste deine Fußballkultur mit verschiedenen Regeln';
+
+  @override
+  String get badgeModesCount => '5 MODI';
+
+  @override
+  String get twoTeamsTitle => '2 Vereine 1 Spieler';
+
+  @override
+  String get twoTeamsSubtitle =>
+      'Finde den gemeinsamen Star, der für beide Vereine spielte.';
+
+  @override
+  String get twoTeamsStatus => 'Gemeinsamer Star';
+
+  @override
+  String get whoAmITitle => 'Wer bin ich?';
+
+  @override
+  String get whoAmISubtitle =>
+      'Errate die Legende mit 5 Karriere-Hinweisen von schwer bis leicht.';
+
+  @override
+  String get whoAmIStatus => 'Geheimniskarte';
+
+  @override
+  String get fiveClues => '5 Hinweise';
+
+  @override
+  String get imposterTitle => 'Hochstapler';
+
+  @override
+  String get imposterSubtitle =>
+      'Entlarve unter 4 Spielern denjenigen, der nie für den Verein spielte.';
+
+  @override
+  String get imposterStatus => '1 Hochstapler';
+
+  @override
+  String get transferPathTitle => 'Transferpfad';
+
+  @override
+  String get transferPathSubtitle =>
+      'Finde den Spieler anhand seiner chronologischen Vereinsstationen.';
+
+  @override
+  String get transferPathStatus => 'Karriere-Route';
+
+  @override
+  String get threePlusClubs => '3+ Vereine';
+
+  @override
+  String get footballBombTitle => 'Fußballbombe';
+
+  @override
+  String get footballBombSubtitle =>
+      'Nenne einen passenden Spieler, bevor die Bombe explodiert.';
+
+  @override
+  String get footballBombStatus => 'Countdown';
+
+  @override
+  String get partyModeLabel => '1-8S • Party';
+
+  @override
+  String get oneToTwoOnlineLabel => '1-2S • Online';
+
+  @override
+  String get roomPlayAction => 'Raum';
+
+  @override
+  String get playAction => 'Spielen';
+
+  @override
+  String get dailyAndRanking => 'Tagesquest & Rangliste';
+
+  @override
+  String get dailyAndRankingSubtitle =>
+      'Sammle Belohnungen, steige auf das weltweite Podium';
+
+  @override
+  String get seasonOne => 'SAISON 1';
+
+  @override
+  String get activeQuest => 'AKTIVE QUEST';
+
+  @override
+  String get dailyChallengeSubtitle =>
+      'Schließe das heutige 3×3-Gitter ab für zusätzliche Belohnungen.';
+
+  @override
+  String get startQuest => 'Quest Starten';
+
+  @override
+  String get leaderboardSubtitle => 'Globale Top 100 & Saison-Podium';
+
+  @override
+  String get rankElite => 'Elite';
+
+  @override
+  String get rankCaptain => 'Kapitän';
+
+  @override
+  String get rankStar => 'Stern';
+
+  @override
+  String get youPlayerPrefix => 'Du';
+
+  @override
+  String get navArena => 'ARENA';
+
+  @override
+  String get navOnline => 'ONLINE';
+
+  @override
+  String get navDaily => 'TÄGLICH';
+
+  @override
+  String get navRanking => 'RANGLISTE';
+
+  @override
+  String get navProfile => 'PROFIL';
+
+  @override
+  String get forgotPasswordQuestion => 'Passwort vergessen?';
+
+  @override
+  String get confirmPasswordLabel => 'Passwort bestätigen';
+
+  @override
+  String get confirmPasswordHint => 'Passwort erneut eingeben';
+
+  @override
+  String get termsAcceptPrefix => 'Ich habe die ';
+
+  @override
+  String get termsAcceptLink => 'Nutzungsbedingungen und Datenschutzrichtlinie';
+
+  @override
+  String get termsAcceptSuffix => ' gelesen und stimme zu.';
+
+  @override
+  String get thirtySeconds => '30s';
+
+  @override
+  String get fifteenSeconds => '15s';
+
+  @override
+  String get twentySeconds => '20s';
+
+  @override
+  String get twentyFiveSeconds => '25s';
+
+  @override
+  String get eighteenSeconds => '18s';
+
+  @override
+  String get oneVsOneSoloOnline => '1v1 • Solo • Online';
+
+  @override
+  String get higherLower => 'Höher / Tiefer';
+
+  @override
+  String get leagueLabel => 'Liga';
+
+  @override
+  String get streakLabel => 'Serie';
+
+  @override
+  String streakMatchesCount(int count) {
+    return '$count Spiele';
+  }
+
+  @override
+  String get completedBadge => 'ABGESCHLOSSEN';
+
+  @override
+  String get rewardClaimed => 'Erhalten ✓';
+
+  @override
+  String get liveOneVsOne => 'Live 1v1';
+
+  @override
+  String get difficultyAndControls => 'Schwierigkeit & Steuerung';
+
+  @override
+  String turnDurationAndMultiplier(int seconds, String multiplier) {
+    return 'Zeit: ${seconds}s • Multiplikator: ${multiplier}x';
+  }
+
+  @override
+  String get hapticsTitle => 'Haptisches Feedback (Vibration)';
+
+  @override
+  String get hapticsSubtitle =>
+      'Taktiles Feedback bei richtigen und falschen Tipps';
+
+  @override
+  String get soundEffectsTitle => 'Soundeffekte';
+
+  @override
+  String get soundEffectsSubtitle => 'Stadionatmosphäre und Sounds im Spiel';
+
+  @override
+  String get sendPasswordResetLink => 'Passwort-Reset-Link senden';
+
+  @override
+  String get deleteAccountPermanently => 'Konto dauerhaft löschen';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Löscht deine Profildaten und dein Konto unwiderruflich';
+
+  @override
+  String get deleteAccountWarning =>
+      'Diese Aktion kann nicht rückgängig gemacht werden. Deine ELO-Punkte, Spielhistorie und dein Profil werden gelöscht.';
+
+  @override
+  String get currentPasswordPrompt =>
+      'Gib zur Bestätigung dein aktuelles Passwort ein';
+
+  @override
+  String get pleaseEnterPassword => 'Bitte gib dein aktuelles Passwort ein.';
+
+  @override
+  String get deleteAccountButton => 'Konto löschen';
+
+  @override
+  String get deletingAccount => 'Wird gelöscht...';
 }

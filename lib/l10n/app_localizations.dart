@@ -891,6 +891,552 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Match History'**
   String get matchHistoryTitle;
+
+  /// Legend league division name
+  ///
+  /// In en, this message translates to:
+  /// **'Legend League'**
+  String get leagueLegend;
+
+  /// Elite league division name
+  ///
+  /// In en, this message translates to:
+  /// **'Elite League'**
+  String get leagueElite;
+
+  /// Pro league division name
+  ///
+  /// In en, this message translates to:
+  /// **'Pro League'**
+  String get leaguePro;
+
+  /// Starter league division name
+  ///
+  /// In en, this message translates to:
+  /// **'Starter League'**
+  String get leagueStarter;
+
+  /// Default player display name
+  ///
+  /// In en, this message translates to:
+  /// **'Goalverse Captain'**
+  String get defaultCaptainName;
+
+  /// Live event banner in hero stage
+  ///
+  /// In en, this message translates to:
+  /// **'SEASON 1 DERBY WEEK'**
+  String get seasonDerbyWeek;
+
+  /// Hero section main headline
+  ///
+  /// In en, this message translates to:
+  /// **'Step onto the Pitch,\nProve Your Knowledge.'**
+  String get heroHeadline;
+
+  /// Hero section description
+  ///
+  /// In en, this message translates to:
+  /// **'Practice solo, dive into live 1v1 matchmaking, or create a private room to duel friends in the Goalverse football gaming universe.'**
+  String get heroSubtitle;
+
+  /// Solo play CTA button
+  ///
+  /// In en, this message translates to:
+  /// **'Play Solo'**
+  String get soloPlay;
+
+  /// Online matchmaking CTA button
+  ///
+  /// In en, this message translates to:
+  /// **'Online Match'**
+  String get onlineMatch;
+
+  /// Private room creation pill
+  ///
+  /// In en, this message translates to:
+  /// **'Create Room'**
+  String get createPrivateRoom;
+
+  /// Join room with code pill
+  ///
+  /// In en, this message translates to:
+  /// **'Join with Code'**
+  String get joinWithCode;
+
+  /// Featured game modes section title
+  ///
+  /// In en, this message translates to:
+  /// **'Featured Modes'**
+  String get featuredModes;
+
+  /// Featured modes section subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Signature Goalverse competitive experiences'**
+  String get featuredModesSubtitle;
+
+  /// Popular badge tag
+  ///
+  /// In en, this message translates to:
+  /// **'POPULAR'**
+  String get badgePopular;
+
+  /// Subtitle for Football SOS game card
+  ///
+  /// In en, this message translates to:
+  /// **'Find shared stars in the 3×3 club grid and complete a three-in-a-row.'**
+  String get sosCardSubtitle;
+
+  /// Play now primary button
+  ///
+  /// In en, this message translates to:
+  /// **'Play Now'**
+  String get playNow;
+
+  /// Subtitle for Rating Battle card
+  ///
+  /// In en, this message translates to:
+  /// **'Pick the card with superior overall, market value, or career goals.'**
+  String get ratingBattleSubtitle;
+
+  /// Arcade game modes section title
+  ///
+  /// In en, this message translates to:
+  /// **'Arcade Modes'**
+  String get arcadeModes;
+
+  /// Arcade modes section subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Test your football culture with distinct rules'**
+  String get arcadeModesSubtitle;
+
+  /// 5 Modes badge tag
+  ///
+  /// In en, this message translates to:
+  /// **'5 MODES'**
+  String get badgeModesCount;
+
+  /// Two clubs one player mode title
+  ///
+  /// In en, this message translates to:
+  /// **'2 Clubs 1 Player'**
+  String get twoTeamsTitle;
+
+  /// Two clubs one player mode subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Find the shared star footballer who played for both clubs.'**
+  String get twoTeamsSubtitle;
+
+  /// Shared star pill tag
+  ///
+  /// In en, this message translates to:
+  /// **'Shared Star'**
+  String get twoTeamsStatus;
+
+  /// Who am I mode title
+  ///
+  /// In en, this message translates to:
+  /// **'Who Am I?'**
+  String get whoAmITitle;
+
+  /// Who am I mode subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Guess the secret legend with 5 career clues revealed from hard to easy.'**
+  String get whoAmISubtitle;
+
+  /// Mystery card pill tag
+  ///
+  /// In en, this message translates to:
+  /// **'Mystery Card'**
+  String get whoAmIStatus;
+
+  /// 5 Clues duration label
+  ///
+  /// In en, this message translates to:
+  /// **'5 Clues'**
+  String get fiveClues;
+
+  /// Imposter mode title
+  ///
+  /// In en, this message translates to:
+  /// **'Imposter'**
+  String get imposterTitle;
+
+  /// Imposter mode subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Catch the imposter who never played for the target club among 4 players.'**
+  String get imposterSubtitle;
+
+  /// 1 Imposter status tag
+  ///
+  /// In en, this message translates to:
+  /// **'1 Imposter'**
+  String get imposterStatus;
+
+  /// Transfer path mode title
+  ///
+  /// In en, this message translates to:
+  /// **'Transfer Path'**
+  String get transferPathTitle;
+
+  /// Transfer path mode subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Find the player by following their chronological club history and seasons.'**
+  String get transferPathSubtitle;
+
+  /// Career route status tag
+  ///
+  /// In en, this message translates to:
+  /// **'Career Route'**
+  String get transferPathStatus;
+
+  /// 3+ clubs label
+  ///
+  /// In en, this message translates to:
+  /// **'3+ Clubs'**
+  String get threePlusClubs;
+
+  /// Football bomb mode title
+  ///
+  /// In en, this message translates to:
+  /// **'Football Bomb'**
+  String get footballBombTitle;
+
+  /// Football bomb mode subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Name a player matching the club or country criteria before the bomb explodes.'**
+  String get footballBombSubtitle;
+
+  /// Countdown status tag
+  ///
+  /// In en, this message translates to:
+  /// **'Countdown'**
+  String get footballBombStatus;
+
+  /// Party mode playerCount label
+  ///
+  /// In en, this message translates to:
+  /// **'1-8P • Party'**
+  String get partyModeLabel;
+
+  /// 1-2 player online label
+  ///
+  /// In en, this message translates to:
+  /// **'1-2P • Online'**
+  String get oneToTwoOnlineLabel;
+
+  /// Room play action prefix
+  ///
+  /// In en, this message translates to:
+  /// **'Room'**
+  String get roomPlayAction;
+
+  /// Play action suffix
+  ///
+  /// In en, this message translates to:
+  /// **'Play'**
+  String get playAction;
+
+  /// Daily quest and ranking section header
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Quest & Ranking'**
+  String get dailyAndRanking;
+
+  /// Daily quest and ranking section subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Claim rewards, rise to the global podium'**
+  String get dailyAndRankingSubtitle;
+
+  /// Season 1 badge
+  ///
+  /// In en, this message translates to:
+  /// **'SEASON 1'**
+  String get seasonOne;
+
+  /// Active quest badge
+  ///
+  /// In en, this message translates to:
+  /// **'ACTIVE QUEST'**
+  String get activeQuest;
+
+  /// Daily challenge card description
+  ///
+  /// In en, this message translates to:
+  /// **'Complete today\'s 3×3 grid to earn extra rewards.'**
+  String get dailyChallengeSubtitle;
+
+  /// Start quest action button
+  ///
+  /// In en, this message translates to:
+  /// **'Start Quest'**
+  String get startQuest;
+
+  /// Leaderboard card subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Global Top 100 & Season Podium'**
+  String get leaderboardSubtitle;
+
+  /// Rank elite title
+  ///
+  /// In en, this message translates to:
+  /// **'Elite'**
+  String get rankElite;
+
+  /// Rank captain title
+  ///
+  /// In en, this message translates to:
+  /// **'Captain'**
+  String get rankCaptain;
+
+  /// Rank star title
+  ///
+  /// In en, this message translates to:
+  /// **'Star'**
+  String get rankStar;
+
+  /// You player indicator label
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get youPlayerPrefix;
+
+  /// Bottom navigation arena tab
+  ///
+  /// In en, this message translates to:
+  /// **'ARENA'**
+  String get navArena;
+
+  /// Bottom navigation online tab
+  ///
+  /// In en, this message translates to:
+  /// **'ONLINE'**
+  String get navOnline;
+
+  /// Bottom navigation daily tab
+  ///
+  /// In en, this message translates to:
+  /// **'DAILY'**
+  String get navDaily;
+
+  /// Bottom navigation ranking tab
+  ///
+  /// In en, this message translates to:
+  /// **'RANKING'**
+  String get navRanking;
+
+  /// Bottom navigation profile tab
+  ///
+  /// In en, this message translates to:
+  /// **'PROFILE'**
+  String get navProfile;
+
+  /// Forgot password link button
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password?'**
+  String get forgotPasswordQuestion;
+
+  /// Confirm password field label
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPasswordLabel;
+
+  /// Confirm password placeholder hint
+  ///
+  /// In en, this message translates to:
+  /// **'Re-enter your password'**
+  String get confirmPasswordHint;
+
+  /// Terms checkbox prefix
+  ///
+  /// In en, this message translates to:
+  /// **'I have read and accept the '**
+  String get termsAcceptPrefix;
+
+  /// Terms link text
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service and Privacy Policy'**
+  String get termsAcceptLink;
+
+  /// Terms checkbox suffix
+  ///
+  /// In en, this message translates to:
+  /// **'.'**
+  String get termsAcceptSuffix;
+
+  /// 30 seconds duration
+  ///
+  /// In en, this message translates to:
+  /// **'30s'**
+  String get thirtySeconds;
+
+  /// 15 seconds duration
+  ///
+  /// In en, this message translates to:
+  /// **'15s'**
+  String get fifteenSeconds;
+
+  /// 20 seconds duration
+  ///
+  /// In en, this message translates to:
+  /// **'20s'**
+  String get twentySeconds;
+
+  /// 25 seconds duration
+  ///
+  /// In en, this message translates to:
+  /// **'25s'**
+  String get twentyFiveSeconds;
+
+  /// 18 seconds duration
+  ///
+  /// In en, this message translates to:
+  /// **'18s'**
+  String get eighteenSeconds;
+
+  /// 1v1 solo online mode label
+  ///
+  /// In en, this message translates to:
+  /// **'1v1 • Solo • Online'**
+  String get oneVsOneSoloOnline;
+
+  /// Higher lower game mode tag
+  ///
+  /// In en, this message translates to:
+  /// **'Higher / Lower'**
+  String get higherLower;
+
+  /// League metric label
+  ///
+  /// In en, this message translates to:
+  /// **'League'**
+  String get leagueLabel;
+
+  /// Streak metric label
+  ///
+  /// In en, this message translates to:
+  /// **'Streak'**
+  String get streakLabel;
+
+  /// Streak count suffix
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Matches'**
+  String streakMatchesCount(int count);
+
+  /// Completed quest badge
+  ///
+  /// In en, this message translates to:
+  /// **'COMPLETED'**
+  String get completedBadge;
+
+  /// Reward claimed button text
+  ///
+  /// In en, this message translates to:
+  /// **'Claimed ✓'**
+  String get rewardClaimed;
+
+  /// Live 1v1 action label
+  ///
+  /// In en, this message translates to:
+  /// **'Live 1v1'**
+  String get liveOneVsOne;
+
+  /// Settings section header for difficulty and controls
+  ///
+  /// In en, this message translates to:
+  /// **'Difficulty & Controls'**
+  String get difficultyAndControls;
+
+  /// Settings indicator for turn duration and score multiplier
+  ///
+  /// In en, this message translates to:
+  /// **'Time: {seconds}s • Multiplier: {multiplier}x'**
+  String turnDurationAndMultiplier(int seconds, String multiplier);
+
+  /// Settings switch title for vibration
+  ///
+  /// In en, this message translates to:
+  /// **'Haptic Feedback (Vibration)'**
+  String get hapticsTitle;
+
+  /// Settings switch subtitle for vibration
+  ///
+  /// In en, this message translates to:
+  /// **'Tactile feedback on correct and wrong guesses'**
+  String get hapticsSubtitle;
+
+  /// Settings switch title for audio
+  ///
+  /// In en, this message translates to:
+  /// **'Sound Effects'**
+  String get soundEffectsTitle;
+
+  /// Settings switch subtitle for audio
+  ///
+  /// In en, this message translates to:
+  /// **'Stadium atmosphere and in-game sound effects'**
+  String get soundEffectsSubtitle;
+
+  /// Settings account tile to send reset email
+  ///
+  /// In en, this message translates to:
+  /// **'Send Password Reset Link'**
+  String get sendPasswordResetLink;
+
+  /// Settings danger zone tile
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account Permanently'**
+  String get deleteAccountPermanently;
+
+  /// Settings danger zone subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Permanently erase your profile data and account'**
+  String get deleteAccountSubtitle;
+
+  /// Delete account confirmation dialog warning message
+  ///
+  /// In en, this message translates to:
+  /// **'This action cannot be undone. Your ELO rating, match history, and user profile will be permanently erased.'**
+  String get deleteAccountWarning;
+
+  /// Password confirmation input hint
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your current password to confirm'**
+  String get currentPasswordPrompt;
+
+  /// Validation error for empty password in account deletion
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your current password.'**
+  String get pleaseEnterPassword;
+
+  /// Account deletion confirm action button
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account'**
+  String get deleteAccountButton;
+
+  /// Account deletion progress indicator text
+  ///
+  /// In en, this message translates to:
+  /// **'Deleting...'**
+  String get deletingAccount;
 }
 
 class _AppLocalizationsDelegate
