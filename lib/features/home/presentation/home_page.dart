@@ -8,10 +8,12 @@ import '../../../core/monetization/ad_service.dart';
 import '../../../core/monetization/monetization_l10n.dart';
 import '../../../core/monetization/premium_service.dart';
 import '../../../core/providers/auth_providers.dart';
+import '../../../core/providers/leaderboard_provider.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/stadium_visuals.dart';
 import '../../game/presentation/online_lobby_dialog.dart';
+import '../../leaderboard/presentation/leaderboard_page.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -56,6 +58,7 @@ class HomePage extends ConsumerWidget {
     final user = ref.watch(currentUserProvider);
     final authRepo = ref.watch(authRepositoryProvider);
     final stats = ref.watch(userStatsProvider);
+    final topEntries = ref.watch(topThreeLeaderboardProvider);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final displayName = (stats.customDisplayName?.isNotEmpty ?? false)
@@ -393,6 +396,7 @@ class HomePage extends ConsumerWidget {
                                 userRating: stats.rating,
                                 userDivision: division,
                                 userName: displayName,
+                                topEntries: topEntries,
                                 onTap: () => context.push('/leaderboard'),
                               );
 
@@ -503,7 +507,7 @@ class _PlayerCommandHeader extends StatelessWidget {
               // Avatar + Name + Level & XP Progress
               Expanded(
                 child: PressableScale(
-                  semanticLabel: 'Oyuncu Profili: $displayName, Seviye $level',
+                  semanticLabel: l10n.profileSemanticLabel(displayName, level),
                   onTap: onProfileTap,
                   child: Row(
                     children: [
@@ -1633,6 +1637,7 @@ class LeaderboardCard extends StatelessWidget {
   final int userRating;
   final String userDivision;
   final String userName;
+  final List<LeaderboardEntry> topEntries;
   final VoidCallback onTap;
 
   const LeaderboardCard({
@@ -1641,6 +1646,7 @@ class LeaderboardCard extends StatelessWidget {
     required this.userRating,
     required this.userDivision,
     required this.userName,
+    this.topEntries = const [],
     required this.onTap,
   });
 
@@ -1649,8 +1655,21 @@ class LeaderboardCard extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
+    final top1 = topEntries.isNotEmpty ? topEntries[0] : null;
+    final top2 = topEntries.length > 1 ? topEntries[1] : null;
+    final top3 = topEntries.length > 2 ? topEntries[2] : null;
+
+    final rank1Name = top1 != null ? top1.name : userName;
+    final rank1Elo = top1 != null ? '${top1.rating}' : '$userRating';
+
+    final rank2Name = top2 != null ? top2.name : (topEntries.isEmpty ? '-' : l10n.rankCaptain);
+    final rank2Elo = top2 != null ? '${top2.rating}' : '-';
+
+    final rank3Name = top3 != null ? top3.name : (topEntries.isEmpty ? '-' : l10n.rankStar);
+    final rank3Elo = top3 != null ? '${top3.rating}' : '-';
+
     return PressableScale(
-      semanticLabel: '$title, Puanın: $userRating ELO',
+      semanticLabel: l10n.leaderboardCardSemanticLabel(title, userRating),
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(AppSpacing.s16),
@@ -1720,8 +1739,8 @@ class LeaderboardCard extends StatelessWidget {
                 Expanded(
                   child: _MiniPodiumBadge(
                     rank: 1,
-                    label: '#1 ${l10n.rankElite}',
-                    elo: '1840',
+                    label: '#1 $rank1Name',
+                    elo: rank1Elo,
                     color: AppColors.warmAmber,
                   ),
                 ),
@@ -1729,8 +1748,8 @@ class LeaderboardCard extends StatelessWidget {
                 Expanded(
                   child: _MiniPodiumBadge(
                     rank: 2,
-                    label: '#2 ${l10n.rankCaptain}',
-                    elo: '1765',
+                    label: '#2 $rank2Name',
+                    elo: rank2Elo,
                     color: AppColors.info,
                   ),
                 ),
@@ -1738,8 +1757,8 @@ class LeaderboardCard extends StatelessWidget {
                 Expanded(
                   child: _MiniPodiumBadge(
                     rank: 3,
-                    label: '#3 ${l10n.rankStar}',
-                    elo: '1690',
+                    label: '#3 $rank3Name',
+                    elo: rank3Elo,
                     color: AppColors.softViolet,
                   ),
                 ),

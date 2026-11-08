@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../data/models/freezed/entity_models.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../data/repositories/web_data_store.dart';
 import '../../game/data/online_match_service.dart';
 import '../../game/presentation/online_arena_banner.dart';
@@ -128,6 +129,7 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
         .read(userStatsProvider.notifier)
         .recordGameResult(won: _passesCount >= 5, score: _passesCount * 100);
 
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -139,20 +141,28 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
         return AlertDialog(
           title: Text(
             hasWinner
-                ? '🏆 ${remaining.first} Kazandı!'
-                : '💥 GÜM! Bomba Patladı!',
+                ? (l10n != null
+                    ? l10n.bombWonTitle(remaining.first)
+                    : '🏆 ${remaining.first} Kazandı!')
+                : (l10n?.bombExplodedTitle ?? '💥 GÜM! Bomba Patladı!'),
             textAlign: TextAlign.center,
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Bomba $eliminatedPlayer elindeyken patladı ve ELENDİ!',
+                l10n != null
+                    ? l10n.bombEliminatedDesc(eliminatedPlayer)
+                    : 'Bomba $eliminatedPlayer elindeyken patladı ve ELENDİ!',
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 12),
-              Text('Toplam Başarılı Pas: $_passesCount'),
+              Text(
+                l10n != null
+                    ? l10n.totalSuccessfulPasses(_passesCount.toString())
+                    : 'Toplam Başarılı Pas: $_passesCount',
+              ),
               if (hasWinner) ...[
                 const SizedBox(height: 8),
                 Text(
@@ -180,7 +190,7 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                   });
                   _startNewRound();
                 },
-                child: const Text('Kalanlarla Devam Et ➔'),
+                child: Text(AppLocalizations.of(ctx)?.nextMatch ?? 'Kalanlarla Devam Et ➔'),
               ),
             ElevatedButton(
               onPressed: () {
@@ -188,7 +198,7 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                 setState(() => _resetPlayers(_playerCount));
                 _startNewRound();
               },
-              child: const Text('Yeni Maç'),
+              child: Text(AppLocalizations.of(ctx)?.playAgainButton ?? 'Yeni Maç'),
             ),
           ],
         );
@@ -241,17 +251,19 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final currentHolder = _activePlayers.isNotEmpty
         ? _activePlayers[_currentTurnIndex]
-        : 'Oyuncu 1';
+        : (l10n != null ? '${l10n.player1Won.split(' ').first} 1' : 'Oyuncu 1');
     final targetTeam = _challenge?.targetTeam;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Football Bomb 💣'),
+        title: Text(l10n?.footballBombTitle ?? 'Football Bomb 💣'),
         actions: [
           AppTheme.onlineRoomButton(
             isOnlineActive: widget.roomId != null,
+            context: context,
             onTap: () {
               showDialog(
                 context: context,
@@ -367,7 +379,9 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    '🎯 Sıra: $currentHolder',
+                                    l10n != null
+                                        ? l10n.turnOf(currentHolder)
+                                        : '🎯 Sıra: $currentHolder',
                                     style: const TextStyle(
                                       color: AppTheme.goldTrophy,
                                       fontWeight: FontWeight.w900,
@@ -511,9 +525,9 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                             Icons.local_fire_department_rounded,
                             size: 22,
                           ),
-                          label: const Text(
-                            'Futbolcu Söyle ve Bombayı Pasla!',
-                            style: TextStyle(
+                          label: Text(
+                            l10n?.bombPassAction ?? 'Futbolcu Söyle ve Bombayı Pasla!',
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w900,
                             ),

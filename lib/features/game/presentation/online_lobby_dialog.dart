@@ -9,6 +9,7 @@ import '../../../core/providers/auth_providers.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/stadium_visuals.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../data/online_match_service.dart';
 import '../domain/online_game_model.dart';
 import '../engine/board_generator.dart';
@@ -237,7 +238,8 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
   Future<void> _onJoinRoom() async {
     final code = _codeController.text.trim();
     if (code.length != 6) {
-      setState(() => _error = 'Lütfen 6 haneli oda kodunu eksiksiz girin.');
+      final l10n = AppLocalizations.of(context);
+      setState(() => _error = l10n?.roomCodeMustBe6Digits ?? 'Please enter the complete 6-digit room code.');
       return;
     }
 
@@ -268,21 +270,22 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
     }
   }
 
-  Widget _buildMatchFormatSelector(bool isDark) {
+  Widget _buildMatchFormatSelector(BuildContext context, bool isDark) {
     if (_selectedMode != 'sos') return const SizedBox.shrink();
+    final l10n = AppLocalizations.of(context)!;
 
     final options = [
       (
         rounds: 3,
         wins: 2,
-        title: '3 TUR – 2 GALİBİYET',
-        desc: 'En fazla 3 tur oynanır, 2 tur kazanan maçı alır',
+        title: l10n.format3RoundsTitle,
+        desc: l10n.format3RoundsDesc,
       ),
       (
         rounds: 5,
         wins: 3,
-        title: '5 TUR – 3 GALİBİYET',
-        desc: 'En fazla 5 tur oynanır, 3 tur kazanan maçı alır',
+        title: l10n.format5RoundsTitle,
+        desc: l10n.format5RoundsDesc,
       ),
     ];
 
@@ -299,7 +302,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
             ),
             const SizedBox(width: 6),
             Text(
-              'MAÇ FORMATI (FOOTBALL SOS SERİSİ)',
+              l10n.matchFormatSos,
               style: AppTypography.label(
                 fontSize: 11.5,
                 color: AppColors.trophyGold,
@@ -404,6 +407,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final selectedInfo = OnlineGameModeInfo.fromId(_selectedMode);
 
@@ -446,7 +450,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Canlı Çok Oyunculu Lobi',
+                          l10n.liveMultiplayerLobby,
                           style: AppTypography.modeTitle(
                             fontSize: 21,
                             color: isDark
@@ -455,7 +459,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
                           ),
                         ),
                         Text(
-                          'Hızlı Eşleşme • Özel Oda • 6 Haneli Kod',
+                          l10n.lobbySubtitle,
                           style: AppTypography.description(
                             fontSize: 12,
                             color: isDark
@@ -478,7 +482,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
 
               // Mode Selector Pills (All 7 Modes)
               Text(
-                'Oyun Modu Seçimi',
+                l10n.selectGameMode,
                 style: AppTypography.label(
                   fontSize: 11.5,
                   color: isDark
@@ -498,7 +502,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
                     final selected = mode.id == _selectedMode;
                     return ChoiceChip(
                       label: Text(
-                        mode.title,
+                        mode.localizedTitle(l10n),
                         style: AppTypography.label(
                           fontSize: 12,
                           color: selected
@@ -537,7 +541,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
               ),
               const SizedBox(height: 6),
               Text(
-                selectedInfo.subtitle,
+                selectedInfo.localizedSubtitle(l10n),
                 style: AppTypography.description(
                   fontSize: 12,
                   color: isDark
@@ -547,11 +551,11 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
               ),
 
               // Match Format Selector for Football SOS (3 Rounds vs 5 Rounds)
-              _buildMatchFormatSelector(isDark),
+              _buildMatchFormatSelector(context, isDark),
 
               const SizedBox(height: 14),
 
-              // 3 Clean Tabs: Hızlı Eşleşme / Oda Oluştur / Koda Katıl
+              // 3 Clean Tabs
               Container(
                 decoration: BoxDecoration(
                   color: isDark
@@ -572,10 +576,10 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
                   unselectedLabelColor: AppColors.muted,
                   indicatorColor: AppColors.primary,
                   labelStyle: AppTypography.label(fontSize: 12),
-                  tabs: const [
-                    Tab(text: 'Hızlı Eşleşme'),
-                    Tab(text: 'Oda Oluştur'),
-                    Tab(text: 'Koda Katıl'),
+                  tabs: [
+                    Tab(text: l10n.quickMatch),
+                    Tab(text: l10n.createRoom),
+                    Tab(text: l10n.joinRoom),
                   ],
                 ),
               ),
@@ -608,9 +612,9 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    _buildQuickMatchTab(selectedInfo, isDark),
-                    _buildCreateRoomTab(selectedInfo, isDark),
-                    _buildJoinTab(isDark),
+                    _buildQuickMatchTab(context, selectedInfo, isDark),
+                    _buildCreateRoomTab(context, selectedInfo, isDark),
+                    _buildJoinTab(context, isDark),
                   ],
                 ),
               ),
@@ -625,9 +629,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
                 children: [
                   Expanded(
                     child: SecondaryButton(
-                      label: _selectedMode == 'sos'
-                          ? 'Tek Oyna (Bot)'
-                          : 'Tek Başına Oyna',
+                      label: l10n.playSoloAction,
                       icon: Icons.person_outline_rounded,
                       onTap: () => _navigateToLocalMode(twoPlayer: false),
                     ),
@@ -635,7 +637,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
                   const SizedBox(width: 10),
                   Expanded(
                     child: SecondaryButton(
-                      label: '2 Oyuncu (Aynı Cihaz)',
+                      label: l10n.playSameDeviceAction,
                       icon: Icons.people_outline_rounded,
                       onTap: () => _navigateToLocalMode(twoPlayer: true),
                     ),
@@ -649,7 +651,13 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
     );
   }
 
-  Widget _buildQuickMatchTab(OnlineGameModeInfo selectedInfo, bool isDark) {
+  Widget _buildQuickMatchTab(
+    BuildContext context,
+    OnlineGameModeInfo selectedInfo,
+    bool isDark,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+
     if (_matchmaking) {
       return Center(
         child: Column(
@@ -658,7 +666,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
             const CircularProgressIndicator(color: AppColors.primary),
             const SizedBox(height: 16),
             Text(
-              'Açık odalar taranıyor ve rakip aranıyor...',
+              l10n.searchingRoomsAndOpponent,
               style: AppTypography.body(
                 color: isDark
                     ? AppColors.foreground
@@ -672,7 +680,8 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
 
     if (_createdRoomCode != null) {
       return _buildWaitingRoomView(
-        title: 'Eşleşme Odası Açıldı — Rakip Bekleniyor',
+        context: context,
+        title: l10n.matchRoomWaitingOpponent,
         selectedInfo: selectedInfo,
         isDark: isDark,
       );
@@ -702,7 +711,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
           ),
           const SizedBox(height: 12),
           Text(
-            '${selectedInfo.title} için açık bir odaya anında bağlanın veya otomatik eşleşme kuyruğuna girin.',
+            l10n.quickMatchPrompt(selectedInfo.localizedTitle(l10n)),
             textAlign: TextAlign.center,
             style: AppTypography.description(
               fontSize: 13,
@@ -711,7 +720,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
           ),
           const SizedBox(height: 18),
           ArenaButton(
-            label: 'Hızlı Eşleşme Başlat',
+            label: l10n.startQuickMatch,
             icon: Icons.bolt_rounded,
             onTap: _onQuickMatch,
           ),
@@ -720,15 +729,21 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
     );
   }
 
-  Widget _buildCreateRoomTab(OnlineGameModeInfo selectedInfo, bool isDark) {
+  Widget _buildCreateRoomTab(
+    BuildContext context,
+    OnlineGameModeInfo selectedInfo,
+    bool isDark,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+
     if (_creating) {
-      return const Center(
+      return Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            CircularProgressIndicator(color: AppColors.primary),
-            SizedBox(height: 12),
-            Text('Özel oda ve maç verisi hazırlanıyor...'),
+            const CircularProgressIndicator(color: AppColors.primary),
+            const SizedBox(height: 12),
+            Text(l10n.preparingPrivateRoom),
           ],
         ),
       );
@@ -736,7 +751,8 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
 
     if (_createdRoomCode != null) {
       return _buildWaitingRoomView(
-        title: 'Arkadaşınızla 6 Haneli Kodu Paylaşın:',
+        context: context,
+        title: l10n.shareRoomCodeWithFriend,
         selectedInfo: selectedInfo,
         isDark: isDark,
       );
@@ -747,7 +763,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            '${selectedInfo.title} modunda 6 haneli özel oda oluşturun ve arkadaşınızı davet edin.',
+            l10n.createPrivateRoomPrompt(selectedInfo.localizedTitle(l10n)),
             textAlign: TextAlign.center,
             style: AppTypography.description(
               fontSize: 13,
@@ -755,53 +771,56 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
             ),
           ),
           const SizedBox(height: 14),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.timer_outlined,
-                size: 16,
-                color: AppColors.primary,
-              ),
-              const SizedBox(width: 6),
-              Text(
-                'Hamle Süresi:',
-                style: AppTypography.label(
-                  fontSize: 12,
-                  color: isDark
-                      ? AppColors.foreground
-                      : AppColors.lightTextPrimary,
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.timer_outlined,
+                  size: 16,
+                  color: AppColors.primary,
                 ),
-              ),
-              const SizedBox(width: 8),
-              for (final sec in [15, 30, 45, 60])
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 3),
-                  child: ChoiceChip(
-                    label: Text(
-                      '${sec}s',
-                      style: AppTypography.label(
-                        fontSize: 11.5,
-                        color: _selectedTurnSeconds == sec
-                            ? AppColors.primaryText
-                            : (isDark
-                                  ? AppColors.foreground
-                                  : AppColors.lightTextPrimary),
-                        tabular: true,
-                      ),
-                    ),
-                    selected: _selectedTurnSeconds == sec,
-                    selectedColor: AppColors.primary,
-                    onSelected: (val) {
-                      if (val) setState(() => _selectedTurnSeconds = sec);
-                    },
+                const SizedBox(width: 6),
+                Text(
+                  l10n.turnDuration,
+                  style: AppTypography.label(
+                    fontSize: 12,
+                    color: isDark
+                        ? AppColors.foreground
+                        : AppColors.lightTextPrimary,
                   ),
                 ),
-            ],
+                const SizedBox(width: 8),
+                for (final sec in [15, 30, 45, 60])
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 3),
+                    child: ChoiceChip(
+                      label: Text(
+                        '${sec}s',
+                        style: AppTypography.label(
+                          fontSize: 11.5,
+                          color: _selectedTurnSeconds == sec
+                              ? AppColors.primaryText
+                              : (isDark
+                                    ? AppColors.foreground
+                                    : AppColors.lightTextPrimary),
+                          tabular: true,
+                        ),
+                      ),
+                      selected: _selectedTurnSeconds == sec,
+                      selectedColor: AppColors.primary,
+                      onSelected: (val) {
+                        if (val) setState(() => _selectedTurnSeconds = sec);
+                      },
+                    ),
+                  ),
+              ],
+            ),
           ),
           const SizedBox(height: 16),
           ArenaButton(
-            label: '6 Haneli Özel Oda Kur',
+            label: l10n.create6DigitPrivateRoom,
             icon: Icons.add_circle_outline_rounded,
             onTap: _onCreateRoom,
           ),
@@ -811,10 +830,12 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
   }
 
   Widget _buildWaitingRoomView({
+    required BuildContext context,
     required String title,
     required OnlineGameModeInfo selectedInfo,
     required bool isDark,
   }) {
+    final l10n = AppLocalizations.of(context)!;
     final roundsToWin = (_selectedTotalRounds ~/ 2) + 1;
     return Center(
       child: Column(
@@ -839,7 +860,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
                 ),
               ),
               child: Text(
-                'Format: $_selectedTotalRounds TUR – $roundsToWin GALİBİYET (Kilitli)',
+                l10n.lockedFormatPrefix(_selectedTotalRounds, roundsToWin),
                 style: AppTypography.label(
                   fontSize: 11,
                   color: AppColors.trophyGold,
@@ -852,8 +873,8 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
             onTap: () {
               Clipboard.setData(ClipboardData(text: _createdRoomCode!));
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Oda kodu kopyalandı! Arkadaşınıza gönderin.'),
+                SnackBar(
+                  content: Text(l10n.roomCodeCopied(_createdRoomCode!)),
                   behavior: SnackBarBehavior.floating,
                 ),
               );
@@ -905,7 +926,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
               ),
               const SizedBox(width: 8),
               Text(
-                'Rakip katıldığında maç otomatik başlayacak...',
+                l10n.matchStartsWhenOpponentJoins,
                 style: AppTypography.description(
                   fontSize: 12,
                   color: isDark
@@ -921,9 +942,9 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
               onPressed: () =>
                   _navigateToOnlineMatch(_createdGameId!, _selectedMode),
               icon: const Icon(Icons.play_arrow_rounded, size: 18),
-              label: const Text(
-                'Odaya Şimdi Gir (Rakip Katılınca Canlı Bağlanır)',
-                style: TextStyle(fontSize: 11.5, fontWeight: FontWeight.w700),
+              label: Text(
+                l10n.enterRoomNowAction,
+                style: const TextStyle(fontSize: 11.5, fontWeight: FontWeight.w700),
               ),
             ),
           ],
@@ -932,13 +953,15 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
     );
   }
 
-  Widget _buildJoinTab(bool isDark) {
+  Widget _buildJoinTab(BuildContext context, bool isDark) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Arkadaşınızın paylaştığı 6 haneli oda kodunu girin:',
+            l10n.enterFriendRoomCodePrompt,
             textAlign: TextAlign.center,
             style: AppTypography.description(
               fontSize: 13,
@@ -973,7 +996,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
               const SizedBox(width: 8),
               IconActionButton(
                 icon: Icons.content_paste_rounded,
-                tooltip: 'Panodan Yapıştır',
+                tooltip: l10n.pasteFromClipboard,
                 size: 46,
                 onTap: _pasteClipboardCode,
               ),
@@ -981,7 +1004,7 @@ class _OnlineLobbyDialogState extends ConsumerState<OnlineLobbyDialog>
           ),
           const SizedBox(height: 16),
           ArenaButton(
-            label: 'Odaya Katıl ve Maça Başla',
+            label: l10n.joinRoomAndStartMatch,
             icon: Icons.login_rounded,
             isLoading: _joining,
             onTap: _onJoinRoom,

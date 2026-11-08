@@ -6,6 +6,7 @@ import '../../../core/providers.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../data/models/freezed/entity_models.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../game/data/online_match_service.dart';
 import '../../game/presentation/online_arena_banner.dart';
 import '../../game/presentation/online_lobby_dialog.dart';
@@ -196,12 +197,17 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
             );
         _showGameOverDialog();
       } else {
+        final l10n = AppLocalizations.of(context);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
               _isMultiplayer
-                  ? '❌ ${selected.name} değil! Sıra Oyuncu ${_currentPlayer + 1}\'e geçti.'
-                  : '❌ ${selected.name} değil! Hata: $_strikes/3',
+                  ? (l10n != null
+                      ? l10n.wrongPlayerNextTurn(selected.name, (_currentPlayer + 1).toString())
+                      : '❌ ${selected.name} değil! Sıra Oyuncu ${_currentPlayer + 1}\'e geçti.')
+                  : (l10n != null
+                      ? '❌ ${selected.name} ${l10n.wrongGuess}! ($_strikes/3)'
+                      : '❌ ${selected.name} değil! Hata: $_strikes/3'),
             ),
             backgroundColor: AppTheme.crimsonStrike,
             behavior: SnackBarBehavior.floating,
@@ -227,6 +233,7 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
   }
 
   void _showSuccessDialog(int points) {
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -234,8 +241,12 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
         return AlertDialog(
           title: Text(
             _isMultiplayer
-                ? '🎯 Oyuncu ${_currentPlayer + 1} Bildi!'
-                : '🎯 TAM İSABET!',
+                ? (l10n != null
+                    ? l10n.playerGuessedCorrect(_currentPlayer + 1, points)
+                    : '🎯 Oyuncu ${_currentPlayer + 1} Bildi!')
+                : (l10n != null
+                    ? l10n.greatGuessSolo(points)
+                    : '🎯 TAM İSABET!'),
             textAlign: TextAlign.center,
           ),
           content: Column(
@@ -258,7 +269,7 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
               ),
               const SizedBox(height: 6),
               Text(
-                '+$points Puan Kazandın!',
+                '+$points Pts',
                 style: const TextStyle(
                   fontSize: 17,
                   color: AppTheme.accentEmerald,
@@ -275,7 +286,7 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
                 _advanceDuelOrNext();
               },
               icon: const Icon(Icons.arrow_forward_rounded),
-              label: const Text('Sonraki Futbolcu'),
+              label: Text(l10n?.nextMatch ?? 'Sonraki Futbolcu'),
             ),
           ],
         );
@@ -284,16 +295,20 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
   }
 
   void _showGameOverDialog() {
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
-          title: const Text('❌ 3 Hata! Tur Bitti', textAlign: TextAlign.center),
+          title: Text(
+            l10n?.duelFinished ?? '❌ 3 Hata! Tur Bitti',
+            textAlign: TextAlign.center,
+          ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text('Gizemli futbolcu:'),
+              Text(l10n?.whoAmITitle ?? 'Gizemli futbolcu:'),
               const SizedBox(height: 10),
               AppTheme.playerAvatarWidget(
                 name: _mysteryPlayer!.name,
@@ -320,7 +335,7 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
                 _advanceDuelOrNext();
               },
               icon: const Icon(Icons.replay_rounded),
-              label: const Text('Sonraki Futbolcu'),
+              label: Text(l10n?.nextMatch ?? 'Sonraki Futbolcu'),
             ),
           ],
         );
@@ -330,14 +345,16 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final clues = _mysteryPlayer?.clues ?? const [];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ben Kimim?'),
+        title: Text(l10n?.whoAmITitle ?? 'Ben Kimim?'),
         actions: [
           AppTheme.onlineRoomButton(
             isOnlineActive: widget.roomId != null,
+            context: context,
             onTap: () {
               showDialog(
                 context: context,
@@ -348,6 +365,7 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
           ),
           AppTheme.modeToggleButton(
             isMultiplayer: _isMultiplayer,
+            context: context,
             onChanged: (val) {
               setState(() => _isMultiplayer = val);
               _resetDuel();
@@ -407,6 +425,7 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
                             currentPlayer: _currentPlayer,
                             currentTurn: _duelTurn,
                             maxTurns: _maxDuelTurns,
+                            context: context,
                           ),
                         Container(
                           padding: const EdgeInsets.symmetric(
@@ -425,16 +444,16 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Row(
+                              Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.psychology_alt_rounded,
                                     color: AppTheme.trophyGold,
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Text(
-                                    'Olası Ödül Puanı:',
-                                    style: TextStyle(
+                                    l10n?.potentialPoints ?? 'Olası Ödül Puanı:',
+                                    style: const TextStyle(
                                       fontWeight: FontWeight.w800,
                                       color: Colors.white,
                                     ),
@@ -451,7 +470,7 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: Text(
-                                  '${_calculatePoints()} PUAN',
+                                  '${_calculatePoints()} PTS',
                                   style: const TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w900,
@@ -513,9 +532,9 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
                                             fontWeight: FontWeight.w700,
                                           ),
                                         )
-                                      : const Text(
-                                          '🔒 Kilitli İpucu',
-                                          style: TextStyle(
+                                      : Text(
+                                          l10n?.lockedClue ?? '🔒 Kilitli İpucu',
+                                          style: const TextStyle(
                                             color: Colors.grey,
                                             fontStyle: FontStyle.italic,
                                           ),
@@ -531,7 +550,9 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
                             onPressed: _unlockNextClue,
                             icon: const Icon(Icons.lock_open_rounded),
                             label: Text(
-                              'Sonraki İpucunu Aç (Kalan: ${clues.length - _unlockedCluesCount})',
+                              l10n != null
+                                  ? l10n.unlockNextClueRemaining((clues.length - _unlockedCluesCount).toString())
+                                  : 'Sonraki İpucunu Aç (Kalan: ${clues.length - _unlockedCluesCount})',
                             ),
                           ),
                           const SizedBox(height: 10),

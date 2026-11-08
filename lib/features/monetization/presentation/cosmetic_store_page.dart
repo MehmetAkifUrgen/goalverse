@@ -10,6 +10,7 @@ import '../../../core/monetization/premium_service.dart';
 import '../../../core/monetization/purchase_service.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/stadium_visuals.dart';
+import '../../../l10n/app_localizations.dart';
 
 class CosmeticStorePage extends ConsumerStatefulWidget {
   const CosmeticStorePage({super.key});
@@ -167,7 +168,7 @@ class _CosmeticStorePageState extends ConsumerState<CosmeticStorePage> {
                           Padding(
                             padding: const EdgeInsets.only(right: 8),
                             child: ChoiceChip(
-                              label: const Text('Tümü'),
+                              label: Text(AppLocalizations.of(context)?.filterAll ?? 'Tümü'),
                               selected: _selectedCategory == null,
                               onSelected: (_) {
                                 setState(() => _selectedCategory = null);

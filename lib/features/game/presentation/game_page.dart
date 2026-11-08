@@ -163,7 +163,9 @@ class _GamePageState extends ConsumerState<GamePage> {
           ref.read(appSettingsProvider.notifier).triggerErrorHaptic();
           _engine?.skipTurn(reason: 'timeout');
           setState(() {
-            _statusMessage = '⏰ Süre doldu! Sıra rakibe geçti.';
+            _statusMessage =
+                AppLocalizations.of(context)?.timeExpiredTurnPasses ??
+                '⏰ Süre doldu! Sıra rakibe geçti.';
             _statusColor = AppColors.trophyGold;
           });
           _timer?.reset();
@@ -211,6 +213,9 @@ class _GamePageState extends ConsumerState<GamePage> {
     engine.startNextRound(nextBoard);
     setState(() {
       _statusMessage =
+          AppLocalizations.of(context)?.roundStartedClubsReady(
+            engine.state.roundNumber,
+          ) ??
           '⚽ Tur ${engine.state.roundNumber} başladı! Yeni kulüp tahtası hazır.';
       _statusColor = AppColors.electricLime;
     });
@@ -406,11 +411,14 @@ class _GamePageState extends ConsumerState<GamePage> {
     }
 
     if (!mounted) return;
+    final l10n = AppLocalizations.of(context);
     setState(() {
       _aiThinking = false;
       _statusMessage = moved
-          ? '🤖 Bot hamlesini yaptı: ${aiPickedName ?? ''}'
-          : '🤖 Bot sırasını pas geçti.';
+          ? (l10n != null
+                ? l10n.botMadeMove(aiPickedName ?? '')
+                : '🤖 Bot hamlesini yaptı: ${aiPickedName ?? ''}')
+          : (l10n?.botPassedTurn ?? '🤖 Bot sırasını pas geçti.');
       _statusColor = AppColors.skyBlue;
     });
     if (engine.state.status == GameStatus.playing &&
@@ -540,8 +548,8 @@ class _GamePageState extends ConsumerState<GamePage> {
                 ),
                 const SizedBox(height: 12),
                 if (history.isEmpty)
-                  const Expanded(
-                    child: Center(child: Text('Henüz hamle yapılmadı.')),
+                  Expanded(
+                    child: Center(child: Text(l10n.noMovesYet)),
                   )
                 else
                   Expanded(
@@ -551,17 +559,21 @@ class _GamePageState extends ConsumerState<GamePage> {
                       itemBuilder: (_, idx) {
                         final item = history[idx];
                         final actor = item.byUserId == 'local-player-1'
-                            ? (_isVsAi ? 'Sen (X)' : 'Oyuncu 1 (X)')
-                            : (_isVsAi ? 'Bot (O)' : 'Oyuncu 2 (O)');
+                            ? (_isVsAi
+                                  ? '${l10n.scoreboardYou} (X)'
+                                  : '${l10n.scoreboardPlayer1} (X)')
+                            : (_isVsAi
+                                  ? '${l10n.scoreboardBot} (O)'
+                                  : '${l10n.scoreboardPlayer2} (O)');
                         final label = switch (item.type) {
                           'move' =>
-                            '⚽ [Tur ${item.roundNumber}] $actor: ${item.playerName ?? item.playerId ?? ''} (Kare ${(item.cellIndex ?? 0) + 1})',
+                            '⚽ [${l10n.roundLabel} ${item.roundNumber}] $actor: ${item.playerName ?? item.playerId ?? ''} (${l10n.yourTurnSelectCell.split(' ').last} ${(item.cellIndex ?? 0) + 1})',
                           'pass' =>
-                            '⏭️ [Tur ${item.roundNumber}] ${l10n.playerPassedTurn(actor)}',
+                            '⏭️ [${l10n.roundLabel} ${item.roundNumber}] ${l10n.playerPassedTurn(actor)}',
                           'timeout' =>
-                            '⏰ [Tur ${item.roundNumber}] $actor (${l10n.errorTimeExpired})',
+                            '⏰ [${l10n.roundLabel} ${item.roundNumber}] $actor (${l10n.errorTimeExpired})',
                           'draw_offer' =>
-                            '🤝 [Tur ${item.roundNumber}] $actor: ${l10n.offerDraw}',
+                            '🤝 [${l10n.roundLabel} ${item.roundNumber}] $actor: ${l10n.offerDraw}',
                           'draw_accepted' => '🤝 ${l10n.drawAcceptedMessage}',
                           'draw_rejected' => '❌ ${l10n.drawRejectedMessage}',
                           'draw_expired' => '⌛ ${l10n.drawOfferExpiredMessage}',
@@ -601,20 +613,21 @@ class _GamePageState extends ConsumerState<GamePage> {
     players.sort((a, b) => (b.eaFcOverall ?? 0).compareTo(a.eaFcOverall ?? 0));
 
     if (!mounted) return;
+    final l10n = AppLocalizations.of(context)!;
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       builder: (ctx) => SafeArea(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(ctx).size.height * 0.7,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(ctx).size.height * 0.7,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     AppTheme.clubCrestWidget(
@@ -648,7 +661,7 @@ class _GamePageState extends ConsumerState<GamePage> {
                   ),
                 ),
                 Text(
-                  'Bu hücre için doğrulanmış ${players.length} futbolcu:',
+                  l10n.verifiedPlayersForCell(players.length),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontSize: 12,
@@ -772,8 +785,7 @@ class _GamePageState extends ConsumerState<GamePage> {
       setState(() {
         switch (result.error) {
           case 'INVALID_PLAYER':
-            _statusMessage =
-                '❌ ${player.name} bu iki kulüpte birden oynamadı! Sıra geçti.';
+            _statusMessage = l10n.playerDidNotPlayForBoth(player.name);
             break;
           default:
             _statusMessage = result.error ?? l10n.errorServerError;
@@ -789,7 +801,7 @@ class _GamePageState extends ConsumerState<GamePage> {
   String _formatDuration(int totalSeconds) {
     final mins = totalSeconds ~/ 60;
     final secs = totalSeconds % 60;
-    return '${mins}dk ${secs.toString().padLeft(2, '0')}sn';
+    return '${mins}m ${secs.toString().padLeft(2, '0')}s';
   }
 
   void _showGameOverDialog(GameState state, int finalScore) {
@@ -807,8 +819,8 @@ class _GamePageState extends ConsumerState<GamePage> {
     final title = isDraw
         ? '🤝 ${l10n.draw}'
         : _isVsAi
-        ? (p1Won ? '🏆 ${l10n.won}' : '🤖 Bot Kazandı!')
-        : (p1Won ? '🏆 Oyuncu 1 (X) Kazandı!' : '🏆 Oyuncu 2 (O) Kazandı!');
+        ? (p1Won ? '🏆 ${l10n.won}' : l10n.botWon)
+        : (p1Won ? l10n.player1WonX : l10n.player2WonO);
 
     showDialog(
       context: context,
@@ -834,7 +846,7 @@ class _GamePageState extends ConsumerState<GamePage> {
                 border: Border.all(color: AppColors.border),
               ),
               child: Text(
-                'MAÇ SONU • ${state.totalRounds} TUR (${state.roundsToWin} GALİBİYET)',
+                l10n.matchEndSummary(state.totalRounds, state.roundsToWin),
                 style: AppTypography.label(
                   fontSize: 10.5,
                   color: AppColors.trophyGold,
@@ -858,7 +870,7 @@ class _GamePageState extends ConsumerState<GamePage> {
               child: Column(
                 children: [
                   Text(
-                    'Tur Skoru:  $p1RoundWins  -  $p2RoundWins',
+                    '${l10n.roundLabel} ${l10n.score}:  $p1RoundWins  -  $p2RoundWins',
                     textAlign: TextAlign.center,
                     style: AppTheme.scoreboardNumberStyle(
                       fontSize: 22,
@@ -867,7 +879,7 @@ class _GamePageState extends ConsumerState<GamePage> {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'Puan: $finalScore  -  ${state.scores['local-player-2'] ?? 0}',
+                    '${l10n.score}: $finalScore  -  ${state.scores['local-player-2'] ?? 0}',
                     style: AppTypography.label(
                       fontSize: 12,
                       color: AppColors.textSecondary,
@@ -887,20 +899,20 @@ class _GamePageState extends ConsumerState<GamePage> {
               child: Column(
                 children: [
                   _buildSummaryRow(
-                    'Kazanılan Turlar',
+                    l10n.roundsWon,
                     '$p1RoundWins - $p2RoundWins',
                   ),
                   const SizedBox(height: 5),
-                  _buildSummaryRow('Doğru Cevap', '$p1Correct'),
+                  _buildSummaryRow(l10n.correctAnswers, '$p1Correct'),
                   const SizedBox(height: 5),
-                  _buildSummaryRow('Yanlış Cevap', '$p1Wrong'),
+                  _buildSummaryRow(l10n.wrongAnswers, '$p1Wrong'),
                   const SizedBox(height: 5),
-                  _buildSummaryRow('Kullanılan Pas', '$p1Passes'),
+                  _buildSummaryRow(l10n.passesUsed, '$p1Passes'),
                   const SizedBox(height: 5),
-                  _buildSummaryRow('Maç Süresi', _formatDuration(durationSec)),
+                  _buildSummaryRow(l10n.matchDuration, _formatDuration(durationSec)),
                   const Divider(height: 14),
                   _buildSummaryRow(
-                    'ELO Değişimi',
+                    l10n.eloChange,
                     '${eloDelta >= 0 ? '+' : ''}$eloDelta ELO',
                     valueColor: eloDelta > 0
                         ? AppColors.electricLime
@@ -923,10 +935,10 @@ class _GamePageState extends ConsumerState<GamePage> {
               ),
             ],
             const SizedBox(height: 8),
-            const Text(
-              '💡 İpucu: Pencereyi kapatıp tablodaki herhangi bir hücreye dokunarak tüm olası doğru futbolcuları görebilirsin!',
+            Text(
+              l10n.inspectBoardHint,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 11.5, color: AppColors.slateGray),
+              style: const TextStyle(fontSize: 11.5, color: AppColors.slateGray),
             ),
           ],
         ),
@@ -936,7 +948,7 @@ class _GamePageState extends ConsumerState<GamePage> {
             onPressed: () {
               Navigator.of(ctx).pop();
             },
-            child: const Text('Tabloyu İncele'),
+            child: Text(l10n.inspectBoard),
           ),
           OutlinedButton(
             onPressed: () {
@@ -985,8 +997,8 @@ class _GamePageState extends ConsumerState<GamePage> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final title = _isVsAi
-        ? 'Football SOS • vs Bot'
-        : 'Football SOS • 2 Kişilik';
+        ? 'Football SOS • vs AI'
+        : l10n.footballSos2P;
 
     return Scaffold(
       appBar: AppBar(
@@ -994,7 +1006,7 @@ class _GamePageState extends ConsumerState<GamePage> {
         actions: [
           // Format Selector (3 Tur - 2 Galibiyet vs 5 Tur - 3 Galibiyet)
           PopupMenuButton<int>(
-            tooltip: 'Maç Formatı Seç',
+            tooltip: l10n.selectMatchFormatTooltip,
             initialValue: _selectedTotalRounds,
             onSelected: (rounds) {
               if (rounds != _selectedTotalRounds) {
@@ -1002,19 +1014,19 @@ class _GamePageState extends ConsumerState<GamePage> {
                 _init();
               }
             },
-            itemBuilder: (_) => const [
+            itemBuilder: (_) => [
               PopupMenuItem(
                 value: 3,
-                child: Text('🏆 3 Tur – 2 Galibiyet (Standart)'),
+                child: Text('🏆 ${l10n.format3RoundsTitle}'),
               ),
               PopupMenuItem(
                 value: 5,
-                child: Text('🏆 5 Tur – 3 Galibiyet (Uzun Seri)'),
+                child: Text('🏆 ${l10n.format5RoundsTitle}'),
               ),
             ],
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 4),
               decoration: BoxDecoration(
                 color: AppColors.pitchGreen,
                 borderRadius: BorderRadius.circular(999),
@@ -1028,9 +1040,9 @@ class _GamePageState extends ConsumerState<GamePage> {
                     size: 14,
                     color: AppColors.trophyGold,
                   ),
-                  const SizedBox(width: 4),
+                  const SizedBox(width: 3),
                   Text(
-                    '$_selectedTotalRounds Tur',
+                    '$_selectedTotalRounds ${l10n.roundLabel}',
                     style: AppTypography.label(
                       fontSize: 11,
                       color: AppColors.trophyGold,
@@ -1041,11 +1053,13 @@ class _GamePageState extends ConsumerState<GamePage> {
             ),
           ),
           IconButton(
+            visualDensity: VisualDensity.compact,
             tooltip: l10n.matchHistoryTitle,
-            icon: const Icon(Icons.history_rounded),
+            icon: const Icon(Icons.history_rounded, size: 20),
             onPressed: () => _showMoveHistorySheet(l10n),
           ),
           AppTheme.onlineRoomButton(
+            context: context,
             onTap: () {
               showDialog(
                 context: context,
@@ -1054,36 +1068,38 @@ class _GamePageState extends ConsumerState<GamePage> {
             },
           ),
           PopupMenuButton<bool>(
-            tooltip: 'Oyun Modu Değiştir',
+            tooltip: l10n.changeGameModeTooltip,
             icon: Icon(
               _isVsAi ? Icons.smart_toy_rounded : Icons.people_rounded,
+              size: 20,
             ),
             onSelected: (vsAi) {
               setState(() => _isVsAi = vsAi);
               _init();
             },
-            itemBuilder: (_) => const [
+            itemBuilder: (_) => [
               PopupMenuItem(
                 value: true,
-                child: Text('🤖 Tek Kişilik (vs Akıllı Bot)'),
+                child: Text(l10n.modeSoloVsBot),
               ),
               PopupMenuItem(
                 value: false,
-                child: Text('👥 2 Kişilik Düello (Aynı Cihaz)'),
+                child: Text(l10n.mode2PlayerLocal),
               ),
             ],
           ),
           IconButton(
-            tooltip: 'Yeni Tablo',
-            icon: const Icon(Icons.refresh_rounded),
+            visualDensity: VisualDensity.compact,
+            tooltip: l10n.newGrid,
+            icon: const Icon(Icons.refresh_rounded, size: 20),
             onPressed: _init,
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 12),
+            padding: const EdgeInsets.only(right: 6),
             child: Center(
               child: Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
+                  horizontal: 7,
                   vertical: 5,
                 ),
                 decoration: BoxDecoration(
@@ -1463,8 +1479,9 @@ class _GamePageState extends ConsumerState<GamePage> {
   }
 
   Widget _buildLocalInterRoundSummaryCard(GameState state) {
-    final p1Name = _isVsAi ? 'Sen' : 'Oyuncu 1';
-    final p2Name = _isVsAi ? 'Bot' : 'Oyuncu 2';
+    final l10n = AppLocalizations.of(context)!;
+    final p1Name = _isVsAi ? l10n.scoreboardYou : l10n.scoreboardPlayer1;
+    final p2Name = _isVsAi ? l10n.scoreboardBot : l10n.scoreboardPlayer2;
     final p1RoundWins = state.roundWinsFor('local-player-1');
     final p2RoundWins = state.roundWinsFor('local-player-2');
     final winner = state.lastRoundWinnerId;
@@ -1472,10 +1489,10 @@ class _GamePageState extends ConsumerState<GamePage> {
     final isDraw = winner == 'draw' || winner == null;
 
     final title = isDraw
-        ? 'TUR ${state.roundNumber} BERABERE BİTTİ'
+        ? l10n.roundEndedInDraw(state.roundNumber)
         : p1WonRound
-        ? '🏆 TUR ${state.roundNumber} KAZANANI: $p1Name'
-        : '⚽ TUR ${state.roundNumber} KAZANANI: $p2Name';
+        ? '🏆 ${l10n.roundLabel} ${state.roundNumber} ${l10n.won}: $p1Name'
+        : '⚽ ${l10n.roundLabel} ${state.roundNumber} ${l10n.won}: $p2Name';
 
     return Container(
       key: const Key('local_inter_round_summary_card'),
@@ -1498,7 +1515,7 @@ class _GamePageState extends ConsumerState<GamePage> {
               border: Border.all(color: AppColors.trophyGold),
             ),
             child: Text(
-              'TUR ${state.roundNumber} TAMAMLANDI',
+              l10n.roundCompletedNewStarting(state.roundNumber),
               style: AppTypography.label(
                 fontSize: 11,
                 color: AppColors.trophyGold,
@@ -1525,7 +1542,7 @@ class _GamePageState extends ConsumerState<GamePage> {
               border: Border.all(color: AppColors.border),
             ),
             child: Text(
-              'Seri Skoru:  $p1Name $p1RoundWins  —  $p2RoundWins $p2Name',
+              '${l10n.seriesDraw.split(' ').first} ${l10n.score}:  $p1Name $p1RoundWins  —  $p2RoundWins $p2Name',
               style: AppTheme.scoreboardNumberStyle(
                 fontSize: 16,
                 color: AppColors.warmWhite,
@@ -1534,7 +1551,7 @@ class _GamePageState extends ConsumerState<GamePage> {
           ),
           const SizedBox(height: 12),
           Text(
-            'Sıradaki: TUR ${state.roundNumber + 1} (${state.roundsToWin} galibiyete ulaşan kazanır)',
+            l10n.nextRoundBanner(state.roundNumber + 1, state.roundsToWin),
             style: AppTypography.description(
               fontSize: 12,
               color: AppColors.textSecondary,
@@ -1543,7 +1560,7 @@ class _GamePageState extends ConsumerState<GamePage> {
           const SizedBox(height: 12),
           ArenaButton(
             key: const Key('local_next_round_button'),
-            label: 'Tur ${state.roundNumber + 1} Başlat',
+            label: l10n.startNextRound(state.roundNumber + 1),
             icon: Icons.play_arrow_rounded,
             compact: true,
             onTap: _startNextRound,
@@ -1620,16 +1637,16 @@ class _GamePageState extends ConsumerState<GamePage> {
     final p2Passes = state.remainingPassesFor('local-player-2');
     final p1RoundWins = state.roundWinsFor('local-player-1');
     final p2RoundWins = state.roundWinsFor('local-player-2');
-    final p1Label = '${_isVsAi ? 'SEN' : 'OYUNCU 1'} (${p1Passes}P)';
-    final p2Label = '${_isVsAi ? 'BOT' : 'OYUNCU 2'} (${p2Passes}P)';
+    final p1Label = '${_isVsAi ? l10n.scoreboardYou : l10n.scoreboardPlayer1} (${p1Passes}P)';
+    final p2Label = '${_isVsAi ? l10n.scoreboardBot : l10n.scoreboardPlayer2} (${p2Passes}P)';
     final centerTop = state.status == GameStatus.won
-        ? 'BİTTİ'
+        ? l10n.scoreboardFinished
         : state.status == GameStatus.draw
-        ? 'BERABERE'
+        ? l10n.scoreboardDraw
         : 'T${state.roundNumber} • $p1RoundWins-$p2RoundWins';
     final centerBottom = _aiThinking
-        ? 'BOT DÜŞÜNÜYOR'
-        : (p1Turn ? 'SIRA: X' : 'SIRA: O');
+        ? l10n.scoreboardAiThinking
+        : (p1Turn ? l10n.scoreboardTurnX : l10n.scoreboardTurnO);
 
     return BroadcastScoreboard(
       p1Name: p1Label,
@@ -1720,6 +1737,7 @@ class _GamePageState extends ConsumerState<GamePage> {
         ? AppColors.trophyGold
         : (isX ? AppColors.electricLime : AppColors.skyBlue);
     final gameEnded = _engine?.state.status != GameStatus.playing;
+    final l10n = AppLocalizations.of(context);
 
     return Material(
       color: Colors.transparent,
@@ -1820,7 +1838,9 @@ class _GamePageState extends ConsumerState<GamePage> {
                             : AppColors.electricLime.withValues(alpha: 0.65),
                       ),
                       Text(
-                        gameEnded ? 'GÖR' : 'SEÇ',
+                        gameEnded
+                            ? (l10n?.cellActionView ?? 'GÖR')
+                            : (l10n?.cellActionSelect ?? 'SEÇ'),
                         style: TextStyle(
                           fontSize: (size * 0.095).clamp(8.0, 10.5),
                           fontWeight: FontWeight.w900,

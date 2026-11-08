@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart' as gma;
 
 import '../providers/auth_providers.dart';
 import '../theme/app_colors.dart';
@@ -150,9 +151,11 @@ class DefaultAdMobPlatformClient implements AdPlatformClient {
 
   bool simulateInterstitialAvailable = true;
   bool simulateRewardedCompleted = true;
+  gma.InterstitialAd? _interstitialAd;
 
   @override
   Future<bool> preloadBanner(String adUnitId) async {
+    if (kIsWeb) return true;
     try {
       await _adChannel.invokeMethod<dynamic>('loadBannerAd', <String, dynamic>{
         'adUnitId': adUnitId,
@@ -163,24 +166,42 @@ class DefaultAdMobPlatformClient implements AdPlatformClient {
 
   @override
   Future<bool> preloadInterstitial(String adUnitId) async {
+    if (kIsWeb) return simulateInterstitialAvailable;
+    final completer = Completer<bool>();
     try {
-      await _adChannel.invokeMethod<dynamic>(
-        'loadInterstitialAd',
-        <String, dynamic>{'adUnitId': adUnitId},
+      await gma.InterstitialAd.load(
+        adUnitId: adUnitId,
+        request: const gma.AdRequest(),
+        adLoadCallback: gma.InterstitialAdLoadCallback(
+          onAdLoaded: (ad) {
+            _interstitialAd = ad;
+            if (!completer.isCompleted) completer.complete(true);
+          },
+          onAdFailedToLoad: (error) {
+            _interstitialAd = null;
+            if (!completer.isCompleted) completer.complete(false);
+          },
+        ),
       );
-    } catch (_) {}
-    return simulateInterstitialAvailable;
+    } catch (_) {
+      return simulateInterstitialAvailable;
+    }
+    return completer.future.timeout(
+      const Duration(seconds: 4),
+      onTimeout: () => simulateInterstitialAvailable,
+    );
   }
 
   @override
   Future<bool> showInterstitial(String adUnitId) async {
     if (!simulateInterstitialAvailable) return false;
-    try {
-      await _adChannel.invokeMethod<dynamic>(
-        'showAdWithoutView',
-        <String, dynamic>{'adUnitId': adUnitId},
-      );
-    } catch (_) {}
+    if (_interstitialAd != null) {
+      try {
+        await _interstitialAd!.show();
+        _interstitialAd = null;
+        return true;
+      } catch (_) {}
+    }
     return true;
   }
 
@@ -190,26 +211,84 @@ class DefaultAdMobPlatformClient implements AdPlatformClient {
     required String userId,
     required String customData,
   }) async {
-    try {
-      await _adChannel.invokeMethod<dynamic>(
-        'loadRewardedAd',
-        <String, dynamic>{
-          'adUnitId': adUnitId,
-          'serverSideVerificationOptions': <String, dynamic>{
-            'userId': userId,
-            'customData': customData,
-          },
-        },
-      );
-    } catch (_) {}
-
-    if (!simulateRewardedCompleted) {
-      return (shown: true, completed: false, ssvToken: null);
+    if (kIsWeb) {
+      if (!simulateRewardedCompleted) {
+        return (shown: true, completed: false, ssvToken: null);
+      }
+      final token =
+          'ssv_${userId}_${DateTime.now().millisecondsSinceEpoch}_$customData';
+      return (shown: true, completed: true, ssvToken: token);
     }
 
-    final token =
-        'ssv_${userId}_${DateTime.now().millisecondsSinceEpoch}_$customData';
-    return (shown: true, completed: true, ssvToken: token);
+    try {
+      final completer =
+          Completer<({bool shown, bool completed, String? ssvToken})>();
+      await gma.RewardedAd.load(
+        adUnitId: adUnitId,
+        request: const gma.AdRequest(),
+        rewardedAdLoadCallback: gma.RewardedAdLoadCallback(
+          onAdLoaded: (ad) {
+            ad.setServerSideOptions(
+              gma.ServerSideVerificationOptions(
+                userId: userId,
+                customData: customData,
+              ),
+            );
+            var earned = false;
+            ad.show(
+              onUserEarnedReward: (adWithoutView, reward) {
+                earned = true;
+              },
+            );
+            ad.fullScreenContentCallback = gma.FullScreenContentCallback(
+              onAdDismissedFullScreenContent: (ad) {
+                ad.dispose();
+                final token = earned
+                    ? 'ssv_${userId}_${DateTime.now().millisecondsSinceEpoch}_$customData'
+                    : null;
+                if (!completer.isCompleted) {
+                  completer.complete(
+                    (shown: true, completed: earned, ssvToken: token),
+                  );
+                }
+              },
+              onAdFailedToShowFullScreenContent: (ad, err) {
+                ad.dispose();
+                if (!completer.isCompleted) {
+                  completer.complete(
+                    (shown: false, completed: false, ssvToken: null),
+                  );
+                }
+              },
+            );
+          },
+          onAdFailedToLoad: (error) {
+            if (!completer.isCompleted) {
+              completer.complete(
+                (shown: false, completed: false, ssvToken: null),
+              );
+            }
+          },
+        ),
+      );
+      return await completer.future.timeout(
+        const Duration(seconds: 8),
+        onTimeout: () => (
+          shown: true,
+          completed: simulateRewardedCompleted,
+          ssvToken: simulateRewardedCompleted
+              ? 'ssv_${userId}_${DateTime.now().millisecondsSinceEpoch}_$customData'
+              : null,
+        ),
+      );
+    } catch (_) {
+      if (!simulateRewardedCompleted) {
+        return (shown: true, completed: false, ssvToken: null);
+      }
+      final token =
+          'ssv_${userId}_${DateTime.now().millisecondsSinceEpoch}_$customData';
+      return (shown: true, completed: true, ssvToken: token);
+    }
   }
 }
 

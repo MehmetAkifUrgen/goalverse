@@ -32,6 +32,7 @@ class ProfilePage extends ConsumerWidget {
     String currentName,
     String currentCountry,
   ) {
+    final l10n = AppLocalizations.of(context)!;
     final nameCtrl = TextEditingController(text: currentName);
     String selectedCountry = currentCountry;
 
@@ -39,22 +40,22 @@ class ProfilePage extends ConsumerWidget {
       context: context,
       builder: (ctx) => StatefulBuilder(
         builder: (ctx, setDialogState) => AlertDialog(
-          title: const Text('Profili Düzenle'),
+          title: Text(l10n.editProfile),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               TextField(
                 controller: nameCtrl,
-                decoration: const InputDecoration(
-                  labelText: 'Oyuncu Adı',
-                  prefixIcon: Icon(Icons.person_outline_rounded),
+                decoration: InputDecoration(
+                  labelText: l10n.playerName,
+                  prefixIcon: const Icon(Icons.person_outline_rounded),
                 ),
               ),
               const SizedBox(height: 16),
-              const Text(
-                'Ülke / Bayrak:',
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 13),
+              Text(
+                l10n.countryFlag,
+                style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 13),
               ),
               const SizedBox(height: 8),
               Wrap(
@@ -79,7 +80,7 @@ class ProfilePage extends ConsumerWidget {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(ctx).pop(),
-              child: const Text('İptal'),
+              child: Text(l10n.cancel),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -88,7 +89,7 @@ class ProfilePage extends ConsumerWidget {
                 await notifier.setCountry(selectedCountry);
                 if (ctx.mounted) Navigator.of(ctx).pop();
               },
-              child: const Text('Kaydet'),
+              child: Text(l10n.save),
             ),
           ],
         ),
@@ -117,7 +118,7 @@ class ProfilePage extends ConsumerWidget {
         ? user!.displayName!
         : (user?.email?.isNotEmpty ?? false)
         ? user!.email!.split('@').first
-        : 'Goalverse Oyuncusu';
+        : (l10n.playerDefault);
 
     final division = stats.rating >= 1600
         ? 'ELITE PRO'
@@ -132,59 +133,56 @@ class ProfilePage extends ConsumerWidget {
           (
             id: 'firstWin',
             title: l10n.firstWin,
-            howTo: 'Herhangi bir oyun modunda ilk galibiyetini al.',
+            howTo: l10n.achievementFirstWinHowTo,
             icon: Icons.emoji_events_rounded,
             color: const Color(0xFFF59E0B),
           ),
           (
             id: 'wins10',
             title: l10n.wins10,
-            howTo: 'Toplam 10 maç kazan.',
+            howTo: l10n.achievementWins10HowTo,
             icon: Icons.military_tech_rounded,
             color: const Color(0xFF3B82F6),
           ),
           (
             id: 'wins100',
             title: l10n.wins100,
-            howTo: 'Toplam 100 maç kazanarak efsaneler arasına gir.',
+            howTo: l10n.achievementWins100HowTo,
             icon: Icons.workspace_premium_rounded,
             color: const Color(0xFF8B5CF6),
           ),
           (
             id: 'perfectGame',
             title: l10n.perfectGame,
-            howTo:
-                'Tek bir maçta 900+ puan topla veya Ben Kimim\'de ilk ipucunda bil!',
+            howTo: l10n.achievementPerfectGameHowTo,
             icon: Icons.auto_awesome_rounded,
             color: const Color(0xFF10B981),
           ),
           (
             id: 'rarePlayer',
             title: l10n.rarePlayer,
-            howTo:
-                '4 veya daha az olası cevabı olan zor bir kulüp kesişimini doğru bil!',
+            howTo: l10n.achievementRarePlayerHowTo,
             icon: Icons.diamond_rounded,
             color: const Color(0xFF06B6D4),
           ),
           (
             id: 'comeback',
             title: l10n.comeback,
-            howTo:
-                'Football SOS maçında geriye düştükten sonra maçı çevirip kazan!',
+            howTo: l10n.achievementComebackHowTo,
             icon: Icons.bolt_rounded,
             color: const Color(0xFFF97316),
           ),
           (
             id: 'winStreak5',
             title: l10n.winStreak5,
-            howTo: 'Üst üste 5 maç kazan.',
+            howTo: l10n.achievementStreak5HowTo,
             icon: Icons.local_fire_department_rounded,
             color: const Color(0xFFEF4444),
           ),
           (
             id: 'winStreak10',
             title: l10n.winStreak10,
-            howTo: 'Üst üste 10 maç kazanarak yenilmezlik serisi yap.',
+            howTo: l10n.achievementStreak10HowTo,
             icon: Icons.whatshot_rounded,
             color: const Color(0xFFEC4899),
           ),
@@ -296,9 +294,9 @@ class ProfilePage extends ConsumerWidget {
                                 size: 16,
                                 color: AppTheme.accentEmerald,
                               ),
-                              label: const Text(
-                                'Adı & Bayrağı Değiştir',
-                                style: TextStyle(
+                              label: Text(
+                                l10n.changeNameAndFlag,
+                                style: const TextStyle(
                                   color: AppTheme.accentEmerald,
                                   fontWeight: FontWeight.w800,
                                   fontSize: 12,
@@ -356,7 +354,7 @@ class ProfilePage extends ConsumerWidget {
                               ),
                               const SizedBox(width: 6),
                               Text(
-                                '${stats.rating} ELO REYTİNGİ',
+                                l10n.eloRatingBadge(stats.rating.toString()),
                                 style: const TextStyle(
                                   color: AppTheme.accentEmerald,
                                   fontWeight: FontWeight.w900,
@@ -386,7 +384,7 @@ class ProfilePage extends ConsumerWidget {
 
                   // Statistics Grid
                   Text(
-                    'İSTATİSTİKLER',
+                    l10n.statisticsTitle,
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w900,
                       letterSpacing: 0.8,
@@ -437,7 +435,7 @@ class ProfilePage extends ConsumerWidget {
                             color: const Color(0xFFF97316),
                           ),
                           _StatTile(
-                            label: 'En İyi Seri',
+                            label: l10n.bestStreak,
                             value: '⚡ ${stats.bestStreak}',
                             icon: Icons.trending_up_rounded,
                             color: const Color(0xFF8B5CF6),
@@ -454,7 +452,7 @@ class ProfilePage extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '${l10n.achievements.toUpperCase()} (Detay için dokun)',
+                        l10n.achievements.toUpperCase(),
                         style: theme.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.w900,
                         ),
@@ -497,13 +495,13 @@ class ProfilePage extends ConsumerWidget {
                                   title: Text(ach.title),
                                   content: Text(
                                     unlocked
-                                        ? '✅ Kazanıldı!\n\n${ach.howTo}'
-                                        : '🔒 Henüz kilitli.\n\nNasıl kazanılır: ${ach.howTo}',
+                                        ? l10n.achievementUnlockedDesc(ach.howTo)
+                                        : l10n.achievementLockedDesc(ach.howTo),
                                   ),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.of(ctx).pop(),
-                                      child: const Text('Tamam'),
+                                      child: Text(l10n.ok),
                                     ),
                                   ],
                                 ),
@@ -638,9 +636,9 @@ class ProfilePage extends ConsumerWidget {
                           children: [
                             Column(
                               children: [
-                                const Text(
-                                  'Toplam Pas Kullanımı',
-                                  style: TextStyle(fontSize: 11.5),
+                                Text(
+                                  l10n.totalPassCount,
+                                  style: const TextStyle(fontSize: 11.5),
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
@@ -655,9 +653,9 @@ class ProfilePage extends ConsumerWidget {
                             ),
                             Column(
                               children: [
-                                const Text(
-                                  'Beraberlik Anlaşması',
-                                  style: TextStyle(fontSize: 11.5),
+                                Text(
+                                  l10n.drawAgreements,
+                                  style: const TextStyle(fontSize: 11.5),
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
@@ -672,9 +670,9 @@ class ProfilePage extends ConsumerWidget {
                             ),
                             Column(
                               children: [
-                                const Text(
-                                  'Maç Geçmişi Kapasitesi',
-                                  style: TextStyle(fontSize: 11.5),
+                                Text(
+                                  l10n.matchHistoryCapacity,
+                                  style: const TextStyle(fontSize: 11.5),
                                 ),
                                 const SizedBox(height: 4),
                                 Text(

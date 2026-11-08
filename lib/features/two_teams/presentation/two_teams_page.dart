@@ -6,6 +6,7 @@ import '../../../core/providers.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../data/models/freezed/entity_models.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../game/data/online_match_service.dart';
 import '../../game/presentation/online_arena_banner.dart';
 import '../../game/presentation/online_lobby_dialog.dart';
@@ -166,11 +167,14 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
       _showSuccessDialog(selected);
     } else {
       ref.read(appSettingsProvider.notifier).triggerErrorHaptic();
+      final l10n = AppLocalizations.of(context);
       if (_isMultiplayer) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              '❌ ${selected.name} her iki kulüpte oynamadı! Sıra diğer oyuncuya geçti.',
+              l10n != null
+                  ? l10n.wrongPlayerNextTurn(selected.name, (_currentPlayer + 1).toString())
+                  : '❌ ${selected.name} her iki kulüpte oynamadı! Sıra diğer oyuncuya geçti.',
             ),
             backgroundColor: AppTheme.crimsonStrike,
             behavior: SnackBarBehavior.floating,
@@ -181,7 +185,9 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              '❌ ${selected.name} hem ${_teamA!.name} hem ${_teamB!.name} forması giymedi!',
+              l10n != null
+                  ? l10n.twoTeamsWrongBoth(selected.name, _teamA!.name, _teamB!.name)
+                  : '❌ ${selected.name} hem ${_teamA!.name} hem ${_teamB!.name} forması giymedi!',
             ),
             backgroundColor: AppTheme.crimsonStrike,
             behavior: SnackBarBehavior.floating,
@@ -231,6 +237,7 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
   }
 
   void _showSuccessDialog(Player player) {
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -238,8 +245,12 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
         return AlertDialog(
           title: Text(
             _isMultiplayer
-                ? '🎉 Oyuncu ${_currentPlayer + 1} Bildi! +250 Puan'
-                : '🎉 Harika Tahmin! +250 Puan',
+                ? (l10n != null
+                    ? l10n.playerGuessedCorrect(_currentPlayer + 1, 250)
+                    : '🎉 Oyuncu ${_currentPlayer + 1} Bildi! +250 Puan')
+                : (l10n != null
+                    ? l10n.greatGuessSolo(250)
+                    : '🎉 Harika Tahmin! +250 Puan'),
             textAlign: TextAlign.center,
           ),
           content: Column(
@@ -262,7 +273,9 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
               ),
               const SizedBox(height: 6),
               Text(
-                'hem ${_teamA!.name} hem de ${_teamB!.name} kulüplerinde oynadı!',
+                l10n != null
+                    ? l10n.playedForBothClubs(_teamA!.name, _teamB!.name)
+                    : 'hem ${_teamA!.name} hem de ${_teamB!.name} kulüplerinde oynadı!',
                 textAlign: TextAlign.center,
               ),
             ],
@@ -279,7 +292,7 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
                 }
               },
               icon: const Icon(Icons.arrow_forward_rounded),
-              label: const Text('Sonraki Eşleşme'),
+              label: Text(l10n?.nextMatch ?? 'Sonraki Eşleşme'),
             ),
           ],
         );
@@ -289,12 +302,14 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('2 Takım 1 Oyuncu'),
+        title: Text(l10n?.twoTeamsTitle ?? '2 Takım 1 Oyuncu'),
         actions: [
           AppTheme.onlineRoomButton(
             isOnlineActive: widget.roomId != null,
+            context: context,
             onTap: () {
               showDialog(
                 context: context,
@@ -305,6 +320,7 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
           ),
           AppTheme.modeToggleButton(
             isMultiplayer: _isMultiplayer,
+            context: context,
             onChanged: (val) {
               setState(() => _isMultiplayer = val);
               _resetDuel();
@@ -363,6 +379,7 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
                             currentPlayer: _currentPlayer,
                             currentTurn: _duelTurn,
                             maxTurns: _maxDuelTurns,
+                            context: context,
                           ),
                         Container(
                           padding: const EdgeInsets.symmetric(
@@ -375,10 +392,10 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
                           ),
                           child: Column(
                             children: [
-                              const Text(
-                                'İki kulübün formasını da giyen futbolcuyu bul!',
+                              Text(
+                                l10n?.twoTeamsPrompt ?? 'İki kulübün formasını da giyen futbolcuyu bul!',
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w800,
                                   color: Colors.white,
@@ -387,7 +404,9 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
                               if (_candidateCount > 0) ...[
                                 const SizedBox(height: 4),
                                 Text(
-                                  'Veritabanında bu iki kulüpte oynayan $_candidateCount yıldız var',
+                                  l10n != null
+                                      ? l10n.twoTeamsDatabaseCandidates(_candidateCount.toString())
+                                      : 'Veritabanında bu iki kulüpte oynayan $_candidateCount yıldız var',
                                   style: const TextStyle(
                                     fontSize: 12,
                                     color: AppTheme.accentEmerald,
@@ -433,8 +452,10 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
                           icon: const Icon(Icons.search_rounded, size: 22),
                           label: Text(
                             _isMultiplayer
-                                ? 'Oyuncu ${_currentPlayer + 1}: Futbolcu Seç'
-                                : 'Futbolcu Ara & Seç',
+                                ? (l10n != null
+                                    ? l10n.selectPlayerPlayerTurn((_currentPlayer + 1).toString())
+                                    : 'Oyuncu ${_currentPlayer + 1}: Futbolcu Seç')
+                                : (l10n?.searchAndSelectPlayer ?? 'Futbolcu Ara & Seç'),
                             style: const TextStyle(
                               fontSize: 17,
                               fontWeight: FontWeight.w800,
@@ -453,7 +474,7 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
                                   Icons.visibility_outlined,
                                   size: 18,
                                 ),
-                                label: const Text('Cevapları Göster'),
+                                label: Text(l10n?.seeAnswers ?? 'Cevapları Göster'),
                               ),
                             ),
                             const SizedBox(width: 12),
@@ -468,8 +489,8 @@ class _TwoTeamsPageState extends ConsumerState<TwoTeamsPage> {
                                 ),
                                 label: Text(
                                   _isMultiplayer
-                                      ? 'Turu Pas Geç'
-                                      : 'Yeni Eşleşme',
+                                      ? (l10n?.passTurn ?? 'Turu Pas Geç')
+                                      : (l10n?.nextMatch ?? 'Yeni Eşleşme'),
                                 ),
                               ),
                             ),

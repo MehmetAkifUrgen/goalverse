@@ -933,5 +933,742 @@
   "deletingAccount": "Deleting...",
   "@deletingAccount": {
     "description": "Account deletion progress indicator text"
-  }
+  },
+  "liveMultiplayerLobby": "Live Multiplayer Lobby",
+  "@liveMultiplayerLobby": {
+    "description": "Title of online multiplayer lobby dialog"
+  },
+  "lobbySubtitle": "Quick Match • Private Room • 6-Digit Code",
+  "@lobbySubtitle": {
+    "description": "Subtitle of online multiplayer lobby dialog"
+  },
+  "selectGameMode": "Select Game Mode",
+  "@selectGameMode": {
+    "description": "Header label for game mode selector in lobby"
+  },
+  "roomCodeMustBe6Digits": "Please enter the complete 6-digit room code.",
+  "@roomCodeMustBe6Digits": {
+    "description": "Validation error for incomplete room code"
+  },
+  "format3RoundsTitle": "3 ROUNDS – 2 WINS",
+  "@format3RoundsTitle": {
+    "description": "Best of 3 rounds option title"
+  },
+  "format3RoundsDesc": "Best of 3 rounds, first to 2 wins takes the match",
+  "@format3RoundsDesc": {
+    "description": "Best of 3 rounds option description"
+  },
+  "format5RoundsTitle": "5 ROUNDS – 3 WINS",
+  "@format5RoundsTitle": {
+    "description": "Best of 5 rounds option title"
+  },
+  "format5RoundsDesc": "Best of 5 rounds, first to 3 wins takes the match",
+  "@format5RoundsDesc": {
+    "description": "Best of 5 rounds option description"
+  },
+  "matchFormatSos": "MATCH FORMAT (FOOTBALL SOS SERIES)",
+  "@matchFormatSos": {
+    "description": "Match format header in lobby"
+  },
+  "searchingRoomsAndOpponent": "Searching for open rooms and opponents...",
+  "@searchingRoomsAndOpponent": {
+    "description": "Matchmaking loading status"
+  },
+  "matchRoomWaitingOpponent": "Match Room Created — Waiting for Opponent",
+  "@matchRoomWaitingOpponent": {
+    "description": "Matchmaking room created message"
+  },
+  "quickMatchPrompt": "Instantly join an open room or enter matchmaking for {mode}.",
+  "@quickMatchPrompt": {
+    "description": "Quick match prompt description with mode name",
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "startQuickMatch": "Start Quick Match",
+  "@startQuickMatch": {
+    "description": "Quick match action button"
+  },
+  "preparingPrivateRoom": "Preparing private room and match data...",
+  "@preparingPrivateRoom": {
+    "description": "Room creation progress text"
+  },
+  "shareRoomCodeWithFriend": "Share the 6-Digit Code with your Friend:",
+  "@shareRoomCodeWithFriend": {
+    "description": "Share code instruction"
+  },
+  "createPrivateRoomPrompt": "Create a 6-digit private room in {mode} and invite your friend.",
+  "@createPrivateRoomPrompt": {
+    "description": "Create room prompt description",
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "turnDuration": "Turn Duration:",
+  "@turnDuration": {
+    "description": "Turn timer label"
+  },
+  "create6DigitPrivateRoom": "Create 6-Digit Private Room",
+  "@create6DigitPrivateRoom": {
+    "description": "Create room button text"
+  },
+  "roomCodeCopied": "Room code copied: {code}",
+  "@roomCodeCopied": {
+    "description": "Snackbar text when copying room code"
+  },
+  "matchStartsWhenOpponentJoins": "Match starts automatically when opponent joins...",
+  "@matchStartsWhenOpponentJoins": {
+    "description": "Waiting for opponent status message"
+  },
+  "enterRoomNowAction": "Enter Room Now (Connects Live When Opponent Joins)",
+  "@enterRoomNowAction": {
+    "description": "Enter room action button"
+  },
+  "enterFriendRoomCodePrompt": "Enter the 6-digit room code shared by your friend:",
+  "@enterFriendRoomCodePrompt": {
+    "description": "Join room input prompt"
+  },
+  "pasteFromClipboard": "Paste from Clipboard",
+  "@pasteFromClipboard": {
+    "description": "Paste code button label"
+  },
+  "joinRoomAndStartMatch": "Join Room & Start Match",
+  "@joinRoomAndStartMatch": {
+    "description": "Join room button label"
+  },
+  "playSoloAction": "Play Solo",
+  "@playSoloAction": {
+    "description": "Local solo play button"
+  },
+  "playSameDeviceAction": "2 Players (Same Device)",
+  "@playSameDeviceAction": {
+    "description": "Local multiplayer button"
+  },
+  "lockedFormatPrefix": "Format: {rounds} ROUNDS – {wins} WINS (Locked)",
+  "@lockedFormatPrefix": {
+    "description": "Locked match format indicator",
+    "placeholders": {
+      "rounds": {
+        "type": "int"
+      },
+      "wins": {
+        "type": "int"
+      }
+    }
+  },
+  "duelMode2P": "2P Duel",
+  "@duelMode2P": {
+    "description": "2-Player duel toggle label"
+  },
+  "duelMode1P": "1P Solo",
+  "@duelMode1P": {
+    "description": "1-Player solo toggle label"
+  },
+  "onlineRoomLive": "Live Room",
+  "@onlineRoomLive": {
+    "description": "Active live room badge"
+  },
+  "onlineRoom": "Online Room",
+  "@onlineRoom": {
+    "description": "Online room button"
+  },
+  "turnP1": "Turn: P1",
+  "@turnP1": {
+    "description": "Player 1 turn indicator"
+  },
+  "turnP2": "Turn: P2",
+  "@turnP2": {
+    "description": "Player 2 turn indicator"
+  },
+  "duelDraw": "Duel Draw",
+  "@duelDraw": {
+    "description": "Duel draw result title"
+  },
+  "player1Won": "Player 1 Won",
+  "@player1Won": {
+    "description": "Player 1 won title"
+  },
+  "player2Won": "Player 2 Won",
+  "@player2Won": {
+    "description": "Player 2 won title"
+  },
+  "twoPlayerDuelResult": "2 Player Duel Result",
+  "@twoPlayerDuelResult": {
+    "description": "Duel summary modal subtitle"
+  },
+  "mainMenuButton": "Main Menu",
+  "@mainMenuButton": {
+    "description": "Return to main menu button"
+  },
+  "playAgainButton": "Play Again",
+  "@playAgainButton": {
+    "description": "Play again rematch button"
+  },
+  "noRankingPlayersYet": "No competitors on the leaderboard yet. Be the first to claim the podium!",
+  "@noRankingPlayersYet": {
+    "description": "Empty state message for leaderboard"
+  },
+  "editProfile": "Edit Profile",
+  "@editProfile": {
+    "description": "Edit profile dialog title"
+  },
+  "playerName": "Player Name",
+  "@playerName": {
+    "description": "Player name input label"
+  },
+  "countryFlag": "Country / Flag:",
+  "@countryFlag": {
+    "description": "Country selector label"
+  },
+  "achievementFirstWinHowTo": "Earn your first victory in any game mode.",
+  "@achievementFirstWinHowTo": {
+    "description": "Achievement description for first victory"
+  },
+  "achievementWins10HowTo": "Win 10 total matches.",
+  "@achievementWins10HowTo": {
+    "description": "Achievement description for 10 wins"
+  },
+  "achievementWins100HowTo": "Win 100 total matches to become a legend.",
+  "@achievementWins100HowTo": {
+    "description": "Achievement description for 100 wins"
+  },
+  "achievementPerfectGameHowTo": "Score 900+ points in a single match or guess on the 1st clue in Who Am I!",
+  "@achievementPerfectGameHowTo": {
+    "description": "Achievement description for perfect game"
+  },
+  "achievementRarePlayerHowTo": "Correctly guess a difficult club intersection with 4 or fewer possible answers!",
+  "@achievementRarePlayerHowTo": {
+    "description": "Achievement description for rare player"
+  },
+  "achievementComebackHowTo": "Come from behind to win a Football SOS match!",
+  "@achievementComebackHowTo": {
+    "description": "Achievement description for comeback"
+  },
+  "achievementStreak5HowTo": "Win 5 matches in a row.",
+  "@achievementStreak5HowTo": {
+    "description": "Achievement description for 5 match streak"
+  },
+  "achievementStreak10HowTo": "Win 10 matches in a row to forge an invincible streak.",
+  "@achievementStreak10HowTo": {
+    "description": "Achievement description for 10 match streak"
+  },
+  "timeExpired": "⏰ Time's Up!",
+  "@timeExpired": {
+    "description": "Turn timer expired dialog title"
+  },
+  "duelFinished": "Duel Finished!",
+  "@duelFinished": {
+    "description": "Duel finished title"
+  },
+  "correctStreakLabel": "Correct Guess Streak",
+  "@correctStreakLabel": {
+    "description": "Streak label in game modes"
+  },
+  "bestStreakStats": "Best Streak: {best} • +{points} Pts",
+  "@bestStreakStats": {
+    "description": "Best streak summary stats",
+    "placeholders": {
+      "best": {
+        "type": "int"
+      },
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "exitAction": "Exit",
+  "@exitAction": {
+    "description": "Exit dialog button"
+  },
+  "seeAnswers": "See Answers",
+  "@seeAnswers": {
+    "description": "Reveal answers button"
+  },
+  "nextMatch": "Next Match",
+  "@nextMatch": {
+    "description": "Next match button"
+  },
+  "playerGuessedCorrect": "🎉 Player {player} Got It! +{points} Pts",
+  "@playerGuessedCorrect": {
+    "description": "Multiplayer round winner dialog title",
+    "placeholders": {
+      "player": {
+        "type": "int"
+      },
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "greatGuessSolo": "🎉 Great Guess! +{points} Pts",
+  "@greatGuessSolo": {
+    "description": "Solo round winner dialog title",
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "playedForBothClubs": "played for both {teamA} and {teamB}!",
+  "@playedForBothClubs": {
+    "description": "Player shared club confirmation sentence",
+    "placeholders": {
+      "teamA": {
+        "type": "String"
+      },
+      "teamB": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyStageHeader": "STAGE {stage} / 4 • 1.5x DAILY TOURNAMENT MULTIPLIER",
+  "@dailyStageHeader": {
+    "description": "Daily challenge stage banner",
+    "placeholders": {
+      "stage": {
+        "type": "int"
+      }
+    }
+  },
+  "skipThisStage": "Skip This Stage ➔",
+  "@skipThisStage": {
+    "description": "Skip stage button"
+  },
+  "dailyChallengeCompletedTitle": "DAILY CHALLENGE COMPLETED!",
+  "@dailyChallengeCompletedTitle": {
+    "description": "Daily challenge completion dialog title"
+  },
+  "dailyChallengeCompletedDesc": "You successfully completed all stages for today. Return tomorrow for new challenges!",
+  "@dailyChallengeCompletedDesc": {
+    "description": "Daily challenge completion dialog message"
+  },
+  "claimDailyRewardAndExit": "Claim Reward & Return to Home",
+  "@claimDailyRewardAndExit": {
+    "description": "Claim reward and exit action button"
+  },
+  "profileSemanticLabel": "Player Profile: {name}, Level {level}",
+  "@profileSemanticLabel": {
+    "description": "Accessibility label for player command header",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "leaderboardCardSemanticLabel": "{title}, Your Rating: {rating} ELO",
+  "@leaderboardCardSemanticLabel": {
+    "description": "Accessibility label for leaderboard card",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "timeExpiredTurnPasses": "⏰ Time expired! Turn passed to opponent.",
+  "@timeExpiredTurnPasses": {
+    "description": "Notification when player timer expires"
+  },
+  "roundStartedClubsReady": "⚽ Round {round} started! New club grid ready.",
+  "@roundStartedClubsReady": {
+    "description": "Round start notification banner",
+    "placeholders": {
+      "round": {
+        "type": "int"
+      }
+    }
+  },
+  "botMadeMove": "🤖 Bot made a move: {player}",
+  "@botMadeMove": {
+    "description": "AI move announcement",
+    "placeholders": {
+      "player": {
+        "type": "String"
+      }
+    }
+  },
+  "botPassedTurn": "🤖 Bot passed their turn.",
+  "@botPassedTurn": {
+    "description": "AI pass notification"
+  },
+  "noMovesYet": "No moves made yet.",
+  "@noMovesYet": {
+    "description": "Empty move history message"
+  },
+  "verifiedPlayersForCell": "Verified {count} players for this cell:",
+  "@verifiedPlayersForCell": {
+    "description": "Cell answers header",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "playerDidNotPlayForBoth": "❌ {player} did not play for both clubs! Turn passed.",
+  "@playerDidNotPlayForBoth": {
+    "description": "Invalid player guess error message",
+    "placeholders": {
+      "player": {
+        "type": "String"
+      }
+    }
+  },
+  "botWon": "🤖 Bot Won!",
+  "@botWon": {
+    "description": "Bot victory message"
+  },
+  "player1WonX": "🏆 Player 1 (X) Won!",
+  "@player1WonX": {
+    "description": "Player 1 X victory title"
+  },
+  "player2WonO": "🏆 Player 2 (O) Won!",
+  "@player2WonO": {
+    "description": "Player 2 O victory title"
+  },
+  "matchEndSummary": "MATCH END • {total} ROUNDS ({wins} WINS)",
+  "@matchEndSummary": {
+    "description": "Match end dialog header",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "wins": {
+        "type": "int"
+      }
+    }
+  },
+  "roundsWon": "Rounds Won",
+  "@roundsWon": {
+    "description": "Rounds won stat label"
+  },
+  "correctAnswers": "Correct Answers",
+  "@correctAnswers": {
+    "description": "Correct answers stat label"
+  },
+  "wrongAnswers": "Wrong Answers",
+  "@wrongAnswers": {
+    "description": "Wrong answers stat label"
+  },
+  "passesUsed": "Passes Used",
+  "@passesUsed": {
+    "description": "Passes used stat label"
+  },
+  "matchDuration": "Match Duration",
+  "@matchDuration": {
+    "description": "Match duration stat label"
+  },
+  "eloChange": "ELO Change",
+  "@eloChange": {
+    "description": "ELO rating change label"
+  },
+  "inspectBoardHint": "💡 Tip: Close this dialog and tap any cell on the grid to inspect all verified valid footballers!",
+  "@inspectBoardHint": {
+    "description": "Post-match hint message"
+  },
+  "inspectBoard": "Inspect Board",
+  "@inspectBoard": {
+    "description": "Inspect board button"
+  },
+  "footballSos2P": "Football SOS • 2 Players",
+  "@footballSos2P": {
+    "description": "2-Player SOS title"
+  },
+  "selectMatchFormatTooltip": "Select Match Format",
+  "@selectMatchFormatTooltip": {
+    "description": "Format selector tooltip"
+  },
+  "changeGameModeTooltip": "Change Game Mode",
+  "@changeGameModeTooltip": {
+    "description": "Mode selector tooltip"
+  },
+  "modeSoloVsBot": "🤖 Solo (vs Smart AI)",
+  "@modeSoloVsBot": {
+    "description": "Solo vs Bot menu item"
+  },
+  "mode2PlayerLocal": "👥 2-Player Duel (Same Device)",
+  "@mode2PlayerLocal": {
+    "description": "2-Player local menu item"
+  },
+  "roundEndedInDraw": "ROUND {round} ENDED IN A DRAW",
+  "@roundEndedInDraw": {
+    "description": "Round draw banner",
+    "placeholders": {
+      "round": {
+        "type": "int"
+      }
+    }
+  },
+  "nextRoundBanner": "Next: ROUND {round} (First to {wins} wins takes the match)",
+  "@nextRoundBanner": {
+    "description": "Next round series prompt",
+    "placeholders": {
+      "round": {
+        "type": "int"
+      },
+      "wins": {
+        "type": "int"
+      }
+    }
+  },
+  "startNextRound": "Start Round {round}",
+  "@startNextRound": {
+    "description": "Start next round button",
+    "placeholders": {
+      "round": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreboardYou": "YOU",
+  "@scoreboardYou": {
+    "description": "Scoreboard current user tag"
+  },
+  "scoreboardBot": "BOT",
+  "@scoreboardBot": {
+    "description": "Scoreboard bot tag"
+  },
+  "scoreboardPlayer1": "PLAYER 1",
+  "@scoreboardPlayer1": {
+    "description": "Scoreboard player 1 tag"
+  },
+  "scoreboardPlayer2": "PLAYER 2",
+  "@scoreboardPlayer2": {
+    "description": "Scoreboard player 2 tag"
+  },
+  "scoreboardFinished": "FINISHED",
+  "@scoreboardFinished": {
+    "description": "Scoreboard finished tag"
+  },
+  "scoreboardDraw": "DRAW",
+  "@scoreboardDraw": {
+    "description": "Scoreboard draw tag"
+  },
+  "scoreboardAiThinking": "AI THINKING",
+  "@scoreboardAiThinking": {
+    "description": "Scoreboard AI thinking status"
+  },
+  "scoreboardTurnX": "TURN: X",
+  "@scoreboardTurnX": {
+    "description": "Turn X indicator"
+  },
+  "scoreboardTurnO": "TURN: O",
+  "@scoreboardTurnO": {
+    "description": "Turn O indicator"
+  },
+  "cellActionSelect": "SELECT",
+  "@cellActionSelect": {
+    "description": "Cell action to select empty cell"
+  },
+  "cellActionView": "VIEW",
+  "@cellActionView": {
+    "description": "Cell action to view filled cell"
+  },
+  "leaveMatchTitle": "Leave Match?",
+  "@leaveMatchTitle": {
+    "description": "Leave match confirmation title"
+  },
+  "leaveMatchConfirm": "Are you sure you want to leave the active multiplayer match?",
+  "@leaveMatchConfirm": {
+    "description": "Leave match confirmation body"
+  },
+  "continueMatch": "Continue Match",
+  "@continueMatch": {
+    "description": "Stay in match button"
+  },
+  "leaveMatch": "Leave Match",
+  "@leaveMatch": {
+    "description": "Leave match button"
+  },
+  "congratsMatchWon": "Congratulations! You reached {wins} wins and took the match!",
+  "@congratsMatchWon": {
+    "description": "Match victory modal message",
+    "placeholders": {
+      "wins": {
+        "type": "int"
+      }
+    }
+  },
+  "seriesDraw": "The series ended in a draw.",
+  "@seriesDraw": {
+    "description": "Series draw modal message"
+  },
+  "opponentMatchWon": "{opponent} reached {wins} wins and took the match.",
+  "@opponentMatchWon": {
+    "description": "Opponent victory modal message",
+    "placeholders": {
+      "opponent": {
+        "type": "String"
+      },
+      "wins": {
+        "type": "int"
+      }
+    }
+  },
+  "connectingToLiveMatch": "Connecting to live match...",
+  "@connectingToLiveMatch": {
+    "description": "Connecting status label"
+  },
+  "roundCompletedNewStarting": "ROUND {round} COMPLETED • NEW ROUND STARTING",
+  "@roundCompletedNewStarting": {
+    "description": "Round completion transition message",
+    "placeholders": {
+      "round": {
+        "type": "int"
+      }
+    }
+  },
+  "yourTurnSelectCell": "YOUR TURN! Select a cell",
+  "@yourTurnSelectCell": {
+    "description": "User turn prompt"
+  },
+  "opponentThinking": "Opponent is thinking ({name})...",
+  "@opponentThinking": {
+    "description": "Opponent turn prompt",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "boardFullNoSeries": "Grid is full, neither player achieved a 3-in-a-row.",
+  "@boardFullNoSeries": {
+    "description": "Grid full draw explanation"
+  },
+  "loserOpponentAhead": "Round Loser: {opponent} • You took the lead in the series!",
+  "@loserOpponentAhead": {
+    "description": "User won the round message",
+    "placeholders": {
+      "opponent": {
+        "type": "String"
+      }
+    }
+  },
+  "loserYouTieNext": "Round Loser: {me} • Level the score in the next round!",
+  "@loserYouTieNext": {
+    "description": "User lost the round message",
+    "placeholders": {
+      "me": {
+        "type": "String"
+      }
+    }
+  },
+  "nextRoundCountdown": "Next: ROUND {round} ({seconds}s)",
+  "@nextRoundCountdown": {
+    "description": "Next round countdown banner",
+    "placeholders": {
+      "round": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "boardLoadFailed": "Failed to load board.",
+  "@boardLoadFailed": {
+    "description": "Board load error message"
+  },
+  "roundLabel": "Round",
+  "@roundLabel": {
+    "description": "Round noun"
+  },
+  "newGrid": "New Grid",
+  "@newGrid": {
+    "description": "New grid action"
+  },
+  "opponentLabel": "Opponent",
+  "@opponentLabel": {
+    "description": "Opponent noun"
+  },
+  "onlineMatchConnecting": "Connecting to live room...",
+  "liveRoomTitle": "LIVE ROOM #{code}",
+  "waitingOpponent": "⏳ Waiting for Opponent",
+  "opponentFinished": "✓ Opponent Finished",
+  "opponentRound": "⚡ Opponent Round {round}",
+  "onlineVictoryTitle": "🏆 ONLINE DUEL VICTORY!",
+  "onlineDrawTitle": "🤝 ONLINE MATCH DRAW!",
+  "onlineDefeatTitle": "💔 ONLINE MATCH LOST",
+  "roomLiveScoreboard": "Room #{code} • Live Scoreboard",
+  "changeNameAndFlag": "Change Name & Flag",
+  "eloRatingBadge": "{rating} ELO RATING",
+  "bestStreak": "Best Streak",
+  "achievementUnlockedDesc": "✅ Unlocked!\n\n{desc}",
+  "achievementLockedDesc": "🔒 Still locked.\n\nHow to unlock: {desc}",
+  "totalPassCount": "Total Passes Used",
+  "drawAgreements": "Draw Agreements",
+  "matchHistoryCapacity": "Match History Capacity",
+  "correctPredictionStreak": "Correct Guess Streak",
+  "peakMarketValue": "Peak Market Value",
+  "careerGoals": "Career Goals",
+  "careerAssists": "Career Assists",
+  "sprintSpeedRating": "Speed / Sprint Rating",
+  "championsLeagueGoals": "Champions League Goals",
+  "playerAge": "Player Age",
+  "comparedStat": "COMPARED STAT: {stat}",
+  "correctGuess": "CORRECT GUESS!",
+  "wrongGuess": "WRONG GUESS",
+  "higher": "Higher",
+  "lower": "Lower",
+  "correctTransferPath": "🎯 Correct Transfer Path!",
+  "earnedPoints": "You earned +{points} Points!",
+  "wrongPlayerNextTurn": "❌ Not {name}! Turn passes to Player {player}.",
+  "wrongPlayerCheckHistory": "❌ Not {name}! Check the club history again.",
+  "answerRevealed": "🏳️ Answer Revealed",
+  "transferPathOwner": "Owner of this transfer history:",
+  "nextCareerPath": "Next Career Path ➔",
+  "transferPathQuestion": "Which footballer does this chronological transfer history belong to?",
+  "cluePositionAndCountry": "💡 Clue: Position {pos} • Country {country}",
+  "presentDay": "Present",
+  "clubsCountLabel": "{count} Clubs",
+  "hintPenalty": "Hint (-150p)",
+  "whoAmIBullseye": "🎯 BULLSEYE!",
+  "potentialPoints": "Potential Reward:",
+  "lockedClue": "🔒 Locked Clue",
+  "unlockNextClueRemaining": "Unlock Next Clue ({count} left)",
+  "unlockNextClue": "Unlock Next Clue",
+  "twoTeamsPrompt": "Find the footballer who played for both clubs!",
+  "twoTeamsDatabaseCandidates": "There are {count} stars in the database who played for both clubs",
+  "selectPlayerPlayerTurn": "Player {player}: Select Player",
+  "searchAndSelectPlayer": "Search & Select Player",
+  "showAnswers": "Show Answers",
+  "passRound": "Pass Turn",
+  "newMatchup": "New Matchup",
+  "bombExplodedTitle": "💥 BOOM! Bomb Exploded!",
+  "bombWonTitle": "🏆 {winner} Won!",
+  "bombEliminatedDesc": "The bomb exploded while in {player}'s hands and was ELIMINATED!",
+  "totalSuccessfulPasses": "Total Successful Passes: {count}",
+  "playerCount": "Player Count",
+  "bombPassAction": "Name a Player and Pass the Bomb!",
+  "imposterCaughtTitle": "🕵️ Imposter Caught! +{points} Points",
+  "imposterWrongSuspect": "❌ Wrong Suspect!",
+  "imposterPrompt": "Select the footballer who NEVER played for this club:",
+  "imposterBadgeNeverPlayed": "🕵️ IMPOSTER! Never Played",
+  "dailyStage1": "⚡ Stage 1: 2 Teams 1 Player",
+  "dailyStage2": "🧩 Stage 2: Who Am I?",
+  "dailyStage3": "🕵️ Stage 3: Find the Imposter",
+  "dailyStage4": "✈️ Stage 4: Transfer Path",
+  "dailyCompletedTournaments": "📅 COMPLETED DAILY TOURNAMENTS",
+  "searchAndSubmitPlayer": "Search and Submit Player",
+  "twoTeamsPlayedBoth": "played for both {teamA} and {teamB}!",
+  "twoTeamsWrongBoth": "❌ {name} did not play for both {teamA} and {teamB}!",
+  "feedbackDrawProposed": "{user} proposed a draw.",
+  "feedbackDrawRejected": "Draw offer declined. Match continues!",
+  "feedbackDrawTimeout": "Draw offer timed out (30s).",
+  "feedbackPassed": "{user} passed! Turn passes to opponent.",
+  "feedbackTimeExpired": "Time expired! Turn passed to opponent.",
+  "giveUpAction": "Give Up",
+  "clubLabel": "Club",
+  "statisticsTitle": "STATISTICS",
+  "playerDefault": "Player",
+  "guessMysteryPlayer": "Guess Mystery Player",
+  "secondsSuffix": "s"
 }

@@ -155,3 +155,4 @@ def update_arb(lang: str):
 
 for lang in ["en", "tr", "de", "es", "fr", "it"]:
     update_arb(lang)
+

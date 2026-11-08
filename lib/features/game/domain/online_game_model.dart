@@ -1,3 +1,5 @@
+import '../../../../l10n/app_localizations.dart';
+
 class OnlineCell {
   final int cellIndex;
   final String playerId;
@@ -274,6 +276,48 @@ class OnlineGameModeInfo {
 
   static OnlineGameModeInfo fromId(String id) {
     return allModes.firstWhere((m) => m.id == id, orElse: () => allModes.first);
+  }
+
+  String localizedTitle(AppLocalizations l10n) {
+    switch (id) {
+      case 'sos':
+        return 'Football SOS';
+      case 'rating_battle':
+        return 'Rating Battle';
+      case 'two_teams':
+        return l10n.twoTeamsTitle;
+      case 'who_am_i':
+        return l10n.whoAmITitle;
+      case 'imposter':
+        return l10n.imposterTitle;
+      case 'transfer_path':
+        return l10n.transferPathTitle;
+      case 'football_bomb':
+        return l10n.footballBombTitle;
+      default:
+        return title;
+    }
+  }
+
+  String localizedSubtitle(AppLocalizations l10n) {
+    switch (id) {
+      case 'sos':
+        return l10n.sosCardSubtitle;
+      case 'rating_battle':
+        return l10n.ratingBattleSubtitle;
+      case 'two_teams':
+        return l10n.twoTeamsSubtitle;
+      case 'who_am_i':
+        return l10n.whoAmISubtitle;
+      case 'imposter':
+        return l10n.imposterSubtitle;
+      case 'transfer_path':
+        return l10n.transferPathSubtitle;
+      case 'football_bomb':
+        return l10n.footballBombSubtitle;
+      default:
+        return subtitle;
+    }
   }
 }
 

@@ -30,6 +30,11 @@ class MonetizationL10n {
 
   static const Map<String, Map<String, String>> _translations = {
     'tr': {
+      'manage_sub_notice': 'Aboneliğinizi Google Play veya App Store hesap ayarlarınız üzerinden istediğiniz zaman yönetebilir veya iptal edebilirsiniz. İptal edilen abonelikler dönem sonuna kadar aktif kalır.',
+      'copy_link': 'Bağlantıyı Kopyala',
+      'terms_body': 'Football SOS Pro abonelikleri Google Play veya App Store hesabınız üzerinden faturalandırılır. Cari dönem bitiminden en az 24 saat önce iptal edilmediği sürece otomatik olarak yenilenir. Abonelik iptal edildiğinde mevcut fatura dönemi sonuna kadar Football SOS Pro haklarınız aktif kalır.',
+      'privacy_body': 'Satın alma ve abonelik doğrulamaları Firebase Authentication UID\'niz ve RevenueCat / resmi uygulama mağazası makbuz doğrulama altyapısı ile güvenli şekilde işlenir. Ödeme kartı bilgileriniz hiçbir zaman uygulama sunucularımızda saklanmaz.',
+
       'pro_title': 'Football SOS Pro',
       'pro_subtitle':
           'Reklamsız stadyum atmosferi, özel saha/tahta temaları, gelişmiş maç analitiği ve şampiyon profil rozetleri.',
@@ -137,6 +142,11 @@ class MonetizationL10n {
           'Profil ve maç sonu ekranında parlayan Sezon 1 kupa aurası.',
     },
     'en': {
+      'manage_sub_notice': 'You can manage or cancel your subscription at any time via your Google Play or App Store account settings. Canceled subscriptions remain active until the end of the billing period.',
+      'copy_link': 'Copy Link',
+      'terms_body': 'Football SOS Pro subscriptions are billed through your Google Play or App Store account. Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period. When canceled, your benefits remain active until the end of the billing cycle.',
+      'privacy_body': 'Purchases and subscription verifications are securely processed using your Firebase Authentication UID and official app store receipt validation. Payment card details are never stored on our servers.',
+
       'pro_title': 'Football SOS Pro',
       'pro_subtitle':
           'Ad-free stadium atmosphere, exclusive pitch & board themes, advanced match analytics, and champion profile badges.',
@@ -237,6 +247,11 @@ class MonetizationL10n {
           'Glowing Season 1 trophy aura on profile and match summary.',
     },
     'es': {
+      'manage_sub_notice': 'Puedes gestionar o cancelar tu suscripción en cualquier momento desde la configuración de tu cuenta de Google Play o App Store. Las suscripciones canceladas permanecen activas hasta el final del periodo.',
+      'copy_link': 'Copiar enlace',
+      'terms_body': 'Las suscripciones a Football SOS Pro se facturan a través de su cuenta de Google Play o App Store. Se renuevan automáticamente a menos que se cancelen al menos 24 horas antes del final del periodo actual.',
+      'privacy_body': 'Las compras y suscripciones se procesan de forma segura utilizando su UID de Firebase y validación oficial. Los datos bancarios nunca se almacenan en nuestros servidores.',
+
       'pro_title': 'Football SOS Pro',
       'pro_subtitle':
           'Experiencia sin anuncios, temas exclusivos de campo y tablero, estadísticas avanzadas e insignias Pro.',
@@ -333,6 +348,11 @@ class MonetizationL10n {
       'item_season1_aura_desc': 'Aura dorada de trofeo en perfil y resumen.',
     },
     'fr': {
+      'manage_sub_notice': 'Vous pouvez gérer ou résilier votre abonnement à tout moment via les paramètres de votre compte Google Play ou App Store. Les abonnements résiliés restent actifs jusqu\'à la fin de la période en cours.',
+      'copy_link': 'Copier le lien',
+      'terms_body': 'Les abonnements Football SOS Pro sont facturés via votre compte Google Play ou App Store. Ils sont renouvelés automatiquement sauf résiliation au moins 24 heures avant la fin de la période.',
+      'privacy_body': 'Les achats et abonnements sont traités de manière sécurisée à l\'aide de votre UID Firebase et de la validation officielle. Vos données bancaires ne sont jamais stockées sur nos serveurs.',
+
       'pro_title': 'Football SOS Pro',
       'pro_subtitle':
           'Expérience sans publicité, thèmes de terrain et plateau exclusifs, statistiques détaillées et badges Pro.',
@@ -430,6 +450,11 @@ class MonetizationL10n {
       'item_season1_aura_desc': 'Aura de trophée Saison 1 sur le profil.',
     },
     'de': {
+      'manage_sub_notice': 'Sie können Ihr Abonnement jederzeit über Ihre Google Play- oder App Store-Kontoeinstellungen verwalten oder kündigen. Gekündigte Abonnements bleiben bis zum Ende des Abrechnungszeitraums aktiv.',
+      'copy_link': 'Link kopieren',
+      'terms_body': 'Football SOS Pro-Abonnements werden über Ihr Google Play- oder App Store-Konto abgerechnet. Sie verlängern sich automatisch, wenn sie nicht mindestens 24 Stunden vor Ende des aktuellen Zeitraums gekündigt werden.',
+      'privacy_body': 'Käufe und Abonnements werden sicher über Ihre Firebase-UID und offizielle Store-Validierung verarbeitet. Kartendaten werden niemals auf unseren Servern gespeichert.',
+
       'pro_title': 'Football SOS Pro',
       'pro_subtitle':
           'Werbefreies Stadionerlebnis, exklusive Rasen- & Spielfeld-Designs, detaillierte Spielstatistiken und Pro-Abzeichen.',
@@ -525,6 +550,11 @@ class MonetizationL10n {
       'item_season1_aura_desc': 'Leuchtende Pokal-Aura im Profil.',
     },
     'it': {
+      'manage_sub_notice': 'Puoi gestire o annullare l\'abbonamento in qualsiasi momento dalle impostazioni del tuo account Google Play o App Store. Gli abbonamenti annullati rimangono attivi fino al termine del periodo.',
+      'copy_link': 'Copia link',
+      'terms_body': 'Gli abbonamenti a Football SOS Pro vengono fatturati tramite il tuo account Google Play o App Store. Si rinnovano automaticamente a meno che non vengano annullati almeno 24 ore prima della scadenza.',
+      'privacy_body': 'Gli acquisti e gli abbonamenti vengono elaborati in modo sicuro tramite il tuo UID Firebase e la convalida ufficiale degli store. I dati di pagamento non vengono mai memorizzati sui nostri server.',
+
       'pro_title': 'Football SOS Pro',
       'pro_subtitle':
           'Atmosfera stadio senza pubblicità, temi esclusivi per campo e griglia, statistiche avanzate e badge Pro.',

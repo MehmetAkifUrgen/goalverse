@@ -6,6 +6,7 @@ import '../../../core/providers.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/stadium_visuals.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../data/models/freezed/entity_models.dart';
 import '../../../data/repositories/rating_category.dart';
 import '../../game/data/online_match_service.dart';
@@ -202,13 +203,14 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
   }
 
   void _showGameOverDialog() {
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
           title: Text(
-            'Düello Bitti!',
+            l10n?.duelFinished ?? 'Düello Bitti!',
             textAlign: TextAlign.center,
             style: AppTypography.sectionTitle(fontSize: 24),
           ),
@@ -222,10 +224,15 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
                   color: AppColors.primary,
                 ),
               ),
-              Text('Doğru Tahmin Serisi', style: AppTypography.description()),
+              Text(
+                l10n?.correctStreakLabel ?? 'Doğru Tahmin Serisi',
+                style: AppTypography.description(),
+              ),
               const SizedBox(height: 12),
               Text(
-                'En İyi Seri: $_bestStreak  •  +${_streak * 150} Puan',
+                l10n != null
+                    ? l10n.bestStreakStats(_bestStreak, _streak * 150)
+                    : 'En İyi Seri: $_bestStreak  •  +${_streak * 150} Puan',
                 style: AppTypography.statValue(
                   fontSize: 15,
                   color: AppColors.warning,
@@ -236,14 +243,14 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
           actionsAlignment: MainAxisAlignment.spaceEvenly,
           actions: [
             SecondaryButton(
-              label: 'Çıkış',
+              label: l10n?.exitAction ?? 'Çıkış',
               onTap: () {
                 Navigator.of(context).pop();
                 context.pop();
               },
             ),
             ArenaButton(
-              label: 'Tekrar Oyna',
+              label: l10n?.playAgainButton ?? 'Tekrar Oyna',
               icon: Icons.replay_rounded,
               onTap: () {
                 Navigator.of(context).pop();
@@ -268,28 +275,30 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
     return val.toString();
   }
 
-  String _getCategoryTitle() {
+  String _getCategoryTitle([BuildContext? context]) {
+    final l10n = context != null ? AppLocalizations.of(context) : null;
     switch (_currentCategory) {
       case RatingCategory.eaFcOverall:
-        return 'EA FC Overall Reytingi';
+        return 'EA FC Overall';
       case RatingCategory.marketValue:
-        return 'Zirve Piyasa Değeri';
+        return l10n?.peakMarketValue ?? 'Zirve Piyasa Değeri';
       case RatingCategory.goalsCareer:
-        return 'Kariyer Gol Sayısı';
+        return l10n?.careerGoals ?? 'Kariyer Gol Sayısı';
       case RatingCategory.assistsCareer:
-        return 'Kariyer Asist Sayısı';
+        return l10n?.careerAssists ?? 'Kariyer Asist Sayısı';
       case RatingCategory.speed:
-        return 'Hız / Sprint Reytingi';
+        return l10n?.sprintSpeedRating ?? 'Hız / Sprint Reytingi';
       case RatingCategory.clGoals:
-        return 'Şampiyonlar Ligi Golleri';
+        return l10n?.championsLeagueGoals ?? 'Şampiyonlar Ligi Golleri';
       case RatingCategory.age:
       case RatingCategory.ageLOW:
-        return 'Futbolcu Yaşı';
+        return l10n?.playerAge ?? 'Futbolcu Yaşı';
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
@@ -298,6 +307,7 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
         actions: [
           AppTheme.onlineRoomButton(
             isOnlineActive: widget.roomId != null,
+            context: context,
             onTap: () {
               showDialog(
                 context: context,
@@ -308,6 +318,7 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
           ),
           AppTheme.modeToggleButton(
             isMultiplayer: _isMultiplayer,
+            context: context,
             onChanged: (val) {
               setState(() => _isMultiplayer = val);
               _resetDuel();
@@ -339,7 +350,7 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        'Seri: $_streak',
+                        l10n != null ? '${l10n.streakLabel}: $_streak' : 'Seri: $_streak',
                         style: AppTypography.statValue(
                           fontSize: 13,
                           color: AppColors.foreground,
@@ -383,6 +394,7 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
                               currentPlayer: _currentPlayer,
                               currentTurn: _duelTurn,
                               maxTurns: _maxDuelTurns,
+                              context: context,
                             ),
                           // Category Broadcast Pill
                           Container(
@@ -412,7 +424,9 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
                                 ),
                                 const SizedBox(width: 8),
                                 Text(
-                                  'KARŞILAŞTIRILAN İSTATİSTİK: ${_getCategoryTitle().toUpperCase()}',
+                                  l10n != null
+                                      ? l10n.comparedStat(_getCategoryTitle(context).toUpperCase())
+                                      : 'KARŞILAŞTIRILAN İSTATİSTİK: ${_getCategoryTitle(context).toUpperCase()}',
                                   style: AppTypography.label(
                                     fontSize: 12,
                                     color: isDark
@@ -546,7 +560,7 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
                       ),
                     ),
                     Text(
-                      _getCategoryTitle(),
+                      _getCategoryTitle(context),
                       style: AppTypography.label(
                         fontSize: 10.5,
                         color: AppColors.muted,
@@ -563,6 +577,7 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
   }
 
   Widget _buildPlayerBCard() {
+    final l10n = AppLocalizations.of(context);
     final p = _playerB;
     if (p == null) return const SizedBox();
     final actualStat = _formatStat(_currentCategory.valueOf(p));
@@ -660,8 +675,8 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
                             ),
                             Text(
                               _lastGuessCorrect == true
-                                  ? 'DOĞRU TAHMİN!'
-                                  : 'YANLIŞ TAHMİN',
+                                  ? (l10n?.correctGuess ?? 'DOĞRU TAHMİN!')
+                                  : (l10n?.wrongGuess ?? 'YANLIŞ TAHMİN'),
                               style: AppTypography.label(
                                 fontSize: 10.5,
                                 color: _lastGuessCorrect == true
@@ -699,7 +714,7 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
                                   ),
                                   const SizedBox(width: 6),
                                   Text(
-                                    'Daha Yüksek',
+                                    l10n?.higher ?? 'Daha Yüksek',
                                     style: AppTypography.button(
                                       fontSize: 14,
                                       color: AppColors.primaryText,
@@ -733,7 +748,7 @@ class _RatingBattlePageState extends ConsumerState<RatingBattlePage> {
                                   ),
                                   const SizedBox(width: 6),
                                   Text(
-                                    'Daha Düşük',
+                                    l10n?.lower ?? 'Daha Düşük',
                                     style: AppTypography.button(
                                       fontSize: 14,
                                       color: AppColors.foreground,

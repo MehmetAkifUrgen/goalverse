@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../l10n/app_localizations.dart';
 import 'app_colors.dart';
 import 'app_radius.dart';
 import 'app_spacing.dart';
@@ -311,7 +312,12 @@ class AppTheme {
   static Widget modeToggleButton({
     required bool isMultiplayer,
     required ValueChanged<bool> onChanged,
+    BuildContext? context,
   }) {
+    final l10n = context != null ? AppLocalizations.of(context) : null;
+    final label = isMultiplayer
+        ? (l10n?.duelMode2P ?? '2P Duel')
+        : (l10n?.duelMode1P ?? '1P Solo');
     final activeColor = isMultiplayer ? primary : foreground;
     return Padding(
       padding: const EdgeInsets.only(right: 6),
@@ -338,7 +344,7 @@ class AppTheme {
               ),
               const SizedBox(width: 5),
               Text(
-                isMultiplayer ? '2P Düello' : '1P Solo',
+                label,
                 style: AppTypography.label(fontSize: 12, color: activeColor),
               ),
             ],
@@ -352,7 +358,12 @@ class AppTheme {
   static Widget onlineRoomButton({
     required VoidCallback onTap,
     bool isOnlineActive = false,
+    BuildContext? context,
   }) {
+    final l10n = context != null ? AppLocalizations.of(context) : null;
+    final label = isOnlineActive
+        ? (l10n?.onlineRoomLive ?? 'Live Room')
+        : (l10n?.onlineRoom ?? 'Online Room');
     return Padding(
       padding: const EdgeInsets.only(right: 6),
       child: InkWell(
@@ -378,7 +389,7 @@ class AppTheme {
               ),
               const SizedBox(width: 5),
               Text(
-                isOnlineActive ? 'Canlı Oda' : 'Online Oda',
+                label,
                 style: AppTypography.label(
                   fontSize: 12,
                   color: isOnlineActive ? primaryText : foreground,
@@ -398,8 +409,16 @@ class AppTheme {
     required int currentPlayer, // 0 or 1
     required int currentTurn,
     required int maxTurns,
+    BuildContext? context,
   }) {
     final p1Active = currentPlayer == 0;
+    final l10n = context != null ? AppLocalizations.of(context) : null;
+    final p1Label = l10n?.scoreboardPlayer1 ?? 'Player 1';
+    final p2Label = l10n?.scoreboardPlayer2 ?? 'Player 2';
+    final roundPrefix = l10n?.roundLabel ?? 'Round';
+    final turnText = p1Active
+        ? (l10n?.turnP1 ?? 'Turn: P1')
+        : (l10n?.turnP2 ?? 'Turn: P2');
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
@@ -439,7 +458,7 @@ class AppTheme {
                         const SizedBox(width: 6),
                         Flexible(
                           child: Text(
-                            'Oyuncu 1',
+                            p1Label,
                             overflow: TextOverflow.ellipsis,
                             style: AppTypography.label(
                               fontSize: 12,
@@ -467,12 +486,12 @@ class AppTheme {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Tur $currentTurn/$maxTurns',
+                  '$roundPrefix $currentTurn/$maxTurns',
                   style: scoreboardNumberStyle(fontSize: 11.5, color: warning),
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  p1Active ? 'Sıra: P1' : 'Sıra: P2',
+                  turnText,
                   style: AppTypography.label(
                     fontSize: 10.5,
                     color: p1Active ? primary : secondary,
@@ -510,7 +529,7 @@ class AppTheme {
                         const SizedBox(width: 6),
                         Flexible(
                           child: Text(
-                            'Oyuncu 2',
+                            p2Label,
                             overflow: TextOverflow.ellipsis,
                             style: AppTypography.label(
                               fontSize: 12,
@@ -544,11 +563,14 @@ class AppTheme {
     required VoidCallback onRematch,
     required VoidCallback onExit,
   }) {
+    final l10n = AppLocalizations.of(context);
     final isDraw = p1Score == p2Score;
     final p1Won = p1Score > p2Score;
     final title = isDraw
-        ? 'Düello Berabere'
-        : (p1Won ? 'Oyuncu 1 Kazandı' : 'Oyuncu 2 Kazandı');
+        ? (l10n?.duelDraw ?? 'Duel Draw')
+        : (p1Won
+            ? (l10n?.player1Won ?? 'Player 1 Won')
+            : (l10n?.player2Won ?? 'Player 2 Won'));
 
     showDialog(
       context: context,
@@ -562,7 +584,10 @@ class AppTheme {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('2 Kişilik Düello Sonucu', style: AppTypography.description()),
+            Text(
+              l10n?.twoPlayerDuelResult ?? '2-Player Duel Result',
+              style: AppTypography.description(),
+            ),
             const SizedBox(height: 14),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -586,7 +611,7 @@ class AppTheme {
               Navigator.of(ctx).pop();
               onExit();
             },
-            child: const Text('Ana Ekran'),
+            child: Text(l10n?.mainMenuButton ?? 'Main Menu'),
           ),
           ElevatedButton.icon(
             onPressed: () {
@@ -594,7 +619,7 @@ class AppTheme {
               onRematch();
             },
             icon: const Icon(Icons.replay_rounded, size: 18),
-            label: const Text('Yeniden Oyna'),
+            label: Text(l10n?.playAgainButton ?? 'Play Again'),
           ),
         ],
       ),

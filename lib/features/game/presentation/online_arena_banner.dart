@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/providers/auth_providers.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../l10n/app_localizations.dart';
 import '../data/online_match_service.dart';
 import '../domain/online_game_model.dart';
 
@@ -89,6 +90,13 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
           .read(userStatsProvider.notifier)
           .recordGameResult(won: won, draw: draw, score: myScore);
 
+      final l10n = AppLocalizations.of(context);
+      final titleText = won
+          ? (l10n?.onlineVictoryTitle ?? '🏆 ONLINE DÜELLO ZAFERİ!')
+          : draw
+          ? (l10n?.onlineDrawTitle ?? '🤝 ONLINE MAÇ BERABERE!')
+          : (l10n?.onlineDefeatTitle ?? '💔 ONLINE MAÇI KAYBETTİNİZ');
+
       showDialog(
         context: context,
         barrierDismissible: true,
@@ -123,11 +131,7 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
               ),
               const SizedBox(height: 12),
               Text(
-                won
-                    ? '🏆 ONLINE DÜELLO ZAFERİ!'
-                    : draw
-                    ? '🤝 ONLINE MAÇ BERABERE!'
-                    : '💔 ONLINE MAÇI KAYBETTİNİZ',
+                titleText,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 19,
@@ -140,7 +144,9 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Oda #${game.roomCode} • Canlı Skor Tablosu',
+                l10n != null
+                    ? l10n.roomLiveScoreboard(game.roomCode)
+                    : 'Oda #${game.roomCode} • Canlı Skor Tablosu',
                 style: const TextStyle(fontSize: 12, color: Colors.grey),
               ),
               const SizedBox(height: 12),
@@ -148,7 +154,7 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   _ScoreColumn(
-                    label: 'SEN',
+                    label: l10n?.scoreboardYou ?? 'YOU',
                     score: myScore,
                     color: AppTheme.accentEmerald,
                   ),
@@ -172,7 +178,7 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
           actions: [
             ElevatedButton(
               onPressed: () => Navigator.of(ctx).pop(),
-              child: const Text('Tamam'),
+              child: Text(l10n?.ok ?? 'Tamam'),
             ),
           ],
         ),
@@ -193,6 +199,7 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
     return StreamBuilder<OnlineGame>(
       stream: _service.streamGame(roomId),
       builder: (context, snapshot) {
+        final l10n = AppLocalizations.of(context);
         if (!snapshot.hasData) {
           return Container(
             margin: const EdgeInsets.only(bottom: 10),
@@ -201,10 +208,10 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
               gradient: AppTheme.stadiumHeroGradient,
               borderRadius: BorderRadius.circular(14),
             ),
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 14,
                   height: 14,
                   child: CircularProgressIndicator(
@@ -212,10 +219,10 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
                     color: AppTheme.accentEmerald,
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Text(
-                  'Canlı odaya bağlanılıyor...',
-                  style: TextStyle(
+                  l10n?.onlineMatchConnecting ?? 'Canlı odaya bağlanılıyor...',
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 12,
                     fontWeight: FontWeight.w700,
@@ -230,9 +237,11 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
         _checkShowOnlineResult(game, myUserId);
 
         final amIP1 = game.player1Id == myUserId;
-        final myName = amIP1 ? game.player1Name : (game.player2Name ?? 'Sen');
+        final myName = amIP1
+            ? game.player1Name
+            : (game.player2Name ?? (l10n?.scoreboardYou ?? 'YOU'));
         final oppName = amIP1
-            ? (game.player2Name ?? 'Rakip Bekleniyor...')
+            ? (game.player2Name ?? (l10n?.waitingOpponent ?? 'Waiting for opponent...'))
             : game.player1Name;
         final myScore = amIP1 ? game.player1Score : game.player2Score;
         final oppScore = amIP1 ? game.player2Score : game.player1Score;
@@ -262,7 +271,9 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
-                            'Oda kodu kopyalandı: ${game.roomCode}',
+                            l10n != null
+                                ? l10n.roomCodeCopied(game.roomCode)
+                                : 'Oda kodu kopyalandı: ${game.roomCode}',
                           ),
                           behavior: SnackBarBehavior.floating,
                           duration: const Duration(seconds: 2),
@@ -284,7 +295,9 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
                         ),
                         const SizedBox(width: 6),
                         Text(
-                          'CANLI ODA #${game.roomCode}',
+                          l10n != null
+                              ? l10n.liveRoomTitle(game.roomCode)
+                              : 'CANLI ODA #${game.roomCode}',
                           style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w900,
@@ -312,10 +325,12 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
                     ),
                     child: Text(
                       game.player2Id == null
-                          ? '⏳ Rakip Bekleniyor'
+                          ? (l10n?.waitingOpponent ?? '⏳ Rakip Bekleniyor')
                           : oppFinished
-                          ? '✓ Rakip Tamamladı'
-                          : '⚡ Rakip Tur $oppRound',
+                          ? (l10n?.opponentFinished ?? '✓ Rakip Tamamladı')
+                          : (l10n != null
+                              ? l10n.opponentRound(oppRound)
+                              : '⚡ Rakip Tur $oppRound'),
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 10.5,
@@ -346,7 +361,7 @@ class _OnlineArenaBannerState extends ConsumerState<OnlineArenaBanner> {
                         children: [
                           Flexible(
                             child: Text(
-                              '🟢 $myName (Sen)',
+                              '🟢 $myName (${l10n?.scoreboardYou ?? "YOU"})',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(

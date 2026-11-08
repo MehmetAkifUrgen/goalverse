@@ -711,4 +711,751 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get deletingAccount => 'Eliminazione...';
+
+  @override
+  String get liveMultiplayerLobby => 'Lobby Multigiocatore dal Vivo';
+
+  @override
+  String get lobbySubtitle =>
+      'Partita Rapida • Stanza Privata • Codice a 6 Cifre';
+
+  @override
+  String get selectGameMode => 'Seleziona Modalità di Gioco';
+
+  @override
+  String get roomCodeMustBe6Digits =>
+      'Inserisci il codice stanza completo a 6 cifre.';
+
+  @override
+  String get format3RoundsTitle => '3 ROUND – 2 VITTORIE';
+
+  @override
+  String get format3RoundsDesc =>
+      'Massimo 3 round, chi ne vince 2 vince la partita';
+
+  @override
+  String get format5RoundsTitle => '5 ROUND – 3 VITTORIE';
+
+  @override
+  String get format5RoundsDesc =>
+      'Massimo 5 round, chi ne vince 3 vince la partita';
+
+  @override
+  String get matchFormatSos => 'FORMATO PARTITA (SERIE FOOTBALL SOS)';
+
+  @override
+  String get searchingRoomsAndOpponent =>
+      'Ricerca di stanze aperte e avversari...';
+
+  @override
+  String get matchRoomWaitingOpponent =>
+      'Stanza Creata — In attesa dell\'avversario';
+
+  @override
+  String quickMatchPrompt(String mode) {
+    return 'Unisciti all\'istante a una stanza aperta o avvia il matchmaking per $mode.';
+  }
+
+  @override
+  String get startQuickMatch => 'Avvia Partita Rapida';
+
+  @override
+  String get preparingPrivateRoom =>
+      'Creazione della stanza privata e dei dati partita...';
+
+  @override
+  String get shareRoomCodeWithFriend =>
+      'Condividi il codice a 6 cifre con il tuo amico:';
+
+  @override
+  String createPrivateRoomPrompt(String mode) {
+    return 'Crea una stanza privata a 6 cifre in $mode e invita il tuo amico.';
+  }
+
+  @override
+  String get turnDuration => 'Tempo per Turno:';
+
+  @override
+  String get create6DigitPrivateRoom => 'Crea Stanza Privata a 6 Cifre';
+
+  @override
+  String roomCodeCopied(Object code) {
+    return 'Codice stanza copiato: $code';
+  }
+
+  @override
+  String get matchStartsWhenOpponentJoins =>
+      'La partita inizia automaticamente quando entra l\'avversario...';
+
+  @override
+  String get enterRoomNowAction =>
+      'Entra nella Stanza Ora (Si Connette dal Vivo)';
+
+  @override
+  String get enterFriendRoomCodePrompt =>
+      'Inserisci il codice a 6 cifre condiviso dal tuo amico:';
+
+  @override
+  String get pasteFromClipboard => 'Incolla dagli Appunti';
+
+  @override
+  String get joinRoomAndStartMatch => 'Entra nella Stanza e Gioca';
+
+  @override
+  String get playSoloAction => 'Gioca da Solo';
+
+  @override
+  String get playSameDeviceAction => '2 Giocatori (Stesso Dispositivo)';
+
+  @override
+  String lockedFormatPrefix(int rounds, int wins) {
+    return 'Formato: $rounds ROUND – $wins VITTORIE (Bloccato)';
+  }
+
+  @override
+  String get duelMode2P => 'Duello 2G';
+
+  @override
+  String get duelMode1P => '1G Solo';
+
+  @override
+  String get onlineRoomLive => 'Stanza dal Vivo';
+
+  @override
+  String get onlineRoom => 'Stanza Online';
+
+  @override
+  String get turnP1 => 'Turno: G1';
+
+  @override
+  String get turnP2 => 'Turno: G2';
+
+  @override
+  String get duelDraw => 'Pareggio nel Duello';
+
+  @override
+  String get player1Won => 'Ha vinto il Giocatore 1';
+
+  @override
+  String get player2Won => 'Ha vinto il Giocatore 2';
+
+  @override
+  String get twoPlayerDuelResult => 'Risultato del Duello a 2 Giocatori';
+
+  @override
+  String get mainMenuButton => 'Menu Principale';
+
+  @override
+  String get playAgainButton => 'Gioca di Nuovo';
+
+  @override
+  String get noRankingPlayersYet =>
+      'Nessun giocatore in classifica per ora. Sii il primo sul podio!';
+
+  @override
+  String get editProfile => 'Modifica profilo';
+
+  @override
+  String get playerName => 'Nome Giocatore';
+
+  @override
+  String get countryFlag => 'Paese / Bandiera:';
+
+  @override
+  String get achievementFirstWinHowTo =>
+      'Ottieni la tua prima vittoria in qualsiasi modalità.';
+
+  @override
+  String get achievementWins10HowTo => 'Vinci 10 partite in totale.';
+
+  @override
+  String get achievementWins100HowTo =>
+      'Vinci 100 partite per diventare una leggenda.';
+
+  @override
+  String get achievementPerfectGameHowTo =>
+      'Ottieni 900+ punti in una partita o indovina al 1° indizio in Chi sono!';
+
+  @override
+  String get achievementRarePlayerHowTo =>
+      'Indovina un incrocio di club difficile con 4 o meno risposte possibili!';
+
+  @override
+  String get achievementComebackHowTo =>
+      'Rimonta e vinci una partita di Football SOS dopo essere stato in svantaggio!';
+
+  @override
+  String get achievementStreak5HowTo => 'Vinci 5 partite consecutive.';
+
+  @override
+  String get achievementStreak10HowTo =>
+      'Vinci 10 partite consecutive per una striscia invincibile.';
+
+  @override
+  String get timeExpired => '⏰ Tempo scaduto!';
+
+  @override
+  String get duelFinished => 'Duello terminato!';
+
+  @override
+  String get correctStreakLabel => 'Striscia di Risposte Esatte';
+
+  @override
+  String bestStreakStats(int best, int points) {
+    return 'Miglior Striscia: $best • +$points Punti';
+  }
+
+  @override
+  String get exitAction => 'Esci';
+
+  @override
+  String get seeAnswers => 'Vedi Risposte';
+
+  @override
+  String get nextMatch => 'Prossima Partita';
+
+  @override
+  String playerGuessedCorrect(int player, int points) {
+    return '🎉 Il Giocatore $player ha indovinato! +$points Pti';
+  }
+
+  @override
+  String greatGuessSolo(int points) {
+    return '🎉 Ottima Risposta! +$points Pti';
+  }
+
+  @override
+  String playedForBothClubs(String teamA, String teamB) {
+    return 'ha giocato sia per $teamA che per $teamB!';
+  }
+
+  @override
+  String dailyStageHeader(int stage) {
+    return 'TAPPA $stage / 4 • 1.5x MOLTIPLICATORE TORNEO GIORNALIERO';
+  }
+
+  @override
+  String get skipThisStage => 'Salta questa tappa ➔';
+
+  @override
+  String get dailyChallengeCompletedTitle => 'SFIDA GIORNALIERA COMPLETATA!';
+
+  @override
+  String get dailyChallengeCompletedDesc =>
+      'Hai completato con successo tutte le tappe di oggi. Torna domani per nuove sfide!';
+
+  @override
+  String get claimDailyRewardAndExit =>
+      'Riscatta la Ricompensa e Torna alla Home';
+
+  @override
+  String profileSemanticLabel(String name, int level) {
+    return 'Profilo Giocatore: $name, Livello $level';
+  }
+
+  @override
+  String leaderboardCardSemanticLabel(String title, int rating) {
+    return '$title, Il tuo Punteggio: $rating ELO';
+  }
+
+  @override
+  String get timeExpiredTurnPasses => '⏰ Tempo scaduto! Turno all\'avversario.';
+
+  @override
+  String roundStartedClubsReady(int round) {
+    return '⚽ Round $round iniziato! Nuova griglia di club pronta.';
+  }
+
+  @override
+  String botMadeMove(String player) {
+    return '🤖 Il bot ha fatto la sua mossa: $player';
+  }
+
+  @override
+  String get botPassedTurn => '🤖 Il bot ha passato il turno.';
+
+  @override
+  String get noMovesYet => 'Nessuna mossa ancora effettuata.';
+
+  @override
+  String verifiedPlayersForCell(int count) {
+    return '$count calciatori verificati per questa casella:';
+  }
+
+  @override
+  String playerDidNotPlayForBoth(String player) {
+    return '❌ $player non ha giocato per entrambi i club! Turno passato.';
+  }
+
+  @override
+  String get botWon => '🤖 Il Bot ha vinto!';
+
+  @override
+  String get player1WonX => '🏆 Il Giocatore 1 (X) ha vinto!';
+
+  @override
+  String get player2WonO => '🏆 Il Giocatore 2 (O) ha vinto!';
+
+  @override
+  String matchEndSummary(int total, int wins) {
+    return 'FINE PARTITA • $total ROUND ($wins VITTORIE)';
+  }
+
+  @override
+  String get roundsWon => 'Round Vinti';
+
+  @override
+  String get correctAnswers => 'Risposte Esatte';
+
+  @override
+  String get wrongAnswers => 'Errori';
+
+  @override
+  String get passesUsed => 'Passaggi Usati';
+
+  @override
+  String get matchDuration => 'Durata della Partita';
+
+  @override
+  String get eloChange => 'Variazione ELO';
+
+  @override
+  String get inspectBoardHint =>
+      '💡 Consiglio: Chiudi questa finestra e tocca una casella per scoprire tutti i calciatori validi!';
+
+  @override
+  String get inspectBoard => 'Ispeziona Tabellone';
+
+  @override
+  String get footballSos2P => 'Football SOS • 2 Giocatori';
+
+  @override
+  String get selectMatchFormatTooltip => 'Seleziona Formato Partita';
+
+  @override
+  String get changeGameModeTooltip => 'Cambia Modalità';
+
+  @override
+  String get modeSoloVsBot => '🤖 Singolo (vs IA Intelligente)';
+
+  @override
+  String get mode2PlayerLocal => '👥 Duello a 2 Giocatori (Stesso Dispositivo)';
+
+  @override
+  String roundEndedInDraw(int round) {
+    return 'ROUND $round FINITO IN PAREGGIO';
+  }
+
+  @override
+  String nextRoundBanner(int round, int wins) {
+    return 'Prossimo: ROUND $round (Chi raggiunge $wins vittorie vince la sfida)';
+  }
+
+  @override
+  String startNextRound(int round) {
+    return 'Inizia Round $round';
+  }
+
+  @override
+  String get scoreboardYou => 'TU';
+
+  @override
+  String get scoreboardBot => 'BOT';
+
+  @override
+  String get scoreboardPlayer1 => 'GIOCATORE 1';
+
+  @override
+  String get scoreboardPlayer2 => 'GIOCATORE 2';
+
+  @override
+  String get scoreboardFinished => 'FINITO';
+
+  @override
+  String get scoreboardDraw => 'PARI';
+
+  @override
+  String get scoreboardAiThinking => 'L\'IA PENSA';
+
+  @override
+  String get scoreboardTurnX => 'TURNO: X';
+
+  @override
+  String get scoreboardTurnO => 'TURNO: O';
+
+  @override
+  String get cellActionSelect => 'SCEGLI';
+
+  @override
+  String get cellActionView => 'VEDI';
+
+  @override
+  String get leaveMatchTitle => 'Abbandonare la Partita?';
+
+  @override
+  String get leaveMatchConfirm =>
+      'Sei sicuro di voler abbandonare la partita multigiocatore in corso?';
+
+  @override
+  String get continueMatch => 'Continua Partita';
+
+  @override
+  String get leaveMatch => 'Abbandona';
+
+  @override
+  String congratsMatchWon(int wins) {
+    return 'Congratulazioni! Hai raggiunto $wins vittorie e vinto la partita!';
+  }
+
+  @override
+  String get seriesDraw => 'La serie è terminata in parità.';
+
+  @override
+  String opponentMatchWon(String opponent, int wins) {
+    return '$opponent ha raggiunto $wins vittorie e vinto la partita.';
+  }
+
+  @override
+  String get connectingToLiveMatch => 'Connessione alla partita in diretta...';
+
+  @override
+  String roundCompletedNewStarting(int round) {
+    return 'ROUND $round COMPLETATO • NUOVO ROUND INIZIATO';
+  }
+
+  @override
+  String get yourTurnSelectCell => 'IL TUO TURNO! Seleziona una casella';
+
+  @override
+  String opponentThinking(String name) {
+    return 'L\'avversario sta pensando ($name)...';
+  }
+
+  @override
+  String get boardFullNoSeries =>
+      'Tabellone pieno, nessun giocatore ha realizzato un tris.';
+
+  @override
+  String loserOpponentAhead(String opponent) {
+    return 'Sconfitto del round: $opponent • Sei in vantaggio nella serie!';
+  }
+
+  @override
+  String loserYouTieNext(String me) {
+    return 'Sconfitto del round: $me • Pareggia i conti nel prossimo round!';
+  }
+
+  @override
+  String nextRoundCountdown(int round, int seconds) {
+    return 'Prossimo: ROUND $round (${seconds}s)';
+  }
+
+  @override
+  String get boardLoadFailed => 'Impossibile caricare il tabellone.';
+
+  @override
+  String get roundLabel => 'Round';
+
+  @override
+  String get newGrid => 'Nuova Griglia';
+
+  @override
+  String get opponentLabel => 'Avversario';
+
+  @override
+  String get onlineMatchConnecting => 'Connessione alla stanza live...';
+
+  @override
+  String liveRoomTitle(Object code) {
+    return 'STANZA LIVE #$code';
+  }
+
+  @override
+  String get waitingOpponent => '⏳ In attesa dell\'avversario';
+
+  @override
+  String get opponentFinished => '✓ Avversario terminato';
+
+  @override
+  String opponentRound(Object round) {
+    return '⚡ Avversario Round $round';
+  }
+
+  @override
+  String get onlineVictoryTitle => '🏆 VITTORIA NEL DUELLO ONLINE!';
+
+  @override
+  String get onlineDrawTitle => '🤝 PAREGGIO PARTITA ONLINE!';
+
+  @override
+  String get onlineDefeatTitle => '💔 PARTITA ONLINE PERSA';
+
+  @override
+  String roomLiveScoreboard(Object code) {
+    return 'Stanza #$code • Tabellone dal vivo';
+  }
+
+  @override
+  String get changeNameAndFlag => 'Cambia nome e bandiera';
+
+  @override
+  String eloRatingBadge(Object rating) {
+    return 'RATING ELO: $rating';
+  }
+
+  @override
+  String get bestStreak => 'Miglior striscia';
+
+  @override
+  String achievementUnlockedDesc(Object desc) {
+    return '✅ Sbloccato!\n\n$desc';
+  }
+
+  @override
+  String achievementLockedDesc(Object desc) {
+    return '🔒 Ancora bloccato.\n\nCome sbloccare: $desc';
+  }
+
+  @override
+  String get totalPassCount => 'Passaggi totali usati';
+
+  @override
+  String get drawAgreements => 'Accordi di pareggio';
+
+  @override
+  String get matchHistoryCapacity => 'Capacità cronologia partite';
+
+  @override
+  String get correctPredictionStreak => 'Striscia di risposte esatte';
+
+  @override
+  String get peakMarketValue => 'Valore di mercato record';
+
+  @override
+  String get careerGoals => 'Gol in carriera';
+
+  @override
+  String get careerAssists => 'Assist in carriera';
+
+  @override
+  String get sprintSpeedRating => 'Velocità / Valutazione sprint';
+
+  @override
+  String get championsLeagueGoals => 'Gol in Champions League';
+
+  @override
+  String get playerAge => 'Età del giocatore';
+
+  @override
+  String comparedStat(Object stat) {
+    return 'STATISTICA CONFRONTATA: $stat';
+  }
+
+  @override
+  String get correctGuess => 'INDOVINATO!';
+
+  @override
+  String get wrongGuess => 'SBAGLIATO';
+
+  @override
+  String get higher => 'Più alto';
+
+  @override
+  String get lower => 'Più basso';
+
+  @override
+  String get correctTransferPath => '🎯 Percorso di trasferimento corretto!';
+
+  @override
+  String earnedPoints(Object points) {
+    return 'Hai guadagnato +$points punti!';
+  }
+
+  @override
+  String wrongPlayerNextTurn(Object name, Object player) {
+    return '❌ Non è $name! Tocca al Giocatore $player.';
+  }
+
+  @override
+  String wrongPlayerCheckHistory(Object name) {
+    return '❌ Non è $name! Ricontrolla la storia dei club.';
+  }
+
+  @override
+  String get answerRevealed => '🏳️ Risposta rivelata';
+
+  @override
+  String get transferPathOwner =>
+      'Proprietario di questa carriera di trasferimenti:';
+
+  @override
+  String get nextCareerPath => 'Prossimo percorso ➔';
+
+  @override
+  String get transferPathQuestion =>
+      'A quale calciatore appartiene questa cronologia di trasferimenti?';
+
+  @override
+  String cluePositionAndCountry(Object country, Object pos) {
+    return '💡 Indizio: Ruolo $pos • Paese $country';
+  }
+
+  @override
+  String get presentDay => 'Presente';
+
+  @override
+  String clubsCountLabel(Object count) {
+    return '$count Club';
+  }
+
+  @override
+  String get hintPenalty => 'Indizio (-150p)';
+
+  @override
+  String get whoAmIBullseye => '🎯 BERSAGLIO!';
+
+  @override
+  String get potentialPoints => 'Ricompensa potenziale:';
+
+  @override
+  String get lockedClue => '🔒 Indizio bloccato';
+
+  @override
+  String unlockNextClueRemaining(Object count) {
+    return 'Sblocca prossimo indizio (Mancano: $count)';
+  }
+
+  @override
+  String get unlockNextClue => 'Sblocca prossimo indizio';
+
+  @override
+  String get twoTeamsPrompt =>
+      'Trova il calciatore che ha giocato in entrambi i club!';
+
+  @override
+  String twoTeamsDatabaseCandidates(Object count) {
+    return 'Ci sono $count stelle nel database che hanno giocato per entrambi i club';
+  }
+
+  @override
+  String selectPlayerPlayerTurn(Object player) {
+    return 'Giocatore $player: Seleziona giocatore';
+  }
+
+  @override
+  String get searchAndSelectPlayer => 'Cerca e seleziona calciatore';
+
+  @override
+  String get showAnswers => 'Mostra risposte';
+
+  @override
+  String get passRound => 'Passa turno';
+
+  @override
+  String get newMatchup => 'Nuova sfida';
+
+  @override
+  String get bombExplodedTitle => '💥 BOOM! La bomba è esplosa!';
+
+  @override
+  String bombWonTitle(Object winner) {
+    return '🏆 $winner ha vinto!';
+  }
+
+  @override
+  String bombEliminatedDesc(Object player) {
+    return 'La bomba è esplosa in mano a $player ed è stato ELIMINATO!';
+  }
+
+  @override
+  String totalSuccessfulPasses(Object count) {
+    return 'Totale passaggi riusciti: $count';
+  }
+
+  @override
+  String get playerCount => 'Numero di giocatori';
+
+  @override
+  String get bombPassAction => 'Nomina un giocatore e passa la bomba!';
+
+  @override
+  String imposterCaughtTitle(Object points) {
+    return '🕵️ Impostore smascherato! +$points punti';
+  }
+
+  @override
+  String get imposterWrongSuspect => '❌ Sospettato errato!';
+
+  @override
+  String get imposterPrompt =>
+      'Seleziona il calciatore che non ha MAI giocato in questo club:';
+
+  @override
+  String get imposterBadgeNeverPlayed => '🕵️ IMPOSTORE! Non ha mai giocato';
+
+  @override
+  String get dailyStage1 => '⚡ Fase 1: 2 Squadre 1 Giocatore';
+
+  @override
+  String get dailyStage2 => '🧩 Fase 2: Chi sono?';
+
+  @override
+  String get dailyStage3 => '🕵️ Fase 3: Trova l\'impostore';
+
+  @override
+  String get dailyStage4 => '✈️ Fase 4: Percorso trasferimenti';
+
+  @override
+  String get dailyCompletedTournaments => '📅 TORNEI GIORNALIERI COMPLETATI';
+
+  @override
+  String get searchAndSubmitPlayer => 'Cerca e invia calciatore';
+
+  @override
+  String twoTeamsPlayedBoth(Object teamA, Object teamB) {
+    return 'ha giocato sia per $teamA che per $teamB!';
+  }
+
+  @override
+  String twoTeamsWrongBoth(Object name, Object teamA, Object teamB) {
+    return '❌ $name non ha giocato per entrambi i club!';
+  }
+
+  @override
+  String feedbackDrawProposed(Object user) {
+    return '$user ha proposto un pareggio.';
+  }
+
+  @override
+  String get feedbackDrawRejected =>
+      'Proposta di pareggio rifiutata. La partita continua!';
+
+  @override
+  String get feedbackDrawTimeout => 'Offerta di pareggio scaduta (30s).';
+
+  @override
+  String feedbackPassed(Object user) {
+    return '$user ha passato! Tocca all\'avversario.';
+  }
+
+  @override
+  String get feedbackTimeExpired => 'Tempo scaduto! Tocca all\'avversario.';
+
+  @override
+  String get giveUpAction => 'Arrendersi';
+
+  @override
+  String get clubLabel => 'Club';
+
+  @override
+  String get statisticsTitle => 'STATISTICHE';
+
+  @override
+  String get playerDefault => 'Giocatore';
+
+  @override
+  String get guessMysteryPlayer => 'Indovina il calciatore misterioso';
+
+  @override
+  String get secondsSuffix => 's';
 }

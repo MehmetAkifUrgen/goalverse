@@ -128,7 +128,12 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
       });
       _advanceStage();
     } else {
-      _showWrongSnack('${selected.name} her iki kulüpte birden oynamadı!');
+      final l10n = AppLocalizations.of(context);
+      _showWrongSnack(
+        l10n != null
+            ? l10n.twoTeamsWrongBoth(selected.name, _teamA?.name ?? '', _teamB?.name ?? '')
+            : '${selected.name} her iki kulüpte birden oynamadı!',
+      );
     }
   }
 
@@ -155,7 +160,12 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
           _unlockedClues++;
         }
       });
-      _showWrongSnack('${selected.name} değil! Yeni ipucu açıldı.');
+      final l10n = AppLocalizations.of(context);
+      _showWrongSnack(
+        l10n != null
+            ? '${selected.name} ${l10n.wrongGuess}!'
+            : '${selected.name} değil! Yeni ipucu açıldı.',
+      );
     }
   }
 
@@ -192,7 +202,12 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
       });
       _advanceStage();
     } else {
-      _showWrongSnack('${selected.name} değil! Transfer geçmişini kontrol et.');
+      final l10n = AppLocalizations.of(context);
+      _showWrongSnack(
+        l10n != null
+            ? l10n.wrongPlayerCheckHistory(selected.name)
+            : '${selected.name} değil! Transfer geçmişini kontrol et.',
+      );
     }
   }
 
@@ -311,7 +326,7 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
                               ),
                               const SizedBox(height: 10),
                               Text(
-                                'AŞAMA ${_currentStage + 1} / 4 • 1.5x GÜNLÜK TURNUVA ÇARPANI',
+                                l10n.dailyStageHeader(_currentStage + 1),
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                   fontSize: 12,
@@ -325,7 +340,7 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
                               const SizedBox(height: 8),
                               TextButton(
                                 onPressed: _skipCurrentStage,
-                                child: const Text('Bu Aşamayı Geç ➔'),
+                                child: Text(l10n.skipThisStage),
                               ),
                             ],
                           ),
@@ -337,19 +352,20 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
   }
 
   Widget _buildCurrentStageWidget() {
+    final l10n = AppLocalizations.of(context);
     switch (_currentStage) {
       case 0:
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              '⚡ Aşama 1: 2 Takım 1 Oyuncu',
+            Text(
+              l10n?.dailyStage1 ?? '⚡ Aşama 1: 2 Takım 1 Oyuncu',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
             ),
             const SizedBox(height: 6),
-            const Text(
-              'Her İKİ kulüpte de forma giymiş bir futbolcu seçin:',
+            Text(
+              l10n?.twoTeamsPrompt ?? 'Her İKİ kulüpte de forma giymiş bir futbolcu seçin:',
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
@@ -368,7 +384,7 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
             ElevatedButton.icon(
               onPressed: _pickPlayerForStage0,
               icon: const Icon(Icons.search_rounded),
-              label: const Text('Futbolcu Ara ve Gönder'),
+              label: Text(l10n?.searchAndSubmitPlayer ?? 'Futbolcu Ara ve Gönder'),
             ),
           ],
         );
@@ -378,10 +394,10 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              '🧩 Aşama 2: Ben Kimim?',
+            Text(
+              l10n?.dailyStage2 ?? '🧩 Aşama 2: Ben Kimim?',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
             ),
             const SizedBox(height: 12),
             Expanded(
@@ -407,7 +423,7 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
                         ),
                       ),
                       title: Text(
-                        unlocked ? clues[idx] : '🔒 Kilitli İpucu',
+                        unlocked ? clues[idx] : (l10n?.lockedClue ?? '🔒 Kilitli İpucu'),
                         style: TextStyle(
                           fontWeight: unlocked
                               ? FontWeight.w700
@@ -427,13 +443,13 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
               OutlinedButton.icon(
                 onPressed: () => setState(() => _unlockedClues++),
                 icon: const Icon(Icons.lock_open_rounded),
-                label: const Text('Sonraki İpucunu Aç'),
+                label: Text(l10n?.unlockNextClue ?? 'Sonraki İpucunu Aç'),
               ),
             const SizedBox(height: 10),
             ElevatedButton.icon(
               onPressed: _pickPlayerForStage1,
               icon: const Icon(Icons.help_outline_rounded),
-              label: const Text('Gizemli Futbolcuyu Tahmin Et'),
+              label: Text(l10n?.guessMysteryPlayer ?? 'Gizemli Futbolcuyu Tahmin Et'),
             ),
           ],
         );
@@ -443,10 +459,10 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              '🕵️ Aşama 3: Ajanı Bul (Imposter)',
+            Text(
+              l10n?.dailyStage3 ?? '🕵️ Aşama 3: Ajanı Bul (Imposter)',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
             ),
             const SizedBox(height: 8),
             Container(
@@ -549,14 +565,14 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              '✈️ Aşama 4: Transfer Rotası',
+            Text(
+              l10n?.dailyStage4 ?? '✈️ Aşama 4: Transfer Rotası',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
             ),
             const SizedBox(height: 6),
-            const Text(
-              'Kariyer geçmişinden futbolcuyu bul:',
+            Text(
+              l10n?.transferPathQuestion ?? 'Kariyer geçmişinden futbolcuyu bul:',
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 12),
@@ -566,7 +582,7 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
                 itemBuilder: (context, idx) {
                   final stop = puzzle.path[idx];
                   final years =
-                      '${stop.seasonStart ?? '?'} – ${stop.seasonEnd ?? 'Günümüz'}';
+                      '${stop.seasonStart ?? '?'} – ${stop.seasonEnd ?? (l10n?.presentDay ?? "Günümüz")}';
                   return Card(
                     margin: const EdgeInsets.only(bottom: 10),
                     child: ListTile(
@@ -658,9 +674,9 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
-              '📅 TAMAMLANAN GÜNLÜK TURNUVALAR',
-              style: TextStyle(
+            Text(
+              l10n.dailyCompletedTournaments,
+              style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w900,
                 letterSpacing: 1.1,

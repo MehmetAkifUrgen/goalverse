@@ -10,6 +10,7 @@ import '../../../core/monetization/purchase_service.dart';
 import '../../../core/monetization/remote_config_service.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/stadium_visuals.dart';
+import '../../../l10n/app_localizations.dart';
 
 class PremiumPaywallPage extends ConsumerStatefulWidget {
   const PremiumPaywallPage({super.key});
@@ -58,8 +59,8 @@ class _PremiumPaywallPageState extends ConsumerState<PremiumPaywallPage> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Aboneliğinizi Google Play veya App Store hesap ayarlarınız üzerinden istediğiniz zaman yönetebilir veya iptal edebilirsiniz. İptal edilen abonelikler dönem sonuna kadar aktif kalır.',
+            Text(
+              mL10n.tr('manage_sub_notice'),
             ),
             const SizedBox(height: 14),
             SelectableText(
@@ -81,11 +82,11 @@ class _PremiumPaywallPageState extends ConsumerState<PremiumPaywallPage> {
               );
               Navigator.of(ctx).pop();
             },
-            child: const Text('Bağlantıyı Kopyala'),
+            child: Text(mL10n.tr('copy_link')),
           ),
           ElevatedButton(
             onPressed: () => Navigator.of(ctx).pop(),
-            child: const Text('Tamam'),
+            child: Text(AppLocalizations.of(context)?.ok ?? 'OK'),
           ),
         ],
       ),
@@ -546,8 +547,7 @@ class _PremiumPaywallPageState extends ConsumerState<PremiumPaywallPage> {
                           onPressed: () => _showLegalSheet(
                             context,
                             title: mL10n.tr('terms_of_use'),
-                            body:
-                                'Football SOS Pro abonelikleri Google Play veya App Store hesabınız üzerinden faturalandırılır. Cari dönem bitiminden en az 24 saat önce iptal edilmediği sürece otomatik olarak yenilenir. Abonelik iptal edildiğinde mevcut fatura dönemi sonuna kadar Football SOS Pro haklarınız aktif kalır.',
+                            body: mL10n.tr('terms_body'),
                           ),
                           child: Text(mL10n.tr('terms_of_use')),
                         ),
@@ -556,8 +556,7 @@ class _PremiumPaywallPageState extends ConsumerState<PremiumPaywallPage> {
                           onPressed: () => _showLegalSheet(
                             context,
                             title: mL10n.tr('privacy_policy'),
-                            body:
-                                'Satın alma ve abonelik doğrulamaları Firebase Authentication UID\'niz ve RevenueCat / resmi uygulama mağazası makbuz doğrulama altyapısı ile güvenli şekilde işlenir. Ödeme kartı bilgileriniz hiçbir zaman uygulama sunucularımızda saklanmaz.',
+                            body: mL10n.tr('privacy_body'),
                           ),
                           child: Text(mL10n.tr('privacy_policy')),
                         ),

@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../data/repositories/web_data_store.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../game/data/online_match_service.dart';
 import '../../game/presentation/online_arena_banner.dart';
 import '../../game/presentation/online_lobby_dialog.dart';
@@ -141,12 +142,14 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
           won: false,
           score: _isMultiplayer ? _p1Score : _score,
         );
-    _showResultDialog(title: '⏰ Süre Doldu!', correct: false);
+    final l10n = AppLocalizations.of(context);
+    _showResultDialog(title: l10n?.timeExpired ?? '⏰ Süre Doldu!', correct: false);
   }
 
   void _onSelectOption(int index) {
     if (_revealed || _puzzle == null) return;
     _timer?.cancel();
+    final l10n = AppLocalizations.of(context);
 
     final option = _puzzle!.options[index];
     final correct = option.isImposter;
@@ -190,8 +193,10 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
       if (!mounted) return;
       _showResultDialog(
         title: correct
-            ? '🕵️ Ajan Yakalandı! +$earned Puan'
-            : '❌ Yanlış Şüpheli!',
+            ? (l10n != null
+                ? l10n.imposterCaughtTitle(earned.toString())
+                : '🕵️ Ajan Yakalandı! +$earned Puan')
+            : (l10n?.imposterWrongSuspect ?? '❌ Yanlış Şüpheli!'),
         correct: correct,
       );
     });
@@ -255,7 +260,7 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
                 Navigator.of(ctx).pop();
                 context.pop();
               },
-              child: const Text('Çıkış'),
+              child: Text(AppLocalizations.of(context)?.exitAction ?? 'Çıkış'),
             ),
           ElevatedButton(
             onPressed: () {
@@ -263,7 +268,9 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
               _advanceDuelOrNext(correct);
             },
             child: Text(
-              _isMultiplayer || correct ? 'Sonraki Tur ➔' : 'Tekrar Oyna',
+              _isMultiplayer || correct
+                  ? (AppLocalizations.of(context)?.nextMatch ?? 'Sonraki Tur ➔')
+                  : (AppLocalizations.of(context)?.playAgainButton ?? 'Tekrar Oyna'),
             ),
           ),
         ],
@@ -273,14 +280,16 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Imposter • Ajan Kim?'),
+        title: Text(l10n?.imposterTitle ?? 'Imposter'),
         actions: [
           AppTheme.onlineRoomButton(
             isOnlineActive: widget.roomId != null,
+            context: context,
             onTap: () {
               showDialog(
                 context: context,
@@ -291,6 +300,7 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
           ),
           AppTheme.modeToggleButton(
             isMultiplayer: _isMultiplayer,
+            context: context,
             onChanged: (val) {
               setState(() => _isMultiplayer = val);
               _resetDuel();
@@ -345,6 +355,7 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
                             currentPlayer: _currentPlayer,
                             currentTurn: _duelTurn,
                             maxTurns: _maxDuelTurns,
+                            context: context,
                           ),
                         // Timer Bar
                         Row(
@@ -353,8 +364,10 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
                             Flexible(
                               child: Text(
                                 _isMultiplayer
-                                    ? 'Oyuncu ${_currentPlayer + 1}: Kulüpte oynamayan ajanı seç!'
-                                    : 'Bu kulüpte HİÇ oynamamış olan futbolcuyu seç:',
+                                    ? (l10n != null
+                                        ? '${l10n.selectPlayerPlayerTurn((_currentPlayer + 1).toString())} - ${l10n.imposterPrompt}'
+                                        : 'Oyuncu ${_currentPlayer + 1}: Kulüpte oynamayan ajanı seç!')
+                                    : (l10n?.imposterPrompt ?? 'Bu kulüpte HİÇ oynamamış olan futbolcuyu seç:'),
                                 style: const TextStyle(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 13,
@@ -569,7 +582,7 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
                                             const SizedBox(height: 4),
                                             Text(
                                               opt.isImposter
-                                                  ? '🕵️ AJAN! Hiç Oynamadı'
+                                                  ? (l10n?.imposterBadgeNeverPlayed ?? '🕵️ AJAN! Hiç Oynamadı')
                                                   : '✅ ${_puzzle!.targetTeam.name}',
                                               textAlign: TextAlign.center,
                                               maxLines: 1,

@@ -119,17 +119,19 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
 
   Future<bool> _confirmExitIfPlaying(OnlineGame? game) async {
     if (game == null || game.isFinished) return true;
+    final l10n = AppLocalizations.of(context);
     final shouldLeave = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Maçtan Çıkılsın mı?'),
-        content: const Text(
-          'Devam eden çok oyunculu maçtan ayrılmak istediğinize emin misiniz?',
+        title: Text(l10n?.leaveMatchTitle ?? 'Maçtan Çıkılsın mı?'),
+        content: Text(
+          l10n?.leaveMatchConfirm ??
+              'Devam eden çok oyunculu maçtan ayrılmak istediğinize emin misiniz?',
         ),
         actions: [
           OutlinedButton(
             onPressed: () => Navigator.of(ctx).pop(false),
-            child: const Text('Maça Devam Et'),
+            child: Text(l10n?.continueMatch ?? 'Maça Devam Et'),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -137,7 +139,7 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
               foregroundColor: Colors.white,
             ),
             onPressed: () => Navigator.of(ctx).pop(true),
-            child: const Text('Maçtan Ayrıl'),
+            child: Text(l10n?.leaveMatch ?? 'Maçtan Ayrıl'),
           ),
         ],
       ),
@@ -370,8 +372,8 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
                   ),
                   const SizedBox(height: 12),
                   if (history.isEmpty)
-                    const Expanded(
-                      child: Center(child: Text('Henüz hamle yapılmadı.')),
+                    Expanded(
+                      child: Center(child: Text(l10n.noMovesYet)),
                     )
                   else
                     Expanded(
@@ -509,7 +511,7 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
                       border: Border.all(color: AppColors.border),
                     ),
                     child: Text(
-                      'MAÇ SONU • ${game.totalRounds} TUR (${game.roundsToWin} GALİBİYET)',
+                      l10n.matchEndSummary(game.totalRounds, game.roundsToWin),
                       style: AppTypography.label(
                         fontSize: 10.5,
                         color: AppColors.trophyGold,
@@ -540,12 +542,12 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
                 children: [
                   Text(
                     isWin
-                        ? 'Tebrikler! Seride ${game.roundsToWin} galibiyete ulaşarak maçı kazandınız!'
+                        ? l10n.congratsMatchWon(game.roundsToWin)
                         : endedByDrawOffer
                         ? l10n.drawAcceptedMessage
                         : isDraw
-                        ? 'Seri berabere tamamlandı.'
-                        : '$oppName seride ${game.roundsToWin} galibiyete ulaşarak maçı kazandı.',
+                        ? l10n.seriesDraw
+                        : l10n.opponentMatchWon(oppName, game.roundsToWin),
                     textAlign: TextAlign.center,
                     style: AppTypography.description(
                       fontSize: 13,
@@ -635,29 +637,29 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
                     child: Column(
                       children: [
                         _buildSummaryStatRow(
-                          'Kazanılan Turlar',
+                          l10n.roundsWon,
                           '$myRoundWins - $oppRoundWins',
                         ),
                         const SizedBox(height: 6),
                         _buildSummaryStatRow(
-                          'Toplam Doğru Cevap',
-                          '$myCorrect (Rakip: $oppCorrect)',
+                          l10n.correctAnswers,
+                          '$myCorrect (${l10n.opponentLabel}: $oppCorrect)',
                         ),
                         const SizedBox(height: 6),
-                        _buildSummaryStatRow('Yanlış Cevap', '$myWrong'),
+                        _buildSummaryStatRow(l10n.wrongAnswers, '$myWrong'),
                         const SizedBox(height: 6),
                         _buildSummaryStatRow(
-                          'Kullanılan Pas',
+                          l10n.passesUsed,
                           '$myTotalPasses',
                         ),
                         const SizedBox(height: 6),
                         _buildSummaryStatRow(
-                          'Maç Süresi',
+                          l10n.matchDuration,
                           _formatDuration(durationSec),
                         ),
                         const Divider(height: 16),
                         _buildSummaryStatRow(
-                          'ELO Değişimi',
+                          l10n.eloChange,
                           '${eloDelta >= 0 ? '+' : ''}$eloDelta ELO',
                           valueColor: eloDelta > 0
                               ? AppColors.electricLime
@@ -673,7 +675,7 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
               actionsAlignment: MainAxisAlignment.center,
               actions: [
                 ArenaButton(
-                  label: 'Ana Menüye Dön',
+                  label: l10n.mainMenuButton,
                   icon: Icons.home_rounded,
                   onTap: () {
                     Navigator.of(context).pop();
@@ -722,16 +724,16 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Scaffold(
-            appBar: AppBar(title: const Text('Online Maç')),
+            appBar: AppBar(title: Text(l10n.onlineMatch)),
             body: Center(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('Hata: ${snapshot.error}'),
+                  Text('${l10n.errorServerError}: ${snapshot.error}'),
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () => context.go('/home'),
-                    child: const Text('Ana Menüye Dön'),
+                    child: Text(l10n.mainMenuButton),
                   ),
                 ],
               ),
@@ -740,14 +742,14 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
         }
 
         if (!snapshot.hasData) {
-          return const Scaffold(
+          return Scaffold(
             body: Center(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CircularProgressIndicator(color: AppColors.electricLime),
-                  SizedBox(height: 16),
-                  Text('Canlı maça bağlanılıyor...'),
+                  const CircularProgressIndicator(color: AppColors.electricLime),
+                  const SizedBox(height: 16),
+                  Text(l10n.connectingToLiveMatch),
                 ],
               ),
             ),
@@ -1020,10 +1022,10 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
                                     !game.isPlaying
                                         ? l10n.waitingForOpponent
                                         : game.isRoundSummary
-                                        ? 'TUR ${game.roundNumber} TAMAMLANDI • YENİ TUR BAŞLIYOR'
+                                        ? l10n.roundCompletedNewStarting(game.roundNumber)
                                         : isMyTurn
-                                        ? 'SIRANIZ! Bir kare seçin'
-                                        : 'Rakip düşünüyor ($oppName)...',
+                                        ? l10n.yourTurnSelectCell
+                                        : l10n.opponentThinking(oppName),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                     style: const TextStyle(
@@ -1100,25 +1102,46 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
                           ],
                           if (game.feedbackMessage != null) ...[
                             const SizedBox(height: 6),
-                            Text(
-                              game.feedbackMessage!,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w700,
-                                color:
-                                    game.feedbackMessage!.contains('Yanlış') ||
-                                        game.feedbackMessage!.contains(
-                                          'doldu',
-                                        ) ||
-                                        game.feedbackMessage!.contains(
-                                          'reddedildi',
-                                        )
-                                    ? AppColors.coralRed
-                                    : AppColors.electricLime,
-                              ),
+                            Builder(
+                              builder: (context) {
+                                final l10n = AppLocalizations.of(context);
+                                final msg = game.feedbackMessage!;
+                                String localizedText = msg;
+                                if (l10n != null) {
+                                  if (msg.contains('pas geçti') || msg.toLowerCase().contains('passed')) {
+                                    final name = msg.split(' ').first;
+                                    localizedText = l10n.feedbackPassed(name);
+                                  } else if (msg.contains('beraberlik teklif etti') || msg.toLowerCase().contains('proposed a draw')) {
+                                    final name = msg.split(' ').first;
+                                    localizedText = l10n.feedbackDrawProposed(name);
+                                  } else if (msg.contains('reddedildi') || msg.toLowerCase().contains('declined')) {
+                                    localizedText = l10n.feedbackDrawRejected;
+                                  } else if (msg.contains('süresi doldu') || msg.toLowerCase().contains('timed out')) {
+                                    localizedText = l10n.feedbackDrawTimeout;
+                                  } else if (msg.contains('Süre doldu') || msg.toLowerCase().contains('time expired')) {
+                                    localizedText = l10n.feedbackTimeExpired;
+                                  }
+                                }
+                                final isAlert = msg.contains('Yanlış') ||
+                                    msg.contains('doldu') ||
+                                    msg.contains('reddedildi') ||
+                                    msg.toLowerCase().contains('wrong') ||
+                                    msg.toLowerCase().contains('declined') ||
+                                    msg.toLowerCase().contains('expired');
+                                return Text(
+                                  localizedText,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w700,
+                                    color: isAlert
+                                        ? AppColors.coralRed
+                                        : AppColors.electricLime,
+                                  ),
+                                );
+                              },
                             ),
                           ],
                           const SizedBox(height: 8),
@@ -1161,21 +1184,22 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
     required int myRoundWins,
     required int oppRoundWins,
   }) {
+    final l10n = AppLocalizations.of(context)!;
     final roundWinner = game.lastRoundWinnerId;
     final didIWinRound = roundWinner == myUserId;
     final isRoundDraw = roundWinner == 'draw' || roundWinner == null;
 
     final roundResultTitle = isRoundDraw
-        ? 'TUR ${game.roundNumber} BERABERE BİTTİ'
+        ? l10n.roundEndedInDraw(game.roundNumber)
         : didIWinRound
-        ? '🏆 TUR ${game.roundNumber} KAZANANI: SEN ($myName)'
-        : '⚽ TUR ${game.roundNumber} KAZANANI: $oppName';
+        ? '🏆 ${l10n.roundLabel} ${game.roundNumber} ${l10n.won}: ${l10n.scoreboardYou} ($myName)'
+        : '⚽ ${l10n.roundLabel} ${game.roundNumber} ${l10n.won}: $oppName';
 
     final roundLoserSubtitle = isRoundDraw
-        ? 'Tahta doldu, her iki oyuncu da 3\'lü seri yapamadı.'
+        ? l10n.boardFullNoSeries
         : didIWinRound
-        ? 'Kaybeden: $oppName • Seride öne geçtiniz!'
-        : 'Kaybeden: $myName • Yeni turda eşitliği yakalayın!';
+        ? l10n.loserOpponentAhead(oppName)
+        : l10n.loserYouTieNext(myName);
 
     return Container(
       key: const Key('online_inter_round_summary_card'),
@@ -1235,7 +1259,7 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
               border: Border.all(color: AppColors.border),
             ),
             child: Text(
-              'Seri Skoru:  $myName $myRoundWins  —  $oppRoundWins $oppName',
+              '${l10n.seriesDraw.split(' ').first} ${l10n.score}:  $myName $myRoundWins  —  $oppRoundWins $oppName',
               style: AppTheme.scoreboardNumberStyle(
                 fontSize: 16,
                 color: AppColors.warmWhite,
@@ -1244,7 +1268,7 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
           ),
           const SizedBox(height: 14),
           Text(
-            'Sıradaki: TUR ${game.roundNumber + 1} (${_roundSummaryCountdown}s)',
+            l10n.nextRoundCountdown(game.roundNumber + 1, _roundSummaryCountdown),
             style: AppTypography.label(
               fontSize: 12,
               color: AppColors.electricLime,
@@ -1253,7 +1277,7 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
           const SizedBox(height: 10),
           ArenaButton(
             key: const Key('online_next_round_button'),
-            label: 'Tur ${game.roundNumber + 1} Başlat',
+            label: l10n.startNextRound(game.roundNumber + 1),
             icon: Icons.play_arrow_rounded,
             compact: true,
             isLoading: _advancingRound,
@@ -1406,7 +1430,8 @@ class _OnlineGamePageState extends ConsumerState<OnlineGamePage> {
 
   Widget _buildGrid(OnlineGame game, String myUserId) {
     if (game.rowTeams.length < 3 || game.colTeams.length < 3) {
-      return const Center(child: Text('Tahta yüklenemedi.'));
+      final l10n = AppLocalizations.of(context);
+      return Center(child: Text(l10n?.boardLoadFailed ?? 'Tahta yüklenemedi.'));
     }
 
     final selRow = _selectedCellIndex != null ? _selectedCellIndex! ~/ 3 : null;

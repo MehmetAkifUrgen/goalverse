@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../data/models/freezed/entity_models.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../data/repositories/web_data_store.dart';
 import '../../game/data/online_match_service.dart';
 import '../../game/presentation/online_arena_banner.dart';
@@ -139,9 +140,10 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
           won: false,
           score: _isMultiplayer ? _p1Score : _score,
         );
+    final l10n = AppLocalizations.of(context);
     _showAnswerDialog(
-      title: '⏰ Süre Doldu!',
-      subtitle: 'Gizemli futbolcu:',
+      title: l10n?.timeExpired ?? '⏰ Süre Doldu!',
+      subtitle: l10n?.transferPathOwner ?? 'Bu transfer geçmişinin sahibi:',
       pointsEarned: 0,
     );
   }
@@ -156,6 +158,7 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
     );
 
     if (selected == null || !mounted || _roundOver) return;
+    final l10n = AppLocalizations.of(context);
 
     if (selected.id == _puzzle!.player.id ||
         selected.normalizedName == _puzzle!.player.normalizedName) {
@@ -188,9 +191,11 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
 
       _showAnswerDialog(
         title: _isMultiplayer
-            ? '🎯 Oyuncu ${_currentPlayer + 1} Bildi!'
-            : '🎯 Doğru Transfer Rotası!',
-        subtitle: '+$earned Puan kazandın!',
+            ? (l10n != null ? l10n.selectPlayerPlayerTurn((_currentPlayer + 1).toString()) : '🎯 Oyuncu ${_currentPlayer + 1}')
+            : (l10n?.correctTransferPath ?? '🎯 Doğru Transfer Rotası!'),
+        subtitle: l10n != null
+            ? l10n.earnedPoints(earned.toString())
+            : '+$earned Puan kazandın!',
         pointsEarned: earned,
       );
     } else {
@@ -204,8 +209,12 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
         SnackBar(
           content: Text(
             _isMultiplayer
-                ? '❌ ${selected.name} değil! Sıra Oyuncu ${_currentPlayer + 1}\'e geçti.'
-                : '❌ ${selected.name} değil! Kulüp geçmişine tekrar bak.',
+                ? (l10n != null
+                    ? l10n.wrongPlayerNextTurn(selected.name, (_currentPlayer + 1).toString())
+                    : '❌ ${selected.name} değil! Sıra Oyuncu ${_currentPlayer + 1}\'e geçti.')
+                : (l10n != null
+                    ? l10n.wrongPlayerCheckHistory(selected.name)
+                    : '❌ ${selected.name} değil! Kulüp geçmişine tekrar bak.'),
           ),
           backgroundColor: AppTheme.crimsonAlert,
           behavior: SnackBarBehavior.floating,
@@ -221,9 +230,10 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
       _roundOver = true;
       _streak = 0;
     });
+    final l10n = AppLocalizations.of(context);
     _showAnswerDialog(
-      title: '🏳️ Cevap Açıldı',
-      subtitle: 'Bu transfer geçmişinin sahibi:',
+      title: l10n?.answerRevealed ?? '🏳️ Cevap Açıldı',
+      subtitle: l10n?.transferPathOwner ?? 'Bu transfer geçmişinin sahibi:',
       pointsEarned: 0,
     );
   }
@@ -295,7 +305,7 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
               Navigator.of(ctx).pop();
               _advanceDuelOrNext();
             },
-            child: const Text('Sonraki Kariyer Rotası ➔'),
+            child: Text(AppLocalizations.of(ctx)?.nextCareerPath ?? 'Sonraki Kariyer Rotası ➔'),
           ),
         ],
       ),
@@ -304,15 +314,17 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final p = _puzzle?.player;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Transfer Path'),
+        title: Text(l10n?.transferPathTitle ?? 'Transfer Path'),
         actions: [
           AppTheme.onlineRoomButton(
             isOnlineActive: widget.roomId != null,
+            context: context,
             onTap: () {
               showDialog(
                 context: context,
@@ -323,6 +335,7 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
           ),
           AppTheme.modeToggleButton(
             isMultiplayer: _isMultiplayer,
+            context: context,
             onChanged: (val) {
               setState(() => _isMultiplayer = val);
               _resetDuel();
@@ -377,6 +390,7 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
                             currentPlayer: _currentPlayer,
                             currentTurn: _duelTurn,
                             maxTurns: _maxDuelTurns,
+                            context: context,
                           ),
                         // Header & Timer
                         Row(
@@ -399,7 +413,9 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
                                 ),
                               ),
                               child: Text(
-                                'ZORLUK: ${_puzzle!.difficulty}',
+                                l10n != null
+                                    ? '${l10n.difficulty.toUpperCase()}: ${_puzzle!.difficulty}'
+                                    : 'ZORLUK: ${_puzzle!.difficulty}',
                                 style: const TextStyle(
                                   color: AppTheme.cyberCyan,
                                   fontWeight: FontWeight.w900,
@@ -426,7 +442,7 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
                                 ),
                               ),
                               child: Text(
-                                '⏱ $_secondsLeft sn',
+                                '⏱ $_secondsLeft ${l10n?.secondsSuffix ?? "sn"}',
                                 style: TextStyle(
                                   color: _secondsLeft <= 7
                                       ? Colors.white
@@ -438,9 +454,9 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
                           ],
                         ),
                         const SizedBox(height: 12),
-                        const Text(
-                          'Bu kronolojik transfer geçmişi hangi futbolcuya ait?',
-                          style: TextStyle(
+                        Text(
+                          l10n?.transferPathQuestion ?? 'Bu kronolojik transfer geçmişi hangi futbolcuya ait?',
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w800,
                           ),
@@ -461,7 +477,9 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
                               ),
                             ),
                             child: Text(
-                              '💡 İpucu: Mevki ${p.position ?? '?'} • Ülke ${AppTheme.nationalityFlag(p.nationality)} ${p.nationality ?? '?'} • OVR ${p.eaFcOverall ?? '?'}',
+                              l10n != null
+                                  ? '${l10n.cluePositionAndCountry(p.position ?? "?", "${AppTheme.nationalityFlag(p.nationality)} ${p.nationality ?? '?'}")} • OVR ${p.eaFcOverall ?? '?'}'
+                                  : '💡 İpucu: Mevki ${p.position ?? '?'} • Ülke ${AppTheme.nationalityFlag(p.nationality)} ${p.nationality ?? '?'} • OVR ${p.eaFcOverall ?? '?'}',
                               style: const TextStyle(
                                 fontWeight: FontWeight.w800,
                                 color: AppTheme.goldTrophy,
@@ -479,7 +497,7 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
                               final stop = _puzzle!.path[index];
                               final isLast = index == _puzzle!.path.length - 1;
                               final years =
-                                  '${stop.seasonStart ?? '?'} – ${stop.seasonEnd ?? 'Günümüz'}';
+                                  '${stop.seasonStart ?? '?'} – ${stop.seasonEnd ?? (l10n?.presentDay ?? "Günümüz")}';
 
                               return Column(
                                 children: [
@@ -543,7 +561,7 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
                                                 ),
                                               ),
                                               Text(
-                                                stop.team.country ?? 'Kulüp',
+                                                stop.team.country ?? (l10n?.clubLabel ?? 'Kulüp'),
                                                 style: TextStyle(
                                                   fontSize: 12,
                                                   color: isDark
@@ -606,7 +624,7 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
                                     : () =>
                                           setState(() => _hintRevealed = true),
                                 icon: const Icon(Icons.lightbulb_outline),
-                                label: const Text('İpucu (-150p)'),
+                                label: Text(l10n?.hintPenalty ?? 'İpucu (-150p)'),
                               ),
                             ),
                             const SizedBox(width: 10),
@@ -614,7 +632,7 @@ class _TransferPathPageState extends ConsumerState<TransferPathPage> {
                               child: OutlinedButton.icon(
                                 onPressed: _roundOver ? null : _giveUp,
                                 icon: const Icon(Icons.flag_outlined),
-                                label: const Text('Pes Et'),
+                                label: Text(l10n?.giveUpAction ?? 'Pes Et'),
                               ),
                             ),
                           ],
