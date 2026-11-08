@@ -1447,4 +1447,71 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get secondsSuffix => 'sn';
+
+  @override
+  String whichPlayerNeverPlayedFor(String team) {
+    return 'Hangi futbolcu HİÇ $team forması giymedi?';
+  }
+
+  @override
+  String neverPlayedForTeamExplanation(
+    String player,
+    String team,
+    String clubs,
+  ) {
+    return '$player kariyerinde hiç $team forması giymedi (Oynadığı kulüpler: $clubs).';
+  }
+
+  @override
+  String get popularSearches => 'Popüler Aramalar';
+
+  @override
+  String get cellLabel => 'HÜCRE';
+
+  @override
+  String get selectedCellLabel => 'SEÇİLİ HÜCRE';
+
+  @override
+  String bombNamePlayerForTeam(String team) {
+    return '$team forması giymiş bir futbolcu söyle!';
+  }
+
+  @override
+  String bombNamePlayerFromNationality(String nat) {
+    return '$nat vatandaşı bir futbolcu söyle!';
+  }
+
+  @override
+  String get bombNameAnyPlayer =>
+      'Veritabanındaki herhangi bir futbolcuyu söyle!';
+
+  @override
+  String clueNationalityPosition(String nat, String pos) {
+    return 'Uyruk: $nat | Mevki: $pos';
+  }
+
+  @override
+  String clueCareerStats(String goals, String assists, String ovr) {
+    return 'Kariyerinde $goals gol ve $assists asist üretti (Overall: $ovr).';
+  }
+
+  @override
+  String clueClubsPlayed(String clubs) {
+    return 'Oynadığı kulüpler: $clubs';
+  }
+
+  @override
+  String clueInitialsAndLength(String initials, String letters) {
+    return 'Baş harfleri: $initials ($letters harfli)';
+  }
+
+  @override
+  String get helpGameModesContent =>
+      'Football SOS • 7 Oyun Modu:\n\n• Football SOS: 3x3 Grid (vs Akıllı Bot, 2P Düello & Online)\n• Rating Battle: 1P Seri & 2P Düello\n• 2 Takım 1 Oyuncu: Ortak futbolcuyu bul\n• Ben Kimim?: 5 ipucundan futbolcuyu tahmin et\n• Imposter: O kulüpte hiç oynamamış ajanı bul\n• Transfer Path: Kariyer geçmişinden futbolcuyu çöz\n• Football Bomb: Süre bitmeden paslaşarak hayatta kal!';
+
+  @override
+  String get errorTitle => 'Hata';
+
+  @override
+  String get winnerTitle => 'Kazanan';
 }

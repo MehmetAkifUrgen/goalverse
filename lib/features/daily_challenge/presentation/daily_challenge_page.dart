@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/providers.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/utils/clue_localizer.dart';
 import '../../../data/models/freezed/entity_models.dart';
 import '../../../data/repositories/web_data_store.dart';
 import '../../../l10n/app_localizations.dart';
@@ -423,7 +424,13 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
                         ),
                       ),
                       title: Text(
-                        unlocked ? clues[idx] : (l10n?.lockedClue ?? '🔒 Kilitli İpucu'),
+                        unlocked
+                            ? ClueLocalizer.getClue(
+                                _whoAmIPlayer!,
+                                idx,
+                                context,
+                              )
+                            : (l10n?.lockedClue ?? '🔒 Kilitli İpucu'),
                         style: TextStyle(
                           fontWeight: unlocked
                               ? FontWeight.w700
@@ -486,7 +493,11 @@ class _DailyChallengePageState extends ConsumerState<DailyChallengePage> {
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
-                      puzzle.ruleDescription,
+                      l10n != null
+                          ? l10n.whichPlayerNeverPlayedFor(
+                              puzzle.targetTeam.name,
+                            )
+                          : puzzle.ruleDescription,
                       style: const TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w800,

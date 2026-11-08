@@ -2679,6 +2679,100 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'s'**
   String get secondsSuffix;
+
+  /// Imposter question prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Which player NEVER played for {team}?'**
+  String whichPlayerNeverPlayedFor(String team);
+
+  /// Imposter answer explanation
+  ///
+  /// In en, this message translates to:
+  /// **'{player} never played for {team} in their career (Clubs: {clubs}).'**
+  String neverPlayedForTeamExplanation(
+    String player,
+    String team,
+    String clubs,
+  );
+
+  /// Popular searches label in player search
+  ///
+  /// In en, this message translates to:
+  /// **'Popular Searches'**
+  String get popularSearches;
+
+  /// Cell label
+  ///
+  /// In en, this message translates to:
+  /// **'CELL'**
+  String get cellLabel;
+
+  /// Selected cell label
+  ///
+  /// In en, this message translates to:
+  /// **'SELECTED CELL'**
+  String get selectedCellLabel;
+
+  /// Football bomb challenge team prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Name a footballer who played for {team}!'**
+  String bombNamePlayerForTeam(String team);
+
+  /// Football bomb challenge nationality prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Name a footballer from {nat}!'**
+  String bombNamePlayerFromNationality(String nat);
+
+  /// Football bomb challenge any player prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Name any footballer in the database!'**
+  String get bombNameAnyPlayer;
+
+  /// Clue 1: Nationality and Position
+  ///
+  /// In en, this message translates to:
+  /// **'Nationality: {nat} | Position: {pos}'**
+  String clueNationalityPosition(String nat, String pos);
+
+  /// Clue 2: Career goals and assists
+  ///
+  /// In en, this message translates to:
+  /// **'Recorded {goals} goals and {assists} assists in career (Overall: {ovr}).'**
+  String clueCareerStats(String goals, String assists, String ovr);
+
+  /// Clue 3: Clubs played for
+  ///
+  /// In en, this message translates to:
+  /// **'Clubs played for: {clubs}'**
+  String clueClubsPlayed(String clubs);
+
+  /// Clue 5: Initials and name length
+  ///
+  /// In en, this message translates to:
+  /// **'Initials: {initials} ({letters} letters)'**
+  String clueInitialsAndLength(String initials, String letters);
+
+  /// Help modal game modes explanation
+  ///
+  /// In en, this message translates to:
+  /// **'Football SOS • 7 Game Modes:\n\n• Football SOS: 3x3 Grid (vs Smart Bot, 2P Duel & Online)\n• Rating Battle: 1P Streak & 2P Duel\n• 2 Teams 1 Player: Find the shared footballer\n• Who Am I?: Guess the mystery footballer from 5 clues\n• Imposter: Spot the player who never played for the club\n• Transfer Path: Identify the footballer from their career history\n• Football Bomb: Pass the bomb before time runs out!'**
+  String get helpGameModesContent;
+
+  /// Error title
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get errorTitle;
+
+  /// Winner title
+  ///
+  /// In en, this message translates to:
+  /// **'Winner'**
+  String get winnerTitle;
 }
 
 class _AppLocalizationsDelegate

@@ -1449,4 +1449,70 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get secondsSuffix => 's';
+
+  @override
+  String whichPlayerNeverPlayedFor(String team) {
+    return 'Which player NEVER played for $team?';
+  }
+
+  @override
+  String neverPlayedForTeamExplanation(
+    String player,
+    String team,
+    String clubs,
+  ) {
+    return '$player never played for $team in their career (Clubs: $clubs).';
+  }
+
+  @override
+  String get popularSearches => 'Popular Searches';
+
+  @override
+  String get cellLabel => 'CELL';
+
+  @override
+  String get selectedCellLabel => 'SELECTED CELL';
+
+  @override
+  String bombNamePlayerForTeam(String team) {
+    return 'Name a footballer who played for $team!';
+  }
+
+  @override
+  String bombNamePlayerFromNationality(String nat) {
+    return 'Name a footballer from $nat!';
+  }
+
+  @override
+  String get bombNameAnyPlayer => 'Name any footballer in the database!';
+
+  @override
+  String clueNationalityPosition(String nat, String pos) {
+    return 'Nationality: $nat | Position: $pos';
+  }
+
+  @override
+  String clueCareerStats(String goals, String assists, String ovr) {
+    return 'Recorded $goals goals and $assists assists in career (Overall: $ovr).';
+  }
+
+  @override
+  String clueClubsPlayed(String clubs) {
+    return 'Clubs played for: $clubs';
+  }
+
+  @override
+  String clueInitialsAndLength(String initials, String letters) {
+    return 'Initials: $initials ($letters letters)';
+  }
+
+  @override
+  String get helpGameModesContent =>
+      'Football SOS • 7 Game Modes:\n\n• Football SOS: 3x3 Grid (vs Smart Bot, 2P Duel & Online)\n• Rating Battle: 1P Streak & 2P Duel\n• 2 Teams 1 Player: Find the shared footballer\n• Who Am I?: Guess the mystery footballer from 5 clues\n• Imposter: Spot the player who never played for the club\n• Transfer Path: Identify the footballer from their career history\n• Football Bomb: Pass the bomb before time runs out!';
+
+  @override
+  String get errorTitle => 'Error';
+
+  @override
+  String get winnerTitle => 'Winner';
 }

@@ -106,9 +106,10 @@ class _PlayerSearchBottomSheetState
     if (widget.rowTeamName == null || widget.colTeamName == null) {
       return const SizedBox.shrink();
     }
+    final l10n = AppLocalizations.of(context);
     final cellLabel = widget.cellIndex != null
-        ? 'HÜCRE ${(widget.cellIndex! ~/ 3) + 1}-${(widget.cellIndex! % 3) + 1}'
-        : 'SEÇİLİ HÜCRE';
+        ? '${l10n?.cellLabel ?? "CELL"} ${(widget.cellIndex! ~/ 3) + 1}-${(widget.cellIndex! % 3) + 1}'
+        : (l10n?.selectedCellLabel ?? 'SELECTED CELL');
 
     return Container(
       margin: const EdgeInsets.fromLTRB(18, 12, 18, 2),
@@ -243,7 +244,7 @@ class _PlayerSearchBottomSheetState
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Popüler Aramalar',
+                        l10n.popularSearches,
                         style: theme.textTheme.labelMedium?.copyWith(
                           color: scheme.onSurfaceVariant,
                           fontWeight: FontWeight.w700,

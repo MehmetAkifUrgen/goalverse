@@ -230,30 +230,45 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
 
   void _showResultDialog({required String title, required bool correct}) {
     if (_puzzle == null) return;
+    final imposterPlayer = _puzzle!.options
+        .firstWhere(
+          (o) => o.isImposter,
+          orElse: () => _puzzle!.options.first,
+        )
+        .player;
+
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (ctx) => AlertDialog(
-        title: Text(title, textAlign: TextAlign.center),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              _puzzle!.explanation,
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 15),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              _isMultiplayer
-                  ? 'Oyuncu 1: $_p1Score  •  Oyuncu 2: $_p2Score'
-                  : 'Skor: $_score  •  Seri: 🔥 $_streak',
-              style: const TextStyle(fontWeight: FontWeight.w800),
-            ),
-          ],
-        ),
-        actionsAlignment: MainAxisAlignment.spaceEvenly,
-        actions: [
+      builder: (ctx) {
+        final l10n = AppLocalizations.of(ctx);
+        return AlertDialog(
+          title: Text(title, textAlign: TextAlign.center),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                l10n != null
+                    ? l10n.neverPlayedForTeamExplanation(
+                        imposterPlayer.name,
+                        _puzzle!.targetTeam.name,
+                        imposterPlayer.clubs.join(', '),
+                      )
+                    : _puzzle!.explanation,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 15),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                _isMultiplayer
+                    ? '${l10n?.scoreboardPlayer1 ?? "Player 1"}: $_p1Score  •  ${l10n?.scoreboardPlayer2 ?? "Player 2"}: $_p2Score'
+                    : 'Score: $_score  •  🔥 $_streak',
+                style: const TextStyle(fontWeight: FontWeight.w800),
+              ),
+            ],
+          ),
+          actionsAlignment: MainAxisAlignment.spaceEvenly,
+          actions: [
           if (!correct && !_isMultiplayer)
             TextButton(
               onPressed: () {
@@ -274,9 +289,10 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
             ),
           ),
         ],
-      ),
-    );
-  }
+      );
+    },
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -393,7 +409,7 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
                                 ),
                               ),
                               child: Text(
-                                '⏱ $_secondsLeft sn',
+                                '⏱ $_secondsLeft ${l10n?.secondsSuffix ?? "s"}',
                                 style: TextStyle(
                                   color: _secondsLeft <= 4
                                       ? Colors.white
@@ -450,9 +466,9 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
-                                      '🕵️ AJANI YAKALA (IMPOSTER)',
-                                      style: TextStyle(
+                                    Text(
+                                      '🕵️ ${(l10n?.imposterTitle ?? "IMPOSTER").toUpperCase()}',
+                                      style: const TextStyle(
                                         color: AppTheme.warning,
                                         fontSize: 11,
                                         fontWeight: FontWeight.w900,
@@ -461,7 +477,11 @@ class _ImposterPageState extends ConsumerState<ImposterPage> {
                                     ),
                                     const SizedBox(height: 4),
                                     Text(
-                                      _puzzle!.ruleDescription,
+                                      l10n != null
+                                          ? l10n.whichPlayerNeverPlayedFor(
+                                              _puzzle!.targetTeam.name,
+                                            )
+                                          : _puzzle!.ruleDescription,
                                       style: const TextStyle(
                                         color: AppTheme.textPrimary,
                                         fontSize: 17,

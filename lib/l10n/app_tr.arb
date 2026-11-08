@@ -854,5 +854,123 @@
   "statisticsTitle": "İSTATİSTİKLER",
   "playerDefault": "Oyuncu",
   "guessMysteryPlayer": "Gizemli Futbolcuyu Tahmin Et",
-  "secondsSuffix": "sn"
+  "secondsSuffix": "sn",
+  "whichPlayerNeverPlayedFor": "Hangi futbolcu HİÇ {team} forması giymedi?",
+  "@whichPlayerNeverPlayedFor": {
+    "description": "Imposter question prompt",
+    "placeholders": {
+      "team": {
+        "type": "String"
+      }
+    }
+  },
+  "neverPlayedForTeamExplanation": "{player} kariyerinde hiç {team} forması giymedi (Oynadığı kulüpler: {clubs}).",
+  "@neverPlayedForTeamExplanation": {
+    "description": "Imposter answer explanation",
+    "placeholders": {
+      "player": {
+        "type": "String"
+      },
+      "team": {
+        "type": "String"
+      },
+      "clubs": {
+        "type": "String"
+      }
+    }
+  },
+  "popularSearches": "Popüler Aramalar",
+  "@popularSearches": {
+    "description": "Popular searches label in player search"
+  },
+  "cellLabel": "HÜCRE",
+  "@cellLabel": {
+    "description": "Cell label"
+  },
+  "selectedCellLabel": "SEÇİLİ HÜCRE",
+  "@selectedCellLabel": {
+    "description": "Selected cell label"
+  },
+  "bombNamePlayerForTeam": "{team} forması giymiş bir futbolcu söyle!",
+  "@bombNamePlayerForTeam": {
+    "description": "Football bomb challenge team prompt",
+    "placeholders": {
+      "team": {
+        "type": "String"
+      }
+    }
+  },
+  "bombNamePlayerFromNationality": "{nat} vatandaşı bir futbolcu söyle!",
+  "@bombNamePlayerFromNationality": {
+    "description": "Football bomb challenge nationality prompt",
+    "placeholders": {
+      "nat": {
+        "type": "String"
+      }
+    }
+  },
+  "bombNameAnyPlayer": "Veritabanındaki herhangi bir futbolcuyu söyle!",
+  "@bombNameAnyPlayer": {
+    "description": "Football bomb challenge any player prompt"
+  },
+  "clueNationalityPosition": "Uyruk: {nat} | Mevki: {pos}",
+  "@clueNationalityPosition": {
+    "description": "Clue 1: Nationality and Position",
+    "placeholders": {
+      "nat": {
+        "type": "String"
+      },
+      "pos": {
+        "type": "String"
+      }
+    }
+  },
+  "clueCareerStats": "Kariyerinde {goals} gol ve {assists} asist üretti (Overall: {ovr}).",
+  "@clueCareerStats": {
+    "description": "Clue 2: Career goals and assists",
+    "placeholders": {
+      "goals": {
+        "type": "String"
+      },
+      "assists": {
+        "type": "String"
+      },
+      "ovr": {
+        "type": "String"
+      }
+    }
+  },
+  "clueClubsPlayed": "Oynadığı kulüpler: {clubs}",
+  "@clueClubsPlayed": {
+    "description": "Clue 3: Clubs played for",
+    "placeholders": {
+      "clubs": {
+        "type": "String"
+      }
+    }
+  },
+  "clueInitialsAndLength": "Baş harfleri: {initials} ({letters} harfli)",
+  "@clueInitialsAndLength": {
+    "description": "Clue 5: Initials and name length",
+    "placeholders": {
+      "initials": {
+        "type": "String"
+      },
+      "letters": {
+        "type": "String"
+      }
+    }
+  },
+  "helpGameModesContent": "Football SOS • 7 Oyun Modu:\n\n• Football SOS: 3x3 Grid (vs Akıllı Bot, 2P Düello & Online)\n• Rating Battle: 1P Seri & 2P Düello\n• 2 Takım 1 Oyuncu: Ortak futbolcuyu bul\n• Ben Kimim?: 5 ipucundan futbolcuyu tahmin et\n• Imposter: O kulüpte hiç oynamamış ajanı bul\n• Transfer Path: Kariyer geçmişinden futbolcuyu çöz\n• Football Bomb: Süre bitmeden paslaşarak hayatta kal!",
+  "@helpGameModesContent": {
+    "description": "Help modal game modes explanation"
+  },
+  "errorTitle": "Hata",
+  "@errorTitle": {
+    "description": "Error title"
+  },
+  "winnerTitle": "Kazanan",
+  "@winnerTitle": {
+    "description": "Winner title"
+  }
 }

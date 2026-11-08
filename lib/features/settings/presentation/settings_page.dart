@@ -413,14 +413,7 @@ class SettingsPage extends ConsumerWidget {
                         onTap: () => _showInfoDialog(
                           context,
                           l10n.help,
-                          '${AppConstants.appName} • 7 Oyun Modu (Single & Multiplayer):\n\n'
-                          '• Football SOS (3x3 Grid: vs Akıllı Bot, 2P Düello & Online)\n'
-                          '• Rating Battle (1P Seri & 2P Düello)\n'
-                          '• 2 Takım 1 Oyuncu (1P & 2P Düello)\n'
-                          '• Ben Kimim? (1P & 2P Düello)\n'
-                          '• Imposter • Ajan Kim? (1P & 2P Düello)\n'
-                          '• Transfer Path • Kariyer Yolu (1P & 2P Düello)\n'
-                          '• Football Bomb 💣 (1-8 Kişilik Parti Modu)',
+                          l10n.helpGameModesContent,
                         ),
                       ),
                     ],

@@ -854,5 +854,123 @@
   "statisticsTitle": "ESTADÍSTICAS",
   "playerDefault": "Jugador",
   "guessMysteryPlayer": "Adivina el jugador misterioso",
-  "secondsSuffix": "s"
+  "secondsSuffix": "s",
+  "whichPlayerNeverPlayedFor": "¿Qué jugador NUNCA jugó en {team}?",
+  "@whichPlayerNeverPlayedFor": {
+    "description": "Imposter question prompt",
+    "placeholders": {
+      "team": {
+        "type": "String"
+      }
+    }
+  },
+  "neverPlayedForTeamExplanation": "{player} nunca jugó en {team} en su carrera (Clubes: {clubs}).",
+  "@neverPlayedForTeamExplanation": {
+    "description": "Imposter answer explanation",
+    "placeholders": {
+      "player": {
+        "type": "String"
+      },
+      "team": {
+        "type": "String"
+      },
+      "clubs": {
+        "type": "String"
+      }
+    }
+  },
+  "popularSearches": "Búsquedas Populares",
+  "@popularSearches": {
+    "description": "Popular searches label in player search"
+  },
+  "cellLabel": "CASILLA",
+  "@cellLabel": {
+    "description": "Cell label"
+  },
+  "selectedCellLabel": "CASILLA SELECCIONADA",
+  "@selectedCellLabel": {
+    "description": "Selected cell label"
+  },
+  "bombNamePlayerForTeam": "¡Nombra a un futbolista que haya jugado en {team}!",
+  "@bombNamePlayerForTeam": {
+    "description": "Football bomb challenge team prompt",
+    "placeholders": {
+      "team": {
+        "type": "String"
+      }
+    }
+  },
+  "bombNamePlayerFromNationality": "¡Nombra a un futbolista de {nat}!",
+  "@bombNamePlayerFromNationality": {
+    "description": "Football bomb challenge nationality prompt",
+    "placeholders": {
+      "nat": {
+        "type": "String"
+      }
+    }
+  },
+  "bombNameAnyPlayer": "¡Nombra a cualquier futbolista de la base de datos!",
+  "@bombNameAnyPlayer": {
+    "description": "Football bomb challenge any player prompt"
+  },
+  "clueNationalityPosition": "Nacionalidad: {nat} | Posición: {pos}",
+  "@clueNationalityPosition": {
+    "description": "Clue 1: Nationality and Position",
+    "placeholders": {
+      "nat": {
+        "type": "String"
+      },
+      "pos": {
+        "type": "String"
+      }
+    }
+  },
+  "clueCareerStats": "Registró {goals} goles y {assists} asistencias en su carrera (Media: {ovr}).",
+  "@clueCareerStats": {
+    "description": "Clue 2: Career goals and assists",
+    "placeholders": {
+      "goals": {
+        "type": "String"
+      },
+      "assists": {
+        "type": "String"
+      },
+      "ovr": {
+        "type": "String"
+      }
+    }
+  },
+  "clueClubsPlayed": "Clubes en los que jugó: {clubs}",
+  "@clueClubsPlayed": {
+    "description": "Clue 3: Clubs played for",
+    "placeholders": {
+      "clubs": {
+        "type": "String"
+      }
+    }
+  },
+  "clueInitialsAndLength": "Iniciales: {initials} ({letters} letras)",
+  "@clueInitialsAndLength": {
+    "description": "Clue 5: Initials and name length",
+    "placeholders": {
+      "initials": {
+        "type": "String"
+      },
+      "letters": {
+        "type": "String"
+      }
+    }
+  },
+  "helpGameModesContent": "Football SOS • 7 Modos de Juego:\n\n• Football SOS: 3x3 Grid (vs Bot, Duelo 2P y Online)\n• Rating Battle: Racha 1P y Duelo 2P\n• 2 Equipos 1 Jugador: Encuentra al futbolista compartido\n• ¿Quién Soy Yo?: Adivina al futbolista con 5 pistas\n• Impostor: Encuentra al jugador que nunca jugó en el club\n• Trayectoria: Adivina al jugador por su historial de fichajes\n• Bomba de Fútbol: ¡Pásala antes de que explote!",
+  "@helpGameModesContent": {
+    "description": "Help modal game modes explanation"
+  },
+  "errorTitle": "Error",
+  "@errorTitle": {
+    "description": "Error title"
+  },
+  "winnerTitle": "Ganador",
+  "@winnerTitle": {
+    "description": "Winner title"
+  }
 }

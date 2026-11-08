@@ -1462,4 +1462,71 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get secondsSuffix => 's';
+
+  @override
+  String whichPlayerNeverPlayedFor(String team) {
+    return 'Welcher Spieler hat NIE für $team gespielt?';
+  }
+
+  @override
+  String neverPlayedForTeamExplanation(
+    String player,
+    String team,
+    String clubs,
+  ) {
+    return '$player hat in seiner Karriere nie für $team gespielt (Vereine: $clubs).';
+  }
+
+  @override
+  String get popularSearches => 'Beliebte Suchanfragen';
+
+  @override
+  String get cellLabel => 'ZELLE';
+
+  @override
+  String get selectedCellLabel => 'AUSGEWÄHLTE ZELLE';
+
+  @override
+  String bombNamePlayerForTeam(String team) {
+    return 'Nenne einen Fußballer, der für $team gespielt hat!';
+  }
+
+  @override
+  String bombNamePlayerFromNationality(String nat) {
+    return 'Nenne einen Fußballer aus $nat!';
+  }
+
+  @override
+  String get bombNameAnyPlayer =>
+      'Nenne irgendeinen Fußballer aus der Datenbank!';
+
+  @override
+  String clueNationalityPosition(String nat, String pos) {
+    return 'Nationalität: $nat | Position: $pos';
+  }
+
+  @override
+  String clueCareerStats(String goals, String assists, String ovr) {
+    return 'Erzielte $goals Tore und $assists Vorlagen in der Karriere (Gesamt: $ovr).';
+  }
+
+  @override
+  String clueClubsPlayed(String clubs) {
+    return 'Vereine in der Karriere: $clubs';
+  }
+
+  @override
+  String clueInitialsAndLength(String initials, String letters) {
+    return 'Initialen: $initials ($letters Buchstaben)';
+  }
+
+  @override
+  String get helpGameModesContent =>
+      'Football SOS • 7 Spielmodi:\n\n• Football SOS: 3x3 Grid (vs Bot, 2P Duell & Online)\n• Rating Battle: 1P Serie & 2P Duell\n• 2 Teams 1 Spieler: Finde den gemeinsamen Fußballer\n• Wer bin ich?: Errate den Spieler anhand von 5 Hinweisen\n• Imposter: Finde den Spieler, der nie für den Verein spielte\n• Transfer Path: Erkenne den Spieler anhand seiner Vereinsstationen\n• Football Bomb: Überlebe, bevor die Bombe explodiert!';
+
+  @override
+  String get errorTitle => 'Fehler';
+
+  @override
+  String get winnerTitle => 'Gewinner';
 }

@@ -854,5 +854,123 @@
   "statisticsTitle": "STATISTIKEN",
   "playerDefault": "Spieler",
   "guessMysteryPlayer": "Geheimen Spieler erraten",
-  "secondsSuffix": "s"
+  "secondsSuffix": "s",
+  "whichPlayerNeverPlayedFor": "Welcher Spieler hat NIE für {team} gespielt?",
+  "@whichPlayerNeverPlayedFor": {
+    "description": "Imposter question prompt",
+    "placeholders": {
+      "team": {
+        "type": "String"
+      }
+    }
+  },
+  "neverPlayedForTeamExplanation": "{player} hat in seiner Karriere nie für {team} gespielt (Vereine: {clubs}).",
+  "@neverPlayedForTeamExplanation": {
+    "description": "Imposter answer explanation",
+    "placeholders": {
+      "player": {
+        "type": "String"
+      },
+      "team": {
+        "type": "String"
+      },
+      "clubs": {
+        "type": "String"
+      }
+    }
+  },
+  "popularSearches": "Beliebte Suchanfragen",
+  "@popularSearches": {
+    "description": "Popular searches label in player search"
+  },
+  "cellLabel": "ZELLE",
+  "@cellLabel": {
+    "description": "Cell label"
+  },
+  "selectedCellLabel": "AUSGEWÄHLTE ZELLE",
+  "@selectedCellLabel": {
+    "description": "Selected cell label"
+  },
+  "bombNamePlayerForTeam": "Nenne einen Fußballer, der für {team} gespielt hat!",
+  "@bombNamePlayerForTeam": {
+    "description": "Football bomb challenge team prompt",
+    "placeholders": {
+      "team": {
+        "type": "String"
+      }
+    }
+  },
+  "bombNamePlayerFromNationality": "Nenne einen Fußballer aus {nat}!",
+  "@bombNamePlayerFromNationality": {
+    "description": "Football bomb challenge nationality prompt",
+    "placeholders": {
+      "nat": {
+        "type": "String"
+      }
+    }
+  },
+  "bombNameAnyPlayer": "Nenne irgendeinen Fußballer aus der Datenbank!",
+  "@bombNameAnyPlayer": {
+    "description": "Football bomb challenge any player prompt"
+  },
+  "clueNationalityPosition": "Nationalität: {nat} | Position: {pos}",
+  "@clueNationalityPosition": {
+    "description": "Clue 1: Nationality and Position",
+    "placeholders": {
+      "nat": {
+        "type": "String"
+      },
+      "pos": {
+        "type": "String"
+      }
+    }
+  },
+  "clueCareerStats": "Erzielte {goals} Tore und {assists} Vorlagen in der Karriere (Gesamt: {ovr}).",
+  "@clueCareerStats": {
+    "description": "Clue 2: Career goals and assists",
+    "placeholders": {
+      "goals": {
+        "type": "String"
+      },
+      "assists": {
+        "type": "String"
+      },
+      "ovr": {
+        "type": "String"
+      }
+    }
+  },
+  "clueClubsPlayed": "Vereine in der Karriere: {clubs}",
+  "@clueClubsPlayed": {
+    "description": "Clue 3: Clubs played for",
+    "placeholders": {
+      "clubs": {
+        "type": "String"
+      }
+    }
+  },
+  "clueInitialsAndLength": "Initialen: {initials} ({letters} Buchstaben)",
+  "@clueInitialsAndLength": {
+    "description": "Clue 5: Initials and name length",
+    "placeholders": {
+      "initials": {
+        "type": "String"
+      },
+      "letters": {
+        "type": "String"
+      }
+    }
+  },
+  "helpGameModesContent": "Football SOS • 7 Spielmodi:\n\n• Football SOS: 3x3 Grid (vs Bot, 2P Duell & Online)\n• Rating Battle: 1P Serie & 2P Duell\n• 2 Teams 1 Spieler: Finde den gemeinsamen Fußballer\n• Wer bin ich?: Errate den Spieler anhand von 5 Hinweisen\n• Imposter: Finde den Spieler, der nie für den Verein spielte\n• Transfer Path: Erkenne den Spieler anhand seiner Vereinsstationen\n• Football Bomb: Überlebe, bevor die Bombe explodiert!",
+  "@helpGameModesContent": {
+    "description": "Help modal game modes explanation"
+  },
+  "errorTitle": "Fehler",
+  "@errorTitle": {
+    "description": "Error title"
+  },
+  "winnerTitle": "Gewinner",
+  "@winnerTitle": {
+    "description": "Winner title"
+  }
 }

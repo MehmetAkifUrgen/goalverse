@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/providers.dart';
 import '../../../core/providers/settings_and_stats_provider.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/utils/clue_localizer.dart';
 import '../../../data/models/freezed/entity_models.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../game/data/online_match_service.dart';
@@ -401,7 +402,11 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
       body: _loading
           ? const Center(child: CircularProgressIndicator())
           : _error != null
-          ? Center(child: Text('Hata: $_error'))
+          ? Center(
+              child: Text(
+                l10n != null ? '${l10n.errorTitle}: $_error' : 'Error: $_error',
+              ),
+            )
           : SafeArea(
               child: Center(
                 child: ConstrainedBox(
@@ -526,7 +531,11 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
                                   ),
                                   title: isUnlocked
                                       ? Text(
-                                          clues[index],
+                                          ClueLocalizer.getClue(
+                                            _mysteryPlayer!,
+                                            index,
+                                            context,
+                                          ),
                                           style: const TextStyle(
                                             fontSize: 15,
                                             fontWeight: FontWeight.w700,
@@ -567,8 +576,12 @@ class _WhoAmIPageState extends ConsumerState<WhoAmIPage> {
                           icon: const Icon(Icons.sports_soccer_rounded),
                           label: Text(
                             _isMultiplayer
-                                ? 'Oyuncu ${_currentPlayer + 1}: Tahmin Et'
-                                : 'Futbolcuyu Tahmin Et',
+                                ? (l10n != null
+                                    ? l10n.selectPlayerPlayerTurn(
+                                        (_currentPlayer + 1).toString(),
+                                      )
+                                    : 'Player ${_currentPlayer + 1}: Guess')
+                                : (l10n?.guessMysteryPlayer ?? 'Guess Footballer'),
                             style: const TextStyle(
                               fontSize: 17,
                               fontWeight: FontWeight.w900,

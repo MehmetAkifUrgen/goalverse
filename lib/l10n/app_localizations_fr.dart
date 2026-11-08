@@ -1458,4 +1458,71 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get secondsSuffix => 's';
+
+  @override
+  String whichPlayerNeverPlayedFor(String team) {
+    return 'Quel joueur n\'a JAMAIS joué pour $team ?';
+  }
+
+  @override
+  String neverPlayedForTeamExplanation(
+    String player,
+    String team,
+    String clubs,
+  ) {
+    return '$player n\'a jamais joué pour $team dans sa carrière (Clubs : $clubs).';
+  }
+
+  @override
+  String get popularSearches => 'Recherches Populaires';
+
+  @override
+  String get cellLabel => 'CASE';
+
+  @override
+  String get selectedCellLabel => 'CASE SÉLECTIONNÉE';
+
+  @override
+  String bombNamePlayerForTeam(String team) {
+    return 'Nommez un footballeur ayant joué pour $team !';
+  }
+
+  @override
+  String bombNamePlayerFromNationality(String nat) {
+    return 'Nommez un footballeur originaire de $nat !';
+  }
+
+  @override
+  String get bombNameAnyPlayer =>
+      'Nommez n\'importe quel footballeur de la base de données !';
+
+  @override
+  String clueNationalityPosition(String nat, String pos) {
+    return 'Nationalité : $nat | Poste : $pos';
+  }
+
+  @override
+  String clueCareerStats(String goals, String assists, String ovr) {
+    return 'A inscrit $goals buts et délivré $assists passes décisives en carrière (Général : $ovr).';
+  }
+
+  @override
+  String clueClubsPlayed(String clubs) {
+    return 'Clubs où il a évolué : $clubs';
+  }
+
+  @override
+  String clueInitialsAndLength(String initials, String letters) {
+    return 'Initiales : $initials ($letters lettres)';
+  }
+
+  @override
+  String get helpGameModesContent =>
+      'Football SOS • 7 Modes de Jeu :\n\n• Football SOS : Grille 3x3 (vs IA, Duel 2J et En Ligne)\n• Rating Battle : Série 1J et Duel 2J\n• 2 Équipes 1 Joueur : Trouvez le joueur commun\n• Qui suis-je ? : Devinez le joueur mystère grâce à 5 indices\n• Imposteur : Trouvez le joueur qui n\'a jamais joué pour le club\n• Parcours : Identifiez le joueur via son historique de transferts\n• Football Bomb : Passez la bombe avant l\'explosion !';
+
+  @override
+  String get errorTitle => 'Erreur';
+
+  @override
+  String get winnerTitle => 'Vainqueur';
 }

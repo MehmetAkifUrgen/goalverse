@@ -1457,4 +1457,71 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get secondsSuffix => 's';
+
+  @override
+  String whichPlayerNeverPlayedFor(String team) {
+    return '¿Qué jugador NUNCA jugó en $team?';
+  }
+
+  @override
+  String neverPlayedForTeamExplanation(
+    String player,
+    String team,
+    String clubs,
+  ) {
+    return '$player nunca jugó en $team en su carrera (Clubes: $clubs).';
+  }
+
+  @override
+  String get popularSearches => 'Búsquedas Populares';
+
+  @override
+  String get cellLabel => 'CASILLA';
+
+  @override
+  String get selectedCellLabel => 'CASILLA SELECCIONADA';
+
+  @override
+  String bombNamePlayerForTeam(String team) {
+    return '¡Nombra a un futbolista que haya jugado en $team!';
+  }
+
+  @override
+  String bombNamePlayerFromNationality(String nat) {
+    return '¡Nombra a un futbolista de $nat!';
+  }
+
+  @override
+  String get bombNameAnyPlayer =>
+      '¡Nombra a cualquier futbolista de la base de datos!';
+
+  @override
+  String clueNationalityPosition(String nat, String pos) {
+    return 'Nacionalidad: $nat | Posición: $pos';
+  }
+
+  @override
+  String clueCareerStats(String goals, String assists, String ovr) {
+    return 'Registró $goals goles y $assists asistencias en su carrera (Media: $ovr).';
+  }
+
+  @override
+  String clueClubsPlayed(String clubs) {
+    return 'Clubes en los que jugó: $clubs';
+  }
+
+  @override
+  String clueInitialsAndLength(String initials, String letters) {
+    return 'Iniciales: $initials ($letters letras)';
+  }
+
+  @override
+  String get helpGameModesContent =>
+      'Football SOS • 7 Modos de Juego:\n\n• Football SOS: 3x3 Grid (vs Bot, Duelo 2P y Online)\n• Rating Battle: Racha 1P y Duelo 2P\n• 2 Equipos 1 Jugador: Encuentra al futbolista compartido\n• ¿Quién Soy Yo?: Adivina al futbolista con 5 pistas\n• Impostor: Encuentra al jugador que nunca jugó en el club\n• Trayectoria: Adivina al jugador por su historial de fichajes\n• Bomba de Fútbol: ¡Pásala antes de que explote!';
+
+  @override
+  String get errorTitle => 'Error';
+
+  @override
+  String get winnerTitle => 'Ganador';
 }

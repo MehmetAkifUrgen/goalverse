@@ -29,7 +29,7 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
 
   BombChallenge? _challenge;
   int _playerCount = 2;
-  late List<String> _activePlayers;
+  late List<int> _activePlayerNumbers;
   int _currentTurnIndex = 0;
 
   int _fuseSeconds = 18;
@@ -56,8 +56,27 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
 
   void _resetPlayers(int count) {
     _playerCount = count;
-    _activePlayers = List.generate(count, (i) => 'Oyuncu ${i + 1}');
+    _activePlayerNumbers = List.generate(count, (i) => i + 1);
     _currentTurnIndex = 0;
+  }
+
+  String _formatPlayer(int num, BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return '${l10n?.playerDefault ?? "Player"} $num';
+  }
+
+  String _getLocalizedBombPrompt(BombChallenge challenge, BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    if (l10n == null) return challenge.prompt;
+    if (challenge.targetTeam != null) {
+      return l10n.bombNamePlayerForTeam(challenge.targetTeam!.name);
+    }
+    if (challenge.targetNationality != null) {
+      final natCode = challenge.targetNationality!;
+      final flag = AppTheme.nationalityFlag(natCode);
+      return l10n.bombNamePlayerFromNationality('$flag $natCode');
+    }
+    return l10n.bombNameAnyPlayer;
   }
 
   Future<int?> _resolveOnlineSeed(int round) async {
@@ -118,7 +137,10 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
 
   void _onBombExploded() {
     if (_exploded) return;
-    final eliminatedPlayer = _activePlayers[_currentTurnIndex];
+    final eliminatedPlayer = _formatPlayer(
+      _activePlayerNumbers[_currentTurnIndex],
+      context,
+    );
 
     setState(() {
       _fuseSeconds = 0;
@@ -134,17 +156,20 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
       context: context,
       barrierDismissible: false,
       builder: (ctx) {
-        final remaining = List<String>.from(_activePlayers)
+        final remaining = List<int>.from(_activePlayerNumbers)
           ..removeAt(_currentTurnIndex);
         final hasWinner = remaining.length == 1;
+        final winnerName = remaining.isNotEmpty
+            ? _formatPlayer(remaining.first, ctx)
+            : '';
 
         return AlertDialog(
           title: Text(
             hasWinner
                 ? (l10n != null
-                    ? l10n.bombWonTitle(remaining.first)
-                    : '🏆 ${remaining.first} Kazandı!')
-                : (l10n?.bombExplodedTitle ?? '💥 GÜM! Bomba Patladı!'),
+                    ? l10n.bombWonTitle(winnerName)
+                    : '🏆 $winnerName Won!')
+                : (l10n?.bombExplodedTitle ?? '💥 BOOM! Bomb Exploded!'),
             textAlign: TextAlign.center,
           ),
           content: Column(
@@ -153,7 +178,7 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
               Text(
                 l10n != null
                     ? l10n.bombEliminatedDesc(eliminatedPlayer)
-                    : 'Bomba $eliminatedPlayer elindeyken patladı ve ELENDİ!',
+                    : 'The bomb exploded with $eliminatedPlayer and was ELIMINATED!',
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontWeight: FontWeight.w800),
               ),
@@ -161,12 +186,12 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
               Text(
                 l10n != null
                     ? l10n.totalSuccessfulPasses(_passesCount.toString())
-                    : 'Toplam Başarılı Pas: $_passesCount',
+                    : 'Total Successful Passes: $_passesCount',
               ),
               if (hasWinner) ...[
                 const SizedBox(height: 8),
                 Text(
-                  '🎉 ${remaining.first} Hayatta Kalan Son Oyuncu!',
+                  '🎉 $winnerName - ${l10n?.winnerTitle ?? "Winner!"}',
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: AppTheme.pitchEmerald,
@@ -183,14 +208,14 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                 onPressed: () {
                   Navigator.of(ctx).pop();
                   setState(() {
-                    _activePlayers.removeAt(_currentTurnIndex);
-                    if (_currentTurnIndex >= _activePlayers.length) {
+                    _activePlayerNumbers.removeAt(_currentTurnIndex);
+                    if (_currentTurnIndex >= _activePlayerNumbers.length) {
                       _currentTurnIndex = 0;
                     }
                   });
                   _startNewRound();
                 },
-                child: Text(AppLocalizations.of(ctx)?.nextMatch ?? 'Kalanlarla Devam Et ➔'),
+                child: Text(AppLocalizations.of(ctx)?.nextMatch ?? 'Continue ➔'),
               ),
             ElevatedButton(
               onPressed: () {
@@ -198,7 +223,7 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                 setState(() => _resetPlayers(_playerCount));
                 _startNewRound();
               },
-              child: Text(AppLocalizations.of(ctx)?.playAgainButton ?? 'Yeni Maç'),
+              child: Text(AppLocalizations.of(ctx)?.playAgainButton ?? 'Play Again'),
             ),
           ],
         );
@@ -245,16 +270,17 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
       _passesCount++;
       _currentMaxFuse = (_currentMaxFuse - 1).clamp(5, 20);
       _fuseSeconds = _currentMaxFuse;
-      _currentTurnIndex = (_currentTurnIndex + 1) % _activePlayers.length;
+      _currentTurnIndex =
+          (_currentTurnIndex + 1) % _activePlayerNumbers.length;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final currentHolder = _activePlayers.isNotEmpty
-        ? _activePlayers[_currentTurnIndex]
-        : (l10n != null ? '${l10n.player1Won.split(' ').first} 1' : 'Oyuncu 1');
+    final currentHolder = _activePlayerNumbers.isNotEmpty
+        ? _formatPlayer(_activePlayerNumbers[_currentTurnIndex], context)
+        : _formatPlayer(1, context);
     final targetTeam = _challenge?.targetTeam;
 
     return Scaffold(
@@ -273,21 +299,21 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
             },
           ),
           PopupMenuButton<int>(
-            tooltip: 'Oyuncu Sayısı',
+            tooltip: l10n?.playerCount ?? 'Player Count',
             icon: const Icon(Icons.group_rounded),
             onSelected: (count) {
               setState(() => _resetPlayers(count));
               _startNewRound();
             },
             itemBuilder: (context) => [
-              const PopupMenuItem<int>(
+              PopupMenuItem<int>(
                 value: 1,
-                child: Text('1 Oyuncu (Solo Hayatta Kalma)'),
+                child: Text('1 ${l10n?.playerDefault ?? "Player"} (Solo)'),
               ),
               for (final c in [2, 3, 4, 6, 8])
                 PopupMenuItem<int>(
                   value: c,
-                  child: Text('$c Oyuncu (Parti Modu)'),
+                  child: Text('$c ${l10n?.playerDefault ?? "Player"}'),
                 ),
             ],
           ),
@@ -296,7 +322,11 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
       body: _loading
           ? const Center(child: CircularProgressIndicator())
           : _error != null
-          ? Center(child: Text('Hata: $_error'))
+          ? Center(
+              child: Text(
+                l10n != null ? '${l10n.errorTitle}: $_error' : 'Error: $_error',
+              ),
+            )
           : SafeArea(
               child: Center(
                 child: ConstrainedBox(
@@ -318,15 +348,19 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                           height: 42,
                           child: ListView.separated(
                             scrollDirection: Axis.horizontal,
-                            itemCount: _activePlayers.length,
+                            itemCount: _activePlayerNumbers.length,
                             separatorBuilder: (_, _) =>
                                 const SizedBox(width: 8),
                             itemBuilder: (context, idx) {
                               final isHolder = idx == _currentTurnIndex;
+                              final pName = _formatPlayer(
+                                _activePlayerNumbers[idx],
+                                context,
+                              );
                               return Chip(
                                 avatar: Text(isHolder ? '💣' : '⚽'),
                                 label: Text(
-                                  _activePlayers[idx],
+                                  pName,
                                   style: TextStyle(
                                     fontWeight: isHolder
                                         ? FontWeight.w900
@@ -398,7 +432,7 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Text(
-                                      '${_challenge!.validPlayerIds.length} olası cevap',
+                                      '${_challenge!.validPlayerIds.length} ${l10n?.clubsCountLabel(_challenge!.validPlayerIds.length.toString()) ?? "answers"}',
                                       style: const TextStyle(
                                         color: Colors.white70,
                                         fontSize: 11,
@@ -425,7 +459,7 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                                     const SizedBox(width: 14),
                                   ],
                                   Text(
-                                    _exploded ? '💥' : '💣 $_fuseSeconds sn',
+                                    _exploded ? '💥' : '💣 $_fuseSeconds ${l10n?.secondsSuffix ?? "s"}',
                                     style: const TextStyle(
                                       fontSize: 38,
                                       fontWeight: FontWeight.w900,
@@ -436,7 +470,7 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                               ),
                               const SizedBox(height: 10),
                               Text(
-                                _challenge!.prompt,
+                                _getLocalizedBombPrompt(_challenge!, context),
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                   fontSize: 18,
@@ -446,7 +480,7 @@ class _FootballBombPageState extends ConsumerState<FootballBombPage> {
                               ),
                               const SizedBox(height: 6),
                               Text(
-                                'Pas: $_passesCount • Her doğru cevapta fitil 1 sn kısalır!',
+                                '${l10n?.passRound ?? "Pass"}: $_passesCount',
                                 style: const TextStyle(
                                   fontSize: 12,
                                   color: Colors.white70,
